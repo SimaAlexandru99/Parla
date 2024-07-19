@@ -217,16 +217,16 @@ function ChatCallPopover({
         <Sheet>
             <SheetTrigger asChild>
                 <Button
-                    className="rounded-full h-14 w-14 flex items-center justify-center bg-gradient-to-r  hover:shadow-lg"
+                    className="rounded-full h-14 w-14 flex items-center justify-center hover:shadow-lg"
                     aria-expanded={popoverOpen}
                     aria-controls="chat-call-popover"
                     aria-label="Open chat"
                     onClick={() => setPopoverOpen(!popoverOpen)}
                 >
                     {popoverOpen ? (
-                        <X className="h-6 w-6 text-white" />
+                        <X className="h-6 w-6 " />
                     ) : (
-                        <Pen className="h-6 w-6 text-white" />
+                        <Pen className="h-6 w-6 " />
                     )}
                 </Button>
             </SheetTrigger>

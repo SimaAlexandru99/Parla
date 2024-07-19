@@ -1,6 +1,4 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import Image from 'next/image';
-import { assets } from '@/constants/assets';
 import { useTheme } from 'next-themes';
 
 interface CallDetailsCardProps {

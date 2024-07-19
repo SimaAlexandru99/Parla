@@ -24,6 +24,11 @@ export default function NextMindLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <title>NextMind - AI powered journey planner for our clients</title> {/* Add the title here */}
+        <link rel="icon" href="favicon.ico" />
+        <link rel="apple-touch-icon" href="favicon.ico" />
+      </head>
       <body className={cn(
         "min-h-screen bg-muted/40 font-sans antialiased",
         fontSans.variable
@@ -39,7 +44,7 @@ export default function NextMindLayout({
               <div className="flex min-h-screen w-full">
                 <Sidebar />
                 <div className="flex flex-col flex-grow w-full">
-                  <Header/>
+                  <Header />
                   <main className="flex-grow overflow-y-auto">
                     {children}
                   </main>
