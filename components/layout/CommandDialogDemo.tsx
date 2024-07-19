@@ -56,7 +56,7 @@ export function CommandDialogDemo() {
 
   return (
     <>
-      <div className="flex items-center gap-2">
+      <div className="md:flex">
         <div className="relative flex-grow">
           <Input
             ref={inputRef}
