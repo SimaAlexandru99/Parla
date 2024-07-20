@@ -15,6 +15,8 @@ import CallsTable from '@/components/dashboard/Call/CallsTable';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/components/ui/use-toast';
+import { useRouter } from 'next/navigation';
+
 
 export default function CallsPage() {
     const { t } = useLanguage();
@@ -31,6 +33,7 @@ export default function CallsPage() {
     const { theme } = useTheme();
     const { toast } = useToast();
     const limitPerPage = 10;
+    const router = useRouter();
 
     const fetchCallsData = useCallback(async (page: number) => {
         setLoading(true);
@@ -99,11 +102,9 @@ export default function CallsPage() {
         }
     }, [companyData?.database, fetchCallsData, page, toast]);
 
-    const handleViewDetails = useCallback((call: CallDetails) => {
-        setSelectedCall(call);
-        setDrawerOpen(true);
-        setAgentDetailsDrawerOpen(false);
-    }, []);
+    const handleViewDetails = (call: CallDetails) => {
+        router.push(`/next-mind/calls/${call._id}`);
+      };
 
     const handleViewAgentDetails = useCallback((agentDetails: any) => {
         setSelectedAgent(agentDetails);

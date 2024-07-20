@@ -1,6 +1,6 @@
 // apiClients.ts
 import { AgentMetrics } from "@/types/AgentMetrics";
-import { ProjectDetails } from "@/types/PropsTypes"; // Ensure this import path is correct
+import { CallDetails, ProjectDetails } from "@/types/PropsTypes"; // Ensure this import path is correct
 
 export interface RecordingCounts {
   currentMonthCount: number;
@@ -369,6 +369,19 @@ export const fetchProjectDetails = async (
   const response = await fetch(url.toString());
   if (!response.ok) {
     throw new Error("Failed to fetch project details");
+  }
+  return await response.json();
+};
+
+// In apiClient.ts
+
+export const fetchCallDetails = async (
+  database: string,
+  callId: string
+): Promise<CallDetails> => {
+  const response = await fetch(`/api/calls/${callId}?database=${database}`);
+  if (!response.ok) {
+    throw new Error('Failed to fetch call details');
   }
   return await response.json();
 };
