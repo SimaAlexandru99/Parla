@@ -20,7 +20,8 @@ import useFetchDepartments from "@/hooks/useFetchDepartments"; // Update the imp
 import { doc, updateDoc } from "firebase/firestore";
 import { db } from "@/lib/firebase/config"; // Update the import path as necessary
 import SuccessDialog from "@/components/layout/SuccessDialog";
-import { ScrollArea } from "@/components/ui/scroll-area"; // Import the ScrollArea component
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { AvatarSkeleton } from "@/components/common/Cards"; 
 
 interface UserProfileProps {
     isOpen: boolean;
@@ -38,7 +39,7 @@ const UserProfile = ({ isOpen, onClose }: UserProfileProps) => {
     const [editDepartment, setEditDepartment] = useState(department);
     const [editCompany, setEditCompany] = useState(company);
     const [isDialogOpen, setIsDialogOpen] = useState(false);
-
+    const [avatarLoaded, setAvatarLoaded] = useState(false);
     const { projects, loadingProjects, error: projectsError } = useFetchProjects(partner, company);
     const { departments, loadingDepartments, error: departmentsError } = useFetchDepartments(partner, editProject, company);
 
@@ -84,13 +85,6 @@ const UserProfile = ({ isOpen, onClose }: UserProfileProps) => {
         }
     }, [uid, editFirstName, editLastName, editEmail, editProject, editDepartment, editCompany]);
 
-    if (loading) {
-        return <div>{t.loading.loadingPage}</div>; // Handle loading state
-    }
-
-    if (!uid) {
-        return <div>{t.userProfile.errors.noUserData}</div>; // Handle case where user data is not available
-    }
 
     return (
         <>
@@ -105,9 +99,17 @@ const UserProfile = ({ isOpen, onClose }: UserProfileProps) => {
                     <ScrollArea className="flex-grow">
                         <div className="grid gap-4 py-4">
                             <div className="flex flex-col items-center space-y-4">
-                                <Avatar className="w-24 h-24">
+                                {!avatarLoaded && profileIcon && <AvatarSkeleton />}
+                                <Avatar
+                                    className={`w-24 h-24 ${!avatarLoaded && profileIcon ? 'hidden' : ''}`}
+                                    onLoad={() => setAvatarLoaded(true)}
+                                >
                                     {profileIcon ? (
-                                        <AvatarImage src={profileIcon} alt={t.userProfile.avatarFallback} />
+                                        <AvatarImage
+                                            src={profileIcon}
+                                            alt={t.userProfile.avatarFallback}
+                                            onLoad={() => setAvatarLoaded(true)}
+                                        />
                                     ) : (
                                         <AvatarFallback>
                                             <span className="text-xl">{firstName?.charAt(0)}{lastName?.charAt(0)}</span>

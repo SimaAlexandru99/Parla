@@ -27,7 +27,7 @@ const Sidebar = () => {
         <aside className="fixed inset-y-0 left-0 z-10 hidden w-16 flex-col border-r bg-background sm:flex">
             <nav className="flex flex-col items-center gap-4 px-2 py-4">
                 <Link href="#" className="flex flex-col items-center gap-4 px-2 py-4">
-                    <ThemeLogo width={25} height={25} />
+                    <ThemeLogo width={20} height={20} />
                 </Link>
 
                 {items.map((item, index) => (

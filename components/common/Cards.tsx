@@ -60,3 +60,7 @@ export const SkeletonCallEntry = () => (
         <Skeleton className="h-12 w-12 rounded-full" />
     </div>
 );
+
+export const AvatarSkeleton = () => (
+    <div className="w-24 h-24 rounded-full bg-gray-200 animate-pulse" />
+  );

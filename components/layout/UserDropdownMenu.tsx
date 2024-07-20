@@ -52,7 +52,6 @@ const UserDropdownMenu = ({
     } else if (lastName) {
       return lastName[0];
     }
-    return 'U';
   };
 
   const toggleTheme = () => {
