@@ -346,11 +346,29 @@ export const fetchCallDurationData = async (
   return await response.json();
 };
 
-// apiClient.ts
-export const fetchAgentMetrics = async (database: string, username: string): Promise<AgentMetrics> => {
-  const response = await fetch(`/api/agent-metrics?database=${database}&username=${username}`);
+export const fetchAgentMetrics = async (
+  database: string,
+  username: string
+): Promise<AgentMetrics> => {
+  const response = await fetch(
+    `/api/agent-metrics?database=${database}&username=${username}`
+  );
   if (!response.ok) {
-    throw new Error('Failed to fetch agent metrics');
+    throw new Error("Failed to fetch agent metrics");
+  }
+  return await response.json();
+};
+
+export const fetchProjectDetails = async (
+  database: string,
+  projectId: string
+): Promise<ProjectDetails> => {
+  const url = new URL(`/api/projects/${projectId}`, window.location.origin);
+  url.searchParams.append("database", database);
+
+  const response = await fetch(url.toString());
+  if (!response.ok) {
+    throw new Error("Failed to fetch project details");
   }
   return await response.json();
 };

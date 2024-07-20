@@ -13,6 +13,7 @@ import useFetchUserCompanyDatabase from "@/hooks/useFetchUserCompanyDatabase";
 import { fetchProjects } from '@/lib/apiClient';
 import CustomPagination from '@/components/common/Pagination';
 import { ProjectDetails } from '@/types/PropsTypes';
+import { useRouter } from 'next/navigation';
 
 export default function ProjectsPage() {
     const { t } = useLanguage();
@@ -24,6 +25,12 @@ export default function ProjectsPage() {
     const [searchTerm, setSearchTerm] = useState('');
     const { toast } = useToast();
     const limitPerPage = 10;
+    const router = useRouter();
+
+    const handleViewProjectDetails = (projectId: string) => {
+        router.push(`/next-mind/projects/${projectId}`);
+    };
+
 
     const fetchProjectsData = useCallback(async (page: number) => {
         setLoading(true);
@@ -68,10 +75,10 @@ export default function ProjectsPage() {
                     <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                         <div className="space-y-1">
                             <CardTitle className="text-2xl font-bold">
-                                {loading ? <Skeleton className="h-8 w-48" /> : t.projectsPage.title}
+                                {t.projectsPage.title}
                             </CardTitle>
                             <CardDescription>
-                                {loading ? <Skeleton className="h-4 w-64" /> : t.projectsPage.description}
+                                {t.projectsPage.description}
                             </CardDescription>
                         </div>
                         <div className='flex items-center justify-between mb-4'>
@@ -128,7 +135,7 @@ export default function ProjectsPage() {
                                                     <Button
                                                         size="icon"
                                                         variant="outline"
-                                                        onClick={() => {/* Handle view project details */}}
+                                                        onClick={() => handleViewProjectDetails(project._id)}
                                                     >
                                                         <Eye className="h-4 w-4" />
                                                     </Button>
