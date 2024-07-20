@@ -9,8 +9,6 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import useFetchUserCompanyDatabase from "@/hooks/useFetchUserCompanyDatabase";
 import { fetchCalls, deleteCall } from '@/lib/apiClient';
 import CustomPagination from '@/components/common/Pagination';
-import CallDetailsDrawer from '@/components/dashboard/Call/CallDetailsDrawer';
-import AgentDetailsDrawer from '@/components/dashboard/Agent/AgentDetailsDrawer';
 import CallsTable from '@/components/dashboard/Call/CallsTable';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -106,10 +104,6 @@ export default function CallsPage() {
         router.push(`/next-mind/calls/${call._id}`);
       };
 
-    const handleViewAgentDetails = useCallback((agentDetails: any) => {
-        setSelectedAgent(agentDetails);
-        setAgentDetailsDrawerOpen(true);
-    }, []);
 
     const renderStatus = useCallback((status: string): React.ReactNode => {
         let statusClass = '';
@@ -181,7 +175,6 @@ export default function CallsPage() {
                                 loading={loading}
                                 handleViewDetails={handleViewDetails}
                                 handleDelete={handleDelete}
-                                handleViewAgentDetails={handleViewAgentDetails}
                                 ringColor={ringColor}
                                 textColor={textColor}
                                 trailColor={trailColor}
@@ -195,20 +188,6 @@ export default function CallsPage() {
                         )}
                     </CardContent>
                 </Card>
-                {selectedCall && (
-                    <CallDetailsDrawer
-                        isOpen={drawerOpen}
-                        onOpenChange={setDrawerOpen}
-                        callDetails={selectedCall}
-                    />
-                )}
-                {selectedAgent && (
-                    <AgentDetailsDrawer
-                        isOpen={agentDetailsDrawerOpen}
-                        onOpenChange={setAgentDetailsDrawerOpen}
-                        agentDetails={selectedAgent}
-                    />
-                )}
                 <CustomPagination
                     page={page}
                     totalItems={totalCalls}

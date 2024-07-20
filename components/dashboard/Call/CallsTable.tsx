@@ -46,7 +46,6 @@ interface CallsTableProps {
     loading: boolean;
     handleViewDetails: (call: CallDetails) => void;
     handleDelete: (id: string) => void;
-    handleViewAgentDetails: (agentDetails: any) => void;
     ringColor: string;
     textColor: string;
     trailColor: string;
@@ -62,7 +61,6 @@ function CallsTable({
     loading,
     handleViewDetails,
     handleDelete,
-    handleViewAgentDetails,
     ringColor,
     textColor,
     trailColor,
@@ -98,12 +96,7 @@ function CallsTable({
                     filteredCalls.map((call, index) => (
                         <TableRow key={index}>
                             <TableCell className="text-center px-2 py-2 md:px-4 md:py-2">
-                                <button
-                                    className="text-primary hover:underline"
-                                    onClick={() => handleViewAgentDetails(call.agent_info)}
-                                >
-                                    {`${call.agent_info.first_name} ${call.agent_info.last_name}`}
-                                </button>
+                                {`${call.agent_info.first_name} ${call.agent_info.last_name}`}
                             </TableCell>
                             <TableCell className="text-center px-2 py-2 md:px-4 md:py-2">{call.phone_number}</TableCell>
                             <TableCell className="text-center px-2 py-2 md:px-4 md:py-2">
