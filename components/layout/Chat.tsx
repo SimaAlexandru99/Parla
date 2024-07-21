@@ -1,4 +1,4 @@
-
+'use client'
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
@@ -17,8 +17,6 @@ import ReactMarkdown from "react-markdown";
 import { Card } from "@/components/ui/card";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Textarea } from "@/components/ui/textarea";
-import PositiveFeedbackCard from "./Cards/PositiveFeedbackCard";
-import NegativeFeedbackCard from "./Cards/NegativeFeedbackCard";
 
 
 function ChatCallPopover({
@@ -366,30 +364,6 @@ function ChatCallPopover({
                                     )}
                                 </div>
                             </Card>
-                            {activeFeedbackCard === index.toString() && selectedButton === "thumbsUp" && (
-                                <PositiveFeedbackCard
-                                    index={index.toString()}
-                                    handleFeedbackClick={handleFeedbackClick}
-                                    handleButtonClick={handleButtonClick}
-                                    handleFeedbackSubmit={handleFeedbackSubmit}
-                                    setActiveFeedbackCard={setActiveFeedbackCard}
-                                    activeFeedbackCard={activeFeedbackCard}
-                                    selectedButton={selectedButton}
-                                    t={t.gemini} // Pass the translation object here
-                                />
-                            )}
-                            {activeFeedbackCard === index.toString() && selectedButton === "thumbsDown" && (
-                                <NegativeFeedbackCard
-                                    index={index.toString()}
-                                    handleFeedbackClick={handleFeedbackClick}
-                                    handleButtonClick={handleButtonClick}
-                                    handleFeedbackSubmit={handleFeedbackSubmit}
-                                    setActiveFeedbackCard={setActiveFeedbackCard}
-                                    activeFeedbackCard={activeFeedbackCard}
-                                    selectedButton={selectedButton}
-                                    t={t.gemini} // Pass the translation object here
-                                />
-                            )}
                         </div>
                     ))}
                 </div>

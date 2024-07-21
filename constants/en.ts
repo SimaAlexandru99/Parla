@@ -25,6 +25,7 @@ export const en = {
     refresh: "Refresh",
     noDataAvailable: "No data available",
     search: "Search...",
+    backToCalls: "Back to Calls",
   },
   chat: {
     disclaimer:

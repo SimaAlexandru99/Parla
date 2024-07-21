@@ -11,6 +11,7 @@ import { Toaster } from "@/components/ui/toaster";
 import Link from "next/link";
 import Sidebar from "@/components/layout/Sidebar";
 import Header from "@/components/layout/HeaderDashboard";
+import Chat from "@/components/layout/Chat";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -48,22 +49,6 @@ export default function NextMindLayout({
                   <main className="flex-grow overflow-y-auto">
                     {children}
                   </main>
-                  <footer className="py-4 md:py-6">
-                    <div className="container md:h-24 max-w-none ">
-                      <p className="text-sm leading-loose text-muted-foreground">
-                        Built by{" "}
-                        <Link
-                          href="https://twitter.com/shadcn"
-                          target="_blank"
-                          rel="noreferrer"
-                          className="font-medium underline underline-offset-4"
-                        >
-                          NextJourney
-                        </Link>
-                        .
-                      </p>
-                    </div>
-                  </footer>
                 </div>
               </div>
               <Toaster />

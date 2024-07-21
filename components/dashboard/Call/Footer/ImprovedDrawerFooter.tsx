@@ -3,40 +3,40 @@ import { DrawerFooter, DrawerClose } from '@/components/ui/drawer';
 import ReactPlayer from 'react-player';
 import { Slider } from '@/components/ui/slider';
 import { Button } from '@/components/ui/button';
-import { Play, Pause, SkipBack, SkipForward } from 'lucide-react';
+    import { Play, Pause, SkipBack, SkipForward } from 'lucide-react';
 
-interface AudioPlayerProps {
-    url: string;
-    playerRef: React.RefObject<ReactPlayer>;
-}
+    interface AudioPlayerProps {
+        url: string;
+        playerRef: React.RefObject<ReactPlayer>;
+    }
 
-const AudioPlayer = ({ url, playerRef }: AudioPlayerProps) => {
-    const [playing, setPlaying] = useState(false);
-    const [progress, setProgress] = useState(0);
-    const [duration, setDuration] = useState(0);
+    const AudioPlayer = ({ url, playerRef }: AudioPlayerProps) => {
+        const [playing, setPlaying] = useState(false);
+        const [progress, setProgress] = useState(0);
+        const [duration, setDuration] = useState(0);
 
-    const handlePlayPause = () => setPlaying(!playing);
-    const handleProgress = (state: { played: number }) => setProgress(state.played);
-    const handleDuration = (duration: number) => setDuration(duration);
-    const handleSeek = (newValue: number[]) => {
-        if (playerRef.current) {
-            playerRef.current.seekTo(newValue[0], 'fraction');
-        }
-    };
+        const handlePlayPause = () => setPlaying(!playing);
+        const handleProgress = (state: { played: number }) => setProgress(state.played);
+        const handleDuration = (duration: number) => setDuration(duration);
+        const handleSeek = (newValue: number[]) => {
+            if (playerRef.current) {
+                playerRef.current.seekTo(newValue[0], 'fraction');
+            }
+        };
 
-    const handleSkip = (direction: 'forward' | 'backward') => {
-        if (playerRef.current) {
-            const currentTime = playerRef.current.getCurrentTime();
-            const newTime = direction === 'forward' ? currentTime + 10 : currentTime - 10;
-            playerRef.current.seekTo(newTime, 'seconds');
-        }
-    };
+        const handleSkip = (direction: 'forward' | 'backward') => {
+            if (playerRef.current) {
+                const currentTime = playerRef.current.getCurrentTime();
+                const newTime = direction === 'forward' ? currentTime + 10 : currentTime - 10;
+                playerRef.current.seekTo(newTime, 'seconds');
+            }
+        };
 
-    const formatTime = (time: number) => {
-        const minutes = Math.floor(time / 60);
-        const seconds = Math.floor(time % 60);
-        return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
-    };
+        const formatTime = (time: number) => {
+            const minutes = Math.floor(time / 60);
+            const seconds = Math.floor(time % 60);
+            return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+        };
 
     return (
         <div className="w-full space-y-2">

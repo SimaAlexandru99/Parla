@@ -19,7 +19,7 @@ import { assets } from '@/constants/assets';
 import { CallDetails } from '@/types/PropsTypes';
 import { Segment } from '@/types/PropsTypes';
 import { Skeleton } from '@/components/ui/skeleton';
-import ChatCallPopover from '@/components/dashboard/Call/Chat';
+import ChatCallPopover from '@/components/layout/Chat';
 import { DialogProvider } from '@/contexts/DialogContext';
 import ReactPlayer from 'react-player';
 import ReactMarkdown from 'react-markdown';
@@ -160,14 +160,14 @@ function CallDetailsDrawer({ isOpen, onOpenChange, callDetails }: CallDetailsDra
         return () => clearInterval(interval);
     }, []);
 
-    useEffect(() => {
-        if (scrollAreaRef.current) {
-            const activeSegment = document.querySelector('.active-segment');
-            if (activeSegment) {
-                activeSegment.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        useEffect(() => {
+            if (scrollAreaRef.current) {
+                const activeSegment = document.querySelector('.active-segment');
+                if (activeSegment) {
+                    activeSegment.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
             }
-        }
-    }, [currentTime]);
+        }, [currentTime]);
 
     useEffect(() => {
         if (callDetails?.segments) {

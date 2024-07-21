@@ -23,6 +23,7 @@ export const ro = {
     refresh: "Reîmprospătează",
     noDataAvailable: "Nu există date disponibile",
     search: "Caută...",
+    backToCalls: "Înapoi la apeluri",
   },
   chat: {
     disclaimer:
