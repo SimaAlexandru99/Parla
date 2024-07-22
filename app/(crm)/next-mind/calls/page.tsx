@@ -102,7 +102,7 @@ export default function CallsPage() {
 
     const handleViewDetails = (call: CallDetails) => {
         router.push(`/next-mind/calls/${call._id}`);
-      };
+    };
 
 
     const renderStatus = useCallback((status: string): React.ReactNode => {
@@ -136,7 +136,7 @@ export default function CallsPage() {
     }, [t.conversationsTab.statusLabels]);
 
     return (
-        <div className='flex flex-1 flex-col gap-4 p-4 md:gap-8 md:p-6'>
+        <div className="mx-auto max-w-screen-4xl p-4 md:p-6 2xl:p-6">
             <div className="w-full">
                 <Card className="w-full">
                     <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">

@@ -4,12 +4,10 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { useRouter, usePathname } from "next/navigation";
-import ThemeLogo from "@/components/theme/ThemeLogo";
-import { Settings, Home, ShoppingCart, Package, Users2, LineChart } from "lucide-react";
+import { Settings } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { navItems } from "@/lib/navItems";
-import Link from "next/link";
 
 const Sidebar = () => {
     const router = useRouter();
@@ -24,9 +22,8 @@ const Sidebar = () => {
     const items = navItems(t);
 
     return (
-        <aside className="fixed inset-y-0 left-0 z-10 hidden w-16 flex-col border-r bg-background sm:flex">
+        <aside className="absolute left-0 top-0 z-[9999] flex h-screen w-72.5 flex-col overflow-y-hidden bg-black duration-300 ease-linear dark:bg-boxdark lg:static lg:translate-x-0 -translate-x-full">
             <nav className="flex flex-col items-center gap-4 px-2 py-4">
-
                 {items.map((item, index) => (
                     <TooltipProvider key={index}>
                         <Tooltip>
@@ -35,8 +32,8 @@ const Sidebar = () => {
                                     size="icon"
                                     variant="ghost"
                                     className={`transition-colors duration-200 ease-in-out transform hover:scale-105 active:scale-95 rounded-full ${pathname === item.href
-                                            ? 'bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))]'
-                                            : 'text-[hsl(var(--foreground))] hover:bg-[hsl(var(--muted))] focus:bg-[hsl(var(--muted))]'
+                                        ? 'bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))]'
+                                        : 'text-[hsl(var(--foreground))] hover:bg-[hsl(var(--muted))] focus:bg-[hsl(var(--muted))]'
                                         }`}
                                     onClick={() => handleNavigation(item.href)}
                                     aria-label={item.tooltip}

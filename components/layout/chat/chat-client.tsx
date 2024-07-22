@@ -1,8 +1,10 @@
+// File: components/ChatClient.tsx
 'use client'
+
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Pen, X, SendHorizonal, Copy, ThumbsUp, ThumbsDown, Mail, Check } from "lucide-react";
+import { Pen, X, SendHorizonal, Copy, Mail, Check } from "lucide-react";
 import { useDialog } from "@/contexts/DialogContext";
 import { useUser } from "@/contexts/UserContext";
 import { assets } from "@/constants/assets";
@@ -11,7 +13,6 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/comp
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { PersonIcon } from "@radix-ui/react-icons";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
-import { Input } from "@/components/ui/input";
 import { ChatCallPopoverProps } from "@/types/PropsTypes";
 import ReactMarkdown from "react-markdown";
 import { Card } from "@/components/ui/card";
@@ -19,7 +20,6 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { Textarea } from "@/components/ui/textarea";
 import useFetchUserCompanyDatabase from "@/hooks/useFetchUserCompanyDatabase";
 import {
-    checkMongoConnection,
     fetchRecordingCounts,
     fetchAverageAudioDuration,
     fetchAverageScore,
@@ -50,14 +50,14 @@ interface DatabaseInfo {
     latestCalls: CallData[];
 }
 
-function ChatCallPopover({
+export default function ChatClient({
     agentSegmentsText = "",
     clientSegmentsText = "",
     averageSentimentScore = 0,
     mostFrequentWords = [],
     agent_info = { first_name: "", last_name: "", project: "" },
 }: ChatCallPopoverProps) {
-    const { firstName, project, profileIcon, loading } = useUser();
+    const { firstName, profileIcon, loading } = useUser();
     const { companyData } = useFetchUserCompanyDatabase();
     const { theme } = useTheme();
     const { dialog, addMessage, updateMessage } = useDialog();
@@ -65,8 +65,6 @@ function ChatCallPopover({
     const [isGenerating, setIsGenerating] = useState<boolean>(false);
     const [popoverOpen, setPopoverOpen] = useState<boolean>(false);
     const [isAtBottom, setIsAtBottom] = useState<boolean>(true);
-    const [activeFeedbackCard, setActiveFeedbackCard] = useState<string | null>(null);
-    const [selectedButton, setSelectedButton] = useState<string>("");
     const [copied, setCopied] = useState<boolean>(false);
     const scrollContainerRef = useRef<HTMLDivElement>(null);
     const { t } = useLanguage();
@@ -81,16 +79,20 @@ function ChatCallPopover({
         occurrences,
         network_error,
         generate_error,
-        tooltip_feedback_thumbs_up,
-        tooltip_feedback_thumbs_down,
         tooltip_copy_success,
         tooltip_copy,
         tooltip_email,
-        feedback_headline,
-        feedback_buttons,
-        feedback_note,
         learn_more,
     } = t.gemini;
+
+    const [databaseInfo, setDatabaseInfo] = useState<DatabaseInfo>({
+        recordingCount: null,
+        averageAudioDuration: null,
+        averageScore: null,
+        averageProcessingTime: null,
+        monthlyData: [],
+        latestCalls: []
+    });
 
     const focusInput = useCallback(() => {
         const inputElement = document.querySelector("input[type='text']") as HTMLInputElement;
@@ -103,18 +105,6 @@ function ChatCallPopover({
         }
     }, []);
 
-    useEffect(() => {
-        if (popoverOpen) {
-            focusInput();
-        }
-    }, [popoverOpen, focusInput]);
-
-    useEffect(() => {
-        if (scrollContainerRef.current && isAtBottom) {
-            scrollToBottom();
-        }
-    }, [dialog, isAtBottom, scrollToBottom]);
-
     const textareaRef = useRef<HTMLTextAreaElement>(null);
 
     const adjustTextareaHeight = useCallback(() => {
@@ -123,15 +113,6 @@ function ChatCallPopover({
             textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
         }
     }, []);
-
-    const [databaseInfo, setDatabaseInfo] = useState<DatabaseInfo>({
-        recordingCount: null,
-        averageAudioDuration: null,
-        averageScore: null,
-        averageProcessingTime: null,
-        monthlyData: [],
-        latestCalls: []
-    });
 
     const fetchDatabaseInfo = useCallback(async () => {
         if (!companyData?.database) return;
@@ -167,14 +148,26 @@ function ChatCallPopover({
     }, [companyData?.database]);
 
     useEffect(() => {
-        if (companyData) {
-            fetchDatabaseInfo();
+        if (popoverOpen) {
+            focusInput();
         }
-    }, [companyData, fetchDatabaseInfo]);
+    }, [popoverOpen, focusInput]);
+
+    useEffect(() => {
+        if (scrollContainerRef.current && isAtBottom) {
+            scrollToBottom();
+        }
+    }, [dialog, isAtBottom, scrollToBottom]);
 
     useEffect(() => {
         adjustTextareaHeight();
     }, [message, adjustTextareaHeight]);
+
+    useEffect(() => {
+        if (companyData) {
+            fetchDatabaseInfo();
+        }
+    }, [companyData, fetchDatabaseInfo]);
 
     const handleSubmit = useCallback(async () => {
         if (message.trim().length < 3) return;
@@ -250,16 +243,6 @@ function ChatCallPopover({
         databaseInfo
     ]);
 
-    const handleKeyDown = useCallback(
-        (event: React.KeyboardEvent<HTMLInputElement>) => {
-            if (event.key === "Enter") {
-                event.preventDefault();
-                handleSubmit();
-            }
-        },
-        [handleSubmit]
-    );
-
     const clearInput = useCallback(() => {
         setMessage("");
         focusInput();
@@ -271,20 +254,6 @@ function ChatCallPopover({
             setIsAtBottom(scrollTop + clientHeight >= scrollHeight - 10);
         }
     }, []);
-
-    const handleFeedbackClick = (type: string, index: string) => {
-        setSelectedButton(type);
-        setActiveFeedbackCard(index);
-    };
-
-    const handleFeedbackSubmit = () => {
-        setActiveFeedbackCard(null);
-        // Handle feedback submission logic here
-    };
-
-    const handleButtonClick = (button: string) => {
-        setSelectedButton(button);
-    };
 
     const handleCopy = (text: string) => {
         navigator.clipboard.writeText(text).then(() => {
@@ -482,5 +451,3 @@ function ChatCallPopover({
         </Sheet>
     );
 }
-
-export default ChatCallPopover;

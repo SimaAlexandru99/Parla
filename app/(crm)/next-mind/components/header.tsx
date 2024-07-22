@@ -1,3 +1,4 @@
+// Header.tsx
 'use client'
 import React, { useState, useCallback, useMemo } from "react";
 import { useRouter, usePathname } from "next/navigation";
@@ -8,13 +9,12 @@ import { Menu, Globe } from "lucide-react";
 import UserDropdownMenu from "@/components/layout/user-dropdown";
 import { useUser } from "@/contexts/UserContext";
 import { useTheme } from "next-themes";
-import ThemeLogo from "@/components/theme/ThemeLogo";
 import CardNotifications from "@/components/layout/card-notifications";
 import { navItems as getNavItems } from "@/lib/navItems";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { CommandDialogDemo } from "@/components/layout/command-dialog";
 
-const HeaderDashboard = () => {
+const Header = () => {
     const { company, profileIcon, firstName, lastName, project, email, handleLogout } = useUser();
     const pathname = usePathname();
     const router = useRouter();
@@ -35,8 +35,8 @@ const HeaderDashboard = () => {
     }, [router]);
 
     return (
-        <header className="sticky top-0 z-30 flex h-14 items-center gap-4 border-b bg-background px-4 sm:static sm:h-auto sm:border-0 sm:bg-transparent sm:px-6">
-            <div className="flex items-center gap-4 w-full justify-between">
+        <header className="sticky top-0 z-[999] flex w-full drop-shadow-1 dark:bg-boxdark dark:drop-shadow-none">
+            <div className="flex items-center gap-4 w-full justify-between p-4 sm:px-6">
                 <div className="flex items-center gap-4">
                     <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
                         <SheetTrigger asChild>
@@ -89,4 +89,4 @@ const HeaderDashboard = () => {
     );
 };
 
-export default React.memo(HeaderDashboard);
+export default React.memo(Header);

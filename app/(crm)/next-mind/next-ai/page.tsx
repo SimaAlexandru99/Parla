@@ -86,7 +86,7 @@ function ChatInterface() {
     };
 
     return (
-        <div className="flex flex-col justify-center h-full">
+        <div className="mx-auto max-w-screen-4xl p-4 md:p-6 2xl:p-6">
             <ScrollArea className="flex md:px-0 h-[69vh] max-w-4xl justify-center mx-auto pb-4 ">
                 {dialog.length === 0 && (
                     <div className="mb-12 transition-all duration-300 ease-in-out transform">

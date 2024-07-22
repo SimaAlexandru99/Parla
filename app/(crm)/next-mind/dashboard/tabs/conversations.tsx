@@ -18,6 +18,8 @@ import useFetchUserCompanyDatabase from "@/hooks/useFetchUserCompanyDatabase";
 import { fetchCalls, deleteCall } from '@/lib/apiClient';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/components/ui/use-toast';
+import { useRouter } from 'next/navigation';
+
 
 const ConversationsTab = () => {
     const [calls, setCalls] = useState<CallDetails[]>([]);
@@ -31,7 +33,7 @@ const ConversationsTab = () => {
     const { t } = useLanguage();
     const { companyData } = useFetchUserCompanyDatabase();
     const { toast } = useToast();
-
+    const router = useRouter();
     const limitPerPage = 10;
 
     const fetchCallsData = useCallback(async (page: number) => {
@@ -90,10 +92,10 @@ const ConversationsTab = () => {
         }
     }, [companyData?.database, fetchCallsData, page, toast]);
 
-    const handleViewDetails = useCallback((call: CallDetails) => {
-        setSelectedCall(call);
-        setDrawerOpen(true);
-    }, []);
+    const handleViewDetails = (call: CallDetails) => {
+        router.push(`/next-mind/calls/${call._id}`);
+    };
+
 
     const handleSearch = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
         setSearchTerm(e.target.value);

@@ -1,18 +1,17 @@
+// File: app/(crm)/layout.tsx
 import { Inter as FontSans } from "next/font/google";
 import "@/styles/globals.css";
 import { UserProvider } from "@/contexts/UserContext";
-import { assets } from '@/constants/assets';
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
 import { cn } from "@/lib/utils";
 import { LanguageProvider } from "@/contexts/LanguageContext";
-import { DialogProvider } from "@/contexts/DialogContext"; // Add this import
+import { DialogProvider } from "@/contexts/DialogContext";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Toaster } from "@/components/ui/toaster";
-import Link from "next/link";
-import Sidebar from "./next-mind/components/sidebar"
-import Header from "./next-mind/components/header"
-import Chat from "@/components/layout/chat";
+import Sidebar from "./next-mind/components/sidebar";
+import Header from "./next-mind/components/header";
+import Chat from "@/components/layout/chat/chat";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -43,12 +42,12 @@ export default function NextMindLayout({
               enableSystem
               disableTransitionOnChange
             >
-              <DialogProvider> {/* Add DialogProvider here */}
-                <div className="flex min-h-screen w-full flex-col bg-muted/40">
+              <DialogProvider>
+                <div className="flex h-screen overflow-hidden">
                   <Sidebar />
-                  <div className="flex flex-col sm:gap-4 sm:py-4 sm:pl-14">
+                  <div className="relative flex flex-1 flex-col overflow-y-auto overflow-x-hidden">
                     <Header />
-                    <main className="flex-grow overflow-y-auto">
+                    <main>
                       {children}
                     </main>
                   </div>
@@ -57,7 +56,7 @@ export default function NextMindLayout({
                 <Chat />
                 <Analytics />
                 <SpeedInsights />
-              </DialogProvider> {/* Close DialogProvider here */}
+              </DialogProvider>
             </ThemeProvider>
           </UserProvider>
         </LanguageProvider>

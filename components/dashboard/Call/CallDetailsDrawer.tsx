@@ -19,14 +19,14 @@ import { assets } from '@/constants/assets';
 import { CallDetails } from '@/types/PropsTypes';
 import { Segment } from '@/types/PropsTypes';
 import { Skeleton } from '@/components/ui/skeleton';
-import ChatCallPopover from '@/components/layout/chat';
+import ChatCallPopover from '@/components/layout/chat/chat';
 import { DialogProvider } from '@/contexts/DialogContext';
 import ReactPlayer from 'react-player';
 import ReactMarkdown from 'react-markdown';
 import TalkRatioChart from '@/components/charts/talk-ratio-chart';
 import WordFrequencyChart from '@/components/charts/word-frequency-chart';
 import { useLanguage } from "@/contexts/LanguageContext";
-import CallSummaryCard from './Cards/CallSummaryCard';
+import CallSummaryCard from '../../../app/(crm)/next-mind/calls/[id]/components/call-summary-card';
 import CallDetailsCard from './Cards/CallDetailsCard';
 import ImprovedDrawerFooter from './Footer/ImprovedDrawerFooter';
 
