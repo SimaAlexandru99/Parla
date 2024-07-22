@@ -19,7 +19,7 @@ import useFetchProjects from "@/hooks/useFetchProjects"; // Update the import pa
 import useFetchDepartments from "@/hooks/useFetchDepartments"; // Update the import path as necessary
 import { doc, updateDoc } from "firebase/firestore";
 import { db } from "@/lib/firebase/config"; // Update the import path as necessary
-import SuccessDialog from "@/components/layout/SuccessDialog";
+import SuccessDialog from "@/components/layout/success-dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { AvatarSkeleton } from "@/components/common/cards"; 
 

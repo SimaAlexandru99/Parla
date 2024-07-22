@@ -10,7 +10,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Toaster } from "@/components/ui/toaster";
 import Link from "next/link";
-import Sidebar from "@/components/layout/Sidebar";
+import Sidebar from "./next-mind/components/sidebar"
 import Header from "./next-mind/components/header"
 import Chat from "@/components/layout/chat";
 

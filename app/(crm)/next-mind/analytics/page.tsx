@@ -16,9 +16,9 @@ import {
     fetchCallDurationData
 } from '@/lib/apiClient';
 import DateRangeSelector from '@/components/common/date-range-selector';
-import CountDisplay from '@/components/charts/CountDisplay';
+import CountDisplay from '@/components/charts/count-display';
 import AverageDurationDisplay from '@/components/dashboard/Agent/AverageDurationDisplay';
-import MonthlyBarChart from '@/components/charts/MonthlyBarChart';
+import MonthlyBarChart from '@/components/charts/monthly-bar-chart';
 import AverageScoreChart from '@/components/dashboard/Agent/AverageScoreDisplay'; // Import AverageScoreChart
 import AverageSentimentDisplay from '@/components/dashboard/Agent/AverageSentimentDisplay';
 import CallDurationDistribution from '@/components/dashboard/Call/CallDurationDistribution';

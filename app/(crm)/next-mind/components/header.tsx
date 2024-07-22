@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Menu, Globe } from "lucide-react";
-import UserDropdownMenu from "@/components/layout/UserDropdownMenu";
+import UserDropdownMenu from "@/components/layout/user-dropdown";
 import { useUser } from "@/contexts/UserContext";
 import { useTheme } from "next-themes";
 import ThemeLogo from "@/components/theme/ThemeLogo";
