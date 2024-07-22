@@ -11,7 +11,7 @@ export default function DashboardPage() {
     const { t } = useLanguage();
 
     return (
-        <div className="mx-auto max-w-screen-4xl p-4 md:p-6 2xl:p-6">
+        <div className="mx-auto max-w-screen-4xl p-4 md:p-6 2xl:p-6 ">
             <div className="w-full">
                 <Tabs defaultValue="overview" className="w-full">
                     <TabsList className='h-12 justify-start'>

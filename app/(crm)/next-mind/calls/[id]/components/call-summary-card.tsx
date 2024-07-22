@@ -40,7 +40,7 @@ export default function CallSummaryCard({
     assets
 }: CallSummaryCardProps) {
     return (
-        <Card className="bg-secondary text-secondary-foreground w-full">
+        <Card className=" text-secondary-foreground w-full">
             <CardHeader>
                 <CardTitle className="text-lg flex items-center">
                     <div className="flex items-start mr-4 w-6 h-6">

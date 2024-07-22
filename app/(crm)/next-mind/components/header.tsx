@@ -35,7 +35,7 @@ const Header = () => {
     }, [router]);
 
     return (
-        <header className="sticky top-0 z-[998] flex w-full drop-shadow-1 dark:bg-boxdark dark:drop-shadow-none">
+        <header className="sticky top-0 z-[998] flex w-full drop-shadow-1  dark:drop-shadow-none">
             <div className="flex items-center gap-4 w-full justify-between p-4 sm:px-6">
                 <div className="flex items-center gap-4">
                     <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>

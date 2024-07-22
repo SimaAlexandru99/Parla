@@ -1,6 +1,6 @@
-// Sidebar.tsx
 'use client'
-import React from "react";
+
+import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { useRouter, usePathname } from "next/navigation";
@@ -8,12 +8,19 @@ import { Settings } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { navItems } from "@/lib/navItems";
+import Image from "next/image";
+import { assets } from "@/constants/assets";
 
 const Sidebar = () => {
     const router = useRouter();
     const pathname = usePathname();
-    const { theme } = useTheme();
+    const { theme, resolvedTheme } = useTheme();
     const { t } = useLanguage();
+    const [logoSrc, setLogoSrc] = useState(assets.logoLight);
+
+    useEffect(() => {
+        setLogoSrc((theme === "dark" || resolvedTheme === "dark") ? assets.logoDark : assets.logoLight);
+    }, [theme, resolvedTheme]);
 
     const handleNavigation = (path: string) => {
         router.push(path);
@@ -22,18 +29,27 @@ const Sidebar = () => {
     const items = navItems(t);
 
     return (
-        <aside className="absolute left-0 top-0 z-[9999] flex h-screen w-72.5 flex-col overflow-y-hidden bg-black duration-300 ease-linear dark:bg-boxdark lg:static lg:translate-x-0 -translate-x-full">
+        <aside className="absolute left-0 top-0 z-[50] flex h-screen w-72.5 flex-col duration-300 ease-linear lg:static lg:translate-x-0 -translate-x-full">
             <nav className="flex flex-col items-center gap-4 px-2 py-4">
+                <div className="mt-2 mb-10">
+                    <Image
+                        src={logoSrc}
+                        alt="NextMind Logo"
+                        width={25}
+                        height={25}
+                        onError={() => setLogoSrc(logoSrc === assets.logoDark ? assets.logoLight : assets.logoDark)}
+                    />
+                </div>
                 {items.map((item, index) => (
-                    <TooltipProvider key={index}>
+                    <TooltipProvider key={index} delayDuration={0}>
                         <Tooltip>
                             <TooltipTrigger asChild>
                                 <Button
                                     size="icon"
                                     variant="ghost"
                                     className={`transition-colors duration-200 ease-in-out transform hover:scale-105 active:scale-95 rounded-full ${pathname === item.href
-                                        ? 'bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))]'
-                                        : 'text-[hsl(var(--foreground))] hover:bg-[hsl(var(--muted))] focus:bg-[hsl(var(--muted))]'
+                                            ? 'bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))]'
+                                            : 'text-[hsl(var(--foreground))] hover:bg-[hsl(var(--muted))] focus:bg-[hsl(var(--muted))]'
                                         }`}
                                     onClick={() => handleNavigation(item.href)}
                                     aria-label={item.tooltip}
@@ -61,7 +77,7 @@ const Sidebar = () => {
                                 <Settings className="h-5 w-5 transition-transform duration-200" />
                             </Button>
                         </TooltipTrigger>
-                        <TooltipContent side="right">
+                        <TooltipContent side="right" className="z-[1000]">
                             <p className="text-[hsl(var(--foreground))]">{t.headers.settings}</p>
                         </TooltipContent>
                     </Tooltip>
