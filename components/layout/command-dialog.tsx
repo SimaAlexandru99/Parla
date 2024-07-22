@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import * as React from "react"
 import {
@@ -21,25 +21,23 @@ import {
 } from "@/components/ui/command"
 import { Input } from "@/components/ui/input"
 
-export function CommandDialogDemo() {
+export function CommandDialogCustom() {
   const [open, setOpen] = React.useState(false)
   const inputRef = React.useRef<HTMLInputElement>(null)
   const commandInputRef = React.useRef<HTMLInputElement>(null)
 
   React.useEffect(() => {
-    const down = (e: KeyboardEvent) => {
+    const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "j" && (e.metaKey || e.ctrlKey)) {
         e.preventDefault()
-        setOpen((open) => !open)
+        setOpen((prev) => !prev)
       }
     }
-    document.addEventListener("keydown", down)
-    return () => document.removeEventListener("keydown", down)
+    document.addEventListener("keydown", handleKeyDown)
+    return () => document.removeEventListener("keydown", handleKeyDown)
   }, [])
 
-  const handleInputClick = () => {
-    setOpen(true)
-  }
+  const handleInputClick = () => setOpen(true)
 
   const handleDialogOpenChange = (open: boolean) => {
     setOpen(open)

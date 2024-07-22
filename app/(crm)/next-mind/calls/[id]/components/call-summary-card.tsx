@@ -67,7 +67,7 @@ export default function CallSummaryCard({
                 </CardTitle>
             </CardHeader>
             <CardContent>
-                <ScrollArea className="h-[calc(100vh-530px)] md:h-[calc(100vh-450px)] lg:h-[calc(100vh-530px)] xl:h-[calc(100vh-530px)] pr-4">
+                <ScrollArea className="h-[300px] pr-4">
                     {loading ? (
                         <Skeleton className="h-24 w-full" />
                     ) : (

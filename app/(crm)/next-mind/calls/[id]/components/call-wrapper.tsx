@@ -1,6 +1,4 @@
-// File: app/calls/[id]/CallDetailsWrapper.tsx
 'use client'
-
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
 import useFetchUserCompanyDatabase from "@/hooks/useFetchUserCompanyDatabase";

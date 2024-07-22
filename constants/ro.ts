@@ -44,6 +44,7 @@ export const ro = {
     callDetails: "Detalii apel",
     callDetailsHeader: "Detalii apel",
     callDuration: "Durată conversație",
+    callDurationDistribution: "Distribuția duratei apelurilor",
     callSummary: "Rezumat apel",
     chat: "Chat",
     client: "Client",

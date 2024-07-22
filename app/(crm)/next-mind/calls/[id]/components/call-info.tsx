@@ -1,18 +1,18 @@
 'use client'
 import React, { useEffect, useState, useMemo, useRef, useCallback } from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
-import { Skeleton } from '@/components/ui/skeleton';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { useLanguage } from "@/contexts/LanguageContext";
 import { CallDetails, Segment } from '@/types/PropsTypes';
-import { Avatar, AvatarFallback } from "@/components/ui/avatar"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ReactPlayer from 'react-player';
 import AudioPlayer from '@/components/common/audio-player';
 import CallSummaryCard from './call-summary-card';
 import { assets } from '@/constants/assets';
-import TalkRatioChart from '@/components/charts/talk-ratio-chart';
+import TalkRatioChart from './talk-ratio-chart';
 import WordFrequencyChart from '@/components/charts/word-frequency-chart';
+import CallDurationDistribution from './call-duration-distribution';
 
 const processSegments = (segments: Segment[]) => {
   const agentSegmentsText = segments
@@ -233,40 +233,54 @@ export default function CallDetailsClient({ initialCall }: { initialCall: CallDe
                     />
                   </CardFooter>
                 </Card>
-                <CallSummaryCard
-                  loading={callSummaryLoading}
-                  visible={callSummaryVisible}
-                  call_summary={call.call_summary}
-                  call={call}
-                  averageSentimentScore={averageSentimentScore}
-                  formatTime={formatTime}
-                  t={t}
-                  assets={assets}
-                />
+                
               </div>
             </div>
           </TabsContent>
           <TabsContent value="analysis">
-            <ScrollArea >
-              <div className="flex flex-col gap-4">
-                <TalkRatioChart
-                  repDuration={repDuration}
-                  customerDuration={customerDuration}
-                  deadAirDuration={deadAirDuration}
-                  crosstalkDuration={crosstalkDuration}
-                  totalDuration={totalDuration}
-                  title={t.call_page.talkRatio}
-                />
-                <WordFrequencyChart
-                  wordFrequencyData={frequentWords.map(word => ({
-                    name: word.word,
-                    size: word.count,
-                  }))}
-                  title={t.call_page.wordFrequency}
-                />
+            <ScrollArea>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                <div className="flex flex-col gap-4">
+                  <TalkRatioChart
+                    repDuration={repDuration}
+                    customerDuration={customerDuration}
+                    deadAirDuration={deadAirDuration}
+                    crosstalkDuration={crosstalkDuration}
+                    totalDuration={totalDuration}
+                    title={t.call_page.talkRatio}
+                  />
+                  <WordFrequencyChart
+                    wordFrequencyData={frequentWords.map(word => ({
+                      name: word.word,
+                      size: word.count,
+                    }))}
+                    title={t.call_page.wordFrequency}
+                  />
+                </div>
+                <div className="flex flex-col gap-4">
+                  <CallSummaryCard
+                    loading={callSummaryLoading}
+                    visible={callSummaryVisible}
+                    call_summary={call.call_summary}
+                    call={call}
+                    averageSentimentScore={averageSentimentScore}
+                    formatTime={formatTime}
+                    t={t}
+                    assets={assets}
+                  />
+                  <CallDurationDistribution
+                    repDuration={repDuration}
+                    customerDuration={customerDuration}
+                    totalDuration={totalDuration}
+                    title={t.call_page.callDurationDistribution}
+                  />
+                </div>
+
               </div>
             </ScrollArea>
           </TabsContent>
+
+
         </Tabs>
       </div>
     </div>

@@ -16,13 +16,14 @@ import {
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-import CallDetailsDrawer from '@/components/dashboard/Call/CallDetailsDrawer';
 import { CallDetails } from '@/types/PropsTypes';
 import { getRingColor } from '@/lib/colorUtils';
 import { useLanguage } from "@/contexts/LanguageContext";
 import { ChartContainer, ChartTooltipContent, ChartConfig, ChartTooltip } from "@/components/ui/chart";
 import useFetchUserCompanyDatabase from "@/hooks/useFetchUserCompanyDatabase";
 import { DataCard, SkeletonCard, SkeletonBarChart, SkeletonCallEntry } from '@/components/common/cards';
+import { useRouter } from 'next/navigation';
+
 
 interface MonthlyData {
     month: number;
@@ -63,6 +64,8 @@ const OverviewTab = () => {
     const [totalCalls, setTotalCalls] = useState(0);
     const [page, setPage] = useState(1);
     const [limit] = useState(5);
+    const router = useRouter();
+
 
 
     const chartConfig = {
@@ -219,9 +222,8 @@ const OverviewTab = () => {
     const trailColor = theme === 'dark' ? '#333333' : '#d6d6d6';
 
     const handleViewDetails = useCallback((call: CallDetails) => {
-        setSelectedCall(call);
-        setDrawerOpen(true);
-    }, []);
+        router.push(`/next-mind/calls/${call._id}`);
+    }, [router]);
 
     return (
         <Card className="w-full ">
@@ -344,13 +346,6 @@ const OverviewTab = () => {
                     )}
                 </div>
             </CardContent>
-            {selectedCall && (
-                <CallDetailsDrawer
-                    isOpen={drawerOpen}
-                    onOpenChange={setDrawerOpen}
-                    callDetails={selectedCall}
-                />
-            )}
         </Card>
     );
 }

@@ -47,6 +47,7 @@ export const en = {
     client: "Client",
     chat: "Chat",
     clientTalkDuration: "Client Talk Duration",
+    callDurationDistribution: "Call Duration Distribution",
     callDetailsHeader: "Call Details",
     callDuration: "Call Duration",
     callSummary: "Call Summary",

@@ -19,7 +19,6 @@ import { Phone, Clock, Award, Timer } from 'lucide-react';
 import { fetchAgentMetrics, checkMongoConnection, fetchRecordingCounts, fetchAverageAudioDuration, fetchAverageScore, fetchAverageProcessingTime, fetchAgentScores, fetchAgentSummary, fetchCalls, deleteCall } from '@/lib/apiClient';
 import useFetchUserCompanyDatabase from "@/hooks/useFetchUserCompanyDatabase";
 import { AgentMetrics } from '@/types/AgentMetrics';
-import CallDetailsDrawer from '@/components/dashboard/Call/CallDetailsDrawer';
 import ProjectOverviewTab from '@/components/dashboard/Agent/Tabs/AgentOverviewTab';
 import AgentActivityTab from '@/components/dashboard/Agent/Tabs/AgentActivityTab';
 import AnalyticsTab from '@/components/dashboard/Agent/Tabs/AnalyticsTab';
@@ -49,7 +48,6 @@ const AgentDetailsDrawer = ({ isOpen, onOpenChange, agentDetails }: AgentDetails
     const [scoreData, setScoreData] = useState<{ month: string; score: number }[]>([]);
     const [scoreTrend, setScoreTrend] = useState<{ percentage: number; trending: 'up' | 'down' | 'neutral' }>({ percentage: 0, trending: 'neutral' });
     const [agentSummary, setAgentSummary] = useState('');
-    const [callDetailsDrawerOpen, setCallDetailsDrawerOpen] = useState(false);
     const [selectedCall, setSelectedCall] = useState<CallDetails | null>(null);
     const [calls, setCalls] = useState<CallDetails[]>([]);
     const [callsLoading, setCallsLoading] = useState(true);
@@ -229,7 +227,6 @@ const AgentDetailsDrawer = ({ isOpen, onOpenChange, agentDetails }: AgentDetails
 
     const handleViewCallDetails = useCallback((call: CallDetails) => {
         setSelectedCall(call);
-        setCallDetailsDrawerOpen(true);
     }, []);
 
     const handleViewAgentDetails = useCallback((agentDetails: any) => {
@@ -383,13 +380,6 @@ const AgentDetailsDrawer = ({ isOpen, onOpenChange, agentDetails }: AgentDetails
                     </DrawerFooter>
                 </DrawerContent>
             </Drawer>
-            {selectedCall && (
-                <CallDetailsDrawer
-                    isOpen={callDetailsDrawerOpen}
-                    onOpenChange={setCallDetailsDrawerOpen}
-                    callDetails={selectedCall}
-                />
-            )}
         </>
     );
 };

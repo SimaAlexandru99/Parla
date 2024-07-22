@@ -1,6 +1,4 @@
-// File: components/ChatClient.tsx
 'use client'
-
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
@@ -214,7 +212,7 @@ export default function ChatClient({
             updateMessage(messageId, data.response);
             setIsAtBottom(true);
         } catch (error) {
-            console.error("Eroare:", error);
+            console.error("Error:", error);
             updateMessage(messageId, generate_error);
         } finally {
             setIsGenerating(false);
@@ -262,19 +260,22 @@ export default function ChatClient({
         });
     };
 
+    const handleToggleChat = () => {
+        setPopoverOpen((prev) => !prev);
+    };
+
     if (loading) {
         return <div>{t.loading.loadingPage}</div>;
     }
 
     return (
-        <Sheet>
+        <Sheet open={popoverOpen} onOpenChange={handleToggleChat}>
             <SheetTrigger asChild>
                 <Button
                     className="fixed bottom-6 right-6 rounded-full h-14 w-14 flex items-center justify-center hover:shadow-lg z-50"
                     aria-expanded={popoverOpen}
                     aria-controls="chat-call-popover"
                     aria-label="Open chat"
-                    onClick={() => setPopoverOpen(!popoverOpen)}
                 >
                     {popoverOpen ? (
                         <X className="h-6 w-6" />
@@ -314,8 +315,7 @@ export default function ChatClient({
                     {dialog.map((entry, index) => (
                         <div key={index} className="mb-4">
                             <Card
-                                className={`p-4 border-none
-                                     flex items-center`}
+                                className={`p-4 border-none flex items-center`}
                             >
                                 <Avatar className="w-10 h-10 cursor-pointer" aria-label="User avatar">
                                     {profileIcon ? (

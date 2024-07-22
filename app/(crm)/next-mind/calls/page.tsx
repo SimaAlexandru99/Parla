@@ -9,7 +9,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import useFetchUserCompanyDatabase from "@/hooks/useFetchUserCompanyDatabase";
 import { fetchCalls, deleteCall } from '@/lib/apiClient';
 import CustomPagination from '@/components/common/pagination';
-import CallsTable from '@/components/dashboard/Call/CallsTable';
+import CallsTable from '@/components/common/calls-table';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/components/ui/use-toast';

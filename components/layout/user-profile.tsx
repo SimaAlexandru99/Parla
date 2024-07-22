@@ -89,7 +89,7 @@ const UserProfile = ({ isOpen, onClose }: UserProfileProps) => {
     return (
         <>
             <Sheet open={isOpen} onOpenChange={onClose}>
-                <SheetContent className="flex flex-col max-h-full">
+                <SheetContent className="flex flex-col max-h-full z-[9999]">
                     <SheetHeader>
                         <SheetTitle>{t.userProfile.title}</SheetTitle>
                         <SheetDescription>

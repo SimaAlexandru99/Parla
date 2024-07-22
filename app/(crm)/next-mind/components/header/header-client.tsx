@@ -1,5 +1,5 @@
-// Header.tsx
 'use client'
+
 import React, { useState, useCallback, useMemo } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
@@ -12,9 +12,9 @@ import { useTheme } from "next-themes";
 import CardNotifications from "@/components/layout/card-notifications";
 import { navItems as getNavItems } from "@/lib/navItems";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { CommandDialogDemo } from "@/components/layout/command-dialog";
+import { CommandDialogCustom } from "@/components/layout/command-dialog";
 
-const Header = () => {
+const HeaderClient = () => {
     const { company, profileIcon, firstName, lastName, project, email, handleLogout } = useUser();
     const pathname = usePathname();
     const router = useRouter();
@@ -35,7 +35,7 @@ const Header = () => {
     }, [router]);
 
     return (
-        <header className="sticky top-0 z-[998] flex w-full drop-shadow-1  dark:drop-shadow-none">
+        <header className="sticky top-0 z-[998] bg-background flex w-full drop-shadow-1  dark:drop-shadow-none">
             <div className="flex items-center gap-4 w-full justify-between p-4 sm:px-6">
                 <div className="flex items-center gap-4">
                     <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
@@ -60,7 +60,7 @@ const Header = () => {
                             </nav>
                         </SheetContent>
                     </Sheet>
-                    <CommandDialogDemo />
+                    <CommandDialogCustom />
                 </div>
                 <div className="flex items-center gap-4">
                     <Select value={language} onValueChange={setLanguage}>
@@ -89,4 +89,4 @@ const Header = () => {
     );
 };
 
-export default React.memo(Header);
+export default HeaderClient;
