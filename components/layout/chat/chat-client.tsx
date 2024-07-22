@@ -285,7 +285,7 @@ export default function ChatClient({
             </SheetTrigger>
             <SheetContent
                 id="chat-call-popover"
-                className="flex flex-col h-full w-full md:max-w-lg p-4 transition-all duration-300 ease-in-out"
+                className="z-[998] flex flex-col h-full w-full md:max-w-lg p-4 transition-all duration-300 ease-in-out"
             >
                 <SheetHeader>
                     <SheetTitle>

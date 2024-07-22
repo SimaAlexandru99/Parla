@@ -1,4 +1,4 @@
-// File: components/ChatWrapper.tsx
+// File: components/chat-wrapper.tsx
 'use client'
 
 import { useState, useEffect } from 'react';
@@ -13,7 +13,13 @@ interface ChatPropsChangeEvent extends CustomEvent {
 }
 
 export default function ChatWrapper() {
-  const [chatProps, setChatProps] = useState<ChatCallPopoverProps | null>(null);
+  const [chatProps, setChatProps] = useState<ChatCallPopoverProps>({
+    agentSegmentsText: "",
+    clientSegmentsText: "",
+    averageSentimentScore: 0,
+    mostFrequentWords: [],
+    agent_info: { first_name: "", last_name: "", project: "" },
+  });
 
   useEffect(() => {
     const handleChatPropsChange = (event: ChatPropsChangeEvent) => {
@@ -27,6 +33,6 @@ export default function ChatWrapper() {
     };
   }, []);
 
-  // Only render ChatClient if we have props
-  return chatProps ? <ChatClient {...chatProps} /> : null;
+  // Always render ChatClient, even with default empty props
+  return <ChatClient {...chatProps} />;
 }
