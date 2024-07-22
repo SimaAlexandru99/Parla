@@ -11,7 +11,7 @@ import { useTheme } from 'next-themes';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { Skeleton } from '@/components/ui/skeleton';
 import CallDetailsDrawer from '@/components/dashboard/Call/CallDetailsDrawer';
-import ConfirmDeleteDialog from '@/components/common/ConfirmDeleteDialog';
+import ConfirmDeleteDialog from '@/components/common/confirm-delete-dialog';
 import { CallDetails } from '@/types/PropsTypes';
 import { useLanguage } from "@/contexts/LanguageContext";
 import useFetchUserCompanyDatabase from "@/hooks/useFetchUserCompanyDatabase";

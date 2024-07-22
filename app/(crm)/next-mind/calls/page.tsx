@@ -8,7 +8,7 @@ import { CallDetails } from '@/types/PropsTypes';
 import { useLanguage } from "@/contexts/LanguageContext";
 import useFetchUserCompanyDatabase from "@/hooks/useFetchUserCompanyDatabase";
 import { fetchCalls, deleteCall } from '@/lib/apiClient';
-import CustomPagination from '@/components/common/Pagination';
+import CustomPagination from '@/components/common/pagination';
 import CallsTable from '@/components/dashboard/Call/CallsTable';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';

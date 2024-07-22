@@ -11,7 +11,7 @@ import { CallDetails, Segment } from '@/types/PropsTypes';
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import ReactPlayer from 'react-player';
-import AudioPlayer from '@/components/common/AudioPlayer';
+import AudioPlayer from '@/components/common/audio-player';
 
 const processSegments = (segments: Segment[]) => {
   const agentSegmentsText = segments

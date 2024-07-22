@@ -3,8 +3,8 @@
 import React from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useLanguage } from "@/contexts/LanguageContext";
-import OverviewTab from './Tabs/OverviewTab';
-import ConversationsTab from './Tabs/ConversationsTab';
+import OverviewTab from './tabs/overview';
+import ConversationsTab from './tabs/conversations';
 
 export default function DashboardPage() {
     const { t } = useLanguage();

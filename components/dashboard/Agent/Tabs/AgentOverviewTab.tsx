@@ -1,7 +1,7 @@
 import React from 'react';
 import { AgentDetails } from '@/types/PropsTypes';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { DataCard, SkeletonCard } from '@/components/common/Cards';
+import { DataCard, SkeletonCard } from '@/components/common/cards';
 import AgentScoreChart from '@/components/dashboard/Agent/AgentScoreChart';
 import AgentSummaryCard from '@/components/dashboard/Agent/AgentSummaryCard';
 

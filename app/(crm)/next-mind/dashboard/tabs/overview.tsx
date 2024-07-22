@@ -22,7 +22,7 @@ import { getRingColor } from '@/lib/colorUtils';
 import { useLanguage } from "@/contexts/LanguageContext";
 import { ChartContainer, ChartTooltipContent, ChartConfig, ChartTooltip } from "@/components/ui/chart";
 import useFetchUserCompanyDatabase from "@/hooks/useFetchUserCompanyDatabase";
-import { DataCard, SkeletonCard, SkeletonBarChart, SkeletonCallEntry } from '@/components/common/Cards';
+import { DataCard, SkeletonCard, SkeletonBarChart, SkeletonCallEntry } from '@/components/common/cards';
 
 interface MonthlyData {
     month: number;

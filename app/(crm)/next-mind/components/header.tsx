@@ -9,10 +9,10 @@ import UserDropdownMenu from "@/components/layout/UserDropdownMenu";
 import { useUser } from "@/contexts/UserContext";
 import { useTheme } from "next-themes";
 import ThemeLogo from "@/components/theme/ThemeLogo";
-import CardNotifications from "@/components/layout/CardNotifications";
+import CardNotifications from "@/components/layout/card-notifications";
 import { navItems as getNavItems } from "@/lib/navItems";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { CommandDialogDemo } from "./CommandDialogDemo";
+import { CommandDialogDemo } from "@/components/layout/command-dialog";
 
 const HeaderDashboard = () => {
     const { company, profileIcon, firstName, lastName, project, email, handleLogout } = useUser();

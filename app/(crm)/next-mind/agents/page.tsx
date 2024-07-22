@@ -12,7 +12,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import useFetchUserCompanyDatabase from "@/hooks/useFetchUserCompanyDatabase";
 import { fetchAgents } from '@/lib/apiClient';
 import { AgentDetails } from '@/types/PropsTypes';
-import CustomPagination from '@/components/common/Pagination';
+import CustomPagination from '@/components/common/pagination';
 import AgentDetailsDrawer from '@/components/dashboard/Agent/AgentDetailsDrawer';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/components/ui/use-toast';

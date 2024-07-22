@@ -1,17 +1,18 @@
 import { Inter as FontSans } from "next/font/google";
 import "@/styles/globals.css";
 import { UserProvider } from "@/contexts/UserContext";
-import { assets } from '@/constants/assets'; // Adjust the import path as needed
+import { assets } from '@/constants/assets';
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
 import { cn } from "@/lib/utils";
 import { LanguageProvider } from "@/contexts/LanguageContext";
+import { DialogProvider } from "@/contexts/DialogContext"; // Add this import
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Toaster } from "@/components/ui/toaster";
 import Link from "next/link";
 import Sidebar from "@/components/layout/Sidebar";
-import Header from "@/components/layout/HeaderDashboard";
-import Chat from "@/components/layout/Chat";
+import Header from "./next-mind/components/header"
+import Chat from "@/components/layout/chat";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -26,7 +27,7 @@ export default function NextMindLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <title>NextMind - AI powered journey planner for our clients</title> {/* Add the title here */}
+        <title>NextMind - AI powered journey planner for our clients</title>
         <link rel="icon" href="favicon.ico" />
         <link rel="apple-touch-icon" href="favicon.ico" />
       </head>
@@ -42,18 +43,21 @@ export default function NextMindLayout({
               enableSystem
               disableTransitionOnChange
             >
-              <div className="flex min-h-screen w-full flex-col bg-muted/40">
-                <Sidebar />
-                <div className="flex flex-col sm:gap-4 sm:py-4 sm:pl-14">
-                  <Header />
-                  <main className="flex-grow overflow-y-auto">
-                    {children}
-                  </main>
+              <DialogProvider> {/* Add DialogProvider here */}
+                <div className="flex min-h-screen w-full flex-col bg-muted/40">
+                  <Sidebar />
+                  <div className="flex flex-col sm:gap-4 sm:py-4 sm:pl-14">
+                    <Header />
+                    <main className="flex-grow overflow-y-auto">
+                      {children}
+                    </main>
+                  </div>
                 </div>
-              </div>
-              <Toaster />
-              <Analytics />
-              <SpeedInsights />
+                <Toaster />
+                <Chat />
+                <Analytics />
+                <SpeedInsights />
+              </DialogProvider> {/* Close DialogProvider here */}
             </ThemeProvider>
           </UserProvider>
         </LanguageProvider>

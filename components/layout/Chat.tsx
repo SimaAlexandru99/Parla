@@ -17,16 +17,48 @@ import ReactMarkdown from "react-markdown";
 import { Card } from "@/components/ui/card";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Textarea } from "@/components/ui/textarea";
+import useFetchUserCompanyDatabase from "@/hooks/useFetchUserCompanyDatabase";
+import {
+    checkMongoConnection,
+    fetchRecordingCounts,
+    fetchAverageAudioDuration,
+    fetchAverageScore,
+    fetchAverageProcessingTime,
+    fetchMonthlyData,
+    fetchLatestCalls
+} from '@/lib/apiClient';
 
+type MonthlyDataItem = {
+    _id: {
+        month: number;
+    };
+    count: number;
+};
+
+type CallData = {
+    callId: string;
+    callTime: string;
+    callScore: number;
+};
+
+interface DatabaseInfo {
+    recordingCount: number | null;
+    averageAudioDuration: string | null;
+    averageScore: number | null;
+    averageProcessingTime: string | null;
+    monthlyData: MonthlyDataItem[];
+    latestCalls: CallData[];
+}
 
 function ChatCallPopover({
-    agentSegmentsText,
-    clientSegmentsText,
-    averageSentimentScore,
-    mostFrequentWords,
-    agent_info,
+    agentSegmentsText = "",
+    clientSegmentsText = "",
+    averageSentimentScore = 0,
+    mostFrequentWords = [],
+    agent_info = { first_name: "", last_name: "", project: "" },
 }: ChatCallPopoverProps) {
     const { firstName, project, profileIcon, loading } = useUser();
+    const { companyData } = useFetchUserCompanyDatabase();
     const { theme } = useTheme();
     const { dialog, addMessage, updateMessage } = useDialog();
     const [message, setMessage] = useState<string>("");
@@ -38,7 +70,6 @@ function ChatCallPopover({
     const [copied, setCopied] = useState<boolean>(false);
     const scrollContainerRef = useRef<HTMLDivElement>(null);
     const { t } = useLanguage();
-
     const {
         agentName,
         projectName,
@@ -93,6 +124,54 @@ function ChatCallPopover({
         }
     }, []);
 
+    const [databaseInfo, setDatabaseInfo] = useState<DatabaseInfo>({
+        recordingCount: null,
+        averageAudioDuration: null,
+        averageScore: null,
+        averageProcessingTime: null,
+        monthlyData: [],
+        latestCalls: []
+    });
+
+    const fetchDatabaseInfo = useCallback(async () => {
+        if (!companyData?.database) return;
+
+        try {
+            const [
+                recordingCounts,
+                averageAudioDuration,
+                averageScore,
+                averageProcessingTime,
+                monthlyData,
+                latestCallsResponse
+            ] = await Promise.all([
+                fetchRecordingCounts(companyData.database),
+                fetchAverageAudioDuration(companyData.database),
+                fetchAverageScore(companyData.database),
+                fetchAverageProcessingTime(companyData.database),
+                fetchMonthlyData(companyData.database, new Date(new Date().getFullYear(), 0, 1), new Date(new Date().getFullYear(), 11, 31)),
+                fetchLatestCalls(companyData.database, 1, 5)
+            ]);
+
+            setDatabaseInfo({
+                recordingCount: recordingCounts.currentMonthCount,
+                averageAudioDuration: averageAudioDuration.averageDurationText,
+                averageScore: averageScore.averageScoreCurrentMonth,
+                averageProcessingTime: averageProcessingTime.averageProcessingTimeText,
+                monthlyData,
+                latestCalls: latestCallsResponse.latestCalls
+            });
+        } catch (error) {
+            console.error("Error fetching database info:", error);
+        }
+    }, [companyData?.database]);
+
+    useEffect(() => {
+        if (companyData) {
+            fetchDatabaseInfo();
+        }
+    }, [companyData, fetchDatabaseInfo]);
+
     useEffect(() => {
         adjustTextareaHeight();
     }, [message, adjustTextareaHeight]);
@@ -105,12 +184,14 @@ function ChatCallPopover({
         const messageId = addMessage(userMessage, "");
 
         const frequentWordsText = mostFrequentWords
-            .map((word, index) => `${index + 1}. **${word.word}**: ${word.count} ${occurrences}`)
-            .join("\n");
+            ? mostFrequentWords
+                .map((word, index) => `${index + 1}. **${word.word}**: ${word.count} ${occurrences}`)
+                .join("\n")
+            : "";
 
         const chatHistory = [
             { role: "user", parts: [{ text: `${agentName} ${agent_info.first_name} ${agent_info.last_name}` }] },
-            { role: "user", parts: [{ text: `${projectName} ${project}` }] },
+            { role: "user", parts: [{ text: `${projectName} ${agent_info.project}` }] },
             { role: "user", parts: [{ text: `${agentText} ${agentSegmentsText}` }] },
             { role: "user", parts: [{ text: `${clientText} ${clientSegmentsText}` }] },
             {
@@ -122,6 +203,10 @@ function ChatCallPopover({
                 ],
             },
             { role: "user", parts: [{ text: `${frequentWords}\n${frequentWordsText}` }] },
+            { role: "user", parts: [{ text: `Total calls this month: ${databaseInfo.recordingCount}` }] },
+            { role: "user", parts: [{ text: `Average call duration: ${databaseInfo.averageAudioDuration}` }] },
+            { role: "user", parts: [{ text: `Average call score: ${databaseInfo.averageScore}` }] },
+            { role: "user", parts: [{ text: `Average processing time: ${databaseInfo.averageProcessingTime}` }] },
             { role: "user", parts: [{ text: userMessage }] },
         ];
 
@@ -157,11 +242,12 @@ function ChatCallPopover({
         generate_error,
         agent_info.first_name,
         agent_info.last_name,
-        project,
+        agent_info.project,
         agentSegmentsText,
         clientSegmentsText,
         averageSentimentScore,
         updateMessage,
+        databaseInfo
     ]);
 
     const handleKeyDown = useCallback(
@@ -215,16 +301,16 @@ function ChatCallPopover({
         <Sheet>
             <SheetTrigger asChild>
                 <Button
-                    className="rounded-full h-14 w-14 flex items-center justify-center hover:shadow-lg"
+                    className="fixed bottom-6 right-6 rounded-full h-14 w-14 flex items-center justify-center hover:shadow-lg z-50"
                     aria-expanded={popoverOpen}
                     aria-controls="chat-call-popover"
                     aria-label="Open chat"
                     onClick={() => setPopoverOpen(!popoverOpen)}
                 >
                     {popoverOpen ? (
-                        <X className="h-6 w-6 " />
+                        <X className="h-6 w-6" />
                     ) : (
-                        <Pen className="h-6 w-6 " />
+                        <Pen className="h-6 w-6" />
                     )}
                 </Button>
             </SheetTrigger>
@@ -299,36 +385,6 @@ function ChatCallPopover({
                                             <ReactMarkdown>{entry.response}</ReactMarkdown>
                                             <div className="mt-2 flex space-x-2">
                                                 <TooltipProvider>
-                                                    <Tooltip>
-                                                        <TooltipTrigger asChild>
-                                                            <Button
-                                                                variant="outline"
-                                                                size="icon"
-                                                                onClick={() => handleFeedbackClick("thumbsUp", index.toString())}
-                                                                aria-label="Thumbs up feedback"
-                                                            >
-                                                                <ThumbsUp className="h-4 w-4" />
-                                                            </Button>
-                                                        </TooltipTrigger>
-                                                        <TooltipContent side="bottom" align="center">
-                                                            <p>{tooltip_feedback_thumbs_up}</p>
-                                                        </TooltipContent>
-                                                    </Tooltip>
-                                                    <Tooltip>
-                                                        <TooltipTrigger asChild>
-                                                            <Button
-                                                                variant="outline"
-                                                                size="icon"
-                                                                onClick={() => handleFeedbackClick("thumbsDown", index.toString())}
-                                                                aria-label="Thumbs down feedback"
-                                                            >
-                                                                <ThumbsDown className="h-4 w-4" />
-                                                            </Button>
-                                                        </TooltipTrigger>
-                                                        <TooltipContent side="bottom" align="center">
-                                                            <p>{tooltip_feedback_thumbs_down}</p>
-                                                        </TooltipContent>
-                                                    </Tooltip>
                                                     <Tooltip>
                                                         <TooltipTrigger asChild>
                                                             <Button

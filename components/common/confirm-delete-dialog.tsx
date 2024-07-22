@@ -17,12 +17,7 @@ interface ConfirmDeleteDialogProps {
   trigger: ReactNode;
 }
 
-const ConfirmDeleteDialog: React.FC<ConfirmDeleteDialogProps> = ({
-  title,
-  description,
-  onConfirm,
-  trigger,
-}) => {
+function ConfirmDeleteDialog({ title, description, onConfirm, trigger }: ConfirmDeleteDialogProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleConfirm = () => {
@@ -41,17 +36,17 @@ const ConfirmDeleteDialog: React.FC<ConfirmDeleteDialogProps> = ({
           <DialogDescription>{description}</DialogDescription>
         </DialogHeader>
         <DialogFooter className="sm:justify-start mt-4">
-          <Button 
-            type="button" 
-            variant="secondary" 
+          <Button
+            type="button"
+            variant="secondary"
             onClick={() => setIsOpen(false)}
             aria-label="Cancel"
           >
             Cancel
           </Button>
-          <Button 
-            type="button" 
-            variant="destructive" 
+          <Button
+            type="button"
+            variant="destructive"
             onClick={handleConfirm}
             aria-label="Confirm delete"
           >

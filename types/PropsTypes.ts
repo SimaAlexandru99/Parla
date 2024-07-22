@@ -49,12 +49,12 @@ interface WordCount {
 
 // Define the ChatCallPopoverProps interface
 export interface ChatCallPopoverProps {
-  segments: Segment[];
-  agentSegmentsText: string;
-  clientSegmentsText: string;
-  averageSentimentScore: number;
-  mostFrequentWords: WordCount[];
-  agent_info: {
+  segments?: Segment[];
+  agentSegmentsText?: string;
+  clientSegmentsText?: string;
+  averageSentimentScore?: number;
+  mostFrequentWords?: WordCount[];
+  agent_info?: {
     first_name: string;
     last_name: string;
     project: string;
@@ -79,7 +79,6 @@ export interface DataCardProps {
 export interface SkeletonCardProps {
   className: string;
 }
-
 
 export interface ProjectDetails {
   _id: string;

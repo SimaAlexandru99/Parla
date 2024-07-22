@@ -8,7 +8,7 @@ import { PersonIcon } from '@radix-ui/react-icons';
 import { Menu } from "lucide-react";
 import UserDropdownMenu from "@/components/layout/UserDropdownMenu";
 import { useUser } from "@/contexts/UserContext";
-import Loading from "@/components/common/Loading";
+import Loading from "@/components/common/loading";
 import ThemeLogo from '@/components/theme/ThemeLogo';
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useTheme } from "next-themes"; // Add this import

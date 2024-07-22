@@ -9,7 +9,7 @@ import { sendEmailVerification } from "firebase/auth";
 import { AlertInformative } from "@/components/ui/alert-custom";
 import ThemeLogo from '@/components/theme/ThemeLogo';
 import { useLanguage } from "@/contexts/LanguageContext";
-import Loading from '@/components/common/Loading';
+import Loading from '@/components/common/loading';
 
 const VerifyEmailComponent = () => {
   const searchParams = useSearchParams();

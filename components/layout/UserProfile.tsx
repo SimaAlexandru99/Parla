@@ -21,7 +21,7 @@ import { doc, updateDoc } from "firebase/firestore";
 import { db } from "@/lib/firebase/config"; // Update the import path as necessary
 import SuccessDialog from "@/components/layout/SuccessDialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { AvatarSkeleton } from "@/components/common/Cards"; 
+import { AvatarSkeleton } from "@/components/common/cards"; 
 
 interface UserProfileProps {
     isOpen: boolean;

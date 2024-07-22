@@ -19,7 +19,7 @@ import { assets } from '@/constants/assets';
 import { CallDetails } from '@/types/PropsTypes';
 import { Segment } from '@/types/PropsTypes';
 import { Skeleton } from '@/components/ui/skeleton';
-import ChatCallPopover from '@/components/layout/Chat';
+import ChatCallPopover from '@/components/layout/chat';
 import { DialogProvider } from '@/contexts/DialogContext';
 import ReactPlayer from 'react-player';
 import ReactMarkdown from 'react-markdown';

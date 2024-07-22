@@ -15,7 +15,7 @@ import {
     fetchAverageSentimentByDateRange,
     fetchCallDurationData
 } from '@/lib/apiClient';
-import DateRangeSelector from '@/components/common/DateRangeSelector';
+import DateRangeSelector from '@/components/common/date-range-selector';
 import CountDisplay from '@/components/charts/CountDisplay';
 import AverageDurationDisplay from '@/components/dashboard/Agent/AverageDurationDisplay';
 import MonthlyBarChart from '@/components/charts/MonthlyBarChart';

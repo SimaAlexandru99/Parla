@@ -11,7 +11,7 @@ import { auth, db } from '@/lib/firebase/config';
 import { useRouter } from "next/navigation";
 import { AlertDestructive } from "@/components/ui/alert-custom";
 import { doc, getDoc } from "firebase/firestore";
-import Loading from "@/components/common/Loading";
+import Loading from "@/components/common/loading";
 import { ChevronLeft, Moon, Sun, Zap } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Toggle } from "@/components/ui/toggle";

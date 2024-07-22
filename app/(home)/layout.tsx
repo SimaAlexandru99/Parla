@@ -7,7 +7,8 @@ import { cn } from "@/lib/utils";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import Header from "@/components/layout/HeaderMain";
+import Header from "./components/header";
+
 
 const fontSans = FontSans({
   subsets: ["latin"],

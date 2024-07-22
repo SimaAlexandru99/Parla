@@ -4,9 +4,9 @@ import React, { useEffect, useState, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { auth } from '@/lib/firebase/config';
 import { applyActionCode, checkActionCode } from 'firebase/auth';
-import Loading from '@/components/common/Loading';
-import ResetPasswordForm from '@/components/auth/ResetPasswordForm';
-import VerifyEmail from '@/components/auth/VerifyEmail';
+import Loading from '@/components/common/loading';
+import ResetPasswordForm from '@/components/auth/reset-password';
+import VerifyEmail from '@/components/auth/verify-email';
 
 const AuthActionComponent = () => {
     const router = useRouter();
