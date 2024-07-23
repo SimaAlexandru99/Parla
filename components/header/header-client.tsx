@@ -6,13 +6,13 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Menu, Globe } from "lucide-react";
-import UserDropdownMenu from "@/components/layout/user-dropdown";
+import UserDropdownMenu from "@/components/user-dropdown";
 import { useUser } from "@/contexts/UserContext";
 import { useTheme } from "next-themes";
-import CardNotifications from "@/components/layout/card-notifications";
+import CardNotifications from "@/components/card-notifications";
 import { navItems as getNavItems } from "@/lib/navItems";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { CommandDialogCustom } from "@/components/layout/command-dialog";
+import { CommandDialogCustom } from "@/components/command-dialog";
 
 const HeaderClient = () => {
     const { company, profileIcon, firstName, lastName, project, email, handleLogout } = useUser();

@@ -6,10 +6,10 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Skeleton } from "@/components/ui/skeleton";
 import { PersonIcon } from '@radix-ui/react-icons';
 import { Menu } from "lucide-react";
-import UserDropdownMenu from "@/components/layout/user-dropdown";
+import UserDropdownMenu from "@/components/user-dropdown";
 import { useUser } from "@/contexts/UserContext";
-import Loading from "@/components/common/loading";
-import ThemeLogo from '@/components/theme/ThemeLogo';
+import Loading from "@/components/loading";
+import ThemeLogo from '@/components/theme-logo';
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useTheme } from "next-themes"; // Add this import
 import {

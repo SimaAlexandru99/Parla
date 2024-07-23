@@ -3,8 +3,9 @@
 import React from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useLanguage } from "@/contexts/LanguageContext";
-import OverviewTab from '../app/(crm)/next-mind/dashboard/tabs/overview';
-import ConversationsTab from '../app/(crm)/next-mind/dashboard/tabs/conversations';
+import OverviewTab from "@/components/overview";
+import ConversationsTab from "@/components/conversations";
+
 
 export default function ClientSideTabs() {
     const { t } = useLanguage();

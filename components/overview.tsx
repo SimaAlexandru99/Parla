@@ -21,7 +21,7 @@ import { getRingColor } from '@/lib/colorUtils';
 import { useLanguage } from "@/contexts/LanguageContext";
 import { ChartContainer, ChartTooltipContent, ChartConfig, ChartTooltip } from "@/components/ui/chart";
 import useFetchUserCompanyDatabase from "@/hooks/useFetchUserCompanyDatabase";
-import { DataCard, SkeletonCard, SkeletonBarChart, SkeletonCallEntry } from '@/components/common/cards';
+import { DataCard, SkeletonCard, SkeletonBarChart, SkeletonCallEntry } from '@/components/cards';
 import { useRouter } from 'next/navigation';
 
 
@@ -218,7 +218,6 @@ const OverviewTab = () => {
         },
     ], [t.dashboard.totalCalls, t.dashboard.averageTime, t.dashboard.score, t.dashboard.processingTime, recordingCount, percentageChange, loading, averageAudioDuration, audioDurationChange, averageScore, averageScoreChange, averageProcessingTime, processingTimeChange]);
 
-    const trailColor = theme === 'dark' ? '#333333' : '#d6d6d6';
 
     const handleViewDetails = useCallback((call: CallDetails) => {
         router.push(`/next-mind/calls/${call._id}`);
@@ -330,7 +329,7 @@ const OverviewTab = () => {
                                                     styles={buildStyles({
                                                         pathColor: getRingColor(call.score),
                                                         textColor: 'currentColor',
-                                                        trailColor: trailColor,
+                                                        trailColor: 'var(--accent)',
                                                         textSize: '28px',
                                                         pathTransition: 'stroke-dashoffset 0.5s ease 0s',
                                                     })}

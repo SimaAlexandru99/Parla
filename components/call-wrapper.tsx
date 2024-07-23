@@ -4,7 +4,7 @@ import { useParams } from 'next/navigation';
 import useFetchUserCompanyDatabase from "@/hooks/useFetchUserCompanyDatabase";
 import { fetchCallDetails } from '@/lib/apiClient';
 import { CallDetails } from '@/types/PropsTypes';
-import CallDetailsClient from '../../app/(crm)/next-mind/calls/[id]/components/call-info';
+import CallDetailsClient from '../app/(crm)/next-mind/calls/[id]/components/call-info';
 import { Skeleton } from '@/components/ui/skeleton';
 
 export default function CallDetailsWrapper() {

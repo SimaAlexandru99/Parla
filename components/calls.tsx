@@ -7,8 +7,8 @@ import { CallDetails } from '@/types/PropsTypes';
 import { useLanguage } from "@/contexts/LanguageContext";
 import useFetchUserCompanyDatabase from "@/hooks/useFetchUserCompanyDatabase";
 import { fetchCalls, deleteCall } from '@/lib/apiClient';
-import CustomPagination from '@/components/common/pagination';
-import CallsTable from '@/components/common/calls-table';
+import CustomPagination from '@/components/pagination';
+import CallsTable from '@/components/calls-table';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/components/ui/use-toast';
@@ -129,7 +129,7 @@ export default function Calls() {
     }, [t.conversationsTab.statusLabels]);
 
     return (
-        <Card className="w-full">
+        <Card className="w-full bg-background">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                 <div className="space-y-1">
                     <CardTitle className="text-2xl font-bold">{t.dashboard.conversations}</CardTitle>

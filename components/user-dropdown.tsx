@@ -13,7 +13,7 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { Button } from '@/components/ui/button';
 import { User, Settings, Moon, Sun, LogOut } from 'lucide-react';
-import UserProfile from '@/components/layout/user-profile';
+import UserProfile from '@/components/user-profile';
 
 interface UserDropdownMenuProps {
   firstName?: string;

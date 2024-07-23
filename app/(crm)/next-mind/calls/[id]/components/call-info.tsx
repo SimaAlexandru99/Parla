@@ -7,12 +7,12 @@ import { CallDetails, Segment } from '@/types/PropsTypes';
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ReactPlayer from 'react-player';
-import AudioPlayer from '@/components/common/audio-player';
-import CallSummaryCard from '@/components/charts/call-summary-card';
+import AudioPlayer from '@/components/audio-player';
+import CallSummaryCard from '@/components/call-summary-card';
 import { assets } from '@/constants/assets';
-import TalkRatioChart from '@/components/charts/talk-ratio-chart';
-import WordFrequencyChart from '@/components/charts/word-frequency-chart';
-import CallDurationDistribution from '@/components/charts/call-duration-distribution';
+import TalkRatioChart from '@/components/talk-ratio-chart';
+import WordFrequencyChart from '@/components/word-frequency-chart';
+import CallDurationDistribution from '@/components/call-duration-distribution';
 
 const processSegments = (segments: Segment[]) => {
   const agentSegmentsText = segments

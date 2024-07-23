@@ -9,7 +9,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 const chartConfig = {
     desktop: {
         label: "Desktop",
-        color: "hsl(var(--primary))",
+        color: "hsl(var(--accent))",
     },
 } satisfies ChartConfig;
 

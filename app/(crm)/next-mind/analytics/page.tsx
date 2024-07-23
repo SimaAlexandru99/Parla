@@ -15,13 +15,13 @@ import {
     fetchAverageSentimentByDateRange,
     fetchCallDurationData
 } from '@/lib/apiClient';
-import DateRangeSelector from '@/components/common/date-range-selector';
-import CountDisplay from '@/components/charts/count-display';
-import AverageDurationDisplay from '@/components/dashboard/Agent/AverageDurationDisplay';
-import MonthlyBarChart from '@/components/charts/monthly-bar-chart';
-import AverageScoreChart from '@/components/dashboard/Agent/AverageScoreDisplay'; // Import AverageScoreChart
-import AverageSentimentDisplay from '@/components/dashboard/Agent/AverageSentimentDisplay';
-import CallDurationDistribution from '@/components/charts/call-duration-distribution';
+import DateRangeSelector from '@/components/date-range-selector';
+import CountDisplay from '@/components/count-display';
+import AverageDurationDisplay from '@/components/average-duration-display';
+import MonthlyBarChart from '@/components/monthly-bar-chart';
+import AverageScoreChart from '@/components/average-score-display';
+import AverageSentimentDisplay from '@/components/average-sentiment-display';
+import CallDurationDistribution from '@/components/call-duration-distribution';
 import useFetchUserCompanyDatabase from "@/hooks/useFetchUserCompanyDatabase";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -85,7 +85,7 @@ export default function AnalyticsPage() {
     return (
         <div className="mx-auto max-w-screen-4xl p-4 md:p-6 2xl:p-6">
             <div className="w-full">
-                <Card className="w-full ">
+                <Card className="w-full bg-transparent">
                     <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                         <div className="space-y-1">
                             <CardTitle className="text-2xl font-bold">{t.analyticsPage.title}</CardTitle>

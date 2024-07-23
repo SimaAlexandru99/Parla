@@ -11,7 +11,7 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { useLanguage } from "@/contexts/LanguageContext";
 import useFetchUserCompanyDatabase from "@/hooks/useFetchUserCompanyDatabase";
 import { fetchProjects } from '@/lib/apiClient';
-import CustomPagination from '@/components/common/pagination';
+import CustomPagination from '@/components/pagination';
 import { ProjectDetails } from '@/types/PropsTypes';
 import { useRouter } from 'next/navigation';
 
@@ -71,7 +71,7 @@ export default function ProjectsPage() {
     return (
         <div className="mx-auto max-w-screen-4xl p-4 md:p-6 2xl:p-6">
             <div className="w-full">
-                <Card className="w-full">
+                <Card className="w-full bg-background">
                     <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                         <div className="space-y-1">
                             <CardTitle className="text-2xl font-bold">
