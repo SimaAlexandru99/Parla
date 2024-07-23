@@ -402,9 +402,17 @@ export const en = {
     tableColumnActions: "Actions",
     buttonDetails: "View this agent's details",
     searchPlaceholder: "Search agents...",
+    viewDetails: "View Details",
   },
   callsPage: {
+    title: "Calls",
+    description: "View and manage call records",
     searchPlaceholder: "Search calls...",
+  },
+  nextAiPage: {
+    title: "Next AI",
+    description: "AI-powered features and insights",
+    // Add more specific translations for the Next AI page
   },
   agent_page: {
     agentDetails: "Agent Details",
@@ -443,7 +451,7 @@ export const en = {
   },
   projectsPage: {
     title: "Projects",
-    description: "List of all projects",
+    description: "Manage and view all projects",
     searchPlaceholder: "Search projects...",
     tableColumnDescription: "Description",
     tableColumnAgentsCount: "Agents Count",
@@ -455,5 +463,8 @@ export const en = {
   analyticsPage: {
     title: "Analytics",
     description: "Overview of the company's analytics",
+  },
+  metadata: {
+    dashboard: "Dashboard"
   },
 };

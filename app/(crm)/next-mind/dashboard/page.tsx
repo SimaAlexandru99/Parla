@@ -1,5 +1,11 @@
 import React from "react";
 import ClientSideTabs from './client-side-dashboard';
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+    title: 'Dashboard', // This will result in "Dashboard | NextMind"
+}
+
 
 export default function DashboardPage() {
     return (

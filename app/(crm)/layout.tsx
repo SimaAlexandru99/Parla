@@ -1,5 +1,5 @@
 // File: app/(crm)/layout.tsx
-import { Inter as FontSans } from "next/font/google";
+import { Work_Sans as FontSans } from "next/font/google";
 import "@/styles/globals.css";
 import { UserProvider } from "@/contexts/UserContext";
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
@@ -12,6 +12,17 @@ import { Toaster } from "@/components/ui/toaster";
 import Sidebar from "./next-mind/components/sidebar/sidebar";
 import Header from "./next-mind/components/header/header";
 import Chat from "@/components/layout/chat/chat";
+import type { Metadata } from 'next'
+
+
+export const metadata: Metadata = {
+  title: {
+    default: 'NextMind - AI powered journey planner for our clients',
+    template: '%s | NextMind'
+  },
+  description: 'AI powered journey planner for our clients',
+}
+
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -25,11 +36,6 @@ export default function NextMindLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <title>NextMind - AI powered journey planner for our clients</title>
-        <link rel="icon" href="favicon.ico" />
-        <link rel="apple-touch-icon" href="favicon.ico" />
-      </head>
       <body className={cn(
         "min-h-screen bg-muted/40 font-sans antialiased",
         fontSans.variable

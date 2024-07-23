@@ -62,6 +62,7 @@ export interface ChatCallPopoverProps {
 }
 
 export interface AgentDetails {
+  _id: string 
   username: string;
   first_name: string;
   last_name: string;

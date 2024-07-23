@@ -1,4 +1,4 @@
-import { Inter as FontSans } from "next/font/google";
+import { Work_Sans as FontSans } from "next/font/google";
 import "@/styles/globals.css";
 import { UserProvider } from "@/contexts/UserContext";
 import { assets } from '@/constants/assets';

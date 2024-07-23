@@ -7,17 +7,17 @@ export const DataCard = ({ icon, title, value, change, loading }: DataCardProps)
     return loading ? (
         <Skeleton className="rounded-xl h-24 w-full" />
     ) : (
-        <Card className="transition-colors duration-300 ease-in-out hover:bg-primary hover:text-primary-foreground group">
+        <Card className="transition-colors bg-background duration-300 ease-in-out hover:bg-accent hover:text-accent-foreground group">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                <CardTitle className="text-sm font-medium group-hover:text-primary-foreground">{title}</CardTitle>
+                <CardTitle className="text-base font-light group-hover:text-primary-foreground">{title}</CardTitle>
                 <div className="group-hover:text-primary-foreground">{icon}</div>
             </CardHeader>
             <CardContent>
-                <div className="text-2xl font-bold group-hover:text-primary-foreground">
+                <div className="text-3xl font-semibold group-hover:text-primary-foreground">
                     {typeof value === 'number' ? value.toLocaleString('ro-RO') : value}
                 </div>
                 {change && (
-                    <div className="text-xs text-muted-foreground group-hover:text-primary-foreground/80">
+                    <div className="text-xs font-normal text-muted-foreground group-hover:text-primary-foreground/80">
                         {change}
                     </div>
                 )}
@@ -64,3 +64,4 @@ export const SkeletonCallEntry = () => (
 export const AvatarSkeleton = () => (
     <div className="w-24 h-24 rounded-full bg-gray-200 animate-pulse" />
   );
+

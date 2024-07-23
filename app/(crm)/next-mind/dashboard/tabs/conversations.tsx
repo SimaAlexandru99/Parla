@@ -164,7 +164,7 @@ const ConversationsTab = () => {
 
     return (
         <div className="w-full space-y-4">
-            <Card className="w-full">
+            <Card className="w-full bg-background">
                 <CardHeader className="flex flex-row items-center justify-between">
                     <div className="space-y-1">
                         <CardTitle>{t.dashboard.conversations}</CardTitle>

@@ -2,7 +2,7 @@
 import React from 'react';
 import { AgentDetails, CallDetails } from '@/types/PropsTypes';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import CallsTable from '@/components/dashboard/Call/CallsTable';
+import CallsTable from '@/components/common/calls-table';
 
 interface AgentActivityTabProps {
     agentDetails: AgentDetails | null;
@@ -47,7 +47,6 @@ const AgentActivityTab = ({
                     loading={callsLoading}
                     handleViewDetails={handleViewCallDetails}
                     handleDelete={handleDelete}
-                    handleViewAgentDetails={handleViewAgentDetails}
                     ringColor={theme === 'dark' ? '#ffffff' : '#000000'}
                     textColor={theme === 'dark' ? '#ffffff' : '#000000'}
                     trailColor={theme === 'dark' ? '#333333' : '#d6d6d6'}

@@ -402,16 +402,24 @@ export const ro = {
   },
   agentsPage: {
     title: "Agenți",
-    description: "Lista agenților și informațiile lor",
+    description: "Gestionează și vizualizează toți agenții",
     tableColumnName: "Nume",
     tableColumnUsername: "Nume utilizator",
     tableColumnProject: "Proiect",
     tableColumnActions: "Acțiuni",
     buttonDetails: "Vezi detaliile acestui agent",
     searchPlaceholder: "Caută agenți...",
+    viewDetails: "Vezi detalii",
   },
   callsPage: {
+    title: "Apeluri",
+    description: "Vizualizează și gestionează înregistrările apelurilor",
     searchPlaceholder: "Caută apeluri...",
+  },
+  nextAiPage: {
+    title: "Next AI",
+    description: "Funcții și informații bazate pe inteligență artificială",
+    // Add more specific translations for the Next AI page
   },
   agent_page: {
     agentDetails: "Detalii agent",
@@ -451,7 +459,7 @@ export const ro = {
   },
   projectsPage: {
     title: "Proiecte",
-    description: "Lista tuturor proiectelor",
+    description: "Gestionează și vizualizează toate proiectele",
     searchPlaceholder: "Caută proiecte...",
     tableColumnName: "Nume proiect",
     tableColumnDescription: "Descriere",
@@ -461,7 +469,10 @@ export const ro = {
     tableColumnGreetings: "Greetings",
   },
   analyticsPage: {
-    title: "Analitice",
-    description: "Analiza datelor și a performanței",
+    title: "Analize",
+    description: "Vizualizează analize detaliate și rapoarte",
+  },
+  metadata: {
+    dashboard: "Panou de control"
   },
 };

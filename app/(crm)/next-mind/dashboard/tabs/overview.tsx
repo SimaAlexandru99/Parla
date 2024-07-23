@@ -71,7 +71,7 @@ const OverviewTab = () => {
     const chartConfig = {
         desktop: {
             label: "Desktop",
-            color: "hsl(var(--primary))",
+            color: "hsl(var(--accent))",
         },
     } satisfies ChartConfig;
 
@@ -218,7 +218,6 @@ const OverviewTab = () => {
         },
     ], [t.dashboard.totalCalls, t.dashboard.averageTime, t.dashboard.score, t.dashboard.processingTime, recordingCount, percentageChange, loading, averageAudioDuration, audioDurationChange, averageScore, averageScoreChange, averageProcessingTime, processingTimeChange]);
 
-    const textColor = theme === 'dark' ? '#ffffff' : '#000000';
     const trailColor = theme === 'dark' ? '#333333' : '#d6d6d6';
 
     const handleViewDetails = useCallback((call: CallDetails) => {
@@ -226,14 +225,13 @@ const OverviewTab = () => {
     }, [router]);
 
     return (
-        <Card className="w-full ">
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+        <Card className="w-full bg-transparent border-none p-0">
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-6 px-0">
                 <div className="space-y-1">
-                    <CardTitle className="text-2xl font-bold">{t.overviewTab.titlePresentation}</CardTitle>
-                    <CardDescription className="text-sm text-muted-foreground">{t.overviewTab.description}</CardDescription>
+                    <CardTitle className="text-2xl font-light">{t.overviewTab.titlePresentation}</CardTitle>
                 </div>
             </CardHeader>
-            <CardContent className="lg:grid-cols-4 gap-4">
+            <CardContent className="lg:grid-cols-4 gap-4 p-0">
                 <div className="grid gap-4 md:grid-cols-2 mb-4 md:gap-6 lg:grid-cols-4">
                     {loading
                         ? cardsData.map((_, index) => (
@@ -300,7 +298,7 @@ const OverviewTab = () => {
                                     </ChartContainer>
                                 </CardContent>
                             </Card>
-                            <Card className="" x-chunk="dashboard-01-chunk-5">
+                            <Card className="bg-transparent" x-chunk="dashboard-01-chunk-5">
                                 <CardHeader>
                                     <CardTitle>{t.overviewTab.titleRecentCalls}</CardTitle>
                                 </CardHeader>
@@ -308,11 +306,11 @@ const OverviewTab = () => {
                                     {latestCalls.map((call, index) => (
                                         <div
                                             key={index}
-                                            className="flex items-center gap-4 p-4 rounded-md cursor-pointer transition-all duration-300 ease-in-out hover:bg-primary hover:text-primary-foreground hover:shadow-md group"
+                                            className="flex items-center gap-4 p-4 rounded-md cursor-pointer transition-all duration-300 ease-in-out hover:bg-accent hover:text-primary-foreground hover:shadow-md group"
                                             onClick={() => handleViewDetails(call)}
                                         >
                                             <Avatar className="h-9 w-9 transition-colors duration-300 ease-in-out">
-                                                <AvatarFallback className="transition-colors duration-300 ease-in-out group-hover:bg-primary-foreground group-hover:text-primary">
+                                                <AvatarFallback className=" transition-colors duration-300 ease-in-out group-hover:bg-primary-foreground group-hover:text-primary">
                                                     {call.agent_info.first_name[0]}{call.agent_info.last_name[0]}
                                                 </AvatarFallback>
                                             </Avatar>
