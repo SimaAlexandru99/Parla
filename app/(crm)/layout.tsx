@@ -1,4 +1,3 @@
-// File: app/(crm)/layout.tsx
 import { Work_Sans as FontSans } from "next/font/google";
 import "@/styles/globals.css";
 import { UserProvider } from "@/contexts/UserContext";
@@ -9,7 +8,7 @@ import { DialogProvider } from "@/contexts/DialogContext";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Toaster } from "@/components/ui/toaster";
-import Sidebar from "@/components/sidebar/sidebar";
+import Sidebar from "@/components/sidebar";
 import Header from "@/components/header/header";
 import Chat from "@/components/chat/chat";
 import type { Metadata } from 'next'

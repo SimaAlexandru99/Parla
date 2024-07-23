@@ -2,7 +2,6 @@ import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { Phone, Clock, Award, Timer } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
-import { useTheme } from 'next-themes';
 import { Bar, BarChart, XAxis, CartesianGrid } from 'recharts';
 import {
     checkMongoConnection,
@@ -43,7 +42,6 @@ const getLastDayOfCurrentYear = (): Date => {
 };
 
 const OverviewTab = () => {
-    const { theme } = useTheme();
     const [loading, setLoading] = useState(true);
     const [, setConnectionStatus] = useState('Checking connection...');
     const [recordingCount, setRecordingCount] = useState<number | null>(null);

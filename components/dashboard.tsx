@@ -1,6 +1,4 @@
 'use client'
-
-import React from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useLanguage } from "@/contexts/LanguageContext";
 import OverviewTab from "@/components/overview";
