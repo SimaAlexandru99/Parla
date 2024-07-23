@@ -7,7 +7,7 @@ import OverviewTab from "@/components/overview";
 import ConversationsTab from "@/components/conversations";
 
 
-export default function ClientSideTabs() {
+export default function Dashboard() {
     const { t } = useLanguage();
 
     return (

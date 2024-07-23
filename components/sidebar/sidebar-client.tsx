@@ -30,7 +30,7 @@ const SidebarClient = () => {
 
     return (
         <aside
-            className={`relative left-0 top-0 z-[999] flex h-screen bg-background shadow-lg transition-all duration-300 ease-in-out ${
+            className={`relative left-0 top-0 z-[999] flex h-screen bg-background transition-all duration-300 ease-in-out ${
                 isExpanded ? 'w-64' : 'w-18'
             }`}
             style={{
@@ -58,10 +58,10 @@ const SidebarClient = () => {
                             size="icon"
                             key={index}
                             variant="ghost"
-                            className={`w-full justify-start px-2 py-2 ${
+                            className={`w-full justify-start px-2 py-2 rounded-full ${
                                 pathname === item.href
-                                    ? 'bg-primary text-primary-foreground'
-                                    : 'text-foreground hover:bg-muted focus:bg-muted '
+                                    ? 'bg-accent text-accent-foreground'
+                                    : 'text-foreground hover:bg-accent hover:text-accent-foreground'
                             } ${isExpanded ? 'flex' : 'flex items-center justify-center'}`}
                             onClick={() => handleNavigation(item.href)}
                             aria-label={item.tooltip}
@@ -74,7 +74,7 @@ const SidebarClient = () => {
                 <div className="mt-auto flex flex-col gap-2 px-2 py-4">
                     <Button
                         variant="ghost"
-                        className={`w-full justify-start px-2 py-2 text-foreground hover:bg-muted focus:bg-muted ${
+                        className={`w-full justify-start px-2 py-2 rounded-full text-foreground hover:bg-accent hover:text-accent-foreground ${
                             isExpanded ? 'flex' : 'flex items-center justify-center'
                         }`}
                         onClick={() => setIsExpanded(!isExpanded)}
@@ -85,7 +85,7 @@ const SidebarClient = () => {
                     </Button>
                     <Button
                         variant="ghost"
-                        className={`w-full justify-start px-2 py-2 text-foreground hover:bg-muted focus:bg-muted ${
+                        className={`w-full justify-start px-2 py-2 rounded-full text-foreground hover:bg-accent hover:text-accent-foreground ${
                             isExpanded ? 'flex' : 'flex items-center justify-center'
                         }`}
                         aria-label={t.headers.settings}

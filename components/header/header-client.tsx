@@ -68,7 +68,7 @@ const HeaderClient = () => {
                             <Globe className="mr-2 h-4 w-4" />
                             <SelectValue placeholder={t.headers.language} />
                         </SelectTrigger>
-                        <SelectContent>
+                        <SelectContent className="z-[999]"> 
                             <SelectItem value="ro">{t.headers.languageSelect.ro}</SelectItem>
                             <SelectItem value="en">{t.headers.languageSelect.en}</SelectItem>
                         </SelectContent>

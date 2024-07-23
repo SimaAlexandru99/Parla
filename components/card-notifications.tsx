@@ -68,7 +68,7 @@ export default function CardNotifications() {
                         <span className="sr-only">Toggle notifications</span>
                     </Button>
                 </PopoverTrigger>
-                <PopoverContent align="end" className="grid gap-4 w-[380px] p-6">
+                <PopoverContent align="end" className="grid gap-4 w-[380px] p-6 z-[999]">
                     <div className="flex justify-between items-center">
                         <h4 className="text-lg font-semibold">Notifications</h4>
                         <Button variant="ghost" size="icon" onClick={() => setIsPopoverOpen(false)}>

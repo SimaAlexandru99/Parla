@@ -11,8 +11,8 @@ import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 
 const Home = () => {
-  const { firebaseUser, loading, error, checkingLogin } = useCheckFirstLogin();
-  const { language, setLanguage, t, isLanguageLoaded } = useLanguage();
+  const { loading, error, checkingLogin } = useCheckFirstLogin();
+  const { t, isLanguageLoaded } = useLanguage();
 
   if (!isLanguageLoaded || loading || checkingLogin) {
     return <Loading />;

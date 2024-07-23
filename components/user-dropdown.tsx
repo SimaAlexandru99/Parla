@@ -69,7 +69,7 @@ const UserDropdownMenu = ({
             </Avatar>
           </Button>
         </DropdownMenuTrigger>
-        <DropdownMenuContent className="w-60 p-2 mt-2" align="end" forceMount>
+        <DropdownMenuContent className="w-60 p-2 mt-2 z-[999]" align="end" forceMount>
           <DropdownMenuLabel className="font-normal">
             <div className="flex flex-col space-y-1">
               <p className="text-sm font-medium leading-none">{fullName}</p>

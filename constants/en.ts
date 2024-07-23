@@ -285,11 +285,12 @@ export const en = {
     loadingPage: "Loading...",
   },
   overviewTab: {
+    title: "Overview",
     description: "Overview of the company's performance",
     handleConnectionError: "An error occurred while connecting to the server",
     handleConnectionUnknownError: "An unknown error occurred",
     handleInfoNotExist: "Information for last month does not exist",
-    titlePresentation: "Overview",
+    titlePresentation: "Monthly Overview",
     titleRecentCalls: "Recent Calls",
   },
   placeholders: {

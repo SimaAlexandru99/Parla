@@ -1,5 +1,5 @@
 import React from "react";
-import ClientSideTabs from '@/components/dashboard'
+import Dashboard from '@/components/dashboard'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -11,7 +11,7 @@ export default function DashboardPage() {
     return (
         <div className="mx-auto max-w-screen-4xl p-4 md:p-6 2xl:p-6 ">
             <div className="w-full">
-                <ClientSideTabs />
+                <Dashboard />
             </div>
         </div>
     );

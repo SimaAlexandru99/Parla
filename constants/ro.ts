@@ -291,11 +291,12 @@ export const ro = {
     loadingPage: "Se încarcă...",
   },
   overviewTab: {
+    title: "Prezentare generală",
     description: "Prezentare generală a activității firmei",
     handleConnectionError: "Nu s-a putut conecta la MongoDB: ",
     handleConnectionUnknownError: "A apărut o eroare necunoscută",
     handleInfoNotExist: "Nu există date pentru luna trecută",
-    titlePresentation: "Prezentare generală",
+    titlePresentation: "Apeluri lunare",
     titleRecentCalls: "Apeluri recente",
   },
   placeholders: {
