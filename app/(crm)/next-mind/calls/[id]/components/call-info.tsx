@@ -8,11 +8,11 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ReactPlayer from 'react-player';
 import AudioPlayer from '@/components/common/audio-player';
-import CallSummaryCard from './call-summary-card';
+import CallSummaryCard from '@/components/charts/call-summary-card';
 import { assets } from '@/constants/assets';
-import TalkRatioChart from './talk-ratio-chart';
+import TalkRatioChart from '@/components/charts/talk-ratio-chart';
 import WordFrequencyChart from '@/components/charts/word-frequency-chart';
-import CallDurationDistribution from './call-duration-distribution';
+import CallDurationDistribution from '@/components/charts/call-duration-distribution';
 
 const processSegments = (segments: Segment[]) => {
   const agentSegmentsText = segments
@@ -233,7 +233,7 @@ export default function CallDetailsClient({ initialCall }: { initialCall: CallDe
                     />
                   </CardFooter>
                 </Card>
-                
+
               </div>
             </div>
           </TabsContent>

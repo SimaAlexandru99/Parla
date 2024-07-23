@@ -1,5 +1,5 @@
 import React from "react";
-import ClientSideTabs from './client-side-dashboard';
+import ClientSideTabs from '@/components/dashboard'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {

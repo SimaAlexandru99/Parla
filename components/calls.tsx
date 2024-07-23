@@ -14,7 +14,7 @@ import { Input } from '@/components/ui/input';
 import { useToast } from '@/components/ui/use-toast';
 import { useRouter } from 'next/navigation';
 
-export default function CallsInterface() {
+export default function Calls() {
     const { t } = useLanguage();
     const { companyData } = useFetchUserCompanyDatabase();
     const [calls, setCalls] = useState<CallDetails[]>([]);

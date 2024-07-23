@@ -14,7 +14,7 @@ import { Input } from '@/components/ui/input';
 import { useToast } from '@/components/ui/use-toast';
 import { useRouter } from 'next/navigation';
 
-export default function AgentsInterface() {
+export default function Agents() {
     const { t } = useLanguage();
     const { companyData } = useFetchUserCompanyDatabase();
     const [agents, setAgents] = useState<AgentDetails[]>([]);

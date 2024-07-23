@@ -9,8 +9,8 @@ import { DialogProvider } from "@/contexts/DialogContext";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Toaster } from "@/components/ui/toaster";
-import Sidebar from "./next-mind/components/sidebar/sidebar";
-import Header from "./next-mind/components/header/header";
+import Sidebar from "@/components/layout/sidebar/sidebar";
+import Header from "@/components/layout/header/header";
 import Chat from "@/components/layout/chat/chat";
 import type { Metadata } from 'next'
 
