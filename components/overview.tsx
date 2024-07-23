@@ -56,8 +56,6 @@ const OverviewTab = () => {
     const [processingTimeChange, setProcessingTimeChange] = useState<string | null>(null);
     const [monthlyData, setMonthlyData] = useState<MonthlyData[]>([]);
     const [latestCalls, setLatestCalls] = useState<CallDetails[]>([]);
-    const [drawerOpen, setDrawerOpen] = useState(false);
-    const [selectedCall, setSelectedCall] = useState<CallDetails | null>(null);
     const { t } = useLanguage();
     const { companyData } = useFetchUserCompanyDatabase();
     const [calls, setCalls] = useState<CallDetails[]>([]);
