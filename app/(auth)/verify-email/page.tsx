@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { auth } from '@/lib/firebase/config';
 import { sendEmailVerification } from "firebase/auth";
 import { AlertInformative } from "@/components/ui/alert-custom";
-import ThemeLogo from '@/components/theme/ThemeLogo';
+import ThemeLogo from '@/components/theme-logo';
 import { useLanguage } from "@/contexts/LanguageContext";
 import Loading from '@/components/loading';
 
