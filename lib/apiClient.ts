@@ -1,6 +1,6 @@
 // apiClients.ts
 import { AgentMetrics } from "@/types/AgentMetrics";
-import { CallDetails, ProjectDetails } from "@/types/PropsTypes"; // Ensure this import path is correct
+import { CallDetails, ProjectDetails, AgentDetails } from "@/types/PropsTypes"; // Ensure this import path is correct
 
 export interface RecordingCounts {
   currentMonthCount: number;
@@ -87,6 +87,27 @@ export const deleteLatestCall = async (
   return await response.json();
 };
 
+export const fetchAgents = async (
+  database: string,
+  page: number,
+  limit: number,
+  searchTerm?: string
+) => {
+  const url = new URL(`/api/agents`, window.location.origin);
+  url.searchParams.append("database", database);
+  url.searchParams.append("page", page.toString());
+  url.searchParams.append("limit", limit.toString());
+  if (searchTerm) {
+    url.searchParams.append("search", searchTerm);
+  }
+
+  const response = await fetch(url.toString());
+  if (!response.ok) {
+    throw new Error("Server error while processing the request");
+  }
+  return await response.json();
+};
+
 export const fetchCalls = async (
   database: string,
   page: number,
@@ -146,27 +167,6 @@ export const deleteCall = async (
     throw new Error(errorData.error || "Failed to delete call");
   }
 
-  return await response.json();
-};
-
-export const fetchAgents = async (
-  database: string,
-  page: number,
-  limit: number,
-  searchTerm?: string
-) => {
-  const url = new URL(`/api/agents`, window.location.origin);
-  url.searchParams.append("database", database);
-  url.searchParams.append("page", page.toString());
-  url.searchParams.append("limit", limit.toString());
-  if (searchTerm) {
-    url.searchParams.append("search", searchTerm);
-  }
-
-  const response = await fetch(url.toString());
-  if (!response.ok) {
-    throw new Error("Server error while processing the request");
-  }
   return await response.json();
 };
 
@@ -373,15 +373,24 @@ export const fetchProjectDetails = async (
   return await response.json();
 };
 
-// In apiClient.ts
-
 export const fetchCallDetails = async (
   database: string,
   callId: string
 ): Promise<CallDetails> => {
   const response = await fetch(`/api/calls/${callId}?database=${database}`);
   if (!response.ok) {
-    throw new Error('Failed to fetch call details');
+    throw new Error("Failed to fetch call details");
+  }
+  return await response.json();
+};
+
+export const fetchAgentDetails = async (database: string, id: string) => {
+  const url = new URL(`/api/agents/${id}`, window.location.origin);
+  url.searchParams.append("database", database);
+
+  const response = await fetch(url.toString());
+  if (!response.ok) {
+    throw new Error("Failed to fetch agent details");
   }
   return await response.json();
 };

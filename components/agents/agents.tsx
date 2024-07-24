@@ -1,9 +1,8 @@
 'use client';
 
 import React, { useState, useEffect, useCallback } from 'react';
-import { RefreshCcw, Loader2, Search, Eye } from 'lucide-react';
+import { RefreshCcw, Search, Loader2 } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { AgentDetails } from '@/types/PropsTypes';
 import { useLanguage } from "@/contexts/LanguageContext";
 import useFetchUserCompanyDatabase from "@/hooks/useFetchUserCompanyDatabase";
@@ -13,6 +12,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/components/ui/use-toast';
 import { useRouter } from 'next/navigation';
+import AgentsTable from './agents-table';
 
 export default function Agents() {
     const { t } = useLanguage();
@@ -33,6 +33,7 @@ export default function Agents() {
                 const data = await fetchAgents(companyData.database, page, limitPerPage, searchTerm);
                 setAgents(Array.isArray(data.agents) ? data.agents : []);
                 setTotalAgents(data.totalAgents || 0);
+                console.log('Fetched agents:', data.agents); // Debugging log
             }
         } catch (error) {
             console.error('Error fetching agents:', error);
@@ -63,6 +64,7 @@ export default function Agents() {
     }, []);
 
     const handleViewDetails = (agent: AgentDetails) => {
+        console.log('Navigating to agent ID:', agent._id); // Debugging log
         router.push(`/next-mind/agents/${agent._id}`);
     };
 
@@ -99,49 +101,12 @@ export default function Agents() {
             </CardHeader>
             <CardContent>
                 <div className="overflow-x-auto">
-                    <Table>
-                        <TableHeader>
-                            <TableRow>
-                                <TableHead>{t.agentsPage.tableColumnName}</TableHead>
-                                <TableHead>{t.agentsPage.tableColumnUsername}</TableHead>
-                                <TableHead>{t.agentsPage.tableColumnProject}</TableHead>
-                                <TableHead className="text-right">{t.agentsPage.tableColumnActions}</TableHead>
-                            </TableRow>
-                        </TableHeader>
-                        <TableBody>
-                            {loading ? (
-                                <TableRow>
-                                    <TableCell colSpan={4} className="text-center">
-                                        <Loader2 className="h-6 w-6 animate-spin mx-auto" />
-                                    </TableCell>
-                                </TableRow>
-                            ) : agents.length > 0 ? (
-                                agents.map((agent) => (
-                                    <TableRow key={agent._id}>
-                                        <TableCell>{`${agent.first_name} ${agent.last_name}`}</TableCell>
-                                        <TableCell>{agent.username}</TableCell>
-                                        <TableCell>{agent.project}</TableCell>
-                                        <TableCell className="text-right">
-                                            <Button
-                                                onClick={() => handleViewDetails(agent)}
-                                                size="sm"
-                                                variant="ghost"
-                                            >
-                                                <Eye className="h-4 w-4 mr-2" />
-                                                {t.agentsPage.viewDetails}
-                                            </Button>
-                                        </TableCell>
-                                    </TableRow>
-                                ))
-                            ) : (
-                                <TableRow>
-                                    <TableCell colSpan={4} className="text-center">
-                                        {t.common.noDataAvailable}
-                                    </TableCell>
-                                </TableRow>
-                            )}
-                        </TableBody>
-                    </Table>
+                    <AgentsTable
+                        agents={agents}
+                        loading={loading}
+                        handleViewDetails={handleViewDetails}
+                        t={t}
+                    />
                 </div>
                 <CustomPagination
                     page={page}

@@ -1,9 +1,9 @@
-import { Metadata } from 'next'
-import Agents from '@/components/agents';
+import { Metadata } from 'next';
+import Agents from '@/components/agents/agents';
 
 export const metadata: Metadata = {
     title: 'Agents',
-}
+};
 
 export default function AgentsPage() {
     return (

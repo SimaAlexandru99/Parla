@@ -1,12 +1,8 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { connectToDatabase } from "@/lib/dbUtils";
+import { ObjectId } from "mongodb";
+import { AgentDetails } from "@/types/PropsTypes";
 
-export interface AgentDetails {
-  username: string;
-  first_name: string;
-  last_name: string;
-  project: string;
-}
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const { database, page = 1, limit = 10, search = '' } = req.query;
@@ -35,7 +31,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     }
 
     const agents = await collection
-      .find(query, { projection: { username: 1, first_name: 1, last_name: 1, project: 1 } })
+      .find(query, { projection: { _id: 1, username: 1, first_name: 1, last_name: 1, project: 1 } })
       .skip(skip)
       .limit(+limit)
       .toArray();
@@ -43,6 +39,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     const totalAgents = await collection.countDocuments(query);
 
     const formattedAgents: AgentDetails[] = agents.map((agent) => ({
+      _id: agent._id.toString(),
       username: agent.username,
       first_name: agent.first_name,
       last_name: agent.last_name,
