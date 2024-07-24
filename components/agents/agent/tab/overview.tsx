@@ -40,14 +40,14 @@ const AgentOverviewTab = ({
   if (!agentDetails) return null;
 
   return (
-    <Card className="w-full">
-      <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+    <Card className="w-full bg-transparent border-none py-">
+      <CardHeader className="flex flex-row items-center justify-between space-y-0  px-0 pb-2">
         <div className="space-y-1">
           <CardTitle className="text-2xl font-bold">{t.agent_page.overview.title}</CardTitle>
           <CardDescription className="text-sm text-muted-foreground">{t.agent_page.overview.description}</CardDescription>
         </div>
       </CardHeader>
-      <CardContent className="lg:grid-cols-4 gap-4">
+      <CardContent className="lg:grid-cols-4 gap-4 px-0">
         <div className="grid gap-4 md:grid-cols-2 mb-4 md:gap-6 lg:grid-cols-4">
           {loading
             ? [...Array(4)].map((_, index) => (

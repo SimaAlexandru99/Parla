@@ -14,7 +14,7 @@ interface AgentScoreChartProps {
 const chartConfig = {
     score: {
         label: "Score",
-        color: "hsl(var(--chart-6))",
+        color: "hsl(var(--accent))",
     },
 } satisfies ChartConfig;
 

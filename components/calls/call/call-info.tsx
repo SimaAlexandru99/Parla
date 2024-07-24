@@ -167,7 +167,7 @@ export default function CallDetailsClient({ initialCall }: { initialCall: CallDe
           </TabsList>
           <TabsContent value="conversation">
             <div className="flex flex-col lg:flex-row w-full h-[calc(100vh-200px)] gap-4">
-              <Card className="flex-1 flex flex-col overflow-hidden ">
+              <Card className="flex-1 flex flex-col overflow-hidden bg-background">
                 <CardHeader className="flex-shrink-0">
                   <CardTitle>{t.call_page.conversation}</CardTitle>
                 </CardHeader>
