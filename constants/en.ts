@@ -1,3 +1,4 @@
+import { id } from "date-fns/locale";
 import { average } from "firebase/firestore";
 
 export const en = {
@@ -416,12 +417,16 @@ export const en = {
     // Add more specific translations for the Next AI page
   },
   agent_page: {
+    id: "Agent ID",
+    agentTitle: "Quality Assurance Specialist",
     agentDetails: "Agent Details",
     agentInformation: "Agent Information",
     firstName: "First Name",
     lastName: "Last Name",
     username: "Username",
     project: "Project",
+    profile: "Profile",
+    statistics: "Statistics",
     close: "Close",
     projectOverview: "Agent Overview",
     agentActivity: "Agent Activity",

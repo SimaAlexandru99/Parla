@@ -1,78 +1,378 @@
 'use client';
 
-import React, { useEffect, useState, useMemo, useRef, useCallback } from 'react';
+import React, { useEffect, useState, useMemo, useCallback } from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { useLanguage } from "@/contexts/LanguageContext";
-import { AgentDetails } from '@/types/PropsTypes';
+import { useTheme } from "next-themes";
+import { AgentDetails, CallDetails } from '@/types/PropsTypes';
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Skeleton } from '@/components/ui/skeleton';
+import { Phone, Clock, Award, Timer } from 'lucide-react';
+import {
+    fetchAgentMetrics,
+    checkMongoConnection,
+    fetchRecordingCounts,
+    fetchAverageAudioDuration,
+    fetchAverageScore,
+    fetchAverageProcessingTime,
+    fetchAgentScores,
+    fetchAgentSummary,
+    fetchCalls,
+    deleteCall
+} from '@/lib/apiClient';
+import useFetchUserCompanyDatabase from "@/hooks/useFetchUserCompanyDatabase";
+import { AgentMetrics } from '@/types/AgentMetrics';
+import ProjectOverviewTab from './tab/overview';
+import AgentActivityTab from './tab/activity';
+import AnalyticsTab from './tab/analytics';
 
-export default function AgentDetailsClient({ initialAgent }: { initialAgent: AgentDetails }) {
-    const { t } = useLanguage();
+interface AgentDetailsClientProps {
+    initialAgent: AgentDetails;
+}
+
+const AgentDetailsClient = ({ initialAgent }: AgentDetailsClientProps) => {
+    const { theme } = useTheme();
+    const { t, language } = useLanguage();
+    const { companyData } = useFetchUserCompanyDatabase();
     const [agent] = useState<AgentDetails>(initialAgent);
+    const [metrics, setMetrics] = useState<AgentMetrics | null>(null);
+    const [connectionStatus, setConnectionStatus] = useState('Checking connection...');
+    const [loading, setLoading] = useState(true);
+    const [recordingCount, setRecordingCount] = useState<number | null>(null);
+    const [percentageChange, setPercentageChange] = useState<string | null>(null);
+    const [averageAudioDuration, setAverageAudioDuration] = useState<string | null>(null);
+    const [averageScore, setAverageScore] = useState<number | null>(null);
+    const [audioDurationChange, setAudioDurationChange] = useState<string | null>(null);
+    const [averageScoreChange, setAverageScoreChange] = useState<string | null>(null);
+    const [averageProcessingTime, setAverageProcessingTime] = useState<string | null>(null);
+    const [processingTimeChange, setProcessingTimeChange] = useState<string | null>(null);
+    const [scoreData, setScoreData] = useState<{ month: string; score: number }[]>([]);
+    const [scoreTrend, setScoreTrend] = useState<{ percentage: number; trending: 'up' | 'down' | 'neutral' }>({ percentage: 0, trending: 'neutral' });
+    const [agentSummary, setAgentSummary] = useState('');
+    const [callDetailsDrawerOpen, setCallDetailsDrawerOpen] = useState(false);
+    const [selectedCall, setSelectedCall] = useState<CallDetails | null>(null);
+    const [calls, setCalls] = useState<CallDetails[]>([]);
+    const [callsLoading, setCallsLoading] = useState(true);
+    const [page, setPage] = useState(1);
+    const [totalCalls, setTotalCalls] = useState(0);
+    const limitPerPage = 10;
+
+    const calculatePercentageChange = useCallback((currentCount: number, lastMonthCount: number) => {
+        if (lastMonthCount > 0) {
+            const change = ((currentCount - lastMonthCount) / lastMonthCount) * 100;
+            setPercentageChange(`${change.toFixed(2)}% ${change >= 0 ? 'more' : 'fewer'} processed`);
+        } else {
+            setPercentageChange(`${t.overviewTab.handleInfoNotExist}`);
+        }
+    }, [t.overviewTab.handleInfoNotExist]);
+
+    const calculateAudioDurationChange = useCallback((currentDuration: number, lastDuration: number) => {
+        if (lastDuration > 0) {
+            const change = ((currentDuration - lastDuration) / lastDuration) * 100;
+            setAudioDurationChange(`${change.toFixed(2)}% ${change >= 0 ? 'longer' : 'shorter'}`);
+        } else {
+            setAudioDurationChange(`${t.overviewTab.handleInfoNotExist}`);
+        }
+    }, [t.overviewTab.handleInfoNotExist]);
+
+    const calculateAverageScoreChange = useCallback((currentScore: number, lastScore: number) => {
+        if (lastScore > 0) {
+            const change = ((currentScore - lastScore) / lastScore) * 100;
+            setAverageScoreChange(`${change.toFixed(2)}% ${change >= 0 ? 'higher' : 'lower'}`);
+        } else {
+            setAverageScoreChange(`${t.overviewTab.handleInfoNotExist}`);
+        }
+    }, [t.overviewTab.handleInfoNotExist]);
+
+    const calculateProcessingTimeChange = useCallback((currentTime: number, lastTime: number) => {
+        if (lastTime > 0) {
+            const change = ((currentTime - lastTime) / lastTime) * 100;
+            setProcessingTimeChange(`${change.toFixed(2)}% ${change >= 0 ? 'longer' : 'shorter'}`);
+        } else {
+            setProcessingTimeChange(`${t.overviewTab.handleInfoNotExist}`);
+        }
+    }, [t.overviewTab.handleInfoNotExist]);
+
+    const calculateScoreTrend = useCallback((scores: { month: string; score: number }[]) => {
+        if (scores.length >= 2) {
+            const lastScore = scores[scores.length - 1].score;
+            const previousScore = scores[scores.length - 2].score;
+            const change = ((lastScore - previousScore) / previousScore) * 100;
+            setScoreTrend({
+                percentage: Math.abs(change),
+                trending: change > 0 ? 'up' : change < 0 ? 'down' : 'neutral'
+            });
+        }
+    }, []);
+
+    const handleConnectionError = useCallback((error: unknown) => {
+        if (error instanceof Error) {
+            setConnectionStatus(`${t.overviewTab.handleConnectionError} ${error.message}`);
+        } else {
+            setConnectionStatus(`${t.overviewTab.handleConnectionUnknownError}`);
+        }
+    }, [t.overviewTab.handleConnectionError, t.overviewTab.handleConnectionUnknownError]);
+
+    const fetchSummary = useCallback(async () => {
+        if (!agent || !companyData?.database) return;
+
+        try {
+            const summary = await fetchAgentSummary(
+                companyData.database,
+                `${agent.first_name} ${agent.last_name}`,
+                agent.username,
+                language,
+                recordingCount || 0,
+                percentageChange || '',
+                averageAudioDuration || '',
+                averageScore || 0,
+                averageProcessingTime || ''
+            );
+
+            setAgentSummary(summary.summary);
+        } catch (error) {
+            console.error('Error fetching agent summary:', error);
+            setAgentSummary('Failed to generate agent summary.');
+        }
+    }, [agent, companyData?.database, language, recordingCount, percentageChange, averageAudioDuration, averageScore, averageProcessingTime]);
+
+    const refetchData = useCallback(async () => {
+        if (!companyData?.database || !agent) return;
+
+        try {
+            const mongoConnection = await checkMongoConnection();
+            setConnectionStatus(mongoConnection.status);
+
+            if (mongoConnection.status === 'Connected to MongoDB') {
+                const [
+                    recordingCounts,
+                    averageAudioDuration,
+                    averageScore,
+                    averageProcessingTime,
+                    agentScores
+                ] = await Promise.all([
+                    fetchRecordingCounts(companyData.database, agent.username),
+                    fetchAverageAudioDuration(companyData.database, agent.username),
+                    fetchAverageScore(companyData.database, agent.username),
+                    fetchAverageProcessingTime(companyData.database, agent.username),
+                    fetchAgentScores(companyData.database, agent.username)
+                ]);
+
+                setRecordingCount(recordingCounts.currentMonthCount);
+                calculatePercentageChange(recordingCounts.currentMonthCount, recordingCounts.lastMonthCount);
+
+                setAverageAudioDuration(averageAudioDuration.averageDurationText);
+                calculateAudioDurationChange(averageAudioDuration.averageDurationInSecondsCurrentMonth, averageAudioDuration.averageDurationInSecondsLastMonth);
+
+                setAverageScore(averageScore.averageScoreCurrentMonth);
+                calculateAverageScoreChange(averageScore.averageScoreCurrentMonth, averageScore.averageScoreLastMonth);
+
+                setAverageProcessingTime(averageProcessingTime.averageProcessingTimeText);
+                calculateProcessingTimeChange(averageProcessingTime.averageProcessingTimeInSecondsCurrentMonth, averageProcessingTime.averageProcessingTimeInSecondsLastMonth);
+
+                setScoreData(agentScores);
+                calculateScoreTrend(agentScores);
+
+                await fetchSummary();
+            }
+        } catch (error) {
+            handleConnectionError(error);
+        } finally {
+            setLoading(false);
+        }
+    }, [companyData?.database, agent, calculatePercentageChange, calculateAudioDurationChange, calculateAverageScoreChange, calculateProcessingTimeChange, calculateScoreTrend, handleConnectionError, fetchSummary]);
+
+    const fetchCallsData = useCallback(async (page: number) => {
+        if (!companyData?.database || !agent) return;
+
+        setCallsLoading(true);
+        try {
+            const data = await fetchCalls(companyData.database, page, limitPerPage, agent.username);
+            setCalls(Array.isArray(data.calls) ? data.calls : []);
+            setTotalCalls(data.totalCalls || 0);
+        } catch (error) {
+            console.error('Error fetching calls:', error);
+            setCalls([]);
+        } finally {
+            setCallsLoading(false);
+        }
+    }, [companyData?.database, agent, limitPerPage]);
+
+    useEffect(() => {
+        if (agent) {
+            setLoading(true);
+            refetchData();
+            fetchCallsData(page);
+        }
+    }, [agent, refetchData, fetchCallsData, page]);
+
+    useEffect(() => {
+        if (agent && companyData?.database) {
+            fetchAgentMetrics(companyData.database, agent.username).then(setMetrics);
+        }
+    }, [agent, companyData]);
+
+    const handlePageChange = useCallback((newPage: number) => {
+        setPage(newPage);
+    }, []);
+
+    const handleDelete = useCallback(async (id: string) => {
+        if (!companyData?.database) return;
+
+        try {
+            await deleteCall(companyData.database, id);
+            fetchCallsData(page);
+        } catch (error) {
+            console.error('Error deleting call:', error);
+        }
+    }, [companyData?.database, fetchCallsData, page]);
+
+    const handleViewCallDetails = useCallback((call: CallDetails) => {
+        setSelectedCall(call);
+        setCallDetailsDrawerOpen(true);
+    }, []);
+
+    const handleViewAgentDetails = useCallback((agentDetails: any) => {
+        console.log('View agent details:', agentDetails);
+    }, []);
+
+    const formatDuration = useCallback((seconds: number): string => {
+        const roundedSeconds = Math.round(seconds);
+        const minutes = Math.floor(roundedSeconds / 60);
+        const remainingSeconds = roundedSeconds % 60;
+        return `${minutes}m ${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}s`;
+    }, []);
+
+    const renderStatus = useCallback((status: string): React.ReactNode => {
+        let statusClass = '';
+        let statusText = '';
+
+        switch (status) {
+            case 'processed':
+                statusClass = 'bg-green-100 text-green-700';
+                statusText = t.conversationsTab.statusLabels.done;
+                break;
+            case 'processing':
+                statusClass = 'bg-yellow-100 text-yellow-700';
+                statusText = t.conversationsTab.statusLabels.processing;
+                break;
+            case 'new':
+                statusClass = 'bg-blue-100 text-blue-700';
+                statusText = t.conversationsTab.statusLabels.new;
+                break;
+            default:
+                statusClass = 'bg-gray-100 text-gray-700';
+                statusText = status;
+                break;
+        }
+
+        return (
+            <span className={`px-2 py-1 rounded-full text-sm font-semibold ${statusClass}`}>
+                {statusText}
+            </span>
+        );
+    }, [t.conversationsTab.statusLabels]);
+
+    const cardsData = useMemo(() => {
+        if (!agent) return [];
+
+        return [
+            {
+                icon: <Phone className="h-4 w-4 text-muted-foreground" />,
+                title: t.dashboard.totalCalls,
+                value: recordingCount,
+                change: percentageChange,
+                loading
+            },
+            {
+                icon: <Clock className="h-4 w-4 text-muted-foreground" />,
+                title: t.dashboard.averageTime,
+                value: averageAudioDuration,
+                change: audioDurationChange,
+                loading
+            },
+            {
+                icon: <Award className="h-4 w-4 text-muted-foreground" />,
+                title: t.dashboard.score,
+                value: averageScore !== null ? `${averageScore} %` : null,
+                change: averageScoreChange,
+                loading
+            },
+            {
+                icon: <Timer className="h-4 w-4 text-muted-foreground" />,
+                title: t.dashboard.processingTime,
+                value: averageProcessingTime,
+                change: processingTimeChange,
+                loading
+            },
+        ];
+    }, [t.dashboard.totalCalls, t.dashboard.averageTime, t.dashboard.score, t.dashboard.processingTime, recordingCount, percentageChange, loading, averageAudioDuration, audioDurationChange, averageScore, averageScoreChange, averageProcessingTime, processingTimeChange, agent]);
+
+    if (!agent) return null;
+
+    const { first_name, last_name, project } = agent;
 
     return (
         <div className="mx-auto max-w-screen-4xl p-4 md:p-6 2xl:p-6">
-            <div className='w-full'>
-                <Tabs defaultValue="profile" className="w-full">
-                    <TabsList>
-                        <TabsTrigger value="profile">Profile</TabsTrigger>
-                        <TabsTrigger value="stats">Statistics</TabsTrigger>
-                    </TabsList>
-                    <TabsContent value="profile">
-                        <div className="flex flex-col lg:flex-row w-full h-[calc(100vh-200px)] gap-4">
-                            <Card className="flex-1 flex flex-col overflow-hidden">
-                                <CardHeader className="flex-shrink-0">
-                                    <CardTitle>{`${agent.first_name} ${agent.last_name}`}</CardTitle>
-                                </CardHeader>
-                                <CardContent className="flex-grow overflow-hidden">
-                                    <ScrollArea className="h-full">
-                                        <div className="space-y-4 pr-4">
-                                            <p><strong>Username:</strong> {agent.username}</p>
-                                            <p><strong>Project:</strong> {agent.project}</p>
-                                            <p><strong>ID:</strong> {agent._id}</p>
-                                        </div>
-                                    </ScrollArea>
-                                </CardContent>
-                            </Card>
-                            <div className="w-full lg:w-1/4 flex flex-col gap-4">
-                                <Card className="bg-primary text-primary-foreground">
-                                    <CardHeader className="p-4">
-                                        <div className="flex items-center space-x-4">
-                                            <Avatar>
-                                                <AvatarFallback className="bg-primary-foreground text-primary">
-                                                    {`${agent.first_name[0]}${agent.last_name[0]}`}
-                                                </AvatarFallback>
-                                            </Avatar>
-                                            <div>
-                                                <CardTitle className="text-lg text-primary-foreground">{`${agent.first_name} ${agent.last_name}`}</CardTitle>
-                                                <p className="text-sm text-primary-foreground/80">Agent</p>
-                                            </div>
-                                        </div>
-                                    </CardHeader>
-                                </Card>
-                            </div>
-                        </div>
-                    </TabsContent>
-                    <TabsContent value="stats">
-                        <ScrollArea>
-                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-                                <div className="flex flex-col gap-4">
-                                    {/* Placeholder for future statistics components */}
-                                    <Skeleton className="h-24 w-full" />
-                                    <Skeleton className="h-24 w-full" />
-                                </div>
-                                <div className="flex flex-col gap-4">
-                                    <Skeleton className="h-24 w-full" />
-                                    <Skeleton className="h-24 w-full" />
-                                </div>
-                            </div>
-                        </ScrollArea>
-                    </TabsContent>
-                </Tabs>
+            <div className="flex items-center gap-4">
+                <Avatar className="h-9 w-9">
+                    <AvatarFallback>{first_name[0]}{last_name[0]}</AvatarFallback>
+                </Avatar>
+                <div>
+                    <h2 className="text-lg font-semibold">
+                        {first_name} {last_name}
+                    </h2>
+                    <p className="text-sm text-gray-500">
+                        {project}
+                    </p>
+                </div>
             </div>
+            <Tabs defaultValue="agent_overview" className="w-full mt-4">
+                <TabsList>
+                    <TabsTrigger value="agent_overview">{t.agent_page.projectOverview}</TabsTrigger>
+                    <TabsTrigger value="agent_activity">{t.agent_page.agentActivity}</TabsTrigger>
+                    <TabsTrigger value="analytics">{t.agent_page.analytics}</TabsTrigger>
+                </TabsList>
+                <TabsContent value="agent_overview">
+                    <ProjectOverviewTab
+                        agentDetails={agent}
+                        loading={loading}
+                        cardsData={cardsData}
+                        scoreData={scoreData}
+                        scoreTrend={scoreTrend}
+                        t={t}
+                        language={language}
+                        companyData={companyData?.database}
+                        recordingCount={recordingCount || 0}
+                        percentageChange={percentageChange || ''}
+                        averageAudioDuration={averageAudioDuration || ''}
+                        averageScore={averageScore || 0}
+                        averageProcessingTime={averageProcessingTime || ''}
+                    />
+                </TabsContent>
+                <TabsContent value="agent_activity">
+                    <AgentActivityTab
+                        agentDetails={agent}
+                        calls={calls}
+                        callsLoading={callsLoading}
+                        handleViewCallDetails={handleViewCallDetails}
+                        handleDelete={handleDelete}
+                        handleViewAgentDetails={handleViewAgentDetails}
+                        formatDuration={formatDuration}
+                        renderStatus={renderStatus}
+                        t={t}
+                        theme={theme || 'light'}
+                        companyData={companyData?.database || ''}
+                    />
+                </TabsContent>
+                <TabsContent value="analytics">
+                    <AnalyticsTab metrics={metrics} t={t} />
+                </TabsContent>
+            </Tabs>
         </div>
     );
-}
+};
+
+export default AgentDetailsClient;

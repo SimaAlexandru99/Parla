@@ -423,12 +423,16 @@ export const ro = {
     // Add more specific translations for the Next AI page
   },
   agent_page: {
+    id: "ID Agent",
+    agentTitle: "Agent",
     agentDetails: "Detalii agent",
     agentInformation: "Informații agent",
     firstName: "Prenume",
     lastName: "Nume",
     username: "Nume utilizator",
     project: "Proiect",
+    profile: "Profil",
+    statistics: "Statistici",
     close: "Închide",
     projectOverview: "Prezentare generală a agentului",
     agentActivity: "Activitatea agentului",

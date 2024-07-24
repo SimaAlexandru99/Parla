@@ -6,6 +6,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@
 import { AgentDetails } from '@/types/PropsTypes';
 import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
+import {Tooltip} from '@/components/ui/tooltip';
 
 const SkeletonRow = () => (
     <TableRow>
@@ -54,16 +55,17 @@ function AgentsTable({ agents, loading, handleViewDetails, t }: AgentsTableProps
                             <TableCell>{agent.username}</TableCell>
                             <TableCell>{agent.project}</TableCell>
                             <TableCell className="text-right">
-                                <Button
-                                    onClick={() => {
-                                        console.log('Navigating to agent ID:', agent._id); // Debugging log
-                                        handleViewDetails(agent);
-                                    }}
-                                    size="sm"
-                                    variant="outline"
-                                >
-                                    <Eye className="h-4 w-4" />
-                                </Button>
+
+
+                                <Tooltip>
+                                    <Button
+                                        onClick={() => handleViewDetails(agent)}
+                                        size="sm"
+                                        variant="outline"
+                                    >
+                                        <Eye className="h-4 w-4" />
+                                    </Button>
+                                </Tooltip>
                             </TableCell>
                         </TableRow>
                     ))
