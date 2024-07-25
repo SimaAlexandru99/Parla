@@ -10,7 +10,7 @@ import ReactPlayer from 'react-player';
 import AudioPlayer from '@/components/AudioPlayer';
 import CallSummaryCard from '@/components/client/call/CallSummaryCard';
 import { assets } from '@/constants/assets';
-import TalkRatioChart from '@/components/talk-ratio-chart';
+import TalkRatioChart from '@/components/TalkRatioChart';
 import WordFrequencyChart from '@/components/WordFrequencyChart';
 import CallDurationDistribution from '@/components/client/call/CallDurationDistribution';
 

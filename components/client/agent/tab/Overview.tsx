@@ -2,8 +2,8 @@ import React from 'react';
 import { AgentDetails } from '@/types/PropsTypes';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { DataCard, SkeletonCard } from '@/components/Cards';
-import AgentScoreChart from '@/components/client/agent/info/score-chart';
-import AgentSummaryCard from '@/components/client/agent/info/summary-card';
+import AgentScoreChart from '@/components/client/agent/info/ScoreChart';
+import AgentSummaryCard from '@/components/client/agent/info/SummaryCard';
 
 interface AgentOverviewTabProps {
   agentDetails: AgentDetails | null;

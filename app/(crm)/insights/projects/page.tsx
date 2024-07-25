@@ -11,7 +11,7 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { useLanguage } from "@/contexts/LanguageContext";
 import useFetchUserCompanyDatabase from "@/hooks/useFetchUserCompanyDatabase";
 import { fetchProjects } from '@/lib/apiClient';
-import CustomPagination from '@/components/pagination';
+import CustomPagination from '@/components/CustomPagination';
 import { ProjectDetails } from '@/types/PropsTypes';
 import { useRouter } from 'next/navigation';
 

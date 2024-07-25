@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import Calls from '@/components/calls/Calls';
+import Calls from '@/components/client/Calls';
 
 export const metadata: Metadata = {
     title: 'Calls',
