@@ -1,4 +1,4 @@
-import { Work_Sans as FontSans } from "next/font/google";
+import { Space_Grotesk as FontSans } from "next/font/google";
 import "@/styles/globals.css";
 import { UserProvider } from "@/contexts/UserContext";
 import { ThemeProvider } from "@/components/ThemeProvider";
@@ -8,9 +8,9 @@ import { DialogProvider } from "@/contexts/DialogContext";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Toaster } from "@/components/ui/toaster";
-import Sidebar from "@/components/sidebar";
-import Header from "@/components/header/header";
-import Chat from "@/components/chat/chat";
+import Sidebar from "@/components/Sidebar";
+import Header from "@/components/client/InsightsHeaderClient";
+import Chat from "@/components/Chat";
 import type { Metadata } from 'next'
 
 

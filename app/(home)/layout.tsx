@@ -1,4 +1,4 @@
-import { Work_Sans as FontSans } from "next/font/google";
+import { Space_Grotesk as FontSans } from "next/font/google";
 import "@/styles/globals.css";
 import { UserProvider } from "@/contexts/UserContext";
 import { ThemeProvider } from "@/components/ThemeProvider";
@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import Header from "@/components/header-main";
+import Header from "@/components/client/Header";
 
 
 const fontSans = FontSans({

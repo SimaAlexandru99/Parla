@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
-import Loading from "@/components/loading";
+import Loading from "@/components/Loading";
 import useCheckFirstLogin from "@/hooks/useCheckFirstLogin";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";

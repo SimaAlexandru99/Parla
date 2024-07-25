@@ -16,7 +16,7 @@ import {
     CardHeader,
     CardTitle,
 } from "@/components/ui/card";
-import { SelectComponent } from '@/components/select-component';
+import { SelectComponent } from '@/components/SelectComponent';
 import { ReloadIcon } from '@radix-ui/react-icons';
 import { AlertDestructive } from "@/components/ui/alert-custom";
 import useFetchUserData from '@/hooks/useFetchUserData';
