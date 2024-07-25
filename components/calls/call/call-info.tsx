@@ -7,7 +7,7 @@ import { CallDetails, Segment } from '@/types/PropsTypes';
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ReactPlayer from 'react-player';
-import AudioPlayer from '@/components/audio-player';
+import AudioPlayer from '@/components/AudioPlayer';
 import CallSummaryCard from '@/components/calls/call/call-summary-card';
 import { assets } from '@/constants/assets';
 import TalkRatioChart from '@/components/talk-ratio-chart';

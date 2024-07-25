@@ -17,7 +17,7 @@ import {
 } from '@/lib/apiClient';
 import DateRangeSelector from '@/components/date-range-selector';
 import CountDisplay from '@/components/count-display';
-import AverageDurationDisplay from '@/components/average-duration-display';
+import AverageDurationDisplay from '@/components/AverageDurationDisplay';
 import MonthlyBarChart from '@/components/monthly-bar-chart';
 import AverageScoreChart from '@/components/average-score-display';
 import AverageSentimentDisplay from '@/components/average-sentiment-display';

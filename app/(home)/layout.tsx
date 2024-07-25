@@ -1,8 +1,7 @@
 import { Work_Sans as FontSans } from "next/font/google";
 import "@/styles/globals.css";
 import { UserProvider } from "@/contexts/UserContext";
-import { assets } from '@/constants/assets';
-import { ThemeProvider } from "@/components/theme-provider";
+import { ThemeProvider } from "@/components/ThemeProvider";
 import { cn } from "@/lib/utils";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { Analytics } from "@vercel/analytics/react";
