@@ -7,14 +7,14 @@ import { CallDetails } from '@/types/PropsTypes';
 import { useLanguage } from "@/contexts/LanguageContext";
 import useFetchUserCompanyDatabase from "@/hooks/useFetchUserCompanyDatabase";
 import { fetchCalls, deleteCall } from '@/lib/apiClient';
-import CustomPagination from '@/components/pagination';
+import CustomPagination from '@/components/CustomPagination';
 import CallsTable from '@/components/client/CallsTable';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/components/ui/use-toast';
 import { useRouter } from 'next/navigation';
 
-export default function Calls() {
+    export default function Calls() {
     const { t } = useLanguage();
     const { companyData } = useFetchUserCompanyDatabase();
     const [calls, setCalls] = useState<CallDetails[]>([]);

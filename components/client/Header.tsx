@@ -33,6 +33,7 @@ import {
     SelectTrigger,
     SelectValue,
 } from "@/components/ui/select";
+import Image from "next/image";
 
 const Header = () => {
     const { uid, firstName, lastName, email, project, company, profileIcon, role, handleLogout, loading } = useUser();
@@ -56,9 +57,9 @@ const Header = () => {
     };
 
     return (
-        <header className="flex h-14 items-center gap-4 border-b bg-muted/40 px-4 lg:h-[80px] lg:px-6">
+        <header className="flex h-14 items-center gap-4 border-b bg-black px-4 lg:h-[80px] lg:px-6">
             <Link href="/">
-                <ThemeLogo width={40} height={40} />
+                <Image src="/parla-logo.png" alt="Logo" width={120} height={30} />
             </Link>
             <div className="flex-grow flex justify-between items-center">
                 <nav className="hidden md:flex gap-2">
@@ -115,7 +116,7 @@ const Header = () => {
                         </TooltipProvider>
                     )}
                     <Link href={uid ? getDestinationLink() : "/signup"}>
-                        <Button className="flex h-10">
+                        <Button className="flex h-10 bg-accent hover:bg-accent/90">
                             {uid ? t.headers.dashboard : t.headers.register}
                         </Button>
                     </Link>
