@@ -61,6 +61,24 @@ export interface ChatCallPopoverProps {
   };
 }
 
+export interface ChatAgentPopoverProps {
+  agentName: string;
+  projectName: string;
+  username: string;
+  totalCalls: number;
+  averageScore: number;
+  averageCallDuration: string;
+  averageProcessingTime: string;
+  percentageChange: string;
+  audioDurationChange: string;
+  averageScoreChange: string;
+  processingTimeChange: string;
+  scoreTrend: { percentage: number; trending: 'up' | 'down' | 'neutral' };
+  connectionStatus: string;
+  agentSummary: string;
+  totalCallsThisMonth: number;
+}
+
 export interface AgentDetails {
   _id: string 
   username: string;
