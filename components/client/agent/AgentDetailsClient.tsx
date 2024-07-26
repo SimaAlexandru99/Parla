@@ -27,16 +27,18 @@ import AnalyticsTab from '@/components/client/agent/tab/Analytics';
 
 interface AgentDetailsClientProps {
     initialAgent: AgentDetails;
+    initialMetrics: any;
 }
 
-const AgentDetailsClient = ({ initialAgent }: AgentDetailsClientProps) => {
+const AgentDetailsClient = ({ initialAgent, initialMetrics }: AgentDetailsClientProps) => {
     const { theme } = useTheme();
     const { t, language } = useLanguage();
     const { companyData } = useFetchUserCompanyDatabase();
     const [agent] = useState<AgentDetails>(initialAgent);
-    const [metrics, setMetrics] = useState<AgentMetrics | null>(null);
+    const [metrics, setMetrics] = useState<any>(initialMetrics);
     const [connectionStatus, setConnectionStatus] = useState('Checking connection...');
     const [loading, setLoading] = useState(true);
+    const [isDataLoaded, setIsDataLoaded] = useState(false);
     const [recordingCount, setRecordingCount] = useState<number | null>(null);
     const [percentageChange, setPercentageChange] = useState<string | null>(null);
     const [averageAudioDuration, setAverageAudioDuration] = useState<string | null>(null);
@@ -173,6 +175,8 @@ const AgentDetailsClient = ({ initialAgent }: AgentDetailsClientProps) => {
                 calculateScoreTrend(agentScores);
 
                 await fetchSummary();
+                
+                setIsDataLoaded(true);
             }
         } catch (error) {
             handleConnectionError(error);
@@ -202,8 +206,11 @@ const AgentDetailsClient = ({ initialAgent }: AgentDetailsClientProps) => {
             setLoading(true);
             refetchData();
             fetchCallsData(page);
+        }
+    }, [agent, refetchData, fetchCallsData, page]);
 
-            // New code to set up AgentDetails chatProps
+    useEffect(() => {
+        if (isDataLoaded && agent) {
             const agentChatProps = {
                 agentName: `${agent.first_name} ${agent.last_name}`,
                 projectName: agent.project,
@@ -212,33 +219,33 @@ const AgentDetailsClient = ({ initialAgent }: AgentDetailsClientProps) => {
                 averageScore: averageScore || 0,
                 averageCallDuration: averageAudioDuration || '',
                 averageProcessingTime: averageProcessingTime || '',
+                percentageChange: percentageChange || '',
+                audioDurationChange: audioDurationChange || '',
+                averageScoreChange: averageScoreChange || '',
+                processingTimeChange: processingTimeChange || '',
+                scoreTrend: scoreTrend,
+                connectionStatus: connectionStatus,
+                agentSummary: agentSummary,
+                totalCallsThisMonth: recordingCount || 0
             };
-
             window.dispatchEvent(new CustomEvent('agentChatPropsChange', { detail: agentChatProps }));
         }
-    }, [agent, refetchData, fetchCallsData, page, recordingCount, averageScore, averageAudioDuration, averageProcessingTime]);
+    }, [
+        isDataLoaded,
+        agent,
+        recordingCount,
+        averageScore,
+        averageAudioDuration,
+        averageProcessingTime,
+        percentageChange,
+        audioDurationChange,
+        averageScoreChange,
+        processingTimeChange,
+        scoreTrend,
+        connectionStatus,
+        agentSummary
+    ]);
 
-    useEffect(() => {
-        if (agent && recordingCount !== null && averageScore !== null) {
-          const agentChatProps = {
-            agentName: `${agent.first_name} ${agent.last_name}`,
-            projectName: agent.project,
-            username: agent.username,
-            totalCalls: recordingCount,
-            averageScore: averageScore,
-            averageCallDuration: averageAudioDuration || '',
-            averageProcessingTime: averageProcessingTime || '',
-            percentageChange: percentageChange || '',
-            audioDurationChange: audioDurationChange || '',
-            averageScoreChange: averageScoreChange || '',
-            processingTimeChange: processingTimeChange || '',
-            scoreTrend: scoreTrend
-          };
-          window.dispatchEvent(new CustomEvent('agentChatPropsChange', { detail: agentChatProps }));
-        }
-      }, [agent, recordingCount, averageScore, averageAudioDuration, averageProcessingTime, percentageChange, audioDurationChange, averageScoreChange, processingTimeChange, scoreTrend]);
-
-      
     useEffect(() => {
         if (agent && companyData?.database) {
             fetchAgentMetrics(companyData.database, agent.username).then(setMetrics);

@@ -74,9 +74,9 @@ export interface ChatAgentPopoverProps {
   averageScoreChange: string;
   processingTimeChange: string;
   scoreTrend: { percentage: number; trending: 'up' | 'down' | 'neutral' };
-  connectionStatus?: string; // Added this property
-  agentSummary?: string; // Added this property
-  totalCallsThisMonth?: number; // Added this property
+  connectionStatus?: string;
+  agentSummary?: string;
+  totalCallsThisMonth?: number;
 }
 
 

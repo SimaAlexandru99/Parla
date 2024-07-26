@@ -59,6 +59,7 @@ export default function ChatClient(props: ChatProps) {
   const [message, setMessage] = useState<string>("");
   const [isGenerating, setIsGenerating] = useState<boolean>(false);
   const [agentChatProps, setAgentChatProps] = useState<ChatAgentPopoverProps | null>(null);
+  const [chatProps, setChatProps] = useState<ChatCallPopoverProps | null>(null);
   const [popoverOpen, setPopoverOpen] = useState<boolean>(false);
   const [isAtBottom, setIsAtBottom] = useState<boolean>(true);
   const [copied, setCopied] = useState<boolean>(false);
@@ -149,18 +150,6 @@ export default function ChatClient(props: ChatProps) {
     }
   }, [popoverOpen, focusInput]);
 
-  useEffect(() => {
-    const handleAgentChatPropsChange = (event: CustomEvent) => {
-      console.log('New agent chat props:', event.detail);
-      setAgentChatProps(event.detail);
-    };
-
-    window.addEventListener('agentChatPropsChange', handleAgentChatPropsChange as EventListener);
-
-    return () => {
-      window.removeEventListener('agentChatPropsChange', handleAgentChatPropsChange as EventListener);
-    };
-  }, []);
 
 
   useEffect(() => {
@@ -179,48 +168,80 @@ export default function ChatClient(props: ChatProps) {
     }
   }, [companyData, fetchDatabaseInfo]);
 
+  useEffect(() => {
+    console.log("Chat component received props:", props);
+  }, [props]);
+
+
+  useEffect(() => {
+    const handleChatPropsChange = (event: CustomEvent<ChatCallPopoverProps | ChatAgentPopoverProps>) => {
+      if (event.detail) {
+        if ('agentName' in event.detail) {
+          // This is ChatAgentPopoverProps
+          setAgentChatProps(event.detail);
+          setChatProps(null); // Clear chatProps when agent props are set
+        } else {
+          // This is ChatCallPopoverProps
+          setChatProps(event.detail);
+          setAgentChatProps(null); // Clear agentChatProps when call props are set
+        }
+      } else {
+        setChatProps(null);
+        setAgentChatProps(null);
+      }
+    };
+  
+    window.addEventListener('chatPropsChange', handleChatPropsChange as EventListener);
+    window.addEventListener('agentChatPropsChange', handleChatPropsChange as EventListener);
+  
+    return () => {
+      window.removeEventListener('chatPropsChange', handleChatPropsChange as EventListener);
+      window.removeEventListener('agentChatPropsChange', handleChatPropsChange as EventListener);
+    };
+  }, []);
+
   const handleSubmit = useCallback(async () => {
     if (message.trim().length < 3) return;
     const userMessage = message;
     setIsGenerating(true);
     setMessage("");
     const messageId = addMessage(userMessage, "");
-
+  
     let chatHistory;
-    if ('username' in props) {
+    if (agentChatProps) {
       // This is ChatAgentPopoverProps
       chatHistory = [
-        { role: "user", parts: [{ text: `Agent Name: ${props.agentName}` }] },
-        { role: "user", parts: [{ text: `Project Name: ${props.projectName}` }] },
-        { role: "user", parts: [{ text: `Username: ${props.username}` }] },
-        { role: "user", parts: [{ text: `Total Calls: ${props.totalCalls}` }] },
-        { role: "user", parts: [{ text: `Average Score: ${props.averageScore}` }] },
-        { role: "user", parts: [{ text: `Average Call Duration: ${props.averageCallDuration}` }] },
-        { role: "user", parts: [{ text: `Average Processing Time: ${props.averageProcessingTime}` }] },
-        { role: "user", parts: [{ text: `Percentage Change: ${props.percentageChange}` }] },
-        { role: "user", parts: [{ text: `Audio Duration Change: ${props.audioDurationChange}` }] },
-        { role: "user", parts: [{ text: `Average Score Change: ${props.averageScoreChange}` }] },
-        { role: "user", parts: [{ text: `Processing Time Change: ${props.processingTimeChange}` }] },
-        { role: "user", parts: [{ text: `Score Trend: ${JSON.stringify(props.scoreTrend)}` }] },
-        { role: "user", parts: [{ text: `Connection Status: ${props.connectionStatus}` }] },
-        { role: "user", parts: [{ text: `Agent Summary: ${props.agentSummary}` }] },
-        { role: "user", parts: [{ text: `Total Calls This Month: ${props.totalCallsThisMonth}` }] },
+        { role: "user", parts: [{ text: `Agent Name: ${agentChatProps.agentName}` }] },
+        { role: "user", parts: [{ text: `Project Name: ${agentChatProps.projectName}` }] },
+        { role: "user", parts: [{ text: `Username: ${agentChatProps.username}` }] },
+        { role: "user", parts: [{ text: `Total Calls: ${agentChatProps.totalCalls}` }] },
+        { role: "user", parts: [{ text: `Average Score: ${agentChatProps.averageScore}` }] },
+        { role: "user", parts: [{ text: `Average Call Duration: ${agentChatProps.averageCallDuration}` }] },
+        { role: "user", parts: [{ text: `Average Processing Time: ${agentChatProps.averageProcessingTime}` }] },
+        { role: "user", parts: [{ text: `Percentage Change: ${agentChatProps.percentageChange}` }] },
+        { role: "user", parts: [{ text: `Audio Duration Change: ${agentChatProps.audioDurationChange}` }] },
+        { role: "user", parts: [{ text: `Average Score Change: ${agentChatProps.averageScoreChange}` }] },
+        { role: "user", parts: [{ text: `Processing Time Change: ${agentChatProps.processingTimeChange}` }] },
+        { role: "user", parts: [{ text: `Score Trend: ${JSON.stringify(agentChatProps.scoreTrend)}` }] },
+        { role: "user", parts: [{ text: `Connection Status: ${agentChatProps.connectionStatus}` }] },
+        { role: "user", parts: [{ text: `Agent Summary: ${agentChatProps.agentSummary}` }] },
+        { role: "user", parts: [{ text: `Total Calls This Month: ${agentChatProps.totalCallsThisMonth}` }] },
         { role: "user", parts: [{ text: userMessage }] },
       ];
-    } else {
+    } else if (chatProps) {
       // This is ChatCallPopoverProps
-      const frequentWordsText = props.mostFrequentWords
-        ? props.mostFrequentWords
+      const frequentWordsText = chatProps.mostFrequentWords
+        ? chatProps.mostFrequentWords
           .map((word, index) => `${index + 1}. **${word.word}**: ${word.count} ${occurrences}`)
           .join("\n")
         : "";
-
+  
       chatHistory = [
-        { role: "user", parts: [{ text: `${agentName} ${props.agent_info?.first_name || ''} ${props.agent_info?.last_name || ''}` }] },
-        { role: "user", parts: [{ text: `${projectName} ${props.agent_info?.project || ''}` }] },
-        { role: "user", parts: [{ text: `${agentText} ${props.agentSegmentsText}` }] },
-        { role: "user", parts: [{ text: `${clientText} ${props.clientSegmentsText}` }] },
-        { role: "user", parts: [{ text: `${sentimentAverage} ${props.averageSentimentScore?.toFixed(2) || '0.00'} ${sentimentScale}` }] },
+        { role: "user", parts: [{ text: `${agentName} ${chatProps.agent_info?.first_name || ''} ${chatProps.agent_info?.last_name || ''}` }] },
+        { role: "user", parts: [{ text: `${projectName} ${chatProps.agent_info?.project || ''}` }] },
+        { role: "user", parts: [{ text: `${agentText} ${chatProps.agentSegmentsText}` }] },
+        { role: "user", parts: [{ text: `${clientText} ${chatProps.clientSegmentsText}` }] },
+        { role: "user", parts: [{ text: `${sentimentAverage} ${chatProps.averageSentimentScore?.toFixed(2) || '0.00'} ${sentimentScale}` }] },
         { role: "user", parts: [{ text: `${frequentWords}\n${frequentWordsText}` }] },
         { role: "user", parts: [{ text: `Total calls this month: ${databaseInfo.recordingCount}` }] },
         { role: "user", parts: [{ text: `Average call duration: ${databaseInfo.averageAudioDuration}` }] },
@@ -228,8 +249,11 @@ export default function ChatClient(props: ChatProps) {
         { role: "user", parts: [{ text: `Average processing time: ${databaseInfo.averageProcessingTime}` }] },
         { role: "user", parts: [{ text: userMessage }] },
       ];
+    } else {
+      // Handle the case where neither props are available
+      chatHistory = [{ role: "user", parts: [{ text: userMessage }] }];
     }
-
+  
     try {
       const res = await fetch("/api/chat", {
         method: "POST",
@@ -249,7 +273,8 @@ export default function ChatClient(props: ChatProps) {
   }, [
     message,
     addMessage,
-    props,
+    agentChatProps,
+    chatProps,
     agentName,
     projectName,
     agentText,
@@ -261,9 +286,10 @@ export default function ChatClient(props: ChatProps) {
     network_error,
     generate_error,
     updateMessage,
-    databaseInfo
+    databaseInfo,
+    setIsAtBottom,
+    setIsGenerating
   ]);
-
   const clearInput = useCallback(() => {
     setMessage("");
     focusInput();
@@ -338,7 +364,7 @@ export default function ChatClient(props: ChatProps) {
           {dialog.map((entry, index) => (
             <div key={index} className="mb-4">
               <Card
-                className={`p-4 border-none flex items-center`}
+                className={`p-4 border-none flex items-center bg-transparent`}
               >
                 <Avatar className="w-10 h-10 cursor-pointer" aria-label="User avatar">
                   {profileIcon ? (
@@ -352,7 +378,7 @@ export default function ChatClient(props: ChatProps) {
                 <p className="ml-2" aria-label="User message">{entry.message}</p>
               </Card>
               <Card
-                className={`mt-2 p-4 border-none`}
+                className={`mt-2 p-4 border-none bg-transparent`}
               >
                 <div className="mb-2 flex items-start gap-2">
                   <Image
@@ -394,16 +420,6 @@ export default function ChatClient(props: ChatProps) {
                             </TooltipTrigger>
                             <TooltipContent side="bottom" align="center">
                               <p>{copied ? tooltip_copy_success : tooltip_copy}</p>
-                            </TooltipContent>
-                          </Tooltip>
-                          <Tooltip>
-                            <TooltipTrigger asChild>
-                              <Button variant="outline" size="icon" aria-label="Email response">
-                                <Mail className="h-4 w-4" />
-                              </Button>
-                            </TooltipTrigger>
-                            <TooltipContent side="bottom" align="center">
-                              <p>{tooltip_email}</p>
                             </TooltipContent>
                           </Tooltip>
                         </TooltipProvider>
