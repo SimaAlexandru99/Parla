@@ -22,7 +22,7 @@ import {
 import { Switch } from '@/components/ui/switch';
 import { Button } from '@/components/ui/button';
 import { User, Moon, Sun, LogOut, UserRound } from "lucide-react";
-import UserProfile from './UserProfile'; // Make sure to adjust the import path accordingly
+import UserProfileWrapper from '@/components/server/UserProfileWrapper'; // Updated import
 import { useLanguage } from '@/contexts/client/LanguageContext';
 
 const UserDropdownMenu = () => {
@@ -141,7 +141,7 @@ const UserDropdownMenu = () => {
           </DropdownMenuContent>
         )}
       </DropdownMenu>
-      <UserProfile isOpen={isProfileOpen} onClose={() => setProfileOpen(false)} />
+      <UserProfileWrapper isOpen={isProfileOpen} onClose={() => setProfileOpen(false)} />
     </>
   );
 };
