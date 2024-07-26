@@ -11,7 +11,7 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/comp
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { PersonIcon } from "@radix-ui/react-icons";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
-import { ChatCallPopoverProps } from "@/types/ChatTypes";
+import { ChatCallPopoverProps } from "@/types/PropsTypes";
 import ReactMarkdown from "react-markdown";
 import { Card } from "@/components/ui/card";
 import { useLanguage } from "@/contexts/client/LanguageContext";
@@ -48,7 +48,7 @@ interface DatabaseInfo {
     latestCalls: CallData[];
 }
 
-export default function ChatClient({
+export default function ChatServer({
     agentSegmentsText = "",
     clientSegmentsText = "",
     averageSentimentScore = 0,
@@ -179,6 +179,8 @@ export default function ChatClient({
                 .map((word, index) => `${index + 1}. **${word.word}**: ${word.count} ${occurrences}`)
                 .join("\n")
             : "";
+
+
 
         const chatHistory = [
             { role: "user", parts: [{ text: `${agentName} ${agent_info.first_name} ${agent_info.last_name}` }] },

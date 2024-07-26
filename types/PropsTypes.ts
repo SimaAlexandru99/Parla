@@ -42,7 +42,7 @@ export interface CallDetails {
 }
 
 // Define the WordCount interface
-interface WordCount {
+export interface WordCount {
   word: string;
   count: number;
 }
