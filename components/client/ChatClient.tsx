@@ -58,6 +58,7 @@ export default function ChatClient(props: ChatProps) {
   const { dialog, addMessage, updateMessage } = useDialog();
   const [message, setMessage] = useState<string>("");
   const [isGenerating, setIsGenerating] = useState<boolean>(false);
+  const [agentChatProps, setAgentChatProps] = useState<ChatAgentPopoverProps | null>(null);
   const [popoverOpen, setPopoverOpen] = useState<boolean>(false);
   const [isAtBottom, setIsAtBottom] = useState<boolean>(true);
   const [copied, setCopied] = useState<boolean>(false);
@@ -147,6 +148,20 @@ export default function ChatClient(props: ChatProps) {
       focusInput();
     }
   }, [popoverOpen, focusInput]);
+
+  useEffect(() => {
+    const handleAgentChatPropsChange = (event: CustomEvent) => {
+      console.log('New agent chat props:', event.detail);
+      setAgentChatProps(event.detail);
+    };
+
+    window.addEventListener('agentChatPropsChange', handleAgentChatPropsChange as EventListener);
+
+    return () => {
+      window.removeEventListener('agentChatPropsChange', handleAgentChatPropsChange as EventListener);
+    };
+  }, []);
+
 
   useEffect(() => {
     if (scrollContainerRef.current && isAtBottom) {
@@ -247,7 +262,7 @@ export default function ChatClient(props: ChatProps) {
     generate_error,
     updateMessage,
     databaseInfo
-  ]); 
+  ]);
 
   const clearInput = useCallback(() => {
     setMessage("");
@@ -280,7 +295,7 @@ export default function ChatClient(props: ChatProps) {
     <Sheet open={popoverOpen} onOpenChange={handleToggleChat}>
       <SheetTrigger asChild>
         <Button
-          className="fixed bottom-6 right-6 rounded-full bg-highlight h-14 w-14 flex items-center justify-center hover:shadow-lg z-50 hover:bg-accent"
+          className="fixed bottom-6 right-6 rounded-full bg-accent h-14 w-14 flex items-center justify-center hover:shadow-lg z-50 hover:bg-accent/90"
           aria-expanded={popoverOpen}
           aria-controls="chat-call-popover"
           aria-label="Open chat"
@@ -302,8 +317,8 @@ export default function ChatClient(props: ChatProps) {
               <div className="mb-4 text-left md:text-left">
                 <div
                   className={`text-4xl font-bold text-transparent bg-clip-text ${theme === "dark"
-                    ? "bg-gradient-to-r from-[#4285F4] via-[#9B72CB] to-[#D96570]"
-                    : "bg-gradient-to-r from-[#5684D1] to-[#1BA1E3]"
+                      ? "bg-gradient-to-r from-[#13f287] to-[#b5ff57]"
+                      : "bg-gradient-to-r from-[#13f287] to-[#b5ff57]"
                     }`}
                 >
                   {t.chat.welcome}, {firstName}!
@@ -453,7 +468,7 @@ export default function ChatClient(props: ChatProps) {
         </div>
         <p className={`text-xs mt-2 ${theme === "dark" ? "text-gray-500" : "text-gray-700"}`}>
           {t.chat.disclaimer}
-          <a href="#" className="text-violet-500">{learn_more}</a>
+          <a href="#" className="text-accent">{learn_more}</a>
         </p>
       </SheetContent>
     </Sheet>

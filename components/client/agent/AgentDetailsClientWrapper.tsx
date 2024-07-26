@@ -34,7 +34,19 @@ export default function AgentDetailsWrapper() {
         }
     }, [id, companyData?.database, companyLoading, companyError]);
 
-    const chatProps = useMemo(() => {
+    useEffect(() => {
+        if (agent) {
+          const agentChatProps = {
+            agentName: `${agent.first_name} ${agent.last_name}`,
+            projectName: agent.project,
+            username: agent.username,
+            // Add other properties as needed
+          };
+          window.dispatchEvent(new CustomEvent('agentChatPropsChange', { detail: agentChatProps }));
+        }
+      }, [agent]);
+
+    const agentChatProps = useMemo(() => {
         if (!agent) return null;
 
         return {
@@ -46,13 +58,13 @@ export default function AgentDetailsWrapper() {
     }, [agent]);
 
     useEffect(() => {
-        if (chatProps) {
-            window.dispatchEvent(new CustomEvent('chatPropsChange', { detail: chatProps }));
+        if (agentChatProps) {
+            window.dispatchEvent(new CustomEvent('agentChatPropsChange', { detail: agentChatProps }));
         }
         return () => {
-            window.dispatchEvent(new CustomEvent('chatPropsChange', { detail: null }));
+            window.dispatchEvent(new CustomEvent('agentChatPropsChange', { detail: null }));
         };
-    }, [chatProps]);
+    }, [agentChatProps]);
 
     if (companyLoading) {
         return <div>Loading company data...</div>;

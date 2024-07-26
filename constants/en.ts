@@ -30,7 +30,7 @@ export const en = {
   },
   chat: {
     disclaimer:
-      "NextJourney may display inaccurate information, including about people, so verify its responses.",
+      "Parla may display inaccurate information, including about people, so verify its responses.",
     input: "Write a text",
     intro: "How can I help you today?",
     label: "I am excited to help you!",

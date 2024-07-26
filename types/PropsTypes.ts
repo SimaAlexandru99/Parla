@@ -74,10 +74,11 @@ export interface ChatAgentPopoverProps {
   averageScoreChange: string;
   processingTimeChange: string;
   scoreTrend: { percentage: number; trending: 'up' | 'down' | 'neutral' };
-  connectionStatus: string;
-  agentSummary: string;
-  totalCallsThisMonth: number;
+  connectionStatus?: string; // Added this property
+  agentSummary?: string; // Added this property
+  totalCallsThisMonth?: number; // Added this property
 }
+
 
 export interface AgentDetails {
   _id: string 

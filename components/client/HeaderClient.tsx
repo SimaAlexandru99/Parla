@@ -32,7 +32,7 @@ export default function HeaderClient() {
   return (
     <>
       <Link href={isLoggedIn ? "/insights/dashboard" : "/get-started"}>
-        <Button className="bg-accent hover:bg-accent/90 text-black text-lg font-medium px-10 py-6">
+        <Button className="bg-accent hover:bg-accent/90 text-black text-lg font-medium px-4 py-4">
           {isLoggedIn ? t.headers.dashboard : t.headers.getStarted}
         </Button>
       </Link>

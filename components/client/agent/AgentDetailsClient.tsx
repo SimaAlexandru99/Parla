@@ -219,6 +219,27 @@ const AgentDetailsClient = ({ initialAgent }: AgentDetailsClientProps) => {
     }, [agent, refetchData, fetchCallsData, page, recordingCount, averageScore, averageAudioDuration, averageProcessingTime]);
 
     useEffect(() => {
+        if (agent && recordingCount !== null && averageScore !== null) {
+          const agentChatProps = {
+            agentName: `${agent.first_name} ${agent.last_name}`,
+            projectName: agent.project,
+            username: agent.username,
+            totalCalls: recordingCount,
+            averageScore: averageScore,
+            averageCallDuration: averageAudioDuration || '',
+            averageProcessingTime: averageProcessingTime || '',
+            percentageChange: percentageChange || '',
+            audioDurationChange: audioDurationChange || '',
+            averageScoreChange: averageScoreChange || '',
+            processingTimeChange: processingTimeChange || '',
+            scoreTrend: scoreTrend
+          };
+          window.dispatchEvent(new CustomEvent('agentChatPropsChange', { detail: agentChatProps }));
+        }
+      }, [agent, recordingCount, averageScore, averageAudioDuration, averageProcessingTime, percentageChange, audioDurationChange, averageScoreChange, processingTimeChange, scoreTrend]);
+
+      
+    useEffect(() => {
         if (agent && companyData?.database) {
             fetchAgentMetrics(companyData.database, agent.username).then(setMetrics);
         }
