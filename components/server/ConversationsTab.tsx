@@ -1,4 +1,4 @@
-'use client'
+
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { ArrowUpRight, Eye, Trash, Search, RefreshCcw, Loader2 } from 'lucide-react';
 import Link from 'next/link';

@@ -1,14 +1,11 @@
 'use client';
 
 import React, { useEffect, useState, useMemo, useCallback } from 'react';
-import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
-import { ScrollArea } from '@/components/ui/scroll-area';
 import { useLanguage } from "@/contexts/client/LanguageContext";
 import { useTheme } from "next-themes";
 import { AgentDetails, CallDetails } from '@/types/PropsTypes';
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Skeleton } from '@/components/ui/skeleton';
 import { Phone, Clock, Award, Timer } from 'lucide-react';
 import {
     fetchAgentMetrics,

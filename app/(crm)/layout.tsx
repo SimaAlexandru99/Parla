@@ -16,8 +16,12 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: {
-    default: 'NextMind - AI powered journey planner for our clients',
-    template: '%s | NextMind'
+    default: 'Parla - AI CRM Solution',
+    template: '%s | Parla'
+  },
+  icons: {
+    icon: '/favicon.jpg',
+    apple: '/apple-favicon.jpg',
   },
   description: 'AI powered journey planner for our clients',
 }

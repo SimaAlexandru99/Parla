@@ -1,8 +1,8 @@
 'use client'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useLanguage } from "@/contexts/client/LanguageContext";
-import OverviewTab from "@/components/OverviewTab";
-import ConversationsTab from "@/components/ConversationsTab";
+import OverviewTab from "@/components/server/OverviewTab";
+import ConversationsTab from "@/components/server/ConversationsTab";
 
 
 export default function Dashboard() {

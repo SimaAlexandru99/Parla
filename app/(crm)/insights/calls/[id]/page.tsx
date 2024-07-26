@@ -1,6 +1,6 @@
 // File: app/calls/[id]/page.tsx
-import CallDetailsWrapper from '@/components/client/call/CallDetailsWrapper';
+import CallDetailsClientWrapper from '@/components/client/call/CallDetailsClientWrapper';
 
 export default function CallDetailsPage() {
-  return <CallDetailsWrapper />;
+  return <CallDetailsClientWrapper />;
 }

@@ -8,17 +8,38 @@ import Header from "@/components/Header";
 import { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import Head from 'next/head';
 
 
 export const metadata: Metadata = {
   title: 'Parla - AI CRM Solution',
-  
   description: 'Parla is an AI CRM solution that helps you manage your customer relationships with ease.',
+  keywords: ['CRM', 'AI', 'customer relationship management', 'Parla'],
   icons: {
-    icon: '/favicon.ico',
+    icon: '/favicon.jpg',
+    apple: '/apple-favicon.jpg',
   },
-}
+  openGraph: {
+    title: 'Parla - AI CRM Solution',
+    description: 'Manage your customer relationships with ease using Parla AI CRM.',
+    url: 'https://www.parla-ai.com',
+    siteName: 'Parla AI CRM',
+    images: [
+      {
+        url: 'https://www.parla-ai.com/og-image.jpg',
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Parla - AI CRM Solution',
+    description: 'Manage your customer relationships with ease using Parla AI CRM.',
+    images: ['https://www.parla-ai.com/twitter-image.jpg'],
+  },
+};
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -33,9 +54,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <link rel="icon" href="/favicon.ico" />
-      </head>
       <body className={cn(
         "min-h-screen bg-muted/40 font-sans antialiased flex flex-col",
         fontSans.variable
