@@ -8,7 +8,7 @@ import { auth } from '@/lib/firebase/config';
 import { sendEmailVerification } from "firebase/auth";
 import { AlertInformative } from "@/components/ui/alert-custom";
 import ThemeLogo from '@/components/ThemeLogo';
-import { useLanguage } from "@/contexts/LanguageContext";
+import { useLanguage } from "@/contexts/client/LanguageContext";
 import Loading from '@/components/Loading';
 
 const VerifyEmailComponent = () => {

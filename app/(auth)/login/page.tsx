@@ -16,7 +16,7 @@ import { ChevronLeft, Moon, Sun, Zap } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Toggle } from "@/components/ui/toggle";
 import { Separator } from "@/components/ui/separator"
-import { useLanguage } from "@/contexts/LanguageContext";
+import { useLanguage } from "@/contexts/client/LanguageContext";
 
 export default function Login() {
     const { t } = useLanguage();

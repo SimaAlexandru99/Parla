@@ -3,7 +3,7 @@ import { Area, AreaChart, CartesianGrid, XAxis, ResponsiveContainer } from "rech
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
 import { Skeleton } from "@/components/ui/skeleton";
-import { useLanguage } from "@/contexts/LanguageContext";
+import { useLanguage } from "@/contexts/client/LanguageContext";
 
 interface AgentScoreChartProps {
     scoreData: { month: string; score: number }[];

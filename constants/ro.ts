@@ -160,9 +160,9 @@ export const ro = {
     welcome:
       "NextMind este platforma ta pentru colaborarea cu partenerii noștri. Să începem prin a completa câțiva pași pentru a personaliza experiența ta!",
   },
-  dropdownMenu: {
-    account: "Contul meu",
-    logout: "Deconectare",
+  dropdown: {
+    profile: "Profil",
+    logOut: "Deconectare",
   },
   errors: {
     emailNotFound:
@@ -236,6 +236,7 @@ export const ro = {
   headers: {
     login: "Loghează-te în contul tău",
     dashboard: "Panou de control",
+    getStarted: "Începeți",
     register: "Înregistrează-te",
     close: "Închide",
     platform: "Platformă",

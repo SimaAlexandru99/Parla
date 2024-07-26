@@ -16,7 +16,7 @@ import validateForm from '@/lib/validateForm';
 import fetchCompanyByDomain from '@/hooks/usefetchCompanyByDomain';
 import createUserProfile from '@/lib/createUserProfile';
 import handleAuthError from '@/lib/handleAuthError';
-import { useLanguage } from "@/contexts/LanguageContext";
+import { useLanguage } from "@/contexts/client/LanguageContext";
 
 const SignUp = () => {
   const { t } = useLanguage();

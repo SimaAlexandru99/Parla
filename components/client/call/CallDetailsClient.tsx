@@ -2,7 +2,7 @@
 import React, { useEffect, useState, useMemo, useRef, useCallback } from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { useLanguage } from "@/contexts/LanguageContext";
+import { useLanguage } from "@/contexts/client/LanguageContext";
 import { CallDetails, Segment } from '@/types/PropsTypes';
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -178,7 +178,7 @@ export default function CallDetailsClient({ initialCall }: { initialCall: CallDe
                         <div
                           key={index}
                           id={`segment-${index}`}
-                          className={`flex ${index === activeSegmentIndex ? 'ring-2 ring-accent' : ''}`}
+                          className={`flex ${index === activeSegmentIndex ? 'ring-0 ring-accent' : ''}`}
                           onClick={() => handleSegmentClick(segment.time_range.start)}
                         >
                           {segment.type_speaker === 'agent' ? (

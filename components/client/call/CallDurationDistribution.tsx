@@ -5,7 +5,7 @@ import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContaine
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
 import { useTheme } from 'next-themes';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { useLanguage } from '@/contexts/client/LanguageContext';
 import {
     ChartConfig,
     ChartContainer,

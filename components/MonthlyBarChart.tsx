@@ -4,7 +4,7 @@ import { Bar, BarChart, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
 import { ChartContainer, ChartTooltipContent, ChartConfig, ChartTooltip } from "@/components/ui/chart";
-import { useLanguage } from "@/contexts/LanguageContext";
+import { useLanguage } from "@/contexts/client/LanguageContext";
 
 const chartConfig = {
     desktop: {

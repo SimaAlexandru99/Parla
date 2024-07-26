@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/components/ui/use-toast';
 import { Skeleton } from '@/components/ui/skeleton';
-import { useLanguage } from "@/contexts/LanguageContext";
+import { useLanguage } from "@/contexts/client/LanguageContext";
 import useFetchUserCompanyDatabase from "@/hooks/useFetchUserCompanyDatabase";
 import { fetchProjects } from '@/lib/apiClient';
 import CustomPagination from '@/components/CustomPagination';

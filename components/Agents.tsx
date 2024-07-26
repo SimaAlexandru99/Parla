@@ -4,7 +4,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { RefreshCcw, Search, Loader2 } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { AgentDetails } from '@/types/PropsTypes';
-import { useLanguage } from "@/contexts/LanguageContext";
+import { useLanguage } from "@/contexts/client/LanguageContext";
 import useFetchUserCompanyDatabase from "@/hooks/useFetchUserCompanyDatabase";
 import { fetchAgents } from '@/lib/apiClient';
 import CustomPagination from '@/components/CustomPagination';

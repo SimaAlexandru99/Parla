@@ -12,7 +12,7 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/comp
 import { Skeleton } from '@/components/ui/skeleton';
 import ConfirmDeleteDialog from '@/components/ConfirmDeleteDialog';
 import { CallDetails } from '@/types/PropsTypes';
-import { useLanguage } from "@/contexts/LanguageContext";
+import { useLanguage } from "@/contexts/client/LanguageContext";
 import useFetchUserCompanyDatabase from "@/hooks/useFetchUserCompanyDatabase";
 import { fetchCalls, deleteCall } from '@/lib/apiClient';
 import { Input } from '@/components/ui/input';

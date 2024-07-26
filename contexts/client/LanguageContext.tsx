@@ -1,7 +1,7 @@
 'use client'
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-import { en } from '../constants/en';
-import { ro } from '../constants/ro';
+import { en } from '../../constants/en';
+import { ro } from '../../constants/ro';
 
 type Language = 'en' | 'ro';
 type Translations = typeof en;

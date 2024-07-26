@@ -1,10 +1,10 @@
 import { Space_Grotesk as FontSans } from "next/font/google";
 import "@/styles/globals.css";
-import { UserProvider } from "@/contexts/UserContext";
+import { UserProvider } from "@/contexts/client/UserContext";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { cn } from "@/lib/utils";
-import { LanguageProvider } from "@/contexts/LanguageContext";
-import { DialogProvider } from "@/contexts/DialogContext";
+import { LanguageProvider } from "@/contexts/client/LanguageContext";
+import { DialogProvider } from "@/contexts/client/DialogContext";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Toaster } from "@/components/ui/toaster";

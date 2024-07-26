@@ -17,7 +17,7 @@ import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import { CallDetails } from '@/types/PropsTypes';
 import { getRingColor } from '@/lib/colorUtils';
-import { useLanguage } from "@/contexts/LanguageContext";
+import { useLanguage } from "@/contexts/client/LanguageContext";
 import { ChartContainer, ChartTooltipContent, ChartConfig, ChartTooltip } from "@/components/ui/chart";
 import useFetchUserCompanyDatabase from "@/hooks/useFetchUserCompanyDatabase";
 import { DataCard, SkeletonCard, SkeletonBarChart, SkeletonCallEntry } from '@/components/Cards';

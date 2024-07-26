@@ -27,7 +27,7 @@ import useFetchPartners from '@/hooks/useFetchPartners';
 import Image from 'next/image';
 import { Skeleton } from "@/components/ui/skeleton"; // Import Skeleton component
 import { ScrollArea } from "@/components/ui/scroll-area"; // Import ScrollArea component
-import { useLanguage } from "@/contexts/LanguageContext";
+import { useLanguage } from "@/contexts/client/LanguageContext";
 
 const saveUserData = async (userId: string, data: any) => {
     try {

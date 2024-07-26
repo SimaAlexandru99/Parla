@@ -3,7 +3,7 @@ import { useRouter } from "next/navigation";
 import { auth, db } from "@/lib/firebase/config";
 import { doc, getDoc } from "firebase/firestore";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { useUser } from "@/contexts/UserContext"; // Adjust the import path as needed
+import { useUser } from "@/contexts/client/UserContext"; // Adjust the import path as needed
 import { UserData } from "@/types/UserTypes"; // Import the UserData interface
 
 const useCheckFirstLogin = () => {

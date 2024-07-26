@@ -156,9 +156,9 @@ export const en = {
     welcome:
       "NextMind is your platform for collaborating with our partners. Let's start by completing a few steps to customize your experience!",
   },
-  dropdownMenu: {
-    account: "My Account",
-    logout: "Logout",
+  dropdown: {
+    profile: "Profile",
+    logOut: "Log out",
   },
   errors: {
     emailNotFound:
@@ -242,6 +242,7 @@ export const en = {
     settings: "Settings",
     theme: "Theme",
     language: "Language",
+    getStarted: "Get Started",
     languageSelect: {
       ro: "Romanian",
       en: "English",

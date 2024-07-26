@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { doc, getDoc, collection, query, where, getDocs } from "firebase/firestore";
 import { db } from "@/lib/firebase/config";
-import { useUser } from "@/contexts/UserContext";
+import { useUser } from "@/contexts/client/UserContext";
 
 interface CompanyData {
   database: string;

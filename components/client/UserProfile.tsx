@@ -1,3 +1,4 @@
+'use client'
 import React, { useState, useEffect, useCallback } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Input } from "@/components/ui/input";
@@ -15,13 +16,15 @@ import {
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useUser } from "@/contexts/client/UserContext";
 import { useLanguage } from "@/contexts/client/LanguageContext";
-import useFetchProjects from "@/hooks/useFetchProjects"; // Update the import path as necessary
-import useFetchDepartments from "@/hooks/useFetchDepartments"; // Update the import path as necessary
+import useFetchProjects from "@/hooks/useFetchProjects";
+import useFetchDepartments from "@/hooks/useFetchDepartments";
 import { doc, updateDoc } from "firebase/firestore";
-import { db } from "@/lib/firebase/config"; // Update the import path as necessary
-import SuccessDialog from "@/components/SuccessDialog";
+import { db } from "@/lib/firebase/config";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { AvatarSkeleton } from "@/components/Cards"; 
+
+export const AvatarSkeleton = () => (
+    <div className="w-24 h-24 rounded-full bg-gray-200 animate-pulse" />
+);
 
 interface UserProfileProps {
     isOpen: boolean;
@@ -32,34 +35,38 @@ const UserProfile = ({ isOpen, onClose }: UserProfileProps) => {
     const { uid, firstName, role, lastName, email, company, project, department, partner, profileIcon, loading } = useUser();
     const { t } = useLanguage();
 
-    const [editFirstName, setEditFirstName] = useState(firstName);
-    const [editLastName, setEditLastName] = useState(lastName);
-    const [editEmail, setEditEmail] = useState(email);
-    const [editProject, setEditProject] = useState(project);
-    const [editDepartment, setEditDepartment] = useState(department);
-    const [editCompany, setEditCompany] = useState(company);
+    const [editFirstName, setEditFirstName] = useState(firstName || '');
+    const [editLastName, setEditLastName] = useState(lastName || '');
+    const [editEmail, setEditEmail] = useState(email || '');
+    const [editProject, setEditProject] = useState(project || '');
+    const [editDepartment, setEditDepartment] = useState(department || '');
+    const [editCompany, setEditCompany] = useState(company || '');
     const [isDialogOpen, setIsDialogOpen] = useState(false);
     const [avatarLoaded, setAvatarLoaded] = useState(false);
-    const { projects, loadingProjects, error: projectsError } = useFetchProjects(partner, company);
-    const { departments, loadingDepartments, error: departmentsError } = useFetchDepartments(partner, editProject, company);
+
+    const { projects, loadingProjects, error: projectsError } = useFetchProjects(partner || '', company || '');
+    const { departments, loadingDepartments, error: departmentsError } = useFetchDepartments(partner || '', editProject, company || '');
+    
+    console.log(projects);
+    console.log(departments);
 
     useEffect(() => {
-        setEditProject(project);
+        setEditProject(project || '');
     }, [project]);
 
     useEffect(() => {
-        setEditDepartment(department);
+        setEditDepartment(department || '');
     }, [department]);
 
     useEffect(() => {
         if (!isOpen) {
             // Reset states when the sheet is closed
-            setEditFirstName(firstName);
-            setEditLastName(lastName);
-            setEditEmail(email);
-            setEditProject(project);
-            setEditDepartment(department);
-            setEditCompany(company);
+            setEditFirstName(firstName || '');
+            setEditLastName(lastName || '');
+            setEditEmail(email || '');
+            setEditProject(project || '');
+            setEditDepartment(department || '');
+            setEditCompany(company || '');
         }
     }, [isOpen, firstName, lastName, email, project, department, company]);
 
@@ -84,7 +91,6 @@ const UserProfile = ({ isOpen, onClose }: UserProfileProps) => {
             console.error("Error updating user profile: ", error);
         }
     }, [uid, editFirstName, editLastName, editEmail, editProject, editDepartment, editCompany]);
-
 
     return (
         <>
@@ -207,18 +213,11 @@ const UserProfile = ({ isOpen, onClose }: UserProfileProps) => {
                     </ScrollArea>
                     <SheetFooter>
                         <SheetClose asChild>
-                            <Button onClick={handleSaveChanges}>{t.buttons.saveChanges}</Button>
+                            <Button className="bg-accent hover:bg-accent/90 text-black font-medium" onClick={handleSaveChanges}>{t.buttons.saveChanges}</Button>
                         </SheetClose>
                     </SheetFooter>
                 </SheetContent>
             </Sheet>
-
-            <SuccessDialog
-                isOpen={isDialogOpen}
-                onClose={() => setIsDialogOpen(false)}
-                title={t.dialog.title}
-                description={t.dialog.description}
-            />
         </>
     );
 };

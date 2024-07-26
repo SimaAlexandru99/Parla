@@ -1,6 +1,6 @@
 'use client'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { useLanguage } from "@/contexts/LanguageContext";
+import { useLanguage } from "@/contexts/client/LanguageContext";
 import OverviewTab from "@/components/OverviewTab";
 import ConversationsTab from "@/components/ConversationsTab";
 

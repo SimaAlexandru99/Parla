@@ -16,15 +16,15 @@ import {
     fetchCallDurationData
 } from '@/lib/apiClient';
 import DateRangeSelector from '@/components/DateRangeSelector';
-import CountDisplay from '@/components/count-display';
+import CountDisplay from '@/components/CountDisplay';
 import AverageDurationDisplay from '@/components/AverageDurationDisplay';
-import MonthlyBarChart from '@/components/monthly-bar-chart';
+import MonthlyBarChart from '@/components/MonthlyBarChart';
 import AverageScoreChart from '@/components/AverageScoreChart';
 import AverageSentimentDisplay from '@/components/AverageSentimentDisplay';
 import CallDurationDistribution from '@/components/client/call/CallDurationDistribution';
 import useFetchUserCompanyDatabase from "@/hooks/useFetchUserCompanyDatabase";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { useLanguage } from "@/contexts/LanguageContext";
+import { useLanguage } from "@/contexts/client/LanguageContext";
 
 interface MonthlyData {
     month: number;

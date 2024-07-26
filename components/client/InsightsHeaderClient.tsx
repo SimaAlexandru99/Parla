@@ -7,11 +7,11 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Menu, Globe } from "lucide-react";
 import UserDropdownMenu from "@/components/UserDropdownMenu";
-import { useUser } from "@/contexts/UserContext";
+import { useUser } from "@/contexts/client/UserContext";
 import { useTheme } from "next-themes";
 import CardNotifications from "@/components/CardNotifications";
 import { navItems as getNavItems } from "@/lib/navItems";
-import { useLanguage } from "@/contexts/LanguageContext";
+import { useLanguage } from "@/contexts/client/LanguageContext";
 import { CommandDialogCustom } from "@/components/CommandDialog";
 
 const HeaderClient = () => {

@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { useRouter, usePathname } from "next/navigation";
 import { Settings, PanelLeft } from "lucide-react";
 import { useTheme } from "next-themes";
-import { useLanguage } from "@/contexts/LanguageContext";
+import { useLanguage } from "@/contexts/client/LanguageContext";
 import { navItems } from "@/lib/navItems";
 import Image from "next/image";
 import { assets } from "@/constants/assets";

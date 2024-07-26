@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { fetchCountByDateRange } from '@/lib/apiClient';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { useLanguage } from '@/contexts/client/LanguageContext';
 
 interface CountDisplayProps {
     database: string;

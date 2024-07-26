@@ -3,8 +3,8 @@ import React, { useState, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Pen, X, SendHorizonal, Copy, Mail, Check } from "lucide-react";
-import { useDialog } from "@/contexts/DialogContext";
-import { useUser } from "@/contexts/UserContext";
+import { useDialog } from "@/contexts/client/DialogContext";
+import { useUser } from "@/contexts/client/UserContext";
 import { assets } from "@/constants/assets";
 import { useTheme } from "next-themes";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
@@ -14,7 +14,7 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/co
 import { ChatCallPopoverProps } from "@/types/PropsTypes";
 import ReactMarkdown from "react-markdown";
 import { Card } from "@/components/ui/card";
-import { useLanguage } from "@/contexts/LanguageContext";
+import { useLanguage } from "@/contexts/client/LanguageContext";
 import { Textarea } from "@/components/ui/textarea";
 import useFetchUserCompanyDatabase from "@/hooks/useFetchUserCompanyDatabase";
 import {
