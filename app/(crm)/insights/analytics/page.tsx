@@ -21,7 +21,7 @@ import AverageDurationDisplay from '@/components/AverageDurationDisplay';
 import MonthlyBarChart from '@/components/MonthlyBarChart';
 import AverageScoreChart from '@/components/AverageScoreChart';
 import AverageSentimentDisplay from '@/components/AverageSentimentDisplay';
-import CallDurationDistribution from '@/components/client/call/CallDurationDistribution';
+import CallDurationDistribution from '@/components/client/call/info/CallDurationDistribution';
 import useFetchUserCompanyDatabase from "@/hooks/useFetchUserCompanyDatabase";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { useLanguage } from "@/contexts/client/LanguageContext";

@@ -1,17 +1,18 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import { useParams } from 'next/navigation';
 import useFetchUserCompanyDatabase from "@/hooks/useFetchUserCompanyDatabase";
 import { fetchAgentDetails } from '@/lib/apiClient';
 import { AgentDetails } from '@/types/PropsTypes';
-import AgentDetailsClient from '../client/AgentClient';
+import { FetchUserCompanyDatabaseResult } from '@/types/CompanyTypes';
+import AgentDetailsClient from '@/components/client/agent/AgentDetailsClient';
 import { Skeleton } from '@/components/ui/skeleton';
 
 export default function AgentDetailsWrapper() {
     const params = useParams();
     const id = params?.id as string;
-    const { companyData } = useFetchUserCompanyDatabase();
+    const { companyData, loading: companyLoading, error: companyError }: FetchUserCompanyDatabaseResult = useFetchUserCompanyDatabase();
     const [agent, setAgent] = useState<AgentDetails | null>(null);
     const [error, setError] = useState<string | null>(null);
 
@@ -28,8 +29,38 @@ export default function AgentDetailsWrapper() {
             }
         }
 
-        loadAgentDetails();
-    }, [id, companyData?.database]);
+        if (!companyLoading && !companyError) {
+            loadAgentDetails();
+        }
+    }, [id, companyData?.database, companyLoading, companyError]);
+
+    const chatProps = useMemo(() => {
+        if (!agent) return null;
+
+        return {
+            agentName: `${agent.first_name} ${agent.last_name}`,
+            projectName: agent.project,
+            username: agent.username,
+            // Add more properties as needed
+        };
+    }, [agent]);
+
+    useEffect(() => {
+        if (chatProps) {
+            window.dispatchEvent(new CustomEvent('chatPropsChange', { detail: chatProps }));
+        }
+        return () => {
+            window.dispatchEvent(new CustomEvent('chatPropsChange', { detail: null }));
+        };
+    }, [chatProps]);
+
+    if (companyLoading) {
+        return <div>Loading company data...</div>;
+    }
+
+    if (companyError) {
+        return <div>Error loading company data: {companyError}</div>;
+    }
 
     if (error) {
         return <div>{error}</div>;

@@ -34,8 +34,8 @@ const AgentActivityTab = ({
     if (!agentDetails) return null;
 
     return (
-        <Card className="w-full">
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+        <Card className="w-full bg-background">
+            <CardHeader className="flex flex-row items-center  justify-between space-y-0 pb-2">
                 <div className="space-y-1">
                     <CardTitle className="text-2xl font-bold">{t.agent_page.activity.title}</CardTitle>
                     <CardDescription className="text-sm text-muted-foreground">{t.agent_page.activity.description}</CardDescription>

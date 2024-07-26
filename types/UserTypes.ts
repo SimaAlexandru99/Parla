@@ -13,9 +13,3 @@ export interface UserData {
     dob?: string; // Added dob as it was used in one of the interfaces
   }
 
-  export interface CompanyData {
-    database: string;
-    domain: string;
-    name: string;
-    // Add any other fields if they exist in the document
-  }

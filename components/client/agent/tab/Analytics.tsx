@@ -1,63 +1,111 @@
-// components/dashboard/Agent/AnalyticsTab.tsx
+"use client"
+
 import React from 'react';
-import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
+import { PieChart, Pie } from 'recharts';
+import { TrendingUp, TrendingDown } from "lucide-react";
 import { AgentMetrics } from '@/types/AgentMetrics';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import {
+  ChartConfig,
+  ChartContainer,
+  ChartTooltip,
+  ChartTooltipContent,
+} from "@/components/ui/chart";
 
 interface AnalyticsTabProps {
     metrics: AgentMetrics | null;
     t: any;
 }
 
-const AnalyticsTab = ({ metrics, t }: AnalyticsTabProps) => {
+const chartConfig: ChartConfig = {
+  sentiment: {
+    label: "Sentiment",
+  },
+  positive: {
+    label: "Positive",
+    color: "hsl(var(--chart-1))",
+  },
+  negative: {
+    label: "Negative",
+    color: "hsl(var(--chart-2))",
+  },
+  duration: {
+    label: "Duration",
+  },
+  deadAir: {
+    label: "Dead Air",
+    color: "hsl(var(--chart-3))",
+  },
+  talkDuration: {
+    label: "Talk Duration",
+    color: "hsl(var(--chart-4))",
+  },
+};
+
+const AnalyticsTab: React.FC<AnalyticsTabProps> = ({ metrics, t }) => {
     if (!metrics) return <p>Loading metrics...</p>;
 
-    return (
-        <Card className="grid gap-4">
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                <div className="space-y-1">
-                    <CardTitle className="text-2xl font-bold">{t.agent_page.overview.title}</CardTitle>
-                    <CardDescription className="text-sm text-muted-foreground">{t.agent_page.overview.description}</CardDescription>
-                </div>
-            </CardHeader>
-            <CardContent className="flex flex-col items-start">
-                <h3>Average Sentiment</h3>
-                <ResponsiveContainer width="100%" height={200}>
-                    <LineChart data={metrics.sentimentData}>
-                        <XAxis dataKey="time" />
-                        <YAxis />
-                        <Tooltip />
-                        <Line type="monotone" dataKey="value" stroke="#8884d8" />
-                    </LineChart>
-                </ResponsiveContainer>
-                <p>{`Average Sentiment: ${metrics.avgSentiment.toFixed(2)}`}</p>
-                <div className="flex flex-col items-start">
-                    <h3>Total Dead Air Duration (Speaker 00)</h3>
-                    <ResponsiveContainer width="100%" height={200}>
-                        <LineChart data={metrics.deadAirData}>
-                            <XAxis dataKey="time" />
-                            <YAxis />
-                            <Tooltip />
-                            <Line type="monotone" dataKey="value" stroke="#82ca9d" />
-                        </LineChart>
-                    </ResponsiveContainer>
-                    <p>{`Total Dead Air Duration: ${metrics.totalDeadAirSpeaker00} seconds`}</p>
-                </div>
-                <div className="flex flex-col items-start">
-                    <h3>Total Talk Duration (Speaker 00)</h3>
-                    <ResponsiveContainer width="100%" height={200}>
-                        <LineChart data={metrics.talkDurationData}>
-                            <XAxis dataKey="time" />
-                            <YAxis />
-                            <Tooltip />
-                            <Line type="monotone" dataKey="value" stroke="#ffc658" />
-                        </LineChart>
-                    </ResponsiveContainer>
-                    <p>{`Total Talk Duration: ${metrics.totalTalkDurationSpeaker00} seconds`}</p>
-                </div>
-            </CardContent>
+    const sentimentData = [
+        { name: 'Positive', value: Math.max(metrics.avgSentiment, 0), fill: chartConfig.positive.color },
+        { name: 'Negative', value: Math.max(-metrics.avgSentiment, 0), fill: chartConfig.negative.color },
+    ];
 
+    const durationData = [
+        { name: 'Dead Air', value: metrics.totalDeadAirSpeaker00, fill: chartConfig.deadAir.color },
+        { name: 'Talk Duration', value: metrics.totalTalkDurationSpeaker00, fill: chartConfig.talkDuration.color },
+    ];
+
+    const renderPieChart = (data: any[], title: string, config: ChartConfig) => (
+        <Card className="flex flex-col bg-background">
+            <CardHeader className="items-center pb-0">
+                <CardTitle>{title}</CardTitle>
+                <CardDescription>{t.agent_page.overview.timeframe}</CardDescription>
+            </CardHeader>
+            <CardContent className="flex-1 pb-0">
+                <ChartContainer
+                    config={config}
+                    className="mx-auto aspect-square max-h-[250px]"
+                >
+                    <PieChart>
+                        <ChartTooltip
+                            cursor={false}
+                            content={<ChartTooltipContent hideLabel />}
+                        />
+                        <Pie data={data} dataKey="value" nameKey="name" />
+                    </PieChart>
+                </ChartContainer>
+            </CardContent>
+            <CardFooter className="flex-col gap-2 text-sm">
+                <div className="flex items-center gap-2 font-medium leading-none">
+                    {data[0].value > data[1].value ? (
+                        <>
+                            Trending up <TrendingUp className="h-4 w-4" />
+                        </>
+                    ) : (
+                        <>
+                            Trending down <TrendingDown className="h-4 w-4" />
+                        </>
+                    )}
+                </div>
+                <div className="leading-none text-muted-foreground">
+                    {t.agent_page.overview.description}
+                </div>
+            </CardFooter>
         </Card>
+    );
+
+    return (
+        <div className="grid gap-4 md:grid-cols-2">
+            {renderPieChart(sentimentData, t.agent_page.overview.sentiment, chartConfig)}
+            {renderPieChart(durationData, t.agent_page.overview.duration, chartConfig)}
+        </div>
     );
 };
 

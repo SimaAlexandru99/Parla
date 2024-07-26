@@ -11,7 +11,7 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/comp
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { PersonIcon } from "@radix-ui/react-icons";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
-import { ChatCallPopoverProps } from "@/types/PropsTypes";
+import { ChatCallPopoverProps } from "@/types/ChatTypes";
 import ReactMarkdown from "react-markdown";
 import { Card } from "@/components/ui/card";
 import { useLanguage } from "@/contexts/client/LanguageContext";

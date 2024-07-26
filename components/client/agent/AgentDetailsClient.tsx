@@ -25,7 +25,6 @@ import ProjectOverviewTab from '@/components/client/agent/tab/Overview';
 import AgentActivityTab from '@/components/client/agent/tab/Activity';
 import AnalyticsTab from '@/components/client/agent/tab/Analytics';
 
-
 interface AgentDetailsClientProps {
     initialAgent: AgentDetails;
 }
@@ -203,8 +202,21 @@ const AgentDetailsClient = ({ initialAgent }: AgentDetailsClientProps) => {
             setLoading(true);
             refetchData();
             fetchCallsData(page);
+
+            // New code to set up AgentDetails chatProps
+            const agentChatProps = {
+                agentName: `${agent.first_name} ${agent.last_name}`,
+                projectName: agent.project,
+                username: agent.username,
+                totalCalls: recordingCount || 0,
+                averageScore: averageScore || 0,
+                averageCallDuration: averageAudioDuration || '',
+                averageProcessingTime: averageProcessingTime || '',
+            };
+
+            window.dispatchEvent(new CustomEvent('agentChatPropsChange', { detail: agentChatProps }));
         }
-    }, [agent, refetchData, fetchCallsData, page]);
+    }, [agent, refetchData, fetchCallsData, page, recordingCount, averageScore, averageAudioDuration, averageProcessingTime]);
 
     useEffect(() => {
         if (agent && companyData?.database) {

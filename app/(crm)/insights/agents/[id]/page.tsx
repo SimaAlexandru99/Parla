@@ -1,4 +1,4 @@
-import AgentDetailsWrapper from '@/components/server/AgentServer';
+import AgentDetailsWrapper from '@/components/client/agent/AgentDetailsClientWrapper';
 
 
 export default function AgentDetailsPage() {

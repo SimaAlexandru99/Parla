@@ -8,11 +8,11 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ReactPlayer from 'react-player';
 import AudioPlayer from '@/components/AudioPlayer';
-import CallSummaryCard from '@/components/client/call/CallSummaryCard';
+import CallSummaryCard from '@/components/client/call/info/CallSummaryCard';
 import { assets } from '@/constants/assets';
 import TalkRatioChart from '@/components/TalkRatioChart';
 import WordFrequencyChart from '@/components/WordFrequencyChart';
-import CallDurationDistribution from '@/components/client/call/CallDurationDistribution';
+import CallDurationDistribution from '@/components/client/call/info/CallDurationDistribution';
 
 const processSegments = (segments: Segment[]) => {
   const agentSegmentsText = segments
