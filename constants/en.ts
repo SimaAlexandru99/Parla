@@ -383,6 +383,7 @@ export const en = {
   },
   averageDurationDisplay: {
     title: "Average Talk Duration",
+    noData: "No Data"
   },
   averageScoreDisplay: {
     title: "Average Call Score",

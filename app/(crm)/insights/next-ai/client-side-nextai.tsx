@@ -167,7 +167,7 @@ export default function ChatInterface() {
         setMessage(text);
         inputRef.current?.focus();
     };
-    
+
 
     return (
         <div className="flex flex-col items-center justify-between h-screen w-full max-w-screen-lg mx-auto">
@@ -176,8 +176,8 @@ export default function ChatInterface() {
                     {dialog.length === 0 && (
                         <div className="mb-12 transition-all duration-300 ease-in-out transform text-center">
                             <h1 className={`text-6xl font-bold mb-6 text-transparent bg-clip-text ${theme === "dark"
-                                ? "bg-gradient-to-r from-[#4285F4] via-[#9B72CB] to-[#D96570]"
-                                : "bg-gradient-to-r from-[#5684D1] to-[#1BA1E3]"
+                                ? "bg-gradient-to-r from-[#13f287] to-[#b5ff57]"
+                                : "bg-gradient-to-r from-[#13f287] to-[#b5ff57]"
                                 }`}>
                                 {t.chat.welcome}, {firstName}!
                             </h1>
@@ -300,7 +300,7 @@ export default function ChatInterface() {
                     <Button
                         size="icon"
                         onClick={handleSubmit}
-                        className="rounded-full transition-colors duration-200"
+                        className="rounded-full transition-colors duration-200 bg-accent hover:bg-accent/80"
                     >
                         <SendHorizonal className="h-5 w-5" />
                     </Button>

@@ -389,6 +389,7 @@ export const ro = {
   },
   averageDurationDisplay: {
     title: "Durata medie a apelurilor",
+    noData: "Fără informații",
   },
   averageScoreDisplay: {
     title: "Scor mediu",
