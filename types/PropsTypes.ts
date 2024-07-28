@@ -49,6 +49,7 @@ export interface WordCount {
 
 // Define the ChatCallPopoverProps interface
 export interface ChatCallPopoverProps {
+  
   segments?: Segment[];
   agentSegmentsText?: string;
   clientSegmentsText?: string;
@@ -61,6 +62,7 @@ export interface ChatCallPopoverProps {
   };
 }
 
+// Define the ChatAgentPopoverProps interface
 export interface ChatAgentPopoverProps {
   agentName: string;
   projectName: string;
@@ -79,15 +81,16 @@ export interface ChatAgentPopoverProps {
   totalCallsThisMonth?: number;
 }
 
-
+// Define the AgentDetails interface
 export interface AgentDetails {
-  _id: string 
+  _id: string;
   username: string;
   first_name: string;
   last_name: string;
   project: string;
 }
 
+// Define the DataCardProps interface
 export interface DataCardProps {
   icon: JSX.Element;
   title: string;
@@ -96,10 +99,12 @@ export interface DataCardProps {
   loading: boolean;
 }
 
+// Define the SkeletonCardProps interface
 export interface SkeletonCardProps {
   className: string;
 }
 
+// Define the ProjectDetails interface
 export interface ProjectDetails {
   _id: string;
   project_name: string;

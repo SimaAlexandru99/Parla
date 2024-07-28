@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: '/favicon.jpg',
-    apple: '/apple-favicon.jpg',
+    apple: '/apple-favicon.png',
   },
   description: 'AI powered journey planner for our clients',
 }

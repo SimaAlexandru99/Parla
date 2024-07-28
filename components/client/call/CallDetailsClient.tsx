@@ -3,7 +3,7 @@ import React, { useEffect, useState, useMemo, useRef, useCallback } from 'react'
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { useLanguage } from "@/contexts/client/LanguageContext";
-import { CallDetails, Segment } from '@/types/PropsTypes';
+import { CallDetails, ChatCallPopoverProps, Segment } from '@/types/PropsTypes';
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ReactPlayer from 'react-player';
@@ -94,17 +94,16 @@ export default function CallDetailsClient({ initialCall }: { initialCall: CallDe
 
   useEffect(() => {
     const mostFrequentWords = extractFrequentWords(call.segments);
-
-    const chatProps = {
-      agentName: `${call.agent_info.first_name} ${call.agent_info.last_name}`,
-      projectName: call.agent_info.project,
+  
+    const chatProps: ChatCallPopoverProps = {
+      segments: call.segments,
       agentSegmentsText,
       clientSegmentsText,
       averageSentimentScore,
       mostFrequentWords,
       agent_info: call.agent_info
     };
-
+    
     window.dispatchEvent(new CustomEvent('chatPropsChange', { detail: chatProps }));
   }, [call, agentSegmentsText, clientSegmentsText, averageSentimentScore]);
 

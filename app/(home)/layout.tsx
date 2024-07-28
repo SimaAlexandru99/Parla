@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   keywords: ['CRM', 'AI', 'customer relationship management', 'Parla'],
   icons: {
     icon: '/favicon.jpg',
-    apple: '/apple-favicon.jpg',
+    apple: '/apple-favicon.png',
   },
   openGraph: {
     title: 'Parla - AI CRM Solution',
