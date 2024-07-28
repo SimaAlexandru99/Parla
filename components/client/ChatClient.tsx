@@ -59,7 +59,7 @@ export default function ChatClient(props: ChatProps) {
   const [message, setMessage] = useState<string>("");
   const [isGenerating, setIsGenerating] = useState<boolean>(false);
   const [agentChatProps, setAgentChatProps] = useState<ChatAgentPopoverProps | null>(null);
-  const [chatProps, setChatProps] = useState<ChatCallPopoverProps | null>(null);
+  const [callChatProps, setCallChatProps] = useState<ChatCallPopoverProps | null>(null);
   const [popoverOpen, setPopoverOpen] = useState<boolean>(false);
   const [isAtBottom, setIsAtBottom] = useState<boolean>(true);
   const [copied, setCopied] = useState<boolean>(false);
@@ -179,14 +179,14 @@ export default function ChatClient(props: ChatProps) {
         if ('agentName' in event.detail) {
           // This is ChatAgentPopoverProps
           setAgentChatProps(event.detail);
-          setChatProps(null); // Clear chatProps when agent props are set
+          setCallChatProps(null); // Clear callChatProps when agent props are set
         } else {
           // This is ChatCallPopoverProps
-          setChatProps(event.detail);
+          setCallChatProps(event.detail);
           setAgentChatProps(null); // Clear agentChatProps when call props are set
         }
       } else {
-        setChatProps(null);
+        setCallChatProps(null);
         setAgentChatProps(null);
       }
     };
@@ -228,20 +228,20 @@ export default function ChatClient(props: ChatProps) {
         { role: "user", parts: [{ text: `Total Calls This Month: ${agentChatProps.totalCallsThisMonth}` }] },
         { role: "user", parts: [{ text: userMessage }] },
       ];
-    } else if (chatProps) {
+    } else if (callChatProps) {
       // This is ChatCallPopoverProps
-      const frequentWordsText = chatProps.mostFrequentWords
-        ? chatProps.mostFrequentWords
+      const frequentWordsText = callChatProps.mostFrequentWords
+        ? callChatProps.mostFrequentWords
           .map((word, index) => `${index + 1}. **${word.word}**: ${word.count} ${occurrences}`)
           .join("\n")
         : "";
   
       chatHistory = [
-        { role: "user", parts: [{ text: `${agentName} ${chatProps.agent_info?.first_name || ''} ${chatProps.agent_info?.last_name || ''}` }] },
-        { role: "user", parts: [{ text: `${projectName} ${chatProps.agent_info?.project || ''}` }] },
-        { role: "user", parts: [{ text: `${agentText} ${chatProps.agentSegmentsText}` }] },
-        { role: "user", parts: [{ text: `${clientText} ${chatProps.clientSegmentsText}` }] },
-        { role: "user", parts: [{ text: `${sentimentAverage} ${chatProps.averageSentimentScore?.toFixed(2) || '0.00'} ${sentimentScale}` }] },
+        { role: "user", parts: [{ text: `${agentName} ${callChatProps.agent_info?.first_name || ''} ${callChatProps.agent_info?.last_name || ''}` }] },
+        { role: "user", parts: [{ text: `${projectName} ${callChatProps.agent_info?.project || ''}` }] },
+        { role: "user", parts: [{ text: `${agentText} ${callChatProps.agentSegmentsText}` }] },
+        { role: "user", parts: [{ text: `${clientText} ${callChatProps.clientSegmentsText}` }] },
+        { role: "user", parts: [{ text: `${sentimentAverage} ${callChatProps.averageSentimentScore?.toFixed(2) || '0.00'} ${sentimentScale}` }] },
         { role: "user", parts: [{ text: `${frequentWords}\n${frequentWordsText}` }] },
         { role: "user", parts: [{ text: `Total calls this month: ${databaseInfo.recordingCount}` }] },
         { role: "user", parts: [{ text: `Average call duration: ${databaseInfo.averageAudioDuration}` }] },
@@ -274,7 +274,7 @@ export default function ChatClient(props: ChatProps) {
     message,
     addMessage,
     agentChatProps,
-    chatProps,
+    callChatProps,
     agentName,
     projectName,
     agentText,
@@ -290,6 +290,7 @@ export default function ChatClient(props: ChatProps) {
     setIsAtBottom,
     setIsGenerating
   ]);
+
   const clearInput = useCallback(() => {
     setMessage("");
     focusInput();
