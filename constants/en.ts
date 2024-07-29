@@ -27,6 +27,15 @@ export const en = {
     noDataAvailable: "No data available",
     search: "Search...",
     backToCalls: "Back to Calls",
+    user: "User"
+  },
+  userDropdown: {
+    profile: "Profile",
+    settings: "Settings",
+    darkMode: "Dark mode",
+    lightMode: "Light mode",
+    toggleTheme: "Toggle theme",
+    logout: "Log out"
   },
   chat: {
     disclaimer:
@@ -234,6 +243,7 @@ export const en = {
     register: "Register",
     close: "Close",
     platform: "Platform",
+    pricing: "Pricing",
     nextMind: "NextMind",
     nextThing: "NextThing",
     light: "Light",

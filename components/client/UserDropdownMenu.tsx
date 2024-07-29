@@ -4,7 +4,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useUser } from '@/contexts/client/UserContext';
-import { useTheme } from 'next-themes';
+import { useThemeToggle } from '@/components/ThemeProvider'; // Import the custom hook
 import {
   DropdownMenu,
   DropdownMenuTrigger,
@@ -22,7 +22,7 @@ import {
 import { Switch } from '@/components/ui/switch';
 import { Button } from '@/components/ui/button';
 import { User, Moon, Sun, LogOut, UserRound } from "lucide-react";
-import UserProfileWrapper from '@/components/server/UserProfileWrapper'; // Updated import
+import UserProfileWrapper from '@/components/server/UserProfileWrapper';
 import { useLanguage } from '@/contexts/client/LanguageContext';
 
 const UserDropdownMenu = () => {
@@ -30,7 +30,7 @@ const UserDropdownMenu = () => {
   const [avatarLoaded, setAvatarLoaded] = useState(false);
   const [isProfileOpen, setProfileOpen] = useState(false);
   const router = useRouter();
-  const { theme, setTheme } = useTheme();
+  const { theme, toggleTheme } = useThemeToggle(); // Use the custom hook
   const { t } = useLanguage();
 
   useEffect(() => {
@@ -56,10 +56,6 @@ const UserDropdownMenu = () => {
     handleLogout();
     router.push('/');
   }, [handleLogout, router]);
-
-  const toggleTheme = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark');
-  };
 
   const fullName = firstName && lastName ? `${firstName} ${lastName}` : 'User';
 

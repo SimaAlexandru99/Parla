@@ -1,26 +1,27 @@
 'use client'
-
-import React, { useState, useCallback, useMemo } from "react";
+import React, { useState, useCallback, useMemo, useEffect } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Menu, Globe } from "lucide-react";
-import UserDropdownMenu from "@/components/UserDropdownMenu";
+import UserDropdownMenu from "@/components/client/UserDropdownMenu";
 import { useUser } from "@/contexts/client/UserContext";
 import { useTheme } from "next-themes";
 import CardNotifications from "@/components/CardNotifications";
 import { navItems as getNavItems } from "@/lib/navItems";
 import { useLanguage } from "@/contexts/client/LanguageContext";
 import { CommandDialogCustom } from "@/components/CommandDialog";
+import { Skeleton } from "@/components/ui/skeleton";
 
-const HeaderClient = () => {
-    const { company, profileIcon, firstName, lastName, project, email, handleLogout } = useUser();
+export default function InsightsHeaderClient() {
     const pathname = usePathname();
     const router = useRouter();
     const [isSheetOpen, setIsSheetOpen] = useState(false);
     const { theme, setTheme } = useTheme();
     const { language, setLanguage, t } = useLanguage();
+    const { email, loading } = useUser();
+    const [isClientLoaded, setIsClientLoaded] = useState(false);
 
     const navItems = useMemo(() => getNavItems(t), [t]);
 
@@ -34,8 +35,30 @@ const HeaderClient = () => {
         setIsSheetOpen(false);
     }, [router]);
 
+    useEffect(() => {
+        const timer = setTimeout(() => setIsClientLoaded(true), 1000);
+        return () => clearTimeout(timer);
+    }, []);
+
+    if (loading || !isClientLoaded) {
+        return (
+            <header className="sticky top-0 bg-background flex w-full drop-shadow-1 dark:drop-shadow-none">
+                <div className="flex items-center gap-4 w-full justify-between p-4 sm:px-6">
+                    <div className="flex items-center gap-4">
+                        <Skeleton className="w-40 h-10 rounded-md" />
+                    </div>
+                    <div className="flex items-center gap-4">
+                        <Skeleton className="w-32 h-10 rounded-md" />
+                        <Skeleton className="w-10 h-10 rounded-full" />
+                        <Skeleton className="w-10 h-10 rounded-full" />
+                    </div>
+                </div>
+            </header>
+        );
+    }
+
     return (
-        <header className="sticky top-0 z-[998] bg-background flex w-full drop-shadow-1  dark:drop-shadow-none">
+        <header className="sticky top-0 bg-background flex w-full drop-shadow-1 dark:drop-shadow-none">
             <div className="flex items-center gap-4 w-full justify-between p-4 sm:px-6">
                 <div className="flex items-center gap-4">
                     <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
@@ -68,25 +91,15 @@ const HeaderClient = () => {
                             <Globe className="mr-2 h-4 w-4" />
                             <SelectValue placeholder={t.headers.language} />
                         </SelectTrigger>
-                        <SelectContent className="z-[999]"> 
+                        <SelectContent>
                             <SelectItem value="ro">{t.headers.languageSelect.ro}</SelectItem>
                             <SelectItem value="en">{t.headers.languageSelect.en}</SelectItem>
                         </SelectContent>
                     </Select>
                     <CardNotifications />
-                    <UserDropdownMenu
-                        firstName={firstName}
-                        lastName={lastName}
-                        email={email}
-                        avatarSrc={profileIcon}
-                        onLogout={handleLogout}
-                        theme={theme}
-                        setTheme={setTheme}
-                    />
+                    <UserDropdownMenu />
                 </div>
             </div>
         </header>
     );
-};
-
-export default HeaderClient;
+}

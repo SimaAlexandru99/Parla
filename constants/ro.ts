@@ -24,6 +24,15 @@ export const ro = {
     noDataAvailable: "Nu există date disponibile",
     search: "Caută...",
     backToCalls: "Înapoi la apeluri",
+    user: "Utilizator",
+  },
+  userDropdown: {
+    profile: "Profil",
+    settings: "Setări",
+    darkMode: "Mod întunecat",
+    lightMode: "Mod luminos",
+    toggleTheme: "Comută temă",
+    logout: "Deconectare",
   },
   chat: {
     disclaimer:
@@ -236,10 +245,11 @@ export const ro = {
   headers: {
     login: "Loghează-te în contul tău",
     dashboard: "Panou de control",
-    getStarted: "Începeți",
+    getStarted: "Începeți acum",
     register: "Înregistrează-te",
     close: "Închide",
     platform: "Platformă",
+    pricing: "Prețuri",
     nextMind: "NextMind",
     nextThing: "NextThing",
     light: "Luminos",

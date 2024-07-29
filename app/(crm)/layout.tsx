@@ -13,26 +13,24 @@ import Header from "@/components/client/InsightsHeaderClient";
 import Chat from "@/components/Chat";
 import type { Metadata } from 'next'
 
-
 export const metadata: Metadata = {
   title: {
     default: 'Parla - AI CRM Solution',
     template: '%s | Parla'
   },
   icons: {
-    icon: '/favicon.jpg',
+    icon: '/favicon.png',
     apple: '/apple-favicon.png',
   },
   description: 'AI powered journey planner for our clients',
 }
-
 
 const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
 });
 
-export default function NextMindLayout({
+export default function ParlaLayout({
   children,
 }: {
   children: React.ReactNode;
@@ -47,9 +45,8 @@ export default function NextMindLayout({
           <UserProvider>
             <ThemeProvider
               attribute="class"
-              defaultTheme="system"
+              defaultTheme="dark"
               enableSystem
-              disableTransitionOnChange
             >
               <DialogProvider>
                 <div className="flex h-screen overflow-hidden">

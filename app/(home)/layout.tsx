@@ -4,7 +4,7 @@ import { UserProvider } from "@/contexts/client/UserContext";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { cn } from "@/lib/utils";
 import { LanguageProvider } from "@/contexts/client/LanguageContext";
-import Header from "@/components/Header";
+import Header from "@/components/client/HeaderClient";
 import { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from '@vercel/speed-insights/next';
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   description: 'Parla is an AI CRM solution that helps you manage your customer relationships with ease.',
   keywords: ['CRM', 'AI', 'customer relationship management', 'Parla'],
   icons: {
-    icon: '/favicon.jpg',
+    icon: '/favicon.png',
     apple: '/apple-favicon.png',
   },
   openGraph: {
@@ -62,8 +62,9 @@ export default function RootLayout({
           <UserProvider>
             <ThemeProvider
               attribute="class"
-              defaultTheme="dark"
-              enableSystem={false}
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
             >
               <Header />
               <main className="flex-grow">
