@@ -18,6 +18,7 @@ import handleAuthError from '@/lib/handleAuthError';
 import { useLanguage } from "@/contexts/client/LanguageContext";
 import { sendEmailVerification } from "firebase/auth";
 import { signupTestimonials } from '@/constants/testimonials';
+import { Checkbox } from "@/components/ui/checkbox";
 
 const SignUp = () => {
   const { t } = useLanguage();
@@ -27,6 +28,7 @@ const SignUp = () => {
   const [isFormValid, setIsFormValid] = useState(false);
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
   const [showPassword, setShowPassword] = useState(false);
+  const [agreedToTerms, setAgreedToTerms] = useState(false);
 
   const [form, setForm] = useState({
     firstName: '',
@@ -35,14 +37,23 @@ const SignUp = () => {
     password: ''
   });
 
+  const [passwordRequirements, setPasswordRequirements] = useState({
+    length: false,
+    uppercase: false,
+    lowercase: false,
+    number: false,
+    special: false
+  });
+
   const firstNameRef = useRef<HTMLInputElement>(null);
   const lastNameRef = useRef<HTMLInputElement>(null);
   const emailRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    setIsFormValid(!!form.firstName && !!form.lastName && !!form.email && !!form.password);
-  }, [form]);
+    const isPasswordValid = Object.values(passwordRequirements).filter(Boolean).length >= 3;
+    setIsFormValid(!!form.firstName && !!form.lastName && !!form.email && isPasswordValid && agreedToTerms);
+  }, [form, passwordRequirements, agreedToTerms]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { id, value } = e.target;
@@ -50,6 +61,16 @@ const SignUp = () => {
       ...prevForm,
       [id]: value
     }));
+
+    if (id === 'password') {
+      setPasswordRequirements({
+        length: value.length >= 9 && value.length <= 64,
+        uppercase: /[A-Z]/.test(value),
+        lowercase: /[a-z]/.test(value),
+        number: /[0-9]/.test(value),
+        special: /[!@#$%^&*(),.?":{}|<>]/.test(value)
+      });
+    }
   };
 
   const handleSignUp = async (e: FormEvent) => {
@@ -122,8 +143,7 @@ const SignUp = () => {
             </blockquote>
             <p className="font-bold text-accent-foreground">{signupTestimonials[currentTestimonialIndex].author}</p>
             <p className="text-accent-foreground/80">{signupTestimonials[currentTestimonialIndex].title}</p>
-          </div>
-          <div className="flex space-x-2 my-4 md:mb-8">
+            <div className="flex space-x-2 my-4 md:mb-8">
             <Button
               variant="secondary"
               size="icon"
@@ -141,6 +161,8 @@ const SignUp = () => {
               <ChevronRight className="h-4 w-4" />
             </Button>
           </div>
+          </div>
+
           <Card className="rounded-2xl p-4 md:p-6 pr-8 md:pr-12 relative">
             <CardHeader>
               <CardTitle className="text-lg md:text-xl">{t.signupPage.cardTitle}</CardTitle>
@@ -229,6 +251,41 @@ const SignUp = () => {
                     )}
                   </button>
                 </div>
+                <div className="mt-2 text-sm">
+                  <p>Password must:</p>
+                  <ul className="list-disc pl-5">
+                    <li className={passwordRequirements.length ? 'text-green-500' : 'text-red-500'}>
+                      Be between 9 and 64 characters
+                    </li>
+                    <li className={
+                      (passwordRequirements.uppercase ? 'text-green-500' : 'text-red-500') + 
+                      (passwordRequirements.lowercase ? ' text-green-500' : ' text-red-500') + 
+                      (passwordRequirements.number ? ' text-green-500' : ' text-red-500') + 
+                      (passwordRequirements.special ? ' text-green-500' : ' text-red-500')
+                    }>
+                      Include at least two of the following:
+                      <ul className="list-disc pl-5">
+                        <li className={passwordRequirements.uppercase ? 'text-green-500' : 'text-red-500'}>An uppercase character</li>
+                        <li className={passwordRequirements.lowercase ? 'text-green-500' : 'text-red-500'}>A lowercase character</li>
+                        <li className={passwordRequirements.number ? 'text-green-500' : 'text-red-500'}>A number</li>
+                        <li className={passwordRequirements.special ? 'text-green-500' : 'text-red-500'}>A special character</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Checkbox 
+                  id="terms" 
+                  checked={agreedToTerms}
+                  onCheckedChange={(checked) => setAgreedToTerms(checked as boolean)}
+                />
+                <label
+                  htmlFor="terms"
+                  className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                >
+                  I agree to Parla&apos;s Privacy Policy and Terms of Service
+                </label>
               </div>
               <Button
                 type="submit"

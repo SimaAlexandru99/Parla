@@ -178,8 +178,7 @@ const SignIn = () => {
                         </blockquote>
                         <p className="font-bold text-accent-foreground">{signinTestimonials[currentTestimonialIndex].author}</p>
                         <p className="text-accent-foreground/80">{signinTestimonials[currentTestimonialIndex].title}</p>
-                    </div>
-                    <div className="flex space-x-2 my-4 md:mb-8">
+                        <div className="flex space-x-2 my-4 md:mb-8">
                         <Button
                             variant="secondary"
                             size="icon"
@@ -197,6 +196,8 @@ const SignIn = () => {
                             <ChevronRight className="h-4 w-4" />
                         </Button>
                     </div>
+                    </div>
+
                     <Card className="rounded-2xl p-4 md:p-6 pr-8 md:pr-12 relative">
                         <CardHeader>
                             <CardTitle className="text-lg md:text-xl">{t.signinPage.cardTitle}</CardTitle>

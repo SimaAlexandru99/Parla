@@ -572,5 +572,6 @@ export const ro = {
     passwordLength: "Parola trebuie să aibă cel puțin 8 caractere",
     confirmPasswordRequired: "Vă rugăm să confirmați parola",
     passwordMismatch: "Parolele nu se potrivesc",
+    passwordRequirements: "Parola trebuie să conțină cel puțin o literă mare, o literă mică, un număr și un caracter special",
   },
 };

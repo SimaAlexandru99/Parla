@@ -544,5 +544,6 @@ export const en = {
     passwordLength: "Password must be at least 8 characters long",
     confirmPasswordRequired: "Please confirm your password",
     passwordMismatch: "Passwords do not match",
+    passwordRequirements: "Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character",
   },
 };

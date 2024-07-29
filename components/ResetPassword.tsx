@@ -19,15 +19,32 @@ interface ResetPasswordFormData {
   confirmPassword: string
 }
 
+interface PasswordRequirements {
+  length: boolean
+  uppercase: boolean
+  lowercase: boolean
+  number: boolean
+  special: boolean
+}
+
 const ResetPassword = () => {
   const router = useRouter()
   const searchParams = useSearchParams()
-  const { register, handleSubmit, formState: { errors }, getValues } = useForm<ResetPasswordFormData>()
+  const { register, handleSubmit, formState: { errors }, getValues, watch } = useForm<ResetPasswordFormData>()
   const { toast } = useToast()
   const { t } = useLanguage()
   const [loading, setLoading] = useState(false)
   const [showDialog, setShowDialog] = useState(false)
   const [oobCode, setOobCode] = useState<string | null>(null)
+  const [passwordRequirements, setPasswordRequirements] = useState<PasswordRequirements>({
+    length: false,
+    uppercase: false,
+    lowercase: false,
+    number: false,
+    special: false
+  })
+
+  const password = watch("password")
 
   useEffect(() => {
     if (searchParams) {
@@ -49,6 +66,26 @@ const ResetPassword = () => {
       router.push('/forgot-password')
     }
   }, [searchParams, router, toast, t])
+
+  useEffect(() => {
+    if (password) {
+      setPasswordRequirements({
+        length: password.length >= 9 && password.length <= 64,
+        uppercase: /[A-Z]/.test(password),
+        lowercase: /[a-z]/.test(password),
+        number: /[0-9]/.test(password),
+        special: /[!@#$%^&*(),.?":{}|<>]/.test(password)
+      })
+    } else {
+      setPasswordRequirements({
+        length: false,
+        uppercase: false,
+        lowercase: false,
+        number: false,
+        special: false
+      })
+    }
+  }, [password])
 
   const onSubmit: SubmitHandler<ResetPasswordFormData> = async (data) => {
     if (!oobCode) return
@@ -74,6 +111,8 @@ const ResetPassword = () => {
     router.push('/signin')
   }
 
+  const isPasswordValid = Object.values(passwordRequirements).filter(Boolean).length >= 3
+
   return (
     <div className="flex min-h-screen bg-teal-900 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-radial from-teal-800/30 via-teal-900/60 to-teal-950 pointer-events-none"></div>
@@ -92,11 +131,33 @@ const ResetPassword = () => {
                 type="password"
                 {...register("password", {
                   required: t.errors.passwordRequired,
-                  minLength: { value: 8, message: t.errors.passwordLength }
+                  validate: () => isPasswordValid || t.errors.passwordRequirements
                 })}
                 className="bg-zinc-800 text-white border-zinc-700"
               />
               {errors.password && <p className="text-red-500 text-sm mt-1">{errors.password.message}</p>}
+              <div className="mt-2 text-sm">
+                <p className="text-white">Password must:</p>
+                <ul className="list-disc pl-5 text-white">
+                  <li className={passwordRequirements.length ? 'text-green-500' : 'text-red-500'}>
+                    Be between 9 and 64 characters
+                  </li>
+                  <li className={
+                    (passwordRequirements.uppercase ? 'text-green-500' : 'text-red-500') + 
+                    (passwordRequirements.lowercase ? ' text-green-500' : ' text-red-500') + 
+                    (passwordRequirements.number ? ' text-green-500' : ' text-red-500') + 
+                    (passwordRequirements.special ? ' text-green-500' : ' text-red-500')
+                  }>
+                    Include at least two of the following:
+                    <ul className="list-disc pl-5">
+                      <li className={passwordRequirements.uppercase ? 'text-green-500' : 'text-red-500'}>An uppercase character</li>
+                      <li className={passwordRequirements.lowercase ? 'text-green-500' : 'text-red-500'}>A lowercase character</li>
+                      <li className={passwordRequirements.number ? 'text-green-500' : 'text-red-500'}>A number</li>
+                      <li className={passwordRequirements.special ? 'text-green-500' : 'text-red-500'}>A special character</li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
             </div>
             <div>
               <Label htmlFor="confirmPassword" className="text-white">{t.resetPasswordPage.confirmPasswordLabel}</Label>
@@ -114,7 +175,7 @@ const ResetPassword = () => {
             <Button
               type="submit"
               className="w-full bg-accent hover:bg-accent/90 text-accent-foreground"
-              disabled={loading}
+              disabled={loading || !isPasswordValid}
             >
               {loading ? t.resetPasswordPage.resettingButton : t.resetPasswordPage.resetButton}
             </Button>
