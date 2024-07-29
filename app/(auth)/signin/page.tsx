@@ -1,30 +1,30 @@
 import React from "react";
-import SignUp from '@/components/SignUp';
+import SignIn from '@/components/SignIn';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Sign Up',
-    description: 'Create your account',
+    title: 'Login',
+    description: 'Sign in to your account',
     openGraph: {
-        title: 'Sign Up | YourAppName',
-        description: 'Create your YourAppName account',
+        title: 'Login | YourAppName',
+        description: 'Sign in to your YourAppName account',
         type: 'website',
-        url: 'https://yourapp.com/signup',
+        url: 'https://yourapp.com/signin',
         images: [
             {
                 url: 'https://yourapp.com/og-image.jpg',
                 width: 1200,
                 height: 630,
-                alt: 'YourAppName Sign Up',
+                alt: 'YourAppName Login',
             },
         ],
     },
 };
 
-export default function SignUpPage() {
+export default function LoginPage() {
     return (
         <main className="min-h-screen">
-            <SignUp />
+            <SignIn />
         </main>
     );
 }

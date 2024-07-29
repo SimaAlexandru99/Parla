@@ -41,7 +41,7 @@ export default function HomeLayout({
           <UserProvider>
             <ThemeProvider
               attribute="class"
-              defaultTheme="system"
+              defaultTheme="dark"
               enableSystem
               disableTransitionOnChange
             >

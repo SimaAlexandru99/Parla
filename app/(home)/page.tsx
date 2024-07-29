@@ -26,7 +26,7 @@ const Home = () => {
           <h1 className="text-6xl font-bold ">{t.homepage.title}</h1>
           <p className="text-xl text-primary">{t.homepage.subtitle}</p>
           <div className="flex w-full items-center justify-center space-x-4 py-4">
-            <Link href="/login">
+            <Link href="/signin">
               <Button className="w-full md:w-auto">{t.homepage.start}</Button>
             </Link>
             <Link href="/">

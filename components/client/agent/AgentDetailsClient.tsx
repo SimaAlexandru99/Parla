@@ -20,7 +20,6 @@ import {
     deleteCall
 } from '@/lib/apiClient';
 import useFetchUserCompanyDatabase from "@/hooks/useFetchUserCompanyDatabase";
-import { AgentMetrics } from '@/types/AgentMetrics';
 import ProjectOverviewTab from '@/components/client/agent/tab/Overview';
 import AgentActivityTab from '@/components/client/agent/tab/Activity';
 import AnalyticsTab from '@/components/client/agent/tab/Analytics';

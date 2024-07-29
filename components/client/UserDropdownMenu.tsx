@@ -95,7 +95,7 @@ const UserDropdownMenu = () => {
           <TooltipProvider>
             <Tooltip >
               <TooltipTrigger asChild>
-                <Link href="/login">
+                <Link href="/signin">
                   <Avatar className="cursor-pointer">
                     <AvatarFallback>
                       <UserRound className="h-6 w-6 text-gray-400 hover:text-white transition-colors" />

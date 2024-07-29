@@ -1,6 +1,6 @@
 // apiClients.ts
 import { AgentMetrics } from "@/types/AgentMetrics";
-import { CallDetails, ProjectDetails, AgentDetails } from "@/types/PropsTypes"; // Ensure this import path is correct
+import { CallDetails, ProjectDetails } from "@/types/PropsTypes"; // Ensure this import path is correct
 
 export interface RecordingCounts {
   currentMonthCount: number;

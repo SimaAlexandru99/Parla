@@ -5,7 +5,7 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import { auth } from '@/lib/firebase/config';
 import { applyActionCode, checkActionCode } from 'firebase/auth';
 import Loading from '@/components/Loading';
-import ResetPasswordForm from '@/components/ResetPasswordForm';
+import ResetPasswordForm from '@/components/ResetPassword';
 import VerifyEmail from '@/components/VerifyEmail';
 
 const AuthActionComponent = () => {
