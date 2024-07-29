@@ -148,7 +148,7 @@ import { useRouter } from 'next/navigation';
                     <Button
                         onClick={() => fetchCallsData(page)}
                         disabled={loading}
-                        className="ml-4"
+                        className="ml-4 bg-accent hover:bg-accent/80"
                         size="icon"
                     >
                         {loading ? (

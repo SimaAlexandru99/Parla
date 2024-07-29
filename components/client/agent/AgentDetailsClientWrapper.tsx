@@ -83,17 +83,6 @@ export default function AgentDetailsWrapper() {
         };
     }, []);
 
-    if (companyLoading) {
-        return <div>Loading company data...</div>;
-    }
-
-    if (companyError) {
-        return <div>Error loading company data: {companyError}</div>;
-    }
-
-    if (error) {
-        return <div>{error}</div>;
-    }
 
     if (!agent || !metrics) {
         return (

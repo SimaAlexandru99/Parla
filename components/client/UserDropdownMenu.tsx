@@ -4,7 +4,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useUser } from '@/contexts/client/UserContext';
-import { useThemeToggle } from '@/components/ThemeProvider'; // Import the custom hook
+import { useThemeToggle } from '@/components/ThemeProvider';
 import {
   DropdownMenu,
   DropdownMenuTrigger,
@@ -24,13 +24,21 @@ import { Button } from '@/components/ui/button';
 import { User, Moon, Sun, LogOut, UserRound } from "lucide-react";
 import UserProfileWrapper from '@/components/server/UserProfileWrapper';
 import { useLanguage } from '@/contexts/client/LanguageContext';
+import Loading from "@/components/Loading";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 const UserDropdownMenu = () => {
   const { firstName, lastName, email, profileIcon, handleLogout } = useUser();
   const [avatarLoaded, setAvatarLoaded] = useState(false);
   const [isProfileOpen, setProfileOpen] = useState(false);
+  const [isLoggingOut, setIsLoggingOut] = useState(false);
   const router = useRouter();
-  const { theme, toggleTheme } = useThemeToggle(); // Use the custom hook
+  const { theme, toggleTheme } = useThemeToggle();
   const { t } = useLanguage();
 
   useEffect(() => {
@@ -52,12 +60,17 @@ const UserDropdownMenu = () => {
     return "";
   };
 
-  const handleLogoutAndRedirect = useCallback(() => {
-    handleLogout();
-    router.push('/');
-  }, [handleLogout, router]);
+  const handleLogoutAndRedirect = useCallback(async () => {
+    setIsLoggingOut(true);
+    await handleLogout();
+    window.location.href = '/';
+  }, [handleLogout]);
 
   const fullName = firstName && lastName ? `${firstName} ${lastName}` : 'User';
+
+  if (isLoggingOut) {
+    return <Loading />;
+  }
 
   return (
     <>
@@ -79,16 +92,25 @@ const UserDropdownMenu = () => {
             </Button>
           </DropdownMenuTrigger>
         ) : (
-          <Link href="/login">
-            <Avatar className="cursor-pointer">
-              <AvatarFallback>
-                <UserRound className="h-6 w-6" />
-              </AvatarFallback>
-            </Avatar>
-          </Link>
+          <TooltipProvider>
+            <Tooltip >
+              <TooltipTrigger asChild>
+                <Link href="/login">
+                  <Avatar className="cursor-pointer">
+                    <AvatarFallback>
+                      <UserRound className="h-6 w-6 text-gray-400 hover:text-white transition-colors" />
+                    </AvatarFallback>
+                  </Avatar>
+                </Link>
+              </TooltipTrigger>
+              <TooltipContent align="end">
+                <p>{t.headers.login || 'Sign In'}</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
         )}
         {isLoggedIn && (
-          <DropdownMenuContent className="w-60 p-2 mt-2 z-[999]" align="end" forceMount>
+          <DropdownMenuContent className="w-60 p-2 mt-2" align="end" forceMount>
             <DropdownMenuLabel className="font-normal">
               <div className="flex flex-col space-y-1">
                 <p className="text-sm font-medium leading-none">{fullName}</p>

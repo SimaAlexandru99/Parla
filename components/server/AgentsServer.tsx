@@ -12,7 +12,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/components/ui/use-toast';
 import { useRouter } from 'next/navigation';
-import AgentsTable from '@/components/AgentsTable';
+import AgentsTable from '@/components/client/AgentsTable';
 
 export default function Agents() {
     const { t } = useLanguage();
@@ -88,7 +88,7 @@ export default function Agents() {
                     <Button
                         onClick={() => fetchAgentsData(page)}
                         disabled={loading}
-                        className="ml-4"
+                        className="ml-4 bg-accent hover:bg-accent/80"
                         size="icon"
                     >
                         {loading ? (

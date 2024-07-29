@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import Agents from '@/components/Agents';
+import Agents from '@/components/server/AgentsServer';
 
 export const metadata: Metadata = {
     title: 'Agents',

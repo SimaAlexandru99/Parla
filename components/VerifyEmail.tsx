@@ -2,7 +2,7 @@
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import ThemeLogo from '@/components/theme/ThemeLogo';
+import Image from 'next/image';
 
 const VerifyEmail = () => {
     const router = useRouter();
@@ -11,8 +11,8 @@ const VerifyEmail = () => {
         <div className="flex items-center justify-center min-h-screen">
             <Card className="w-[450px] h-[400px] flex flex-col items-center justify-center">
                 <CardHeader className="text-center items-center">
-                    <Link href="/" className="mb-16">
-                        <ThemeLogo width={60} height={60} />
+                    <Link href="/">
+                        <Image src="/parla-logo.png" alt="Parla" width={100} height={40} />
                     </Link>
                     <CardTitle className="text-2xl ">Success!</CardTitle>
                     <CardDescription className="mt-4 text-md">

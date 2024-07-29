@@ -1,6 +1,3 @@
-import { id } from "date-fns/locale";
-import { average } from "firebase/firestore";
-
 export const en = {
   alerts: {
     success: "Email resent successfully!",
@@ -238,14 +235,12 @@ export const en = {
     tooltip_feedback_thumbs_up: "Positive response",
   },
   headers: {
-    login: "Log in to your account",
+    login: "Log in",
     dashboard: "Dashboard",
     register: "Register",
     close: "Close",
     platform: "Platform",
     pricing: "Pricing",
-    nextMind: "NextMind",
-    nextThing: "NextThing",
     light: "Light",
     dark: "Dark",
     system: "System",
@@ -319,24 +314,6 @@ export const en = {
     sales: "Sales",
     transactions: "Transactions",
   },
-  testimonials: [
-    {
-      author: "Sofia Davis",
-      text: "This library has saved me countless hours of work and helped me deliver stunning designs to my clients faster than ever.",
-    },
-    {
-      author: "John Smith",
-      text: "This platform is a true treasure for any designer. It completely changed the way I work.",
-    },
-    {
-      author: "Maria Popescu",
-      text: "I've never come across a resource so complete and easy to use. I highly recommend it.",
-    },
-    {
-      author: "Alex Johnson",
-      text: "The services offered by this library are unmatched. I managed to complete complex projects in record time.",
-    },
-  ],
   titles: {
     chooseDepartment: "Your Department",
     choosePartner: "Choose Partner",
