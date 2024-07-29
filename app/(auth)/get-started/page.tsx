@@ -86,6 +86,7 @@ const GetStarted = () => {
                     dob,
                     profileIcon,
                     firstLoginCompleted: true,
+                    role: "user"
                 };
 
                 await saveUserData(user.uid, userData);
