@@ -2,10 +2,10 @@ import type { Metadata } from 'next'
 import ResetPassword from '@/components/ResetPassword'
 
 export const metadata: Metadata = {
-  title: 'Reset Password | Parla',
+  title: 'Reset Password',
   description: 'Reset your Parla account password',
   openGraph: {
-    title: 'Reset Password | Parla',
+    title: 'Reset Password',
     description: 'Reset your Parla account password',
     type: 'website',
     url: 'https://parla.com/reset-password',

@@ -6,8 +6,8 @@ export const metadata: Metadata = {
     title: 'Sign Up',
     description: 'Create your account',
     openGraph: {
-        title: 'Sign Up | YourAppName',
-        description: 'Create your YourAppName account',
+        title: 'Sign Up | Parla',
+        description: 'Create your Parla account',
         type: 'website',
         url: 'https://yourapp.com/signup',
         images: [
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
                 url: 'https://yourapp.com/og-image.jpg',
                 width: 1200,
                 height: 630,
-                alt: 'YourAppName Sign Up',
+                alt: 'Parla Sign Up',
             },
         ],
     },

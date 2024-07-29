@@ -545,6 +545,13 @@ export const ro = {
     invalidLinkTitle: "Link de resetare invalid",
     invalidLinkMessage: "Linkul de resetare a parolei este invalid sau a expirat. Vă rugăm să solicitați unul nou.",
   },
+  confirmEmailPage: {
+    title: "Email Confirmat",
+    message: "Emailul dvs. a fost confirmat cu succes.",
+    successTitle: "Email Confirmat!",
+    successMessage: "Acum vă puteți autentifica cu emailul dvs.",
+    backToSignIn: "Înapoi la Autentificare"
+  },
   errors: {
     emailNotFound: "Adresa de email nu a fost găsită. Vă rugăm să vă înregistrați sau să încercați din nou.",
     enterDob: "Vă rugăm să introduceți data nașterii.",

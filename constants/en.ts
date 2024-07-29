@@ -517,6 +517,13 @@ export const en = {
     invalidLinkTitle: "Invalid Reset Link",
     invalidLinkMessage: "The password reset link is invalid or has expired. Please request a new one.",
   },
+  confirmEmailPage: {
+    title: "Email Confirmed",
+    message: "Your email has been successfully confirmed.",
+    successTitle: "Email Confirmed!",
+    successMessage: "You can now sign in with your email.",
+    backToSignIn: "Back to Sign In"
+  },
   errors: {
     emailNotFound: "The email address was not found. Please register or try again.",
     enterDob: "Please enter your date of birth.",
