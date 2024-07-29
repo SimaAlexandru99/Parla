@@ -524,6 +524,18 @@ export const en = {
     successMessage: "You can now sign in with your email.",
     backToSignIn: "Back to Sign In"
   },
+  verifyEmailPage: {
+    title: "Verify Your Email",
+    sentMessage: "We've sent a verification email to {email}.",
+    checkInbox: "Check your email inbox for a message from us.",
+    clickLink: "Click on the verification link in the email to activate your account.",
+    checkSpam: "If you don't see the email, check your spam folder.",
+    didntReceive: "Didn't receive the email? Click below to resend.",
+    resendEmail: "Resend Verification Email",
+    backToSignIn: "Back to Sign In",
+    emailResent: "Verification email resent",
+    resending: "Resending...",
+  },
   errors: {
     emailNotFound: "The email address was not found. Please register or try again.",
     enterDob: "Please enter your date of birth.",
@@ -552,5 +564,9 @@ export const en = {
     confirmPasswordRequired: "Please confirm your password",
     passwordMismatch: "Passwords do not match",
     passwordRequirements: "Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character",
+    emailResendError: "Error resending verification email",
+    tryAgainLater: "Please try again later",
+    userNotFound: "User not found",
+    trySignInAgain: "Please try signing in again",
   },
 };

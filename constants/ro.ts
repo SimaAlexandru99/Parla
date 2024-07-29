@@ -552,6 +552,16 @@ export const ro = {
     successMessage: "Acum vă puteți autentifica cu emailul dvs.",
     backToSignIn: "Înapoi la Autentificare"
   },
+  verifyEmailPage: {
+    title: "Verifică-ți Emailul",
+    sentMessage: "Am trimis un email de verificare la adresa {email}.",
+    checkInbox: "Verifică-ți căsuța de email pentru un mesaj de la noi.",
+    clickLink: "Click pe linkul de verificare din email pentru a-ți activa contul.",
+    checkSpam: "Dacă nu vezi emailul, verifică și folderul de spam.",
+    didntReceive: "Nu ai primit emailul? Click mai jos pentru a-l retrimite.",
+    resendEmail: "Retrimite Emailul de Verificare",
+    backToSignIn: "Înapoi la Autentificare"
+  },
   errors: {
     emailNotFound: "Adresa de email nu a fost găsită. Vă rugăm să vă înregistrați sau să încercați din nou.",
     enterDob: "Vă rugăm să introduceți data nașterii.",

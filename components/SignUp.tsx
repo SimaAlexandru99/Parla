@@ -75,7 +75,6 @@ const SignUp = () => {
 
   const handleSignUp = async (e: FormEvent) => {
     e.preventDefault();
-    console.log("Sign up form submitted");
 
     const validationError = validateForm(form.firstName, form.lastName, form.email, form.password);
     if (validationError) {
@@ -133,7 +132,6 @@ const SignUp = () => {
       <div className="absolute inset-0 bg-gradient-radial from-teal-800/30 via-teal-900/60 to-teal-950 pointer-events-none"></div>
 
       <Card className="m-auto w-full max-w-6xl bg-zinc-900 rounded-3xl overflow-hidden flex flex-col md:flex-row relative z-10">
-        {/* Left side - Testimonial */}
         <div className="w-full md:w-1/2 bg-accent p-6 md:p-12 flex flex-col justify-between relative">
           <div>
             <h2 className="text-2xl md:text-4xl font-bold mb-4 md:mb-6 text-accent-foreground">{t.signupPage.testimonialTitle}</h2>
@@ -144,23 +142,23 @@ const SignUp = () => {
             <p className="font-bold text-accent-foreground">{signupTestimonials[currentTestimonialIndex].author}</p>
             <p className="text-accent-foreground/80">{signupTestimonials[currentTestimonialIndex].title}</p>
             <div className="flex space-x-2 my-4 md:mb-8">
-            <Button
-              variant="secondary"
-              size="icon"
-              className="bg-zinc-800 text-white"
-              onClick={() => changeTestimonial('prev')}
-            >
-              <ChevronLeft className="h-4 w-4" />
-            </Button>
-            <Button
-              variant="secondary"
-              size="icon"
-              className="bg-zinc-800 text-white"
-              onClick={() => changeTestimonial('next')}
-            >
-              <ChevronRight className="h-4 w-4" />
-            </Button>
-          </div>
+              <Button
+                variant="secondary"
+                size="icon"
+                className="bg-zinc-800 text-white"
+                onClick={() => changeTestimonial('prev')}
+              >
+                <ChevronLeft className="h-4 w-4" />
+              </Button>
+              <Button
+                variant="secondary"
+                size="icon"
+                className="bg-zinc-800 text-white"
+                onClick={() => changeTestimonial('next')}
+              >
+                <ChevronRight className="h-4 w-4" />
+              </Button>
+            </div>
           </div>
 
           <Card className="rounded-2xl p-4 md:p-6 pr-8 md:pr-12 relative">
@@ -183,7 +181,6 @@ const SignUp = () => {
           <div className="absolute top-0 right-0 w-24 h-24 md:w-32 md:h-32 bg-accent-foreground/20 rounded-bl-full"></div>
         </div>
 
-        {/* Right side - Sign-up form */}
         <div className="w-full md:w-1/2 p-6 md:p-12 text-white">
           <CardHeader>
             <Image src="/logo.png" alt="Parla Logo" width={50} height={50} />
