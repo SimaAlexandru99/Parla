@@ -1,7 +1,7 @@
 'use client'
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-import { en } from '../../constants/en';
-import { ro } from '../../constants/ro';
+import { en } from '@/constants/en';
+import { ro } from '@/constants/ro';
 
 type Language = 'en' | 'ro';
 type Translations = typeof en;
@@ -17,14 +17,14 @@ const LanguageContext = createContext<LanguageContextProps | undefined>(undefine
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [language, setLanguage] = useState<Language>('ro');
-  const [translations, setTranslations] = useState<Translations>(ro);
+  const [translations, setTranslations] = useState<Translations>(ro as Translations);
   const [isLanguageLoaded, setIsLanguageLoaded] = useState(false);
 
   useEffect(() => {
     const storedLanguage = localStorage.getItem('language') as Language;
     if (storedLanguage) {
       setLanguage(storedLanguage);
-      setTranslations(storedLanguage === 'en' ? en : ro);
+      setTranslations(storedLanguage === 'en' ? en as Translations : ro as Translations);
     }
     setIsLanguageLoaded(true);
   }, []);
@@ -32,7 +32,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     if (isLanguageLoaded) {
       localStorage.setItem('language', language);
-      setTranslations(language === 'en' ? en : ro);
+      setTranslations(language === 'en' ? en as Translations : ro as Translations);
     }
   }, [language, isLanguageLoaded]);
 

@@ -480,7 +480,7 @@ export const ro = {
     description: "Vizualizează analize detaliate și rapoarte",
   },
   metadata: {
-    dashboard: "Panou de control"
+    dashboard: "Panou de control",
   },
 
   // New translations
@@ -496,8 +496,10 @@ export const ro = {
     signingInButton: "Se autentifică...",
     createAccount: "Creați un cont",
     testimonialTitle: "Ce spun clienții noștri.",
-    cardTitle: "Obțineți instrumentul potrivit și locul potrivit, aplicați acum",
-    cardDescription: "Fiți printre primii fondatori care experimentează cea mai ușoară modalitate de a-și analiza afacerea.",
+    cardTitle:
+      "Obțineți instrumentul potrivit și locul potrivit, aplicați acum",
+    cardDescription:
+      "Fiți printre primii fondatori care experimentează cea mai ușoară modalitate de a-și analiza afacerea.",
     dontHaveAccount: "Nu ai un cont? ",
   },
   signupPage: {
@@ -516,11 +518,13 @@ export const ro = {
     loginLink: "Autentifică-te",
     testimonialTitle: "Alătură-te Comunității Noastre Înfloritoare",
     cardTitle: "Începe-ți Călătoria Astăzi",
-    cardDescription: "Alătură-te miilor de profesioniști care își găsesc cariera visată prin intermediul platformei noastre.",
+    cardDescription:
+      "Alătură-te miilor de profesioniști care își găsesc cariera visată prin intermediul platformei noastre.",
   },
   forgotPasswordPage: {
     title: "Resetează-ți Parola",
-    description: "Introdu adresa ta de email și îți vom trimite un link pentru a-ți reseta parola.",
+    description:
+      "Introdu adresa ta de email și îți vom trimite un link pentru a-ți reseta parola.",
     emailLabel: "Adresă de Email",
     emailPlaceholder: "johndoe@exemplu.com",
     sendButton: "Trimite Link de Resetare",
@@ -531,7 +535,8 @@ export const ro = {
     rememberPassword: "Ți-ai amintit parola?",
     signIn: "Autentificare",
     cardTitle: "Ai uitat parola?",
-    cardDescription: "Nu-ți face griji, se întâmplă și celor mai buni dintre noi. Hai să te ajutăm să revii în contul tău.",
+    cardDescription:
+      "Nu-ți face griji, se întâmplă și celor mai buni dintre noi. Hai să te ajutăm să revii în contul tău.",
   },
   resetPasswordPage: {
     title: "Resetare Parolă",
@@ -540,33 +545,40 @@ export const ro = {
     resetButton: "Resetează Parola",
     resettingButton: "Se resetează...",
     successTitle: "Parola a fost resetată cu succes",
-    successMessage: "Parola dumneavoastră a fost resetată cu succes. Acum vă puteți autentifica folosind noua parolă.",
+    successMessage:
+      "Parola dumneavoastră a fost resetată cu succes. Acum vă puteți autentifica folosind noua parolă.",
     backToSignIn: "Înapoi la Autentificare",
     invalidLinkTitle: "Link de resetare invalid",
-    invalidLinkMessage: "Linkul de resetare a parolei este invalid sau a expirat. Vă rugăm să solicitați unul nou.",
+    invalidLinkMessage:
+      "Linkul de resetare a parolei este invalid sau a expirat. Vă rugăm să solicitați unul nou.",
   },
   confirmEmailPage: {
     title: "Email Confirmat",
     message: "Emailul dvs. a fost confirmat cu succes.",
     successTitle: "Email Confirmat!",
     successMessage: "Acum vă puteți autentifica cu emailul dvs.",
-    backToSignIn: "Înapoi la Autentificare"
+    backToSignIn: "Înapoi la Autentificare",
   },
   verifyEmailPage: {
     title: "Verifică-ți Emailul",
     sentMessage: "Am trimis un email de verificare la adresa {email}.",
     checkInbox: "Verifică-ți căsuța de email pentru un mesaj de la noi.",
-    clickLink: "Click pe linkul de verificare din email pentru a-ți activa contul.",
+    clickLink:
+      "Click pe linkul de verificare din email pentru a-ți activa contul.",
     checkSpam: "Dacă nu vezi emailul, verifică și folderul de spam.",
     didntReceive: "Nu ai primit emailul? Click mai jos pentru a-l retrimite.",
     resendEmail: "Retrimite Emailul de Verificare",
-    backToSignIn: "Înapoi la Autentificare"
+    backToSignIn: "Înapoi la Autentificare",
+    emailResent: "Email retrimis cu succes",
+    resending: "Retrimitere email...",
   },
   errors: {
-    emailNotFound: "Adresa de email nu a fost găsită. Vă rugăm să vă înregistrați sau să încercați din nou.",
+    emailNotFound:
+      "Adresa de email nu a fost găsită. Vă rugăm să vă înregistrați sau să încercați din nou.",
     enterDob: "Vă rugăm să introduceți data nașterii.",
     generalError: "A apărut o eroare. Vă rugăm să încercați din nou.",
-    invalidCredential: "Date de autentificare invalide. Vă rugăm să verificați emailul și parola și să încercați din nou.",
+    invalidCredential:
+      "Date de autentificare invalide. Vă rugăm să verificați emailul și parola și să încercați din nou.",
     invalidEmail: "Adresa de email este formatată incorect.",
     invalidPassword: "Parola trebuie să aibă cel puțin 6 caractere.",
     selectDepartment: "Vă rugăm să selectați un departament.",
@@ -581,14 +593,17 @@ export const ro = {
     passwordRequired: "Parola este obligatorie",
     validationError: "Eroare de validare",
     companyNotFound: "Companie negăsită",
-    companyNotFoundDescription: "Nu s-a găsit o companie pentru domeniul de email furnizat.",
+    companyNotFoundDescription:
+      "Nu s-a găsit o companie pentru domeniul de email furnizat.",
     signUpError: "Eroare la înregistrare",
     passwordResetError: "Eroare la Resetarea Parolei",
-    tooManyRequests: "Prea multe solicitări. Te rugăm să încerci din nou mai târziu.",
+    tooManyRequests:
+      "Prea multe solicitări. Te rugăm să încerci din nou mai târziu.",
     missingEmail: "Te rugăm să introduci adresa ta de email.",
     passwordLength: "Parola trebuie să aibă cel puțin 8 caractere",
     confirmPasswordRequired: "Vă rugăm să confirmați parola",
     passwordMismatch: "Parolele nu se potrivesc",
-    passwordRequirements: "Parola trebuie să conțină cel puțin o literă mare, o literă mică, un număr și un caracter special",
+    passwordRequirements:
+      "Parola trebuie să conțină cel puțin o literă mare, o literă mică, un număr și un caracter special",
   },
 };

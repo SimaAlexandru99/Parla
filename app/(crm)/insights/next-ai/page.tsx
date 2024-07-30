@@ -1,4 +1,4 @@
-import ChatInterface from './client-side-nextai';
+import ChatInterface from '../../../../components/NextAi';
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {

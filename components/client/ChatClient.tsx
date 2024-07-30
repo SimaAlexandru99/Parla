@@ -80,19 +80,7 @@
       tooltip_copy,
       tooltip_email,
       learn_more,
-    } = t.gemini;
-
-    const isCallProps = (props: ChatCallPopoverProps | ChatAgentPopoverProps): props is ChatCallPopoverProps => {
-      return 'agentSegmentsText' in props;
-    };
-  
-    if (isCallProps(props)) {
-      // Handle call props
-      console.log('Call props:', props.agentSegmentsText, props.clientSegmentsText);
-    } else {
-      // Handle agent props
-      console.log('Agent props:', props.agentName, props.projectName);
-    }
+    } = t.gemini;  
     
     const [databaseInfo, setDatabaseInfo] = useState<DatabaseInfo>({
       recordingCount: null,

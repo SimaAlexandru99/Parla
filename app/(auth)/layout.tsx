@@ -26,7 +26,7 @@ const fontSans = FontSans({
   variable: "--font-sans",
 });
 
-export default function HomeLayout({
+export default function AuthLayout({
   children,
 }: {
   children: React.ReactNode;

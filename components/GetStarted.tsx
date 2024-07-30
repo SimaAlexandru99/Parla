@@ -28,6 +28,8 @@ import Image from 'next/image';
 import { Skeleton } from "@/components/ui/skeleton";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { useLanguage } from "@/contexts/client/LanguageContext";
+import { useUser } from "@/contexts/client/UserContext";
+
 
 const saveUserData = async (userId: string, data: any) => {
     try {
@@ -53,23 +55,35 @@ const GetStarted = () => {
     const [success, setSuccess] = useState<boolean>(false);
     const [errorMessage, setErrorMessage] = useState<string>('');
     const { t } = useLanguage();
-
+    const { uid, loading } = useUser();
     const { partners, loading: partnersLoading, error: partnersError } = useFetchPartners(userData?.company || '');
     const { projects, loadingProjects, error: projectsError } = useFetchProjects(partner, userData?.company || '');
     const { departments, loadingDepartments, error: departmentsError } = useFetchDepartments(partner, project, userData?.company || '');
     const { teamLeaders, loadingTeamLeaders, error: teamLeadersError } = useFetchTeamLeaders(department, project, partner, userData?.company || '');
 
+    
+
+    // Add this useEffect at the beginning of your component
     useEffect(() => {
-        const fetchAvatars = async () => {
-            const storage = getStorage();
-            const avatarsRef = ref(storage, 'avatars/');
-            const avatarsList = await listAll(avatarsRef);
-            const urls = await Promise.all(avatarsList.items.map(item => getDownloadURL(item)));
-            setProfileIcons(urls);
-            setIconsLoading(false);
-        };
-        fetchAvatars();
-    }, []);
+        if (!loading) {
+            console.log(uid)
+            if (!uid) {
+                router.push('/signin'); // Redirect to login if not logged in
+            } else if (userData?.firstLoginCompleted) {
+                router.push('/'); // Redirect to home if first login is already completed
+            }
+        }
+    }, [uid, userData, loading, router]);
+
+    // If still loading or redirecting, show a loading state
+    if (loading || !uid || userData?.firstLoginCompleted) {
+        return (
+            <div className="flex min-h-screen items-center justify-center bg-teal-900">
+                <ReloadIcon className="animate-spin h-8 w-8 text-white" />
+            </div>
+        );
+    }
+
 
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();

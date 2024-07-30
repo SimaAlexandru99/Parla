@@ -106,7 +106,7 @@ export interface SkeletonCardProps {
 
 // Define the ProjectDetails interface
 export interface ProjectDetails {
-  _id: string;
+  id: string;
   project_name: string;
   greetings_words: string[];
   companies_names: string[];
@@ -120,5 +120,5 @@ export interface ProjectDetails {
   analyze_company_presented: boolean;
   analyze_client_availability: boolean;
   analyze_from_what_company: boolean;
-  agentsCount: number; // New field
+  agentsCount: number;
 }

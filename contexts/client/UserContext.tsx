@@ -1,9 +1,10 @@
 'use client';
 
-import { createContext, useContext, useEffect, useState, ReactNode } from "react";
+import { createContext, useContext, useEffect, useState, ReactNode, useCallback } from "react";
 import { auth, db } from "@/lib/firebase/config";
 import { onAuthStateChanged, signOut, User } from "firebase/auth";
 import { doc, onSnapshot } from "firebase/firestore";
+import { isEqual } from 'lodash'; // You might need to install this package
 
 interface UserData {
   uid: string | null;
@@ -54,6 +55,25 @@ export const UserProvider = ({
   });
   const [loading, setLoading] = useState(!initialUserData);
 
+  const handleLogout = useCallback(async () => {
+    setLoading(true);
+    try {
+      await signOut(auth);
+      setUserData(initialUserState);
+    } catch (error) {
+      console.error("Error signing out:", error);
+    } finally {
+      setLoading(false);
+    }
+  }, []);
+
+  const setUserContext = useCallback((user: Partial<UserContextType>) => {
+    setUserData((prevData) => {
+      const newData = { ...prevData, ...user };
+      return isEqual(prevData, newData) ? prevData : newData;
+    });
+  }, []);
+
   useEffect(() => {
     const unsubscribeAuth = onAuthStateChanged(auth, (user: User | null) => {
       if (user) {
@@ -61,7 +81,10 @@ export const UserProvider = ({
         const unsubscribeDoc = onSnapshot(userDocRef, (doc) => {
           if (doc.exists()) {
             const fetchedUserData = doc.data() as UserData;
-            setUserData((prevData) => ({ ...prevData, ...fetchedUserData }));
+            setUserData((prevData) => {
+              const newData = { ...prevData, ...fetchedUserData };
+              return isEqual(prevData, newData) ? prevData : newData;
+            });
           }
           setLoading(false);
         });
@@ -75,22 +98,6 @@ export const UserProvider = ({
 
     return () => unsubscribeAuth();
   }, []);
-
-  const handleLogout = async () => {
-    setLoading(true);
-    try {
-      await signOut(auth);
-      setUserData(initialUserState);
-    } catch (error) {
-      console.error("Error signing out:", error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const setUserContext = (user: Partial<UserContextType>) => {
-    setUserData((prevData) => ({ ...prevData, ...user }));
-  };
 
   const contextValue: UserContextType = {
     ...userData,
