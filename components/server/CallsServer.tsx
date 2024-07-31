@@ -3,21 +3,28 @@ import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { RefreshCcw, Loader2, Search } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { useTheme } from 'next-themes';
-import { CallDetails } from '@/types/PropsTypes';
+import { CallDetails, ProjectDetails } from '@/types/PropsTypes';
 import { useLanguage } from "@/contexts/client/LanguageContext";
 import useFetchUserCompanyDatabase from "@/hooks/useFetchUserCompanyDatabase";
-import { fetchCalls, deleteCall } from '@/lib/apiClient';
+import { fetchCalls, deleteCall, fetchProjects, uploadCallData } from '@/lib/apiClient';
 import CustomPagination from '@/components/CustomPagination';
 import CallsTable from '@/components/client/CallsTable';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/components/ui/use-toast';
 import { useRouter } from 'next/navigation';
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Label } from "@/components/ui/label";
+import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { app } from '@/lib/firebase/config';
 
-    export default function Calls() {
+export default function Calls() {
     const { t } = useLanguage();
     const { companyData } = useFetchUserCompanyDatabase();
     const [calls, setCalls] = useState<CallDetails[]>([]);
+    const [projects, setProjects] = useState<ProjectDetails[]>([]);
+    const [selectedProject, setSelectedProject] = useState<string>('');
     const [loading, setLoading] = useState(true);
     const [page, setPage] = useState(1);
     const [totalCalls, setTotalCalls] = useState(0);
@@ -26,6 +33,26 @@ import { useRouter } from 'next/navigation';
     const { toast } = useToast();
     const router = useRouter();
     const limitPerPage = 10;
+
+    const fetchProjectsData = useCallback(async () => {
+        try {
+            if (companyData?.database) {
+                const { projects } = await fetchProjects(companyData.database, 1, 100);
+                if (Array.isArray(projects) && projects.every(p => '_id' in p && 'project_name' in p)) {
+                    setProjects(projects);
+                } else {
+                    throw new Error('Invalid project data structure');
+                }
+            }
+        } catch (error) {
+            console.error('Error fetching projects:', error);
+            toast({
+                title: "Error",
+                description: "Failed to fetch projects. Please try again later.",
+                variant: "destructive",
+            });
+        }
+    }, [companyData?.database, toast]);
 
     const fetchCallsData = useCallback(async (page: number) => {
         setLoading(true);
@@ -51,27 +78,115 @@ import { useRouter } from 'next/navigation';
     useEffect(() => {
         if (companyData?.database) {
             fetchCallsData(page);
+            fetchProjectsData();
         }
-    }, [fetchCallsData, page, companyData?.database]);
+    }, [fetchCallsData, fetchProjectsData, page, companyData?.database]);
 
     const handlePageChange = useCallback((newPage: number) => {
         setPage(newPage);
     }, []);
 
+
+    // Helper function to capitalize the first letter of a string
+    const capitalize = (s: string) => s.charAt(0).toUpperCase() + s.slice(1).toLowerCase();
+
+    const handleFileUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
+        const files = event.target.files;
+        if (files && selectedProject && companyData?.database) {
+            setLoading(true);
+            const storage = getStorage(app);
+
+            const selectedProjectDetails = projects.find(p => p._id === selectedProject);
+            if (!selectedProjectDetails) {
+                toast({
+                    title: "Error",
+                    description: "Selected project not found.",
+                    variant: "destructive",
+                });
+                setLoading(false);
+                return;
+            }
+            const projectName = selectedProjectDetails.project_name;
+
+            for (let i = 0; i < files.length; i++) {
+                const file = files[i];
+                try {
+                    console.log(`Uploading file: ${file.name}`);
+                    const storageRef = ref(storage, `calls/${projectName}/${file.name}`);
+                    await uploadBytes(storageRef, file);
+                    console.log(`File uploaded to Firebase: ${file.name}`);
+                    const downloadURL = await getDownloadURL(storageRef);
+                    console.log(`Download URL obtained: ${downloadURL}`);
+
+                    const filenameMatch = file.name.match(/E_(.+?)_D_/);
+                    let username = '';
+                    let firstName = '';
+                    let lastName = '';
+
+                    if (filenameMatch && filenameMatch[1]) {
+                        username = filenameMatch[1];
+                        const nameParts = username.split('.');
+                        if (nameParts.length === 2) {
+                            firstName = capitalize(nameParts[0]);
+                            lastName = capitalize(nameParts[1]);
+                        }
+                    }
+
+                    const phoneMatch = file.name.match(/CLID_(\d+)_/);
+                    const phoneNumber = phoneMatch ? phoneMatch[1] : '';
+
+                    const callData: Partial<CallDetails> = {
+                        filename: file.name,
+                        status: 'in_progress',
+                        agent_info: {
+                            username: username,
+                            first_name: firstName,
+                            last_name: lastName,
+                            project: projectName,
+                        },
+                        file_info: {
+                            extension: 'wav',
+                            duration: 0,
+                            day: new Date().toISOString().split('T')[0],
+                            file_path: downloadURL
+                        },
+                        phone_number: phoneNumber
+                    };
+
+                    console.log('Sending data to API:', JSON.stringify(callData, null, 2));
+
+                    const result = await uploadCallData(companyData.database, callData);
+
+                    console.log('API response:', JSON.stringify(result, null, 2));
+
+                    toast({
+                        title: "Success",
+                        description: `File ${file.name} uploaded and added to database.`,
+                    });
+                } catch (error) {
+                    console.error('Error processing file:', error);
+                    toast({
+                        title: "Error",
+                        description: `Failed to process ${file.name}. ${error instanceof Error ? error.message : 'Unknown error'}`,
+                        variant: "destructive",
+                    });
+                }
+            }
+            setLoading(false);
+            fetchCallsData(page);
+        } else {
+            toast({
+                title: "Warning",
+                description: "Please select a project before uploading files.",
+                variant: "destructive",
+            });
+        }
+    };
+
+
     const handleSearch = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
         setSearchTerm(e.target.value);
         setPage(1);
-    }, []);
-
-    const ringColor = useMemo(() => (theme === 'dark' ? '#ffffff' : '#000000'), [theme]);
-    const textColor = useMemo(() => (theme === 'dark' ? '#ffffff' : '#000000'), [theme]);
-    const trailColor = useMemo(() => (theme === 'dark' ? '#333333' : '#d6d6d6'), [theme]);
-
-    const formatDuration = useCallback((seconds: number): string => {
-        const roundedSeconds = Math.round(seconds);
-        const minutes = Math.floor(roundedSeconds / 60);
-        const remainingSeconds = roundedSeconds % 60;
-        return `${minutes}m ${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}s`;
     }, []);
 
     const handleDelete = useCallback(async (id: string) => {
@@ -94,9 +209,20 @@ import { useRouter } from 'next/navigation';
         }
     }, [companyData?.database, fetchCallsData, page, toast]);
 
-    const handleViewDetails = (call: CallDetails) => {
+    const handleViewDetails = useCallback((call: CallDetails) => {
         router.push(`/insights/calls/${call._id}`);
-    };
+    }, [router]);
+
+    const ringColor = useMemo(() => (theme === 'dark' ? '#ffffff' : '#000000'), [theme]);
+    const textColor = useMemo(() => (theme === 'dark' ? '#ffffff' : '#000000'), [theme]);
+    const trailColor = useMemo(() => (theme === 'dark' ? '#333333' : '#d6d6d6'), [theme]);
+
+    const formatDuration = useCallback((seconds: number): string => {
+        const roundedSeconds = Math.round(seconds);
+        const minutes = Math.floor(roundedSeconds / 60);
+        const remainingSeconds = roundedSeconds % 60;
+        return `${minutes}m ${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}s`;
+    }, []);
 
     const renderStatus = useCallback((status: string): React.ReactNode => {
         let statusClass = '';
@@ -157,6 +283,52 @@ import { useRouter } from 'next/navigation';
                             <RefreshCcw className="h-4 w-4" />
                         )}
                     </Button>
+                    <Dialog>
+                        <DialogTrigger asChild>
+                            <Button className="ml-4">Import Calls</Button>
+                        </DialogTrigger>
+                        <DialogContent>
+                            <DialogHeader>
+                                <DialogTitle>Import Calls</DialogTitle>
+                                <DialogDescription>Select a project and upload WAV files to import calls.</DialogDescription>
+                            </DialogHeader>
+                            <div className="grid gap-4 py-4">
+                                <div className="grid grid-cols-4 items-center gap-4">
+                                    <Label htmlFor="project" className="text-right">
+                                        Project
+                                    </Label>
+                                    <Select
+                                        onValueChange={setSelectedProject}
+                                        value={selectedProject}
+                                    >
+                                        <SelectTrigger className="col-span-3">
+                                            <SelectValue placeholder="Select a project" />
+                                        </SelectTrigger>
+                                        <SelectContent>
+                                            {projects.map((project) => (
+                                                <SelectItem key={project._id} value={project._id}>
+                                                    {project.project_name}
+                                                </SelectItem>
+                                            ))}
+                                        </SelectContent>
+                                    </Select>
+                                </div>
+                                <div className="grid grid-cols-4 items-center gap-4">
+                                    <Label htmlFor="files" className="text-right">
+                                        WAV Files
+                                    </Label>
+                                    <Input
+                                        id="files"
+                                        type="file"
+                                        accept=".wav"
+                                        multiple
+                                        onChange={handleFileUpload}
+                                        className="col-span-3"
+                                    />
+                                </div>
+                            </div>
+                        </DialogContent>
+                    </Dialog>
                 </div>
             </CardHeader>
             <CardContent>

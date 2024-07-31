@@ -15,6 +15,7 @@ import CustomPagination from '@/components/CustomPagination';
 import { ProjectDetails } from '@/types/PropsTypes';
 import { useRouter } from 'next/navigation';
 
+
 export default function ProjectsPage() {
     const { t } = useLanguage();
     const { companyData } = useFetchUserCompanyDatabase();

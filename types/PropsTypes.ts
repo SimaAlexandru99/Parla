@@ -13,6 +13,8 @@ export interface Segment {
 // Define the CallDetails interface
 export interface CallDetails {
   _id: string;
+  project_id?: string; // New field for file uploads
+  filename?: string; 
   phone_number: string;
   agent_info: {
     username: string;
@@ -22,7 +24,9 @@ export interface CallDetails {
   };
   score: number;
   file_info: {
+    extension: string;
     duration: number;
+    day: string;
     file_path: string;
   };
   segments: Segment[];
@@ -37,7 +41,7 @@ export interface CallDetails {
     SPEAKER_00: number;
     SPEAKER_01: number;
   };
-  status: "completed" | "in_progress" | "failed"; // Example statuses
+  status: 'completed' | 'in_progress' | 'failed' | 'new'; // Added 'new' status
   call_summary: string;
 }
 
@@ -106,7 +110,7 @@ export interface SkeletonCardProps {
 
 // Define the ProjectDetails interface
 export interface ProjectDetails {
-  id: string;
+  _id: string;
   project_name: string;
   greetings_words: string[];
   companies_names: string[];

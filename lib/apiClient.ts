@@ -422,3 +422,26 @@ export const fetchAgentDetails = async (database: string, id: string) => {
   }
   return await response.json();
 };
+
+export const uploadCallData = async (
+  database: string,
+  callData: Partial<CallDetails>
+): Promise<{ message: string; id: string }> => {
+  const url = new URL(`/api/calls`, window.location.origin);
+  url.searchParams.append("database", database);
+
+  const response = await fetch(url.toString(), {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ callData }),
+  });
+
+  if (!response.ok) {
+    const errorData = await response.json();
+    throw new Error(errorData.error || "Failed to upload call data");
+  }
+
+  return await response.json();
+};
