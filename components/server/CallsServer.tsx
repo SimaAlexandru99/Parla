@@ -137,7 +137,7 @@ export default function Calls() {
 
                     const callData: Partial<CallDetails> = {
                         filename: file.name,
-                        status: 'in_progress',
+                        status: 'to_process',
                         agent_info: {
                             username: username,
                             first_name: firstName,

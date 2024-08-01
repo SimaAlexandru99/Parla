@@ -8,7 +8,6 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/comp
 import { Skeleton } from '@/components/ui/skeleton';
 import ConfirmDeleteDialog from '@/components/ConfirmDeleteDialog';
 import { CallDetails } from '@/types/PropsTypes';
-import Link from 'next/link';
 
 const SkeletonRow = () => (
     <TableRow>
@@ -67,9 +66,7 @@ function CallsTable({
     formatDuration,
     renderStatus,
     t,
-    agentUsername,
-    companyDatabase
-}: CallsTableProps) {
+    agentUsername }: CallsTableProps) {
     const filteredCalls = agentUsername
         ? calls.filter(call => call.agent_info.username === agentUsername)
         : calls;
@@ -116,9 +113,7 @@ function CallsTable({
                             </TableCell>
                             <TableCell className="text-center px-2 py-2 md:px-4 md:py-2">{formatDuration(call.file_info.duration)}</TableCell>
                             <TableCell className="text-center px-2 py-2 md:px-4 md:py-2">
-                                <Link href={`/project/${call.agent_info.project}`} className="text-primary hover:underline">
-                                    {call.agent_info.project}
-                                </Link>
+                                {call.agent_info.project}
                             </TableCell>
                             <TableCell className="text-center px-2 py-2 md:px-4 md:py-2">{renderStatus(call.status)}</TableCell>
                             <TableCell className="text-center px-2 py-2 md:px-4 md:py-2">
