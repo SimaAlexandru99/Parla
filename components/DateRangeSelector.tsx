@@ -1,7 +1,5 @@
 "use client"
-
 import { useState, useEffect } from 'react';
-import { useTheme } from 'next-themes';
 import { enUS, ro } from 'date-fns/locale'; // Import the locales you need
 import {
     Select,
@@ -33,7 +31,6 @@ const DateRangeSelector = ({ onApply }: DateRangeSelectorProps) => {
     const [selectedPeriod, setSelectedPeriod] = useState(periods[1]); // Set default to 'Last 30 days'
     const [startDate, setStartDate] = useState<Date | null>(new Date(new Date().setDate(new Date().getDate() - 30)));
     const [endDate, setEndDate] = useState<Date | null>(new Date());
-    const { theme } = useTheme();
 
     // Determine the locale based on the current language
     const locale = language === 'ro' ? ro : enUS;
