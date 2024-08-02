@@ -74,7 +74,7 @@ const findMostFrequentWords = (segments: Segment[]): { word: string; count: numb
 export default function CallDetailsClient({ initialCall }: { initialCall: CallDetails }) {
   const { t } = useLanguage();
   const [call] = useState<CallDetails>(initialCall);
-  const [currentTime, setCurrentTime] = useState(0);
+  const [, setCurrentTime] = useState(0);
   const playerRef = useRef<ReactPlayer>(null);
   const scrollAreaRef = useRef<HTMLDivElement>(null);
   const [activeSegmentIndex, setActiveSegmentIndex] = useState<number | null>(null);
@@ -94,7 +94,7 @@ export default function CallDetailsClient({ initialCall }: { initialCall: CallDe
 
   useEffect(() => {
     const mostFrequentWords = extractFrequentWords(call.segments);
-  
+
     const chatProps: ChatCallPopoverProps = {
       segments: call.segments,
       agentSegmentsText,
@@ -103,7 +103,7 @@ export default function CallDetailsClient({ initialCall }: { initialCall: CallDe
       mostFrequentWords,
       agent_info: call.agent_info
     };
-    
+
     window.dispatchEvent(new CustomEvent('chatPropsChange', { detail: chatProps }));
   }, [call, agentSegmentsText, clientSegmentsText, averageSentimentScore]);
 

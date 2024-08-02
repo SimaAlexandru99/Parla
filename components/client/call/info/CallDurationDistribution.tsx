@@ -1,18 +1,14 @@
 'use client'
-
 import React, { useEffect, useState } from 'react';
-import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContainer, LabelList } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, LabelList } from 'recharts';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
-import { useTheme } from 'next-themes';
-import { useLanguage } from '@/contexts/client/LanguageContext';
 import {
     ChartConfig,
     ChartContainer,
     ChartTooltip,
     ChartTooltipContent,
 } from "@/components/ui/chart"
-
 interface CallDurationDistributionProps {
     repDuration: number;
     customerDuration: number;
@@ -37,8 +33,6 @@ const chartConfig = {
 const CallDurationDistribution = ({ repDuration, customerDuration, totalDuration, title }: CallDurationDistributionProps) => {
     const [data, setData] = useState<any[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
-    const { theme } = useTheme();
-    const { t } = useLanguage();
 
     useEffect(() => {
         // Example data fetching logic

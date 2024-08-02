@@ -119,20 +119,22 @@ function CallsTable({
                             <TableCell className="text-center px-2 py-2 md:px-4 md:py-2">
                                 <div className="flex gap-2 justify-center">
                                     <TooltipProvider>
-                                        <Tooltip>
-                                            <TooltipTrigger asChild>
-                                                <Button
-                                                    size="icon"
-                                                    variant="outline"
-                                                    onClick={() => handleViewDetails(call)}
-                                                >
-                                                    <Eye className="h-4 w-4" />
-                                                </Button>
-                                            </TooltipTrigger>
-                                            <TooltipContent>
-                                                {t.conversationsTab.buttonDetails}
-                                            </TooltipContent>
-                                        </Tooltip>
+                                        {call.status !== 'to_process' && call.status !== 'processing' && (
+                                            <Tooltip>
+                                                <TooltipTrigger asChild>
+                                                    <Button
+                                                        size="icon"
+                                                        variant="outline"
+                                                        onClick={() => handleViewDetails(call)}
+                                                    >
+                                                        <Eye className="h-4 w-4" />
+                                                    </Button>
+                                                </TooltipTrigger>
+                                                <TooltipContent>
+                                                    {t.conversationsTab.buttonDetails}
+                                                </TooltipContent>
+                                            </Tooltip>
+                                        )}
                                         <Tooltip>
                                             <TooltipTrigger asChild>
                                                 <ConfirmDeleteDialog

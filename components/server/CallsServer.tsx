@@ -1,6 +1,6 @@
 'use client';
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
-import { RefreshCcw, Loader2, Search } from 'lucide-react';
+import { RefreshCcw, Loader2, Search, Upload } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { useTheme } from 'next-themes';
 import { CallDetails, ProjectDetails } from '@/types/PropsTypes';
@@ -29,6 +29,8 @@ export default function Calls() {
     const [page, setPage] = useState(1);
     const [totalCalls, setTotalCalls] = useState(0);
     const [searchTerm, setSearchTerm] = useState('');
+    const [selectedFiles, setSelectedFiles] = useState<FileList | null>(null);
+    const [isDialogOpen, setIsDialogOpen] = useState(false);
     const { theme } = useTheme();
     const { toast } = useToast();
     const router = useRouter();
@@ -82,107 +84,118 @@ export default function Calls() {
         }
     }, [fetchCallsData, fetchProjectsData, page, companyData?.database]);
 
+    useEffect(() => {
+        if (!isDialogOpen) {
+            setSelectedProject('');
+            setSelectedFiles(null);
+        }
+    }, [isDialogOpen]);
+
     const handlePageChange = useCallback((newPage: number) => {
         setPage(newPage);
     }, []);
 
-
-    // Helper function to capitalize the first letter of a string
     const capitalize = (s: string) => s.charAt(0).toUpperCase() + s.slice(1).toLowerCase();
 
-    const handleFileUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
-        const files = event.target.files;
-        if (files && selectedProject && companyData?.database) {
-            setLoading(true);
-            const storage = getStorage(app);
-
-            const selectedProjectDetails = projects.find(p => p._id === selectedProject);
-            if (!selectedProjectDetails) {
-                toast({
-                    title: "Error",
-                    description: "Selected project not found.",
-                    variant: "destructive",
-                });
-                setLoading(false);
-                return;
-            }
-            const projectName = selectedProjectDetails.project_name;
-
-            for (let i = 0; i < files.length; i++) {
-                const file = files[i];
-                try {
-                    console.log(`Uploading file: ${file.name}`);
-                    const storageRef = ref(storage, `calls/${projectName}/${file.name}`);
-                    await uploadBytes(storageRef, file);
-                    console.log(`File uploaded to Firebase: ${file.name}`);
-                    const downloadURL = await getDownloadURL(storageRef);
-                    console.log(`Download URL obtained: ${downloadURL}`);
-
-                    const filenameMatch = file.name.match(/E_(.+?)_D_/);
-                    let username = '';
-                    let firstName = '';
-                    let lastName = '';
-
-                    if (filenameMatch && filenameMatch[1]) {
-                        username = filenameMatch[1];
-                        const nameParts = username.split('.');
-                        if (nameParts.length === 2) {
-                            firstName = capitalize(nameParts[0]);
-                            lastName = capitalize(nameParts[1]);
-                        }
-                    }
-
-                    const phoneMatch = file.name.match(/CLID_(\d+)_/);
-                    const phoneNumber = phoneMatch ? phoneMatch[1] : '';
-
-                    const callData: Partial<CallDetails> = {
-                        filename: file.name,
-                        status: 'to_process',
-                        agent_info: {
-                            username: username,
-                            first_name: firstName,
-                            last_name: lastName,
-                            project: projectName,
-                        },
-                        file_info: {
-                            extension: 'wav',
-                            duration: 0,
-                            day: new Date().toISOString().split('T')[0],
-                            file_path: downloadURL
-                        },
-                        phone_number: phoneNumber
-                    };
-
-                    console.log('Sending data to API:', JSON.stringify(callData, null, 2));
-
-                    const result = await uploadCallData(companyData.database, callData);
-
-                    console.log('API response:', JSON.stringify(result, null, 2));
-
-                    toast({
-                        title: "Success",
-                        description: `File ${file.name} uploaded and added to database.`,
-                    });
-                } catch (error) {
-                    console.error('Error processing file:', error);
-                    toast({
-                        title: "Error",
-                        description: `Failed to process ${file.name}. ${error instanceof Error ? error.message : 'Unknown error'}`,
-                        variant: "destructive",
-                    });
-                }
-            }
-            setLoading(false);
-            fetchCallsData(page);
-        } else {
-            toast({
-                title: "Warning",
-                description: "Please select a project before uploading files.",
-                variant: "destructive",
-            });
-        }
+    const handleFileSelection = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setSelectedFiles(event.target.files);
     };
 
+    const handleUpload = async () => {
+        if (!selectedFiles || !selectedProject || !companyData?.database) {
+            toast({
+                title: "Warning",
+                description: "Please select a project and files before uploading.",
+                variant: "destructive",
+            });
+            return;
+        }
+
+        setLoading(true);
+        const storage = getStorage(app);
+
+        const selectedProjectDetails = projects.find(p => p._id === selectedProject);
+        if (!selectedProjectDetails) {
+            toast({
+                title: "Error",
+                description: "Selected project not found.",
+                variant: "destructive",
+            });
+            setLoading(false);
+            return;
+        }
+        const projectName = selectedProjectDetails.project_name;
+
+        try {
+            for (let i = 0; i < selectedFiles.length; i++) {
+                const file = selectedFiles[i];
+                console.log(`Uploading file: ${file.name}`);
+                const storageRef = ref(storage, `calls/${projectName}/${file.name}`);
+                await uploadBytes(storageRef, file);
+                console.log(`File uploaded to Firebase: ${file.name}`);
+                const downloadURL = await getDownloadURL(storageRef);
+                console.log(`Download URL obtained: ${downloadURL}`);
+
+                const filenameMatch = file.name.match(/E_(.+?)_D_/);
+                let username = '';
+                let firstName = '';
+                let lastName = '';
+
+                if (filenameMatch && filenameMatch[1]) {
+                    username = filenameMatch[1];
+                    const nameParts = username.split('.');
+                    if (nameParts.length === 2) {
+                        firstName = capitalize(nameParts[0]);
+                        lastName = capitalize(nameParts[1]);
+                    }
+                }
+
+                const phoneMatch = file.name.match(/CLID_(\d+)_/);
+                const phoneNumber = phoneMatch ? phoneMatch[1] : '';
+
+                const callData: Partial<CallDetails> = {
+                    filename: file.name,
+                    status: 'to_process',
+                    agent_info: {
+                        username: username,
+                        first_name: firstName,
+                        last_name: lastName,
+                        project: projectName,
+                    },
+                    file_info: {
+                        extension: 'wav',
+                        duration: 0,
+                        day: new Date().toISOString().split('T')[0],
+                        file_path: downloadURL
+                    },
+                    phone_number: phoneNumber
+                };
+
+                console.log('Sending data to API:', JSON.stringify(callData, null, 2));
+
+                const result = await uploadCallData(companyData.database, callData);
+
+                console.log('API response:', JSON.stringify(result, null, 2));
+            }
+
+            setLoading(false);
+            fetchCallsData(page);
+            setSelectedFiles(null);
+            setIsDialogOpen(false);
+            toast({
+                title: "Success",
+                description: "All files uploaded successfully.",
+            });
+        } catch (error) {
+            console.error('Error during upload:', error);
+            toast({
+                title: "Error",
+                description: "An error occurred during upload. Please try again.",
+                variant: "destructive",
+            });
+            setLoading(false);
+        }
+    };
 
     const handleSearch = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
         setSearchTerm(e.target.value);
@@ -283,25 +296,23 @@ export default function Calls() {
                             <RefreshCcw className="h-4 w-4" />
                         )}
                     </Button>
-                    <Dialog>
+                    <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
                         <DialogTrigger asChild>
-                            <Button className="ml-4">Import Calls</Button>
+                            <Button className="ml-4" onClick={() => setIsDialogOpen(true)}>Import Calls</Button>
                         </DialogTrigger>
                         <DialogContent>
                             <DialogHeader>
                                 <DialogTitle>Import Calls</DialogTitle>
                                 <DialogDescription>Select a project and upload WAV files to import calls.</DialogDescription>
                             </DialogHeader>
-                            <div className="grid gap-4 py-4">
-                                <div className="grid grid-cols-4 items-center gap-4">
-                                    <Label htmlFor="project" className="text-right">
-                                        Project
-                                    </Label>
+                            <div className="flex flex-col space-y-4 py-4">
+                                <div className="flex flex-col space-y-2">
+                                    <Label htmlFor="project">Project</Label>
                                     <Select
                                         onValueChange={setSelectedProject}
                                         value={selectedProject}
                                     >
-                                        <SelectTrigger className="col-span-3">
+                                        <SelectTrigger>
                                             <SelectValue placeholder="Select a project" />
                                         </SelectTrigger>
                                         <SelectContent>
@@ -313,19 +324,28 @@ export default function Calls() {
                                         </SelectContent>
                                     </Select>
                                 </div>
-                                <div className="grid grid-cols-4 items-center gap-4">
-                                    <Label htmlFor="files" className="text-right">
-                                        WAV Files
-                                    </Label>
+                                <div className="flex flex-col space-y-2">
+                                    <Label htmlFor="files">WAV Files</Label>
                                     <Input
                                         id="files"
                                         type="file"
                                         accept=".wav"
                                         multiple
-                                        onChange={handleFileUpload}
-                                        className="col-span-3"
+                                        onChange={handleFileSelection}
                                     />
                                 </div>
+                                <Button 
+                                    onClick={handleUpload} 
+                                    disabled={!selectedFiles || selectedFiles.length === 0 || !selectedProject}
+                                    className="w-full"
+                                >
+                                    {loading ? (
+                                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                                    ) : (
+                                        <Upload className="mr-2 h-4 w-4" />
+                                    )}
+                                    Upload Files
+                                </Button>
                             </div>
                         </DialogContent>
                     </Dialog>

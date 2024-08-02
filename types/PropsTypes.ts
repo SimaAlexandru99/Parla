@@ -41,7 +41,7 @@ export interface CallDetails {
     SPEAKER_00: number;
     SPEAKER_01: number;
   };
-  status: 'completed' | 'to_process' | 'failed' | 'new'; // Added 'new' status
+  status: 'completed' | 'to_process' | 'failed' | 'new' | 'processing'; // Added 'new' status
   call_summary: string;
 }
 

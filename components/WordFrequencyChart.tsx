@@ -33,8 +33,9 @@ const WordFrequencyChart = ({ wordFrequencyData, title }: WordFrequencyChartProp
     } satisfies ChartConfig;
 
     const processedData = useMemo(() => {
-        const total = wordFrequencyData.reduce((sum, item) => sum + item.size, 0);
-        return wordFrequencyData.map((item, index) => ({
+        const filteredData = wordFrequencyData.filter(item => item.size >= 5);
+        const total = filteredData.reduce((sum, item) => sum + item.size, 0);
+        return filteredData.map((item, index) => ({
             ...item,
             percentage: (item.size / total) * 100,
             fill: COLORS[index % COLORS.length]

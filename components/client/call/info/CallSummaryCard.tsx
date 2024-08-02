@@ -33,9 +33,6 @@ export default function CallSummaryCard({
     loading,
     visible,
     call_summary,
-    call,
-    averageSentimentScore,
-    formatTime,
     t,
     assets
 }: CallSummaryCardProps) {
@@ -67,7 +64,7 @@ export default function CallSummaryCard({
                 </CardTitle>
             </CardHeader>
             <CardContent>
-                <ScrollArea className="h-[300px] pr-4">
+                <ScrollArea className="h-[400px] pr-4">
                     {loading ? (
                         <Skeleton className="h-24 w-full" />
                     ) : (
