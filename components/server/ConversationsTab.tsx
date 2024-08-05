@@ -92,7 +92,7 @@ const ConversationsTab = () => {
     }, [companyData?.database, fetchCallsData, page, toast]);
 
     const handleViewDetails = (call: CallDetails) => {
-        router.push(`/insights/calls/${call._id}`);
+        router.push(`/calls/${call._id}`);
     };
 
 
@@ -183,7 +183,7 @@ const ConversationsTab = () => {
                         <Button
                             onClick={() => fetchCallsData(page)}
                             disabled={loading}
-                            className="ml-4"
+                            className="ml-4 bg-accent hover:bg-accent/90"
                             size="icon"
                         >
                             {loading ? (

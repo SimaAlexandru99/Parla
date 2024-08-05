@@ -65,7 +65,7 @@ export default function Agents() {
 
     const handleViewDetails = (agent: AgentDetails) => {
         console.log('Navigating to agent ID:', agent._id); // Debugging log
-        router.push(`/insights/agents/${agent._id}`);
+        router.push(`/agents/${agent._id}`);
     };
 
     return (

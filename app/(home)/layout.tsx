@@ -4,50 +4,33 @@ import { UserProvider } from "@/contexts/client/UserContext";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { cn } from "@/lib/utils";
 import { LanguageProvider } from "@/contexts/client/LanguageContext";
-import Header from "@/components/client/HeaderClient";
-import { Metadata } from "next";
+import { DialogProvider } from "@/contexts/client/DialogContext";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from '@vercel/speed-insights/next';
-
+import { Toaster } from "@/components/ui/toaster";
+import Sidebar from "@/components/Sidebar";
+import Header from "@/components/client/InsightsHeaderClient";
+import Chat from "@/components/Chat";
+import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Parla - AI CRM Solution',
-  description: 'Parla is an AI CRM solution that helps you manage your customer relationships with ease.',
-  keywords: ['CRM', 'AI', 'customer relationship management', 'Parla'],
+  title: {
+    default: 'Parla - AI CRM Solution',
+    template: '%s | Parla'
+  },
   icons: {
     icon: '/favicon.png',
     apple: '/apple-favicon.png',
   },
-  openGraph: {
-    title: 'Parla - AI CRM Solution',
-    description: 'Manage your customer relationships with ease using Parla AI CRM.',
-    url: 'https://www.parla-ai.com',
-    siteName: 'Parla AI CRM',
-    images: [
-      {
-        url: 'https://www.parla-ai.com/og-image.jpg',
-        width: 1200,
-        height: 630,
-      },
-    ],
-    locale: 'en_US',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Parla - AI CRM Solution',
-    description: 'Manage your customer relationships with ease using Parla AI CRM.',
-    images: ['https://www.parla-ai.com/twitter-image.jpg'],
-  },
-};
+  description: 'AI powered journey planner for our clients',
+}
 
 const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
 });
 
-
-export default function RootLayout({
+export default function ParlaLayout({
   children,
 }: {
   children: React.ReactNode;
@@ -55,7 +38,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={cn(
-        "min-h-screen bg-muted/40 font-sans antialiased flex flex-col",
+        "min-h-screen bg-muted/40 font-sans antialiased",
         fontSans.variable
       )}>
         <LanguageProvider>
@@ -64,14 +47,22 @@ export default function RootLayout({
               attribute="class"
               defaultTheme="dark"
               enableSystem
-              disableTransitionOnChange
             >
-              <Header />
-              <main className="flex-grow">
-                {children}
-              </main>
-              <Analytics />
-              <SpeedInsights />
+              <DialogProvider>
+                <div className="flex h-screen overflow-hidden">
+                  <Sidebar />
+                  <div className="relative flex flex-1 flex-col overflow-y-auto overflow-x-hidden">
+                    <Header />
+                    <main>
+                      {children}
+                    </main>
+                  </div>
+                </div>
+                <Toaster />
+                <Chat />
+                <Analytics />
+                <SpeedInsights />
+              </DialogProvider>
             </ThemeProvider>
           </UserProvider>
         </LanguageProvider>

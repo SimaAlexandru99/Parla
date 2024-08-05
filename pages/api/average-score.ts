@@ -58,8 +58,8 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     const [currentMonthResult] = await collection.aggregate(pipelineCurrentMonth).toArray();
     const [lastMonthResult] = await collection.aggregate(pipelineLastMonth).toArray();
 
-    const averageScoreCurrentMonth = currentMonthResult?.averageScore || 0;
-    const averageScoreLastMonth = lastMonthResult?.averageScore || 0;
+    const averageScoreCurrentMonth = Number((currentMonthResult?.averageScore || 0).toFixed(2));
+    const averageScoreLastMonth = Number((lastMonthResult?.averageScore || 0).toFixed(2));
 
     res.status(200).json({ averageScoreCurrentMonth, averageScoreLastMonth });
   } catch (error) {

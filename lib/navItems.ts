@@ -14,7 +14,7 @@ export const navItems = (t: any) => [
     view: "dashboard",
     title: t.buttons.dashboard,
     text: t.buttons.dashboard,
-    href: "/insights/dashboard",
+    href: "/dashboard",
   },
   {
     icon: LineChart,
@@ -22,7 +22,7 @@ export const navItems = (t: any) => [
     view: "analytics",
     title: t.call_page.analytics,
     text: t.call_page.analytics,
-    href: "/insights/analytics",
+    href: "/analytics",
   },
   {
     icon: PhoneCall,
@@ -30,7 +30,7 @@ export const navItems = (t: any) => [
     view: "calls",
     title: t.call_page.calls,
     text: t.call_page.calls,
-    href: "/insights/calls",
+    href: "/calls",
   },
   {
     icon: Users,
@@ -38,7 +38,7 @@ export const navItems = (t: any) => [
     view: "agents",
     title: t.call_page.agents,
     text: t.call_page.agents,
-    href: "/insights/agents",
+    href: "/agents",
   },
   {
     icon: FolderCog,
@@ -46,7 +46,7 @@ export const navItems = (t: any) => [
     view: "projects",
     title: t.projectsPage.title,
     text: t.projectsPage.title,
-    href: "/insights/projects",
+    href: "/projects",
   },
   {
     icon: Bot,
@@ -54,6 +54,6 @@ export const navItems = (t: any) => [
     view: "next-ai",
     title: t.call_page.chat,
     text: t.call_page.chat,
-    href: "/insights/next-ai",
+    href: "/next-ai",
   },
 ];

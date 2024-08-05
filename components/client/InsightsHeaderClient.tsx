@@ -1,13 +1,12 @@
 'use client'
 import React, { useState, useCallback, useMemo, useEffect } from "react";
-import { useRouter, usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Menu, Globe } from "lucide-react";
 import UserDropdownMenu from "@/components/client/UserDropdownMenu";
 import { useUser } from "@/contexts/client/UserContext";
-import { useTheme } from "next-themes";
 import CardNotifications from "@/components/CardNotifications";
 import { navItems as getNavItems } from "@/lib/navItems";
 import { useLanguage } from "@/contexts/client/LanguageContext";
@@ -15,20 +14,13 @@ import { CommandDialogCustom } from "@/components/CommandDialog";
 import { Skeleton } from "@/components/ui/skeleton";
 
 export default function InsightsHeaderClient() {
-    const pathname = usePathname();
     const router = useRouter();
     const [isSheetOpen, setIsSheetOpen] = useState(false);
-    const { theme, setTheme } = useTheme();
     const { language, setLanguage, t } = useLanguage();
-    const { email, loading } = useUser();
+    const { loading } = useUser();
     const [isClientLoaded, setIsClientLoaded] = useState(false);
 
     const navItems = useMemo(() => getNavItems(t), [t]);
-
-    const currentNavItem = useMemo(
-        () => navItems.find(item => item.href === pathname),
-        [navItems, pathname]
-    );
 
     const handleLinkClick = useCallback((href: string) => {
         router.push(href);
@@ -86,16 +78,6 @@ export default function InsightsHeaderClient() {
                     <CommandDialogCustom />
                 </div>
                 <div className="flex items-center gap-4">
-                    <Select value={language} onValueChange={setLanguage}>
-                        <SelectTrigger className="w-[130px]" aria-label="Select language">
-                            <Globe className="mr-2 h-4 w-4" />
-                            <SelectValue placeholder={t.headers.language} />
-                        </SelectTrigger>
-                        <SelectContent>
-                            <SelectItem value="ro">{t.headers.languageSelect.ro}</SelectItem>
-                            <SelectItem value="en">{t.headers.languageSelect.en}</SelectItem>
-                        </SelectContent>
-                    </Select>
                     <CardNotifications />
                     <UserDropdownMenu />
                 </div>

@@ -216,7 +216,7 @@ const OverviewTab = () => {
 
 
     const handleViewDetails = useCallback((call: CallDetails) => {
-        router.push(`/insights/calls/${call._id}`);
+        router.push(`/calls/${call._id}`);
     }, [router]);
 
     return (

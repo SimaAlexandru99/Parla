@@ -223,7 +223,7 @@ export default function Calls() {
     }, [companyData?.database, fetchCallsData, page, toast]);
 
     const handleViewDetails = useCallback((call: CallDetails) => {
-        router.push(`/insights/calls/${call._id}`);
+        router.push(`/calls/${call._id}`);
     }, [router]);
 
     const ringColor = useMemo(() => (theme === 'dark' ? '#ffffff' : '#000000'), [theme]);
@@ -247,6 +247,10 @@ export default function Calls() {
                 statusText = t.conversationsTab.statusLabels.done;
                 break;
             case 'processing':
+                statusClass = 'bg-yellow-100 text-yellow-700';
+                statusText = t.conversationsTab.statusLabels.processing;
+                break;
+            case 'to_process':
                 statusClass = 'bg-yellow-100 text-yellow-700';
                 statusText = t.conversationsTab.statusLabels.processing;
                 break;
@@ -337,7 +341,7 @@ export default function Calls() {
                                 <Button 
                                     onClick={handleUpload} 
                                     disabled={!selectedFiles || selectedFiles.length === 0 || !selectedProject}
-                                    className="w-full"
+                                    className="w-full bg-accent hover:bg-accent/80"
                                 >
                                     {loading ? (
                                         <Loader2 className="mr-2 h-4 w-4 animate-spin" />

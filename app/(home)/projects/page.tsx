@@ -29,7 +29,7 @@ export default function ProjectsPage() {
     const router = useRouter();
 
     const handleViewProjectDetails = (projectId: string) => {
-        router.push(`/insights/projects/${projectId}`);
+        router.push(`/projects/${projectId}`);
     };
 
 

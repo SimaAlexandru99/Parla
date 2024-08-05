@@ -1,42 +1,29 @@
 'use client'
-import React from 'react';
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+import { useUser } from '@/contexts/client/UserContext';
+import Loading from '@/components/Loading';
 
-import Loading from "@/components/Loading";
-import useCheckFirstLogin from "@/hooks/useCheckFirstLogin";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import { useLanguage } from "@/contexts/client/LanguageContext";
+export default function InsightsPage() {
+  const router = useRouter();
+  const { email, loading } = useUser();
+  const isLoggedIn = !!email;
 
-const Home = () => {
-  const { loading, error, checkingLogin } = useCheckFirstLogin();
-  const { t, isLanguageLoaded } = useLanguage();
+  useEffect(() => {
+    if (!loading) {
+      if (isLoggedIn) {
+        router.push('/dashboard');
+      } else {
+        router.push('/signin');
+      }
+    }
+  }, [isLoggedIn, loading, router]);
 
-  if (!isLanguageLoaded || loading || checkingLogin) {
-    return <Loading />;
+  // Return a loading state while checking auth status
+  if (loading) {
+    <Loading />
   }
 
-  if (error) {
-    return <div>Error: {error.message}</div>;
-  }
-
-  return (
-    <main className="flex flex-col min-h-screen ">
-      <div className="mx-auto px-4">
-        <section className="flex flex-col items-center gap-4 py-16 text-center">
-          <h1 className="text-6xl font-bold ">{t.homepage.title}</h1>
-          <p className="text-xl text-primary">{t.homepage.subtitle}</p>
-          <div className="flex w-full items-center justify-center space-x-4 py-4">
-            <Link href="/signin">
-              <Button className="w-full md:w-auto">{t.homepage.start}</Button>
-            </Link>
-            <Link href="/">
-              <Button className="w-full md:w-auto" variant="outline">{t.homepage.learnMore}</Button>
-            </Link>
-          </div>
-        </section>
-      </div>
-    </main>
-  );
-};
-
-export default Home;
+  // This return is just a placeholder, the component will redirect before rendering
+  return null;
+}
