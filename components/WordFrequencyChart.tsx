@@ -87,7 +87,7 @@ const WordFrequencyChart = ({ wordFrequencyData, title }: WordFrequencyChartProp
                     </ResponsiveContainer>
                 </ChartContainer>
                 <div className="mt-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
-                    {processedData.map((item, index) => (
+                    {processedData.map((item, _index) => (
                         <div key={item.name} className="flex items-center">
                             <div
                                 className="w-3 h-3 rounded-full mr-2"

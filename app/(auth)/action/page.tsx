@@ -1,9 +1,9 @@
-// pages/action.tsx
-
 'use client'
 
 import { useEffect } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
+import { Suspense } from 'react'
+import Loading from '@/components/Loading'
 
 const ActionHandler = () => {
   const router = useRouter()
@@ -43,4 +43,10 @@ const ActionHandler = () => {
   )
 }
 
-export default ActionHandler
+const Page = () => (
+  <Suspense fallback={<Loading/>}>
+    <ActionHandler />
+  </Suspense>
+)
+
+export default Page

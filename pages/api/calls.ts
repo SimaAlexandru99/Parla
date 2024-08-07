@@ -81,7 +81,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
           SPEAKER_00: doc.total_talk_duration?.SPEAKER_00 || 0,
           SPEAKER_01: doc.total_talk_duration?.SPEAKER_01 || 0,
         },
-        status: doc.status as "completed" | "in_progress" | "failed" | "new",
+        status: doc.status as CallDetails['status'], // This ensures only valid statuses are used
         call_summary: doc.call_summary || "",
       }));
 

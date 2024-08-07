@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { Phone, Clock, Award, Timer } from 'lucide-react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Bar, BarChart, XAxis, CartesianGrid } from 'recharts';
 import {
@@ -56,10 +56,10 @@ const OverviewTab = () => {
     const [latestCalls, setLatestCalls] = useState<CallDetails[]>([]);
     const { t } = useLanguage();
     const { companyData } = useFetchUserCompanyDatabase();
-    const [calls, setCalls] = useState<CallDetails[]>([]);
-    const [totalCalls, setTotalCalls] = useState(0);
-    const [page, setPage] = useState(1);
-    const [limit] = useState(5);
+    const [] = useState<CallDetails[]>([]);
+    const [, setTotalCalls] = useState(0);
+    const [page, ] = useState(1);
+    const [] = useState(5);
     const router = useRouter();
 
 

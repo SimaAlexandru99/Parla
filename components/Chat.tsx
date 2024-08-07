@@ -38,7 +38,8 @@ export default function ChatWrapper() {
       if (event.detail) {
         setChatProps(event.detail);
       } else {
-        setChatProps(defaultCallProps);
+        // Use the appropriate default based on the event type
+        setChatProps(event.type === 'agentChatPropsChange' ? defaultAgentProps : defaultCallProps);
       }
     };
 

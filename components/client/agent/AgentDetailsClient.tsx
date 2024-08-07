@@ -49,12 +49,12 @@ const AgentDetailsClient = ({ initialAgent, initialMetrics }: AgentDetailsClient
     const [scoreData, setScoreData] = useState<{ month: string; score: number }[]>([]);
     const [scoreTrend, setScoreTrend] = useState<{ percentage: number; trending: 'up' | 'down' | 'neutral' }>({ percentage: 0, trending: 'neutral' });
     const [agentSummary, setAgentSummary] = useState('');
-    const [callDetailsDrawerOpen, setCallDetailsDrawerOpen] = useState(false);
-    const [selectedCall, setSelectedCall] = useState<CallDetails | null>(null);
+    const [, setCallDetailsDrawerOpen] = useState(false);
+    const [, setSelectedCall] = useState<CallDetails | null>(null);
     const [calls, setCalls] = useState<CallDetails[]>([]);
     const [callsLoading, setCallsLoading] = useState(true);
-    const [page, setPage] = useState(1);
-    const [totalCalls, setTotalCalls] = useState(0);
+    const [page] = useState(1);
+    const [, setTotalCalls] = useState(0);
     const limitPerPage = 10;
 
     const calculatePercentageChange = useCallback((currentCount: number, lastMonthCount: number) => {
@@ -251,9 +251,6 @@ const AgentDetailsClient = ({ initialAgent, initialMetrics }: AgentDetailsClient
         }
     }, [agent, companyData]);
 
-    const handlePageChange = useCallback((newPage: number) => {
-        setPage(newPage);
-    }, []);
 
     const handleDelete = useCallback(async (id: string) => {
         if (!companyData?.database) return;

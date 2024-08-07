@@ -18,7 +18,7 @@ export default function AgentDetailsWrapper() {
     const { companyData, loading: companyLoading, error: companyError }: FetchUserCompanyDatabaseResult = useFetchUserCompanyDatabase();
     const [agent, setAgent] = useState<AgentDetails | null>(null);
     const [metrics, setMetrics] = useState<any>(null);
-    const [error, setError] = useState<string | null>(null);
+    const [, setError] = useState<string | null>(null);
 
     useEffect(() => {
         async function loadAgentDetails() {

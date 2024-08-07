@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import { useUser } from '@/contexts/client/UserContext';
 import { useThemeToggle } from '@/components/ThemeProvider';
 import {
@@ -37,7 +36,6 @@ const UserDropdownMenu = () => {
   const [avatarLoaded, setAvatarLoaded] = useState(false);
   const [isProfileOpen, setProfileOpen] = useState(false);
   const [isLoggingOut, setIsLoggingOut] = useState(false);
-  const router = useRouter();
   const { theme, toggleTheme } = useThemeToggle();
   const { t } = useLanguage();
 

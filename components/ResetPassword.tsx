@@ -1,16 +1,16 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
-import { useRouter, useSearchParams } from "next/navigation"
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
-import { useForm, SubmitHandler } from "react-hook-form"
-import { useToast } from "@/components/ui/use-toast"
-import { useLanguage } from "@/contexts/client/LanguageContext"
+import { useRouter, useSearchParams } from 'next/navigation'
+import Image from 'next/image'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog'
+import { useForm, SubmitHandler } from 'react-hook-form'
+import { useToast } from '@/components/ui/use-toast'
+import { useLanguage } from '@/contexts/client/LanguageContext'
 import { confirmPasswordReset, verifyPasswordResetCode } from 'firebase/auth'
 import { auth } from '@/lib/firebase/config'
 
@@ -44,7 +44,7 @@ const ResetPassword = () => {
     special: false
   })
 
-  const password = watch("password")
+  const password = watch('password')
 
   useEffect(() => {
     if (searchParams) {
@@ -53,7 +53,7 @@ const ResetPassword = () => {
         setOobCode(code)
         verifyPasswordResetCode(auth, code).catch(() => {
           toast({
-            variant: "destructive",
+            variant: 'destructive',
             title: t.resetPasswordPage.invalidLinkTitle,
             description: t.resetPasswordPage.invalidLinkMessage,
           })
@@ -97,7 +97,7 @@ const ResetPassword = () => {
     } catch (error) {
       console.error('Password reset error:', error)
       toast({
-        variant: "destructive",
+        variant: 'destructive',
         title: t.errors.passwordResetError,
         description: t.errors.generalError,
       })
@@ -129,7 +129,7 @@ const ResetPassword = () => {
               <Input
                 id="password"
                 type="password"
-                {...register("password", {
+                {...register('password', {
                   required: t.errors.passwordRequired,
                   validate: () => isPasswordValid || t.errors.passwordRequirements
                 })}
@@ -142,19 +142,17 @@ const ResetPassword = () => {
                   <li className={passwordRequirements.length ? 'text-green-500' : 'text-red-500'}>
                     Be between 9 and 64 characters
                   </li>
-                  <li className={
-                    (passwordRequirements.uppercase ? 'text-green-500' : 'text-red-500') + 
-                    (passwordRequirements.lowercase ? ' text-green-500' : ' text-red-500') + 
-                    (passwordRequirements.number ? ' text-green-500' : ' text-red-500') + 
-                    (passwordRequirements.special ? ' text-green-500' : ' text-red-500')
-                  }>
-                    Include at least two of the following:
-                    <ul className="list-disc pl-5">
-                      <li className={passwordRequirements.uppercase ? 'text-green-500' : 'text-red-500'}>An uppercase character</li>
-                      <li className={passwordRequirements.lowercase ? 'text-green-500' : 'text-red-500'}>A lowercase character</li>
-                      <li className={passwordRequirements.number ? 'text-green-500' : 'text-red-500'}>A number</li>
-                      <li className={passwordRequirements.special ? 'text-green-500' : 'text-red-500'}>A special character</li>
-                    </ul>
+                  <li className={passwordRequirements.uppercase ? 'text-green-500' : 'text-red-500'}>
+                    Include an uppercase character
+                  </li>
+                  <li className={passwordRequirements.lowercase ? 'text-green-500' : 'text-red-500'}>
+                    Include a lowercase character
+                  </li>
+                  <li className={passwordRequirements.number ? 'text-green-500' : 'text-red-500'}>
+                    Include a number
+                  </li>
+                  <li className={passwordRequirements.special ? 'text-green-500' : 'text-red-500'}>
+                    Include a special character
                   </li>
                 </ul>
               </div>
@@ -164,9 +162,9 @@ const ResetPassword = () => {
               <Input
                 id="confirmPassword"
                 type="password"
-                {...register("confirmPassword", {
+                {...register('confirmPassword', {
                   required: t.errors.confirmPasswordRequired,
-                  validate: (value) => value === getValues("password") || t.errors.passwordMismatch
+                  validate: (value) => value === getValues('password') || t.errors.passwordMismatch
                 })}
                 className="bg-zinc-800 text-white border-zinc-700"
               />

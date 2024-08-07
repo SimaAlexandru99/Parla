@@ -1,6 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { connectToDatabase } from "@/lib/dbUtils";
-import { ObjectId } from "mongodb";
 import { AgentDetails } from "@/types/PropsTypes";
 
 

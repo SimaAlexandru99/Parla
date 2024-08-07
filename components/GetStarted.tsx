@@ -6,7 +6,6 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useRouter } from "next/navigation";
 import { doc, setDoc } from "firebase/firestore";
-import { getStorage, ref, listAll, getDownloadURL } from "firebase/storage";
 import { auth, db } from '@/lib/firebase/config';
 import {
     Card,
@@ -46,9 +45,9 @@ const GetStarted = () => {
     const [dob, setDob] = useState<string>(userData?.dob || '');
     const [project, setSelectedProject] = useState<string>('');
     const [teamLeader, setTeamLeader] = useState<string>('');
-    const [profileIcons, setProfileIcons] = useState<string[]>([]);
+    const [profileIcons] = useState<string[]>([]);
     const [profileIcon, setProfileIcon] = useState<string>('');
-    const [iconsLoading, setIconsLoading] = useState<boolean>(true);
+    const [iconsLoading] = useState<boolean>(true);
     const router = useRouter();
     const [step, setStep] = useState<number>(1);
     const [submitting, setSubmitting] = useState<boolean>(false);
@@ -57,9 +56,9 @@ const GetStarted = () => {
     const { t } = useLanguage();
     const { uid, loading } = useUser();
     const { partners, loading: partnersLoading, error: partnersError } = useFetchPartners(userData?.company || '');
-    const { projects, loadingProjects, error: projectsError } = useFetchProjects(partner, userData?.company || '');
-    const { departments, loadingDepartments, error: departmentsError } = useFetchDepartments(partner, project, userData?.company || '');
-    const { teamLeaders, loadingTeamLeaders, error: teamLeadersError } = useFetchTeamLeaders(department, project, partner, userData?.company || '');
+    const { projects, loadingProjects } = useFetchProjects(partner, userData?.company || '');
+    const { departments, loadingDepartments } = useFetchDepartments(partner, project, userData?.company || '');
+    const { teamLeaders, loadingTeamLeaders } = useFetchTeamLeaders(department, project, partner, userData?.company || '');
 
     
 

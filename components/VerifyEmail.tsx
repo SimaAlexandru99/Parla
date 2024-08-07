@@ -1,15 +1,16 @@
+// components/VerifyEmail.tsx
 'use client'
 
 import React, { useEffect, useState } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { useLanguage } from "@/contexts/client/LanguageContext"
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
+import { useLanguage } from '@/contexts/client/LanguageContext'
 import { Mailbox } from 'lucide-react'
 import Link from 'next/link'
 import { auth } from '@/lib/firebase/config'
-import { sendEmailVerification, onAuthStateChanged } from "firebase/auth"
-import { useToast } from "@/components/ui/use-toast"
+import { sendEmailVerification, onAuthStateChanged } from 'firebase/auth'
+import { useToast } from '@/components/ui/use-toast'
 
 const VerifyEmail = () => {
   const { t } = useLanguage()
@@ -43,7 +44,7 @@ const VerifyEmail = () => {
       } catch (error) {
         console.error('Error resending verification email:', error)
         toast({
-          variant: "destructive",
+          variant: 'destructive',
           title: t.errors.emailResendError,
           description: t.errors.tryAgainLater,
           duration: 5000,
@@ -51,7 +52,7 @@ const VerifyEmail = () => {
       }
     } else {
       toast({
-        variant: "destructive",
+        variant: 'destructive',
         title: t.errors.userNotFound,
         description: t.errors.trySignInAgain,
         duration: 5000,
@@ -63,7 +64,7 @@ const VerifyEmail = () => {
   return (
     <div className="flex min-h-screen bg-teal-900 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-radial from-teal-800/30 via-teal-900/60 to-teal-950 pointer-events-none"></div>
-
+      
       <Card className="m-auto w-full max-w-md bg-zinc-900 rounded-3xl overflow-hidden relative z-10">
         <CardHeader className="p-6 text-center">
           <Mailbox className="w-16 h-16 mx-auto text-accent mb-4" />
@@ -78,11 +79,9 @@ const VerifyEmail = () => {
             <li>{t.verifyEmailPage.clickLink}</li>
             <li>{t.verifyEmailPage.checkSpam}</li>
           </ul>
-          <p className="mb-6">
-            {t.verifyEmailPage.didntReceive}
-          </p>
+          <p className="mb-6">{t.verifyEmailPage.didntReceive}</p>
           <div className="flex flex-col space-y-4">
-            <Button 
+            <Button
               className="w-full bg-accent hover:bg-accent/90 text-accent-foreground"
               onClick={resendVerificationEmail}
               disabled={loading}

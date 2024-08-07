@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
-import { ArrowUpRight, Eye, Trash, Search, RefreshCcw, Loader2 } from 'lucide-react';
+import { Eye, Trash, Search, RefreshCcw, Loader2 } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -23,10 +23,9 @@ import { useRouter } from 'next/navigation';
 const ConversationsTab = () => {
     const [calls, setCalls] = useState<CallDetails[]>([]);
     const [loading, setLoading] = useState(true);
-    const [drawerOpen, setDrawerOpen] = useState(false);
-    const [selectedCall, setSelectedCall] = useState<CallDetails | null>(null);
+    const [] = useState<CallDetails | null>(null);
     const [page, setPage] = useState(1);
-    const [totalCalls, setTotalCalls] = useState(0);
+    const [, setTotalCalls] = useState(0);
     const [searchTerm, setSearchTerm] = useState('');
     const { theme } = useTheme();
     const { t } = useLanguage();

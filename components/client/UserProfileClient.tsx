@@ -41,8 +41,8 @@ export default function UserProfileClient({ initialData, isOpen, onClose }: User
     const [avatarLoaded, setAvatarLoaded] = useState(false);
     const { setUserContext } = useUser();
 
-    const { projects, loadingProjects, error: projectsError } = useFetchProjects(editData.partner || '', editData.company || '');
-    const { departments, loadingDepartments, error: departmentsError } = useFetchDepartments(editData.partner || '', editData.project || '', editData.company || '');
+    const { projects, loadingProjects } = useFetchProjects(editData.partner || '', editData.company || '');
+    const { departments, loadingDepartments } = useFetchDepartments(editData.partner || '', editData.project || '', editData.company || '');
 
     useEffect(() => {
         setEditData(initialData);

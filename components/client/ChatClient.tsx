@@ -1,319 +1,322 @@
-  'use client'
+'use client'
 
-  import React, { useState, useEffect, useCallback, useRef } from "react";
-  import Image from "next/image";
-  import { Button } from "@/components/ui/button";
-  import { Pen, X, SendHorizonal, Copy, Mail, Check } from "lucide-react";
-  import { useDialog } from "@/contexts/client/DialogContext";
-  import { useUser } from "@/contexts/client/UserContext";
-  import { assets } from "@/constants/assets";
-  import { useTheme } from "next-themes";
-  import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-  import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-  import { PersonIcon } from "@radix-ui/react-icons";
-  import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
-  import { ChatCallPopoverProps, ChatAgentPopoverProps } from "@/types/PropsTypes";
-  import ReactMarkdown from "react-markdown";
-  import { Card } from "@/components/ui/card";
-  import { useLanguage } from "@/contexts/client/LanguageContext";
-  import { Textarea } from "@/components/ui/textarea";
-  import useFetchUserCompanyDatabase from "@/hooks/useFetchUserCompanyDatabase";
-  import {
-    fetchRecordingCounts,
-    fetchAverageAudioDuration,
-    fetchAverageScore,
-    fetchAverageProcessingTime,
-    fetchMonthlyData,
-    fetchLatestCalls
-  } from '@/lib/apiClient';
+import React, { useState, useEffect, useCallback, useRef } from "react";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { Pen, X, SendHorizonal, Copy, Check } from "lucide-react";
+import { useDialog } from "@/contexts/client/DialogContext";
+import { useUser } from "@/contexts/client/UserContext";
+import { assets } from "@/constants/assets";
+import { useTheme } from "next-themes";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { PersonIcon } from "@radix-ui/react-icons";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { ChatCallPopoverProps, ChatAgentPopoverProps } from "@/types/PropsTypes";
+import ReactMarkdown from "react-markdown";
+import { Card } from "@/components/ui/card";
+import { useLanguage } from "@/contexts/client/LanguageContext";
+import { Textarea } from "@/components/ui/textarea";
+import useFetchUserCompanyDatabase from "@/hooks/useFetchUserCompanyDatabase";
+import {
+  fetchRecordingCounts,
+  fetchAverageAudioDuration,
+  fetchAverageScore,
+  fetchAverageProcessingTime,
+  fetchMonthlyData,
+  fetchLatestCalls
+} from '@/lib/apiClient';
 
-  type ChatProps = ChatCallPopoverProps | ChatAgentPopoverProps;
+type ChatProps = ChatCallPopoverProps | ChatAgentPopoverProps;
 
-  type MonthlyDataItem = {
-    _id: {
-      month: number;
-    };
-    count: number;
+type MonthlyDataItem = {
+  _id: {
+    month: number;
   };
+  count: number;
+};
 
-  type CallData = {
-    callId: string;
-    callTime: string;
-    callScore: number;
-  };
+type CallData = {
+  callId: string;
+  callTime: string;
+  callScore: number;
+};
 
-  interface DatabaseInfo {
-    recordingCount: number | null;
-    averageAudioDuration: string | null;
-    averageScore: number | null;
-    averageProcessingTime: string | null;
-    monthlyData: MonthlyDataItem[];
-    latestCalls: CallData[];
-  }
+interface DatabaseInfo {
+  recordingCount: number | null;
+  averageAudioDuration: string | null;
+  averageScore: number | null;
+  averageProcessingTime: string | null;
+  monthlyData: MonthlyDataItem[];
+  latestCalls: CallData[];
+}
 
-  export default function ChatClient(props: ChatProps) {
-    const { firstName, profileIcon, loading } = useUser();
-    const { companyData } = useFetchUserCompanyDatabase();
-    const { theme } = useTheme();
-    const { dialog, addMessage, updateMessage } = useDialog();
-    const [message, setMessage] = useState<string>("");
-    const [isGenerating, setIsGenerating] = useState<boolean>(false);
-    const [agentChatProps, setAgentChatProps] = useState<ChatAgentPopoverProps | null>(null);
-    const [callChatProps, setCallChatProps] = useState<ChatCallPopoverProps | null>(null);
-    const [popoverOpen, setPopoverOpen] = useState<boolean>(false);
-    const [isAtBottom, setIsAtBottom] = useState<boolean>(true);
-    const [copied, setCopied] = useState<boolean>(false);
-    const scrollContainerRef = useRef<HTMLDivElement>(null);
-    const { t } = useLanguage();
-    const {
-      agentName,
-      projectName,
-      agentText,
-      clientText,
-      sentimentAverage,
-      sentimentScale,
-      frequentWords,
-      occurrences,
-      network_error,
-      generate_error,
-      tooltip_copy_success,
-      tooltip_copy,
-      tooltip_email,
-      learn_more,
-    } = t.gemini;  
-    
-    const [databaseInfo, setDatabaseInfo] = useState<DatabaseInfo>({
-      recordingCount: null,
-      averageAudioDuration: null,
-      averageScore: null,
-      averageProcessingTime: null,
-      monthlyData: [],
-      latestCalls: []
-    });
+export default function ChatClient(_props: ChatProps) {
+  const { firstName, profileIcon, loading } = useUser();
+  const { companyData } = useFetchUserCompanyDatabase();
+  const { theme } = useTheme();
+  const { dialog, addMessage, updateMessage } = useDialog();
+  const [message, setMessage] = useState<string>("");
+  const [isGenerating, setIsGenerating] = useState<boolean>(false);
+  const [agentChatProps, setAgentChatProps] = useState<ChatAgentPopoverProps | null>(null);
+  const [callChatProps, setCallChatProps] = useState<ChatCallPopoverProps | null>(null);
+  const [popoverOpen, setPopoverOpen] = useState<boolean>(false);
+  const [isAtBottom, setIsAtBottom] = useState<boolean>(true);
+  const [copied, setCopied] = useState<boolean>(false);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const { t } = useLanguage();
+  const {
+    agentName,
+    projectName,
+    agentText,
+    clientText,
+    sentimentAverage,
+    sentimentScale,
+    frequentWords,
+    occurrences,
+    network_error,
+    generate_error,
+    tooltip_copy_success,
+    tooltip_copy,
+    learn_more,
+  } = t.gemini;  
+  
+  const [databaseInfo, setDatabaseInfo] = useState<DatabaseInfo>({
+    recordingCount: null,
+    averageAudioDuration: null,
+    averageScore: null,
+    averageProcessingTime: null,
+    monthlyData: [],
+    latestCalls: []
+  });
 
-    const focusInput = useCallback(() => {
-      const inputElement = document.querySelector("input[type='text']") as HTMLInputElement;
-      inputElement?.focus();
-    }, []);
+  const focusInput = useCallback(() => {
+    const inputElement = document.querySelector("input[type='text']") as HTMLInputElement;
+    inputElement?.focus();
+  }, []);
 
-    const scrollToBottom = useCallback(() => {
-      if (scrollContainerRef.current) {
-        scrollContainerRef.current.scrollTop = scrollContainerRef.current.scrollHeight;
-      }
-    }, []);
+  const scrollToBottom = useCallback(() => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollTop = scrollContainerRef.current.scrollHeight;
+    }
+  }, []);
 
-    const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
 
-    const adjustTextareaHeight = useCallback(() => {
-      if (textareaRef.current) {
-        textareaRef.current.style.height = "auto";
-        textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
-      }
-    }, []);
+  const adjustTextareaHeight = useCallback(() => {
+    if (textareaRef.current) {
+      textareaRef.current.style.height = "auto";
+      textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
+    }
+  }, []);
 
-    const fetchDatabaseInfo = useCallback(async () => {
-      if (!companyData?.database) return;
+  const fetchDatabaseInfo = useCallback(async () => {
+    if (!companyData?.database) return;
 
-      try {
-        const [
-          recordingCounts,
-          averageAudioDuration,
-          averageScore,
-          averageProcessingTime,
-          monthlyData,
-          latestCallsResponse
-        ] = await Promise.all([
-          fetchRecordingCounts(companyData.database),
-          fetchAverageAudioDuration(companyData.database),
-          fetchAverageScore(companyData.database),
-          fetchAverageProcessingTime(companyData.database),
-          fetchMonthlyData(companyData.database, new Date(new Date().getFullYear(), 0, 1), new Date(new Date().getFullYear(), 11, 31)),
-          fetchLatestCalls(companyData.database, 1, 5)
-        ]);
+    try {
+      const [
+        recordingCounts,
+        averageAudioDuration,
+        averageScore,
+        averageProcessingTime,
+        monthlyData,
+        latestCallsResponse
+      ] = await Promise.all([
+        fetchRecordingCounts(companyData.database),
+        fetchAverageAudioDuration(companyData.database),
+        fetchAverageScore(companyData.database),
+        fetchAverageProcessingTime(companyData.database),
+        fetchMonthlyData(companyData.database, new Date(new Date().getFullYear(), 0, 1), new Date(new Date().getFullYear(), 11, 31)),
+        fetchLatestCalls(companyData.database, 1, 5)
+      ]);
 
-        setDatabaseInfo({
-          recordingCount: recordingCounts.currentMonthCount,
-          averageAudioDuration: averageAudioDuration.averageDurationText,
-          averageScore: averageScore.averageScoreCurrentMonth,
-          averageProcessingTime: averageProcessingTime.averageProcessingTimeText,
-          monthlyData,
-          latestCalls: latestCallsResponse.latestCalls
-        });
-      } catch (error) {
-        console.error("Error fetching database info:", error);
-      }
-    }, [companyData?.database]);
+      setDatabaseInfo({
+        recordingCount: recordingCounts.currentMonthCount,
+        averageAudioDuration: averageAudioDuration.averageDurationText,
+        averageScore: averageScore.averageScoreCurrentMonth,
+        averageProcessingTime: averageProcessingTime.averageProcessingTimeText,
+        monthlyData,
+        latestCalls: latestCallsResponse.latestCalls
+      });
+    } catch (error) {
+      console.error("Error fetching database info:", error);
+    }
+  }, [companyData?.database]);
 
-    useEffect(() => {
-      if (popoverOpen) {
-        focusInput();
-      }
-    }, [popoverOpen, focusInput]);
+  useEffect(() => {
+    if (popoverOpen) {
+      focusInput();
+    }
+  }, [popoverOpen, focusInput]);
 
+  useEffect(() => {
+    if (scrollContainerRef.current && isAtBottom) {
+      scrollToBottom();
+    }
+  }, [dialog, isAtBottom, scrollToBottom]);
 
+  useEffect(() => {
+    adjustTextareaHeight();
+  }, [message, adjustTextareaHeight]);
 
-    useEffect(() => {
-      if (scrollContainerRef.current && isAtBottom) {
-        scrollToBottom();
-      }
-    }, [dialog, isAtBottom, scrollToBottom]);
+  useEffect(() => {
+    if (companyData) {
+      fetchDatabaseInfo();
+    }
+  }, [companyData, fetchDatabaseInfo]);
 
-    useEffect(() => {
-      adjustTextareaHeight();
-    }, [message, adjustTextareaHeight]);
-
-    useEffect(() => {
-      if (companyData) {
-        fetchDatabaseInfo();
-      }
-    }, [companyData, fetchDatabaseInfo]);
-
-
-
-    useEffect(() => {
-      const handleChatPropsChange = (event: CustomEvent<ChatCallPopoverProps | ChatAgentPopoverProps>) => {
-        if (event.detail) {
-          if ('agentName' in event.detail) {
-            // This is ChatAgentPopoverProps
-            setAgentChatProps(event.detail);
-            setCallChatProps(null); // Clear callChatProps when agent props are set
-          } else {
-            // This is ChatCallPopoverProps
-            setCallChatProps(event.detail);
-            setAgentChatProps(null); // Clear agentChatProps when call props are set
-          }
-        } else {
+  useEffect(() => {
+    const handleChatPropsChange = (event: CustomEvent<ChatCallPopoverProps | ChatAgentPopoverProps>) => {
+      if (event.detail) {
+        if ('agentName' in event.detail) {
+          setAgentChatProps(event.detail);
           setCallChatProps(null);
+        } else {
+          setCallChatProps(event.detail);
           setAgentChatProps(null);
         }
-      };
-    
-      window.addEventListener('chatPropsChange', handleChatPropsChange as EventListener);
-      window.addEventListener('agentChatPropsChange', handleChatPropsChange as EventListener);
-    
-      return () => {
-        window.removeEventListener('chatPropsChange', handleChatPropsChange as EventListener);
-        window.removeEventListener('agentChatPropsChange', handleChatPropsChange as EventListener);
-      };
-    }, []);
-
-    const handleSubmit = useCallback(async () => {
-      if (message.trim().length < 3) return;
-      const userMessage = message;
-      setIsGenerating(true);
-      setMessage("");
-      const messageId = addMessage(userMessage, "");
-    
-      let chatHistory;
-      if (agentChatProps) {
-        // This is ChatAgentPopoverProps
-        chatHistory = [
-          { role: "user", parts: [{ text: `Agent Name: ${agentChatProps.agentName}` }] },
-          { role: "user", parts: [{ text: `Project Name: ${agentChatProps.projectName}` }] },
-          { role: "user", parts: [{ text: `Username: ${agentChatProps.username}` }] },
-          { role: "user", parts: [{ text: `Total Calls: ${agentChatProps.totalCalls}` }] },
-          { role: "user", parts: [{ text: `Average Score: ${agentChatProps.averageScore}` }] },
-          { role: "user", parts: [{ text: `Average Call Duration: ${agentChatProps.averageCallDuration}` }] },
-          { role: "user", parts: [{ text: `Average Processing Time: ${agentChatProps.averageProcessingTime}` }] },
-          { role: "user", parts: [{ text: `Percentage Change: ${agentChatProps.percentageChange}` }] },
-          { role: "user", parts: [{ text: `Audio Duration Change: ${agentChatProps.audioDurationChange}` }] },
-          { role: "user", parts: [{ text: `Average Score Change: ${agentChatProps.averageScoreChange}` }] },
-          { role: "user", parts: [{ text: `Processing Time Change: ${agentChatProps.processingTimeChange}` }] },
-          { role: "user", parts: [{ text: `Score Trend: ${JSON.stringify(agentChatProps.scoreTrend)}` }] },
-          { role: "user", parts: [{ text: `Connection Status: ${agentChatProps.connectionStatus}` }] },
-          { role: "user", parts: [{ text: `Agent Summary: ${agentChatProps.agentSummary}` }] },
-          { role: "user", parts: [{ text: `Total Calls This Month: ${agentChatProps.totalCallsThisMonth}` }] },
-          { role: "user", parts: [{ text: userMessage }] },
-        ];
-      } else if (callChatProps) {
-        // This is ChatCallPopoverProps
-        const frequentWordsText = callChatProps.mostFrequentWords
-          ? callChatProps.mostFrequentWords
-            .map((word, index) => `${index + 1}. **${word.word}**: ${word.count} ${occurrences}`)
-            .join("\n")
-          : "";
-    
-        chatHistory = [
-          { role: "user", parts: [{ text: `${agentName} ${callChatProps.agent_info?.first_name || ''} ${callChatProps.agent_info?.last_name || ''}` }] },
-          { role: "user", parts: [{ text: `${projectName} ${callChatProps.agent_info?.project || ''}` }] },
-          { role: "user", parts: [{ text: `${agentText} ${callChatProps.agentSegmentsText}` }] },
-          { role: "user", parts: [{ text: `${clientText} ${callChatProps.clientSegmentsText}` }] },
-          { role: "user", parts: [{ text: `${sentimentAverage} ${callChatProps.averageSentimentScore?.toFixed(2) || '0.00'} ${sentimentScale}` }] },
-          { role: "user", parts: [{ text: `${frequentWords}\n${frequentWordsText}` }] },
-          { role: "user", parts: [{ text: `Total calls this month: ${databaseInfo.recordingCount}` }] },
-          { role: "user", parts: [{ text: `Average call duration: ${databaseInfo.averageAudioDuration}` }] },
-          { role: "user", parts: [{ text: `Average call score: ${databaseInfo.averageScore}` }] },
-          { role: "user", parts: [{ text: `Average processing time: ${databaseInfo.averageProcessingTime}` }] },
-          { role: "user", parts: [{ text: userMessage }] },
-        ];
       } else {
-        // Handle the case where neither props are available
-        chatHistory = [{ role: "user", parts: [{ text: userMessage }] }];
+        setCallChatProps(null);
+        setAgentChatProps(null);
       }
-    
-      try {
-        const res = await fetch("/api/chat", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ message: userMessage, chatHistory }),
-        });
-        if (!res.ok) throw new Error(network_error);
-        const data = await res.json();
-        updateMessage(messageId, data.response);
-        setIsAtBottom(true);
-      } catch (error) {
-        console.error("Error:", error);
-        updateMessage(messageId, generate_error);
-      } finally {
-        setIsGenerating(false);
-      }
-    }, [
-      message,
-      addMessage,
-      agentChatProps,
-      callChatProps,
-      agentName,
-      projectName,
-      agentText,
-      clientText,
-      sentimentAverage,
-      sentimentScale,
-      frequentWords,
-      occurrences,
-      network_error,
-      generate_error,
-      updateMessage,
-      databaseInfo,
-      setIsAtBottom,
-      setIsGenerating
-    ]);
-
-    const clearInput = useCallback(() => {
-      setMessage("");
-      focusInput();
-    }, [focusInput]);
-
-    const handleScroll = useCallback(() => {
-      if (scrollContainerRef.current) {
-        const { scrollTop, scrollHeight, clientHeight } = scrollContainerRef.current;
-        setIsAtBottom(scrollTop + clientHeight >= scrollHeight - 10);
-      }
-    }, []);
-
-    const handleCopy = (text: string) => {
-      navigator.clipboard.writeText(text).then(() => {
-        setCopied(true);
-        setTimeout(() => setCopied(false), 2000);
-      });
     };
-
-    const handleToggleChat = () => {
-      setPopoverOpen((prev) => !prev);
+  
+    window.addEventListener('chatPropsChange', handleChatPropsChange as EventListener);
+    window.addEventListener('agentChatPropsChange', handleChatPropsChange as EventListener);
+  
+    return () => {
+      window.removeEventListener('chatPropsChange', handleChatPropsChange as EventListener);
+      window.removeEventListener('agentChatPropsChange', handleChatPropsChange as EventListener);
     };
+  }, []);
 
-    if (loading) {
-      return <div>{t.loading.loadingPage}</div>;
+  const handleSubmit = useCallback(async () => {
+    if (message.trim().length < 3) return;
+    const userMessage = message;
+    setIsGenerating(true);
+    setMessage("");
+    const messageId = addMessage(userMessage, "");
+  
+    let chatHistory = [
+      { role: "user", parts: [{ text: `Total calls this month: ${databaseInfo.recordingCount}` }] },
+      { role: "user", parts: [{ text: `Average call duration: ${databaseInfo.averageAudioDuration}` }] },
+      { role: "user", parts: [{ text: `Average call score: ${databaseInfo.averageScore}` }] },
+      { role: "user", parts: [{ text: `Average processing time: ${databaseInfo.averageProcessingTime}` }] },
+    ];
+
+    // Add monthly data
+    databaseInfo.monthlyData.forEach((item) => {
+      chatHistory.push({ role: "user", parts: [{ text: `Month ${item._id.month}: ${item.count} calls` }] });
+    });
+
+    // Add latest calls
+    databaseInfo.latestCalls.forEach((call, index) => {
+      chatHistory.push({ role: "user", parts: [{ text: `Latest call ${index + 1}: ID ${call.callId}, Time ${call.callTime}, Score ${call.callScore}` }] });
+    });
+
+    if (agentChatProps) {
+      chatHistory = [
+        ...chatHistory,
+        { role: "user", parts: [{ text: `Agent Name: ${agentChatProps.agentName}` }] },
+        { role: "user", parts: [{ text: `Project Name: ${agentChatProps.projectName}` }] },
+        { role: "user", parts: [{ text: `Username: ${agentChatProps.username}` }] },
+        { role: "user", parts: [{ text: `Total Calls: ${agentChatProps.totalCalls}` }] },
+        { role: "user", parts: [{ text: `Average Score: ${agentChatProps.averageScore}` }] },
+        { role: "user", parts: [{ text: `Average Call Duration: ${agentChatProps.averageCallDuration}` }] },
+        { role: "user", parts: [{ text: `Average Processing Time: ${agentChatProps.averageProcessingTime}` }] },
+        { role: "user", parts: [{ text: `Percentage Change: ${agentChatProps.percentageChange}` }] },
+        { role: "user", parts: [{ text: `Audio Duration Change: ${agentChatProps.audioDurationChange}` }] },
+        { role: "user", parts: [{ text: `Average Score Change: ${agentChatProps.averageScoreChange}` }] },
+        { role: "user", parts: [{ text: `Processing Time Change: ${agentChatProps.processingTimeChange}` }] },
+        { role: "user", parts: [{ text: `Score Trend: ${JSON.stringify(agentChatProps.scoreTrend)}` }] },
+        { role: "user", parts: [{ text: `Connection Status: ${agentChatProps.connectionStatus}` }] },
+        { role: "user", parts: [{ text: `Agent Summary: ${agentChatProps.agentSummary}` }] },
+        { role: "user", parts: [{ text: `Total Calls This Month: ${agentChatProps.totalCallsThisMonth}` }] },
+      ];
+    } else if (callChatProps) {
+      const frequentWordsText = callChatProps.mostFrequentWords
+        ? callChatProps.mostFrequentWords
+          .map((word, index) => `${index + 1}. **${word.word}**: ${word.count} ${occurrences}`)
+          .join("\n")
+        : "";
+  
+      chatHistory = [
+        ...chatHistory,
+        { role: "user", parts: [{ text: `${agentName} ${callChatProps.agent_info?.first_name || ''} ${callChatProps.agent_info?.last_name || ''}` }] },
+        { role: "user", parts: [{ text: `${projectName} ${callChatProps.agent_info?.project || ''}` }] },
+        { role: "user", parts: [{ text: `${agentText} ${callChatProps.agentSegmentsText}` }] },
+        { role: "user", parts: [{ text: `${clientText} ${callChatProps.clientSegmentsText}` }] },
+        { role: "user", parts: [{ text: `${sentimentAverage} ${callChatProps.averageSentimentScore?.toFixed(2) || '0.00'} ${sentimentScale}` }] },
+        { role: "user", parts: [{ text: `${frequentWords}\n${frequentWordsText}` }] },
+      ];
     }
+
+    // Add the user's message at the end
+    chatHistory.push({ role: "user", parts: [{ text: userMessage }] });
+  
+    try {
+      const res = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: userMessage, chatHistory }),
+      });
+      if (!res.ok) throw new Error(network_error);
+      const data = await res.json();
+      updateMessage(messageId, data.response);
+      setIsAtBottom(true);
+    } catch (error) {
+      console.error("Error:", error);
+      updateMessage(messageId, generate_error);
+    } finally {
+      setIsGenerating(false);
+    }
+  }, [
+    message,
+    addMessage,
+    agentChatProps,
+    callChatProps,
+    agentName,
+    projectName,
+    agentText,
+    clientText,
+    sentimentAverage,
+    sentimentScale,
+    frequentWords,
+    occurrences,
+    network_error,
+    generate_error,
+    updateMessage,
+    databaseInfo,
+    setIsAtBottom,
+    setIsGenerating
+  ]);
+
+  const clearInput = useCallback(() => {
+    setMessage("");
+    focusInput();
+  }, [focusInput]);
+
+  const handleScroll = useCallback(() => {
+    if (scrollContainerRef.current) {
+      const { scrollTop, scrollHeight, clientHeight } = scrollContainerRef.current;
+      setIsAtBottom(scrollTop + clientHeight >= scrollHeight - 10);
+    }
+  }, []);
+
+  const handleCopy = (text: string) => {
+    navigator.clipboard.writeText(text).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    });
+  };
+
+  const handleToggleChat = () => {
+    setPopoverOpen((prev) => !prev);
+  };
+
+  if (loading) {
+    return <div>{t.loading.loadingPage}</div>;
+  }
 
     return (
       <Sheet open={popoverOpen} onOpenChange={handleToggleChat}>

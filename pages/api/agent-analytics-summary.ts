@@ -51,7 +51,7 @@ export default async function handler(
       return res.status(404).json({ message: "No assistant model found" });
     }
 
-    const { name, model: modelName } = assistantModel;
+    const { name } = assistantModel;
 
     if (name !== "Gemini") {
       return res.status(400).json({ message: "Invalid assistant name" });

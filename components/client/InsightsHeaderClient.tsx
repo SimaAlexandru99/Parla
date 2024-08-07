@@ -3,8 +3,7 @@ import React, { useState, useCallback, useMemo, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Menu, Globe } from "lucide-react";
+import { Menu } from "lucide-react";
 import UserDropdownMenu from "@/components/client/UserDropdownMenu";
 import { useUser } from "@/contexts/client/UserContext";
 import CardNotifications from "@/components/CardNotifications";
@@ -16,7 +15,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 export default function InsightsHeaderClient() {
     const router = useRouter();
     const [isSheetOpen, setIsSheetOpen] = useState(false);
-    const { language, setLanguage, t } = useLanguage();
+    const { t } = useLanguage();
     const { loading } = useUser();
     const [isClientLoaded, setIsClientLoaded] = useState(false);
 

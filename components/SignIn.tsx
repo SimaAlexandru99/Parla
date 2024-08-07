@@ -25,8 +25,7 @@ const ErrorMessage = ({ message }: { message: string }) => (
 );
 
 const SignIn = () => {
-    const [signInWithEmailAndPassword, user, loading, firebaseError] = useSignInWithEmailAndPassword(auth);
-    const router = useRouter();
+    const [signInWithEmailAndPassword, _, loading, firebaseError] = useSignInWithEmailAndPassword(auth);    const router = useRouter();
     const { register, handleSubmit, formState: { errors }, watch } = useForm<SignInFormData>();
     const { toast } = useToast();
     const [isFormValid, setIsFormValid] = useState(false);

@@ -24,7 +24,6 @@ const AgentActivityTab = ({
     callsLoading,
     handleViewCallDetails,
     handleDelete,
-    handleViewAgentDetails,
     formatDuration,
     renderStatus,
     t,

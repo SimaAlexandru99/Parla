@@ -1,14 +1,20 @@
-import React from 'react'
-import VerifyEmail from '@/components/VerifyEmail'
-import { Metadata } from 'next'
+import React, { Suspense } from 'react';
+import { Metadata } from 'next';
+import VerifyEmail from '@/components/VerifyEmail';
 
 export const metadata: Metadata = {
-  title: 'Verify Your Email',
-  description: 'Please verify your email address to complete your registration.',
-}
+  title: 'Verify Email',
+  description: 'Verify your Parla account email',
+};
 
 const VerifyEmailPage = () => {
-  return <VerifyEmail />
+  return (
+    <main className="min-h-screen bg-teal-900">
+      <Suspense fallback={<div>Loading...</div>}>
+        <VerifyEmail />
+      </Suspense>
+    </main>
+  );
 }
 
-export default VerifyEmailPage
+export default VerifyEmailPage;

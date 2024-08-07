@@ -22,8 +22,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 
 const SignUp = () => {
   const { t } = useLanguage();
-  const [createUserWithEmailAndPassword, user, loading, firebaseError] = useCreateUserWithEmailAndPassword(auth);
-  const router = useRouter();
+  const [createUserWithEmailAndPassword, _, loading, __] = useCreateUserWithEmailAndPassword(auth);  const router = useRouter();
   const { toast } = useToast();
   const [isFormValid, setIsFormValid] = useState(false);
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);

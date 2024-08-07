@@ -75,10 +75,12 @@ export const UserProvider = ({
   }, []);
 
   useEffect(() => {
+    let unsubscribeDoc = () => {};
+  
     const unsubscribeAuth = onAuthStateChanged(auth, (user: User | null) => {
       if (user) {
         const userDocRef = doc(db, "users", user.uid);
-        const unsubscribeDoc = onSnapshot(userDocRef, (doc) => {
+        unsubscribeDoc = onSnapshot(userDocRef, (doc) => {
           if (doc.exists()) {
             const fetchedUserData = doc.data() as UserData;
             setUserData((prevData) => {
@@ -88,17 +90,17 @@ export const UserProvider = ({
           }
           setLoading(false);
         });
-
-        return () => unsubscribeDoc();
       } else {
         setUserData(initialUserState);
         setLoading(false);
       }
     });
-
-    return () => unsubscribeAuth();
+  
+    return () => {
+      unsubscribeAuth();
+      unsubscribeDoc();
+    };
   }, []);
-
   const contextValue: UserContextType = {
     ...userData,
     handleLogout,
