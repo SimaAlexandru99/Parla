@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
-import { Plus, X, Bell } from "lucide-react";
+import {  X, Bell } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { BellIcon, CheckIcon } from "@radix-ui/react-icons";
 import { Switch } from "@/components/ui/switch";
-import { useTheme } from "next-themes";
 
 const notifications = [
     {
@@ -27,7 +26,6 @@ const notifications = [
 export default function CardNotifications() {
     const [isPopoverOpen, setIsPopoverOpen] = useState(false);
     const [isPushEnabled, setIsPushEnabled] = useState(false);
-    const { theme } = useTheme();
 
     useEffect(() => {
         if (Notification.permission === 'granted') {
