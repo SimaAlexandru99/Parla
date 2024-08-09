@@ -4,7 +4,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { PersonIcon } from "@radix-ui/react-icons";
-import { SendHorizonal, Copy, Mail, Check, Image as ImageIcon, Lightbulb, PenTool, Globe, Mic } from "lucide-react";
+import { SendHorizonal, Copy, Mail, Check, BarChart, Clock, Zap, Phone } from "lucide-react";
 import { useUser } from "@/contexts/client/UserContext";
 import { useDialog } from "@/contexts/client/DialogContext";
 import { useTheme } from "next-themes";
@@ -157,10 +157,22 @@ export default function ChatInterface() {
     };
 
     const suggestionCards = [
-        { icon: <ImageIcon className="w-6 h-6" />, text: "Create an image & bedtime story" },
-        { icon: <Lightbulb className="w-6 h-6" />, text: "What's the reaction to and impact of autonomous vehicles" },
-        { icon: <PenTool className="w-6 h-6" />, text: "Create a splashy watercolor image" },
-        { icon: <Globe className="w-6 h-6" />, text: "Find hotels in Phuket for a week, and suggest a packing list" },
+        { 
+            icon: <BarChart className="w-6 h-6" />, 
+            text: "Analyze the trend of total calls this month compared to previous months" 
+        },
+        { 
+            icon: <Clock className="w-6 h-6" />, 
+            text: "What insights can you provide about our average call duration?" 
+        },
+        { 
+            icon: <Zap className="w-6 h-6" />, 
+            text: "Suggest ways to reduce our average processing time" 
+        },
+        { 
+            icon: <Phone className="w-6 h-6" />, 
+            text: "Give me a comprehensive analysis of our call center performance" 
+        },
     ];
 
     const handleCardClick = (text: string) => {
@@ -172,7 +184,7 @@ export default function ChatInterface() {
     return (
         <div className="flex flex-col items-center justify-between h-screen w-full max-w-screen-lg mx-auto">
             <div className="flex-grow flex flex-col w-full">
-                <ScrollArea className="flex-grow h-0 overflow-y-auto" ref={scrollAreaRef}>
+                <ScrollArea className="flex-grow h-0 overflow-y-auto z-0" ref={scrollAreaRef}>
                     {dialog.length === 0 && (
                         <div className="mb-12 transition-all duration-300 ease-in-out transform text-center">
                             <h1 className={`text-6xl font-bold mb-6 text-transparent bg-clip-text ${theme === "dark"
@@ -192,7 +204,7 @@ export default function ChatInterface() {
                             {suggestionCards.map((card, index) => (
                                 <Card
                                     key={index}
-                                    className="flex-grow-0 flex-shrink-0 basis-[calc(25%-1rem)] p-6 flex flex-col justify-between rounded-xl cursor-pointer transition-all duration-200 hover:bg-primary hover:text-primary-foreground"
+                                    className="flex-grow-0 flex-shrink-0 basis-[calc(25%-1rem)] p-6 flex flex-col justify-between rounded-xl cursor-pointer transition-all duration-200 hover:bg-accent hover:text-primary-foreground"
                                     onClick={() => handleCardClick(card.text)}
                                 >
                                     <p className="text-lg mb-4">{card.text}</p>
@@ -282,20 +294,6 @@ export default function ChatInterface() {
                         placeholder={t.placeholders.chatInput}
                         className="flex-1 bg-transparent border-none focus:outline-none px-4 py-2"
                     />
-                    <Button
-                        size="icon"
-                        onClick={() => inputRef.current?.click()}
-                        className="bg-transparent hover:bg-card rounded-full p-2 transition-colors duration-200"
-                    >
-                        <ImageIcon className="h-5 w-5 text-secondary-foreground" />
-                    </Button>
-                    <Button
-                        size="icon"
-                        onClick={() => { }}
-                        className="bg-transparent hover:bg-card rounded-full p-2 transition-colors duration-200"
-                    >
-                        <Mic className="h-5 w-5 text-secondary-foreground" />
-                    </Button>
 
                     <Button
                         size="icon"

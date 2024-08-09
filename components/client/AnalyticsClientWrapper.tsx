@@ -1,7 +1,5 @@
-// File: components/client/analytics/AnalyticsClientWrapper.tsx
 
 'use client';
-
 import React from 'react';
 import AnalyticsContent from './AnalyticsContent';
 
