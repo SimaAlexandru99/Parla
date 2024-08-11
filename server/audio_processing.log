@@ -1,0 +1,2465 @@
+2024-08-02 10:38:06,390 - INFO - Successfully connected to MongoDB.
+2024-08-02 10:38:06,392 - INFO - Using device: cuda
+2024-08-02 10:38:16,810 - INFO - Extracted words from common_words collection.
+2024-08-02 10:38:16,814 - INFO - Extracted words from positive_words collection.
+2024-08-02 10:38:16,817 - INFO - Extracted words from negative_words collection.
+2024-08-02 10:38:16,819 - INFO - Extracted words from greetings_words collection.
+2024-08-02 10:38:16,821 - INFO - Extracted words from companies collection.
+2024-08-02 10:38:16,823 - INFO - Extracted words from words_to_remove collection.
+2024-08-02 10:38:16,825 - INFO - Extracted words from availability_words collection.
+2024-08-02 10:38:16,827 - INFO - Extracted words from from_what_company collection.
+2024-08-02 10:38:16,828 - INFO - Extracted words from good_bye_words collection.
+2024-08-02 10:38:16,830 - INFO - Found 1 files with status 'to_process'.
+2024-08-02 10:38:16,831 - INFO - Using device: cuda
+2024-08-02 10:38:45,734 - INFO - Successfully downloaded E_andra.oprea_D_2024-06-03_H_102615_067_CLID_722566683_Follow Up.wav to C:\Users\simaa\AppData\Local\Temp\E_andra.oprea_D_2024-06-03_H_102615_067_CLID_722566683_Follow Up.wav
+2024-08-02 10:38:50,403 - INFO - Audio Duration: 38.184 seconds
+2024-08-02 10:38:53,792 - INFO - Processing file: E_andra.oprea_D_2024-06-03_H_102615_067_CLID_722566683_Follow Up.wav
+2024-08-02 10:38:56,646 - INFO - Agent andra.oprea already exists in the agents database.
+2024-08-02 10:38:57,465 - INFO - Agent Name: Andra Oprea
+2024-08-02 10:38:58,975 - INFO - Project Name: BCR
+2024-08-02 10:38:59,889 - INFO - Day: 2024-06-03
+2024-08-02 10:39:00,636 - INFO - Phone Number: 722566683
+2024-08-02 10:39:01,404 - INFO - Final Status: Follow Up
+2024-08-02 10:39:14,687 - INFO - Speaker: SPEAKER_00
+2024-08-02 10:39:14,688 - INFO - Time: 10.0s to 15.0s
+2024-08-02 10:39:14,699 - INFO - Sentiment: 3 stars
+2024-08-02 10:39:15,913 - INFO - Speaker: SPEAKER_00
+2024-08-02 10:39:15,913 - INFO - Time: 0.0s to 5.0s
+2024-08-02 10:39:15,919 - INFO - Sentiment: 5 stars
+2024-08-02 10:39:16,300 - INFO - Speaker: SPEAKER_00
+2024-08-02 10:39:16,301 - INFO - Time: 15.0s to 20.0s
+2024-08-02 10:39:16,306 - INFO - Sentiment: 3 stars
+2024-08-02 10:39:17,356 - INFO - Speaker: SPEAKER_00
+2024-08-02 10:39:17,357 - INFO - Time: 5.0s to 10.0s
+2024-08-02 10:39:17,362 - INFO - Sentiment: 3 stars
+2024-08-02 10:39:19,185 - INFO - Speaker: SPEAKER_00
+2024-08-02 10:39:19,185 - INFO - Time: 20.0s to 25.0s
+2024-08-02 10:39:19,191 - INFO - Sentiment: 3 stars
+2024-08-02 10:39:19,894 - INFO - Speaker: SPEAKER_00
+2024-08-02 10:39:19,895 - INFO - Time: 25.0s to 30.0s
+2024-08-02 10:39:19,901 - INFO - Sentiment: 5 stars
+2024-08-02 10:39:21,535 - INFO - Speaker: SPEAKER_01
+2024-08-02 10:39:21,536 - INFO - Time: 5.0s to 10.0s
+2024-08-02 10:39:21,541 - INFO - Sentiment: 3 stars
+2024-08-02 10:39:23,830 - INFO - Speaker: SPEAKER_01
+2024-08-02 10:39:23,832 - INFO - Time: 20.0s to 25.0s
+2024-08-02 10:39:23,840 - INFO - Sentiment: 2 stars
+2024-08-02 10:39:23,925 - INFO - Speaker: SPEAKER_01
+2024-08-02 10:39:23,926 - INFO - Time: 25.0s to 30.0s
+2024-08-02 10:39:23,931 - INFO - Sentiment: 5 stars
+2024-08-02 10:39:24,155 - INFO - Speaker: SPEAKER_01
+2024-08-02 10:39:24,155 - INFO - Time: 10.0s to 15.0s
+2024-08-02 10:39:24,159 - INFO - Sentiment: 3 stars
+2024-08-02 10:39:24,987 - INFO - Speaker: SPEAKER_01
+2024-08-02 10:39:24,987 - INFO - Time: 15.0s to 20.0s
+2024-08-02 10:39:24,992 - INFO - Sentiment: 3 stars
+2024-08-02 10:39:26,548 - INFO - Speaker: SPEAKER_01
+2024-08-02 10:39:26,548 - INFO - Time: 30.0s to 35.0s
+2024-08-02 10:39:26,551 - INFO - Sentiment: 3 stars
+2024-08-02 10:39:26,553 - INFO - Average Sentiment Score: 3.42
+2024-08-02 10:39:26,553 - INFO - Impact Result: {'start_sentiment': 5, 'end_sentiment': 3, 'percentage_change': -40.0, 'impact': 'Negative change', 'adjusted_conversion_rate': 0.06}
+2024-08-02 10:39:26,554 - INFO - Satisfaction Score: neutral
+2024-08-02 10:39:26,554 - INFO - Projected Customer Rating: 5
+2024-08-02 10:39:26,555 - INFO - SPEAKER_00 Total Talk Duration: 30.00 seconds
+2024-08-02 10:39:26,555 - INFO - SPEAKER_01 Total Talk Duration: 30.00 seconds
+2024-08-02 10:39:26,555 - INFO - Total Crosstalk Duration: 0.00 seconds
+2024-08-02 10:39:26,556 - INFO - SPEAKER_00 Total Dead Air Duration: 0.00 seconds
+2024-08-02 10:39:26,556 - INFO - SPEAKER_01 Total Dead Air Duration: 5.00 seconds
+2024-08-02 10:39:26,562 - INFO - Agent did not use any greetings words.
+2024-08-02 10:39:26,562 - INFO - Agent did not mention any company names.
+2024-08-02 10:39:26,562 - INFO - Final Score: 90
+2024-08-02 10:48:45,494 - INFO - Successfully connected to MongoDB.
+2024-08-02 10:48:45,495 - INFO - Using device: cuda
+2024-08-02 10:48:56,872 - INFO - Extracted words from common_words collection.
+2024-08-02 10:48:56,876 - INFO - Extracted words from positive_words collection.
+2024-08-02 10:48:56,878 - INFO - Extracted words from negative_words collection.
+2024-08-02 10:48:56,880 - INFO - Extracted words from greetings_words collection.
+2024-08-02 10:48:56,882 - INFO - Extracted words from companies collection.
+2024-08-02 10:48:56,883 - INFO - Extracted words from words_to_remove collection.
+2024-08-02 10:48:56,885 - INFO - Extracted words from availability_words collection.
+2024-08-02 10:48:56,887 - INFO - Extracted words from from_what_company collection.
+2024-08-02 10:48:56,889 - INFO - Extracted words from good_bye_words collection.
+2024-08-02 10:48:56,891 - INFO - Found 1 files with status 'to_process'.
+2024-08-02 10:48:56,892 - INFO - Using device: cuda
+2024-08-02 10:49:15,881 - INFO - Exiting...
+2024-08-02 10:49:16,692 - INFO - Exiting...
+2024-08-02 10:52:39,611 - INFO - Successfully connected to MongoDB.
+2024-08-02 10:52:39,612 - INFO - Using device: cuda
+2024-08-02 10:52:50,390 - INFO - Extracted words from common_words collection.
+2024-08-02 10:52:50,395 - INFO - Extracted words from positive_words collection.
+2024-08-02 10:52:50,397 - INFO - Extracted words from negative_words collection.
+2024-08-02 10:52:50,398 - INFO - Extracted words from greetings_words collection.
+2024-08-02 10:52:50,401 - INFO - Extracted words from companies collection.
+2024-08-02 10:52:50,402 - INFO - Extracted words from words_to_remove collection.
+2024-08-02 10:52:50,404 - INFO - Extracted words from availability_words collection.
+2024-08-02 10:52:50,406 - INFO - Extracted words from from_what_company collection.
+2024-08-02 10:52:50,408 - INFO - Extracted words from good_bye_words collection.
+2024-08-02 10:52:50,409 - INFO - Found 1 files with status 'to_process'.
+2024-08-02 10:52:50,410 - INFO - Using device: cuda
+2024-08-02 10:52:51,489 - INFO - Loaded configuration for project BCR
+2024-08-02 10:57:11,518 - INFO - Successfully downloaded E_andra.oprea_D_2024-06-03_H_102615_067_CLID_722566683_Follow Up.wav to C:\Users\simaa\AppData\Local\Temp\E_andra.oprea_D_2024-06-03_H_102615_067_CLID_722566683_Follow Up.wav
+2024-08-02 10:57:11,524 - INFO - Audio Duration: 38.184 seconds
+2024-08-02 10:57:11,524 - INFO - Processing file: E_andra.oprea_D_2024-06-03_H_102615_067_CLID_722566683_Follow Up.wav
+2024-08-02 10:57:11,527 - INFO - Agent andra.oprea already exists in the agents database.
+2024-08-02 10:57:11,527 - INFO - Agent Name: Andra Oprea
+2024-08-02 10:57:11,528 - INFO - Project Name: BCR
+2024-08-02 10:57:11,528 - INFO - Day: 2024-06-03
+2024-08-02 10:57:11,528 - INFO - Phone Number: 722566683
+2024-08-02 10:57:11,528 - INFO - Final Status: Follow Up
+2024-08-02 10:57:15,563 - INFO - Speaker: SPEAKER_00
+2024-08-02 10:57:15,564 - INFO - Time: 10.0s to 15.0s
+2024-08-02 10:57:15,576 - INFO - Sentiment: 3 stars
+2024-08-02 10:57:16,705 - INFO - Speaker: SPEAKER_00
+2024-08-02 10:57:16,705 - INFO - Time: 0.0s to 5.0s
+2024-08-02 10:57:16,710 - INFO - Sentiment: 5 stars
+2024-08-02 10:57:17,162 - INFO - Speaker: SPEAKER_00
+2024-08-02 10:57:17,162 - INFO - Time: 15.0s to 20.0s
+2024-08-02 10:57:17,168 - INFO - Sentiment: 3 stars
+2024-08-02 10:57:18,241 - INFO - Speaker: SPEAKER_00
+2024-08-02 10:57:18,242 - INFO - Time: 5.0s to 10.0s
+2024-08-02 10:57:18,248 - INFO - Sentiment: 3 stars
+2024-08-02 10:57:19,965 - INFO - Speaker: SPEAKER_00
+2024-08-02 10:57:19,965 - INFO - Time: 20.0s to 25.0s
+2024-08-02 10:57:19,971 - INFO - Sentiment: 3 stars
+2024-08-02 10:57:20,723 - INFO - Speaker: SPEAKER_00
+2024-08-02 10:57:20,723 - INFO - Time: 25.0s to 30.0s
+2024-08-02 10:57:20,729 - INFO - Sentiment: 5 stars
+2024-08-02 10:57:22,336 - INFO - Speaker: SPEAKER_01
+2024-08-02 10:57:22,336 - INFO - Time: 5.0s to 10.0s
+2024-08-02 10:57:22,342 - INFO - Sentiment: 3 stars
+2024-08-02 10:57:24,615 - INFO - Speaker: SPEAKER_01
+2024-08-02 10:57:24,615 - INFO - Time: 25.0s to 30.0s
+2024-08-02 10:57:24,621 - INFO - Sentiment: 5 stars
+2024-08-02 10:57:24,841 - INFO - Speaker: SPEAKER_01
+2024-08-02 10:57:24,841 - INFO - Time: 10.0s to 15.0s
+2024-08-02 10:57:24,846 - INFO - Sentiment: 3 stars
+2024-08-02 10:57:25,017 - INFO - Speaker: SPEAKER_01
+2024-08-02 10:57:25,017 - INFO - Time: 20.0s to 25.0s
+2024-08-02 10:57:25,022 - INFO - Sentiment: 2 stars
+2024-08-02 10:57:25,303 - INFO - Speaker: SPEAKER_01
+2024-08-02 10:57:25,303 - INFO - Time: 15.0s to 20.0s
+2024-08-02 10:57:25,308 - INFO - Sentiment: 3 stars
+2024-08-02 10:57:27,180 - INFO - Speaker: SPEAKER_01
+2024-08-02 10:57:27,181 - INFO - Time: 30.0s to 35.0s
+2024-08-02 10:57:27,184 - INFO - Sentiment: 3 stars
+2024-08-02 10:57:27,186 - INFO - Average Sentiment Score: 3.42
+2024-08-02 10:57:27,186 - INFO - Impact Result: {'start_sentiment': 5, 'end_sentiment': 3, 'percentage_change': -40.0, 'impact': 'Negative change', 'adjusted_conversion_rate': 0.06}
+2024-08-02 10:57:27,187 - INFO - Satisfaction Score: neutral
+2024-08-02 10:57:27,187 - INFO - Projected Customer Rating: 5
+2024-08-02 10:57:27,187 - INFO - SPEAKER_00 Total Talk Duration: 30.00 seconds
+2024-08-02 10:57:27,188 - INFO - SPEAKER_01 Total Talk Duration: 30.00 seconds
+2024-08-02 10:57:27,188 - INFO - Total Crosstalk Duration: 0.00 seconds
+2024-08-02 10:57:27,188 - INFO - SPEAKER_00 Total Dead Air Duration: 0.00 seconds
+2024-08-02 10:57:27,188 - INFO - SPEAKER_01 Total Dead Air Duration: 5.00 seconds
+2024-08-02 10:57:52,135 - INFO - Agent did not use any greetings words.
+2024-08-02 11:00:37,039 - INFO - Agent did not mention any company names.
+2024-08-02 11:00:37,039 - INFO - Final Score: 90
+2024-08-02 13:33:59,373 - INFO - Successfully connected to MongoDB.
+2024-08-02 13:33:59,375 - INFO - Using device: cuda
+2024-08-02 13:34:09,788 - INFO - Loading words from collection: common_words
+2024-08-02 13:34:09,789 - INFO - Accessing collection: common_words
+2024-08-02 13:34:09,793 - INFO - Extracted word: sunt from common_words
+2024-08-02 13:34:09,793 - INFO - Extracted word: pe from common_words
+2024-08-02 13:34:09,793 - INFO - Extracted word: la from common_words
+2024-08-02 13:34:09,794 - INFO - Extracted word: a from common_words
+2024-08-02 13:34:09,794 - INFO - Extracted word: ce from common_words
+2024-08-02 13:34:09,794 - INFO - Extracted word: si from common_words
+2024-08-02 13:34:09,795 - INFO - Extracted word: este from common_words
+2024-08-02 13:34:09,795 - INFO - Extracted word: cu from common_words
+2024-08-02 13:34:09,795 - INFO - Extracted word: pentru from common_words
+2024-08-02 13:34:09,795 - INFO - Extracted word: de from common_words
+2024-08-02 13:34:09,796 - INFO - Extracted word: ca from common_words
+2024-08-02 13:34:09,796 - INFO - Extracted word: în from common_words
+2024-08-02 13:34:09,801 - INFO - Extracted word: al from common_words
+2024-08-02 13:34:09,802 - INFO - Extracted word: un from common_words
+2024-08-02 13:34:09,802 - INFO - Extracted word: ma from common_words
+2024-08-02 13:34:09,802 - INFO - Extracted word: sa from common_words
+2024-08-02 13:34:09,802 - INFO - Extracted word: avea from common_words
+2024-08-02 13:34:09,803 - INFO - Extracted word: acest from common_words
+2024-08-02 13:34:09,803 - INFO - Extracted word: foarte from common_words
+2024-08-02 13:34:09,803 - INFO - Extracted word: ei from common_words
+2024-08-02 13:34:09,804 - INFO - Extracted word: chiar from common_words
+2024-08-02 13:34:09,804 - INFO - Extracted word: nu from common_words
+2024-08-02 13:34:09,804 - INFO - Extracted word: trebuie from common_words
+2024-08-02 13:34:09,804 - INFO - Extracted word: spune from common_words
+2024-08-02 13:34:09,805 - INFO - Extracted word: poate from common_words
+2024-08-02 13:34:09,805 - INFO - Extracted word: mult from common_words
+2024-08-02 13:34:09,805 - INFO - Extracted word: doar from common_words
+2024-08-02 13:34:09,805 - INFO - Extracted word: mai from common_words
+2024-08-02 13:34:09,813 - INFO - Extracted word: cine from common_words
+2024-08-02 13:34:09,814 - INFO - Extracted word: unde from common_words
+2024-08-02 13:34:09,814 - INFO - Extracted word: când from common_words
+2024-08-02 13:34:09,814 - INFO - Extracted word: cum from common_words
+2024-08-02 13:34:09,830 - INFO - Extracted word: deoarece from common_words
+2024-08-02 13:34:09,830 - INFO - Extracted word: sau from common_words
+2024-08-02 13:34:09,830 - INFO - Extracted word: ori from common_words
+2024-08-02 13:34:09,830 - INFO - Extracted word: fie from common_words
+2024-08-02 13:34:09,830 - INFO - Extracted word: posibil from common_words
+2024-08-02 13:34:09,835 - INFO - Extracted word: toate from common_words
+2024-08-02 13:34:09,842 - INFO - Extracted word: tot from common_words
+2024-08-02 13:34:09,843 - INFO - Extracted word: nimic from common_words
+2024-08-02 13:34:09,843 - INFO - Extracted word: nimeni from common_words
+2024-08-02 13:34:09,850 - INFO - Extracted word: aici from common_words
+2024-08-02 13:34:09,851 - INFO - Extracted 54 words from common_words collection.
+2024-08-02 13:34:09,851 - INFO - Loaded 54 words into global variable COMMON_WORDS.
+2024-08-02 13:34:09,851 - INFO - Loading words from collection: positive_words
+2024-08-02 13:34:09,852 - INFO - Accessing collection: positive_words
+2024-08-02 13:34:09,854 - INFO - Extracted word: bine from positive_words
+2024-08-02 13:34:09,854 - INFO - Extracted word: frumos from positive_words
+2024-08-02 13:34:09,854 - INFO - Extracted word: minunat from positive_words
+2024-08-02 13:34:09,855 - INFO - Extracted word: superb from positive_words
+2024-08-02 13:34:09,855 - INFO - Extracted word: excelent from positive_words
+2024-08-02 13:34:09,855 - INFO - Extracted word: grozav from positive_words
+2024-08-02 13:34:09,856 - INFO - Extracted word: extraordinar from positive_words
+2024-08-02 13:34:09,856 - INFO - Extracted word: deosebit from positive_words
+2024-08-02 13:34:09,856 - INFO - Extracted word: perfect from positive_words
+2024-08-02 13:34:09,856 - INFO - Extracted word: uimitor from positive_words
+2024-08-02 13:34:09,856 - INFO - Extracted word: incredibil from positive_words
+2024-08-02 13:34:09,857 - INFO - Extracted word: fantasticos from positive_words
+2024-08-02 13:34:09,861 - INFO - Extracted word: colosal from positive_words
+2024-08-02 13:34:09,861 - INFO - Extracted word: gigantic from positive_words
+2024-08-02 13:34:09,861 - INFO - Extracted word: impozant from positive_words
+2024-08-02 13:34:09,861 - INFO - Extracted word: grandios from positive_words
+2024-08-02 13:34:09,862 - INFO - Extracted word: sublim from positive_words
+2024-08-02 13:34:09,862 - INFO - Extracted word: splendid from positive_words
+2024-08-02 13:34:09,862 - INFO - Extracted word: extravagant from positive_words
+2024-08-02 13:34:09,863 - INFO - Extracted word: fenomenal from positive_words
+2024-08-02 13:34:09,863 - INFO - Extracted word: miraculos from positive_words
+2024-08-02 13:34:09,863 - INFO - Extracted word: magic from positive_words
+2024-08-02 13:34:09,863 - INFO - Extracted word: fabulos from positive_words
+2024-08-02 13:34:09,867 - INFO - Extracted word: ideal from positive_words
+2024-08-02 13:34:09,871 - INFO - Extracted word: impecabil from positive_words
+2024-08-02 13:34:09,875 - INFO - Extracted word: de top from positive_words
+2024-08-02 13:34:09,876 - INFO - Extracted word: de calitate from positive_words
+2024-08-02 13:34:09,876 - INFO - Extracted word: de încredere from positive_words
+2024-08-02 13:34:09,876 - INFO - Extracted word: fiabil from positive_words
+2024-08-02 13:34:09,876 - INFO - Extracted word: eficient from positive_words
+2024-08-02 13:34:09,877 - INFO - Extracted word: rapid from positive_words
+2024-08-02 13:34:09,877 - INFO - Extracted word: convenabil from positive_words
+2024-08-02 13:34:09,877 - INFO - Extracted word: accesibil from positive_words
+2024-08-02 13:34:09,877 - INFO - Extracted word: avantajos from positive_words
+2024-08-02 13:34:09,877 - INFO - Extracted word: util from positive_words
+2024-08-02 13:34:09,878 - INFO - Extracted word: benefic from positive_words
+2024-08-02 13:34:09,878 - INFO - Extracted word: suportiv from positive_words
+2024-08-02 13:34:09,878 - INFO - Extracted word: prietenos from positive_words
+2024-08-02 13:34:09,879 - INFO - Extracted word: amabil from positive_words
+2024-08-02 13:34:09,879 - INFO - Extracted word: profesionist from positive_words
+2024-08-02 13:34:09,879 - INFO - Extracted word: dedicat from positive_words
+2024-08-02 13:34:09,880 - INFO - Extracted word: pasionat from positive_words
+2024-08-02 13:34:09,880 - INFO - Extracted word: entuziast from positive_words
+2024-08-02 13:34:09,885 - INFO - Extracted word: motivat from positive_words
+2024-08-02 13:34:09,885 - INFO - Extracted word: orientat spre client from positive_words
+2024-08-02 13:34:09,890 - INFO - Extracted word: flexibil from positive_words
+2024-08-02 13:34:09,890 - INFO - Extracted word: adaptabil from positive_words
+2024-08-02 13:34:09,890 - INFO - Extracted word: proactiv from positive_words
+2024-08-02 13:34:09,891 - INFO - Extracted word: comunicativ from positive_words
+2024-08-02 13:34:09,891 - INFO - Extracted word: persuasiv from positive_words
+2024-08-02 13:34:09,891 - INFO - Extracted word: negociator priceput from positive_words
+2024-08-02 13:34:09,896 - INFO - Extracted word: organizator eficient from positive_words
+2024-08-02 13:34:09,896 - INFO - Extracted word: planificator strategic from positive_words
+2024-08-02 13:34:09,896 - INFO - Extracted word: gânditor inovator from positive_words
+2024-08-02 13:34:09,897 - INFO - Extracted word: orientat spre rezultate from positive_words
+2024-08-02 13:34:09,897 - INFO - Extracted word: concentrat pe obiective from positive_words
+2024-08-02 13:34:09,897 - INFO - Extracted word: motivat de succes from positive_words
+2024-08-02 13:34:09,924 - INFO - Extracted word: sigur from positive_words
+2024-08-02 13:34:09,924 - INFO - Extracted word: solid from positive_words
+2024-08-02 13:34:09,924 - INFO - Extracted word: robust from positive_words
+2024-08-02 13:34:09,924 - INFO - Extracted word: rezistent from positive_words
+2024-08-02 13:34:09,925 - INFO - Extracted word: durabil from positive_words
+2024-08-02 13:34:09,925 - INFO - Extracted word: permanent from positive_words
+2024-08-02 13:34:09,925 - INFO - Extracted word: constant from positive_words
+2024-08-02 13:34:09,926 - INFO - Extracted word: stabil from positive_words
+2024-08-02 13:34:09,926 - INFO - Extracted word: echilibrat from positive_words
+2024-08-02 13:34:09,926 - INFO - Extracted word: reglamentar from positive_words
+2024-08-02 13:34:09,927 - INFO - Extracted word: uniform from positive_words
+2024-08-02 13:34:09,927 - INFO - Extracted word: consecvent from positive_words
+2024-08-02 13:34:09,927 - INFO - Extracted word: metodic from positive_words
+2024-08-02 13:34:09,927 - INFO - Extracted word: riguros from positive_words
+2024-08-02 13:34:09,928 - INFO - Extracted word: precis from positive_words
+2024-08-02 13:34:09,928 - INFO - Extracted word: exact from positive_words
+2024-08-02 13:34:09,928 - INFO - Extracted word: corect from positive_words
+2024-08-02 13:34:09,928 - INFO - Extracted word: superior from positive_words
+2024-08-02 13:34:09,929 - INFO - Extracted word: remarcabil from positive_words
+2024-08-02 13:34:09,929 - INFO - Extracted word: unic from positive_words
+2024-08-02 13:34:09,929 - INFO - Extracted word: special from positive_words
+2024-08-02 13:34:09,929 - INFO - Extracted word: particular from positive_words
+2024-08-02 13:34:09,930 - INFO - Extracted word: distins from positive_words
+2024-08-02 13:34:09,934 - INFO - Extracted word: rar from positive_words
+2024-08-02 13:34:09,939 - INFO - Extracted word: valoros from positive_words
+2024-08-02 13:34:09,939 - INFO - Extracted word: scump from positive_words
+2024-08-02 13:34:09,939 - INFO - Extracted word: costisitor from positive_words
+2024-08-02 13:34:09,940 - INFO - Extracted word: lucru manual from positive_words
+2024-08-02 13:34:09,940 - INFO - Extracted word: exclusivist from positive_words
+2024-08-02 13:34:09,943 - INFO - Extracted word: rafinat from positive_words
+2024-08-02 13:34:09,943 - INFO - Extracted word: elegant from positive_words
+2024-08-02 13:34:09,943 - INFO - Extracted word: luxos from positive_words
+2024-08-02 13:34:09,944 - INFO - Extracted word: sofisticat from positive_words
+2024-08-02 13:34:09,944 - INFO - Extracted 105 words from positive_words collection.
+2024-08-02 13:34:09,944 - INFO - Loaded 105 words into global variable POSITIVE_WORDS.
+2024-08-02 13:34:09,944 - INFO - Loading words from collection: negative_words
+2024-08-02 13:34:09,945 - INFO - Accessing collection: negative_words
+2024-08-02 13:34:09,952 - INFO - Extracted word: prost from negative_words
+2024-08-02 13:34:09,952 - INFO - Extracted word: urât from negative_words
+2024-08-02 13:34:09,952 - INFO - Extracted word: groaznic from negative_words
+2024-08-02 13:34:09,953 - INFO - Extracted word: ingrozitor from negative_words
+2024-08-02 13:34:09,953 - INFO - Extracted word: teribil from negative_words
+2024-08-02 13:34:09,953 - INFO - Extracted word: fioros from negative_words
+2024-08-02 13:34:09,953 - INFO - Extracted word: speriat from negative_words
+2024-08-02 13:34:09,958 - INFO - Extracted word: nervos from negative_words
+2024-08-02 13:34:09,958 - INFO - Extracted word: furios from negative_words
+2024-08-02 13:34:09,963 - INFO - Extracted word: trist from negative_words
+2024-08-02 13:34:09,963 - INFO - Extracted word: nefericit from negative_words
+2024-08-02 13:34:09,972 - INFO - Extracted word: melancolic from negative_words
+2024-08-02 13:34:09,972 - INFO - Extracted word:  deprimant from negative_words
+2024-08-02 13:34:09,972 - INFO - Extracted word: plictisitor from negative_words
+2024-08-02 13:34:09,973 - INFO - Extracted word: obositor from negative_words
+2024-08-02 13:34:09,973 - INFO - Extracted word: greu from negative_words
+2024-08-02 13:34:09,973 - INFO - Extracted word: dificil from negative_words
+2024-08-02 13:34:09,973 - INFO - Extracted word: imposibil from negative_words
+2024-08-02 13:34:09,974 - INFO - Extracted word: nerealist from negative_words
+2024-08-02 13:34:09,974 - INFO - Extracted word: riscant from negative_words
+2024-08-02 13:34:09,974 - INFO - Extracted word: periculos from negative_words
+2024-08-02 13:34:09,979 - INFO - Extracted word: nociv from negative_words
+2024-08-02 13:34:09,983 - INFO - Extracted word: nesigur from negative_words
+2024-08-02 13:34:09,988 - INFO - Extracted word: murdar from negative_words
+2024-08-02 13:34:09,988 - INFO - Extracted word: dezordonat from negative_words
+2024-08-02 13:34:09,988 - INFO - Extracted word: vechi from negative_words
+2024-08-02 13:34:09,988 - INFO - Extracted word: învechit from negative_words
+2024-08-02 13:34:09,993 - INFO - Extracted word: lipsit de valoare from negative_words
+2024-08-02 13:34:09,993 - INFO - Extracted word: inutil from negative_words
+2024-08-02 13:34:09,997 - INFO - Extracted word: neimportant from negative_words
+2024-08-02 13:34:09,998 - INFO - Extracted word: nesemnificativ from negative_words
+2024-08-02 13:34:09,998 - INFO - Extracted word: inferior from negative_words
+2024-08-02 13:34:09,998 - INFO - Extracted word: slab from negative_words
+2024-08-02 13:34:09,999 - INFO - Extracted word: mediocru from negative_words
+2024-08-02 13:34:09,999 - INFO - Extracted word: lipsit de calitate from negative_words
+2024-08-02 13:34:09,999 - INFO - Extracted word: defect from negative_words
+2024-08-02 13:34:09,999 - INFO - Extracted word: spart from negative_words
+2024-08-02 13:34:10,000 - INFO - Extracted word: stricat from negative_words
+2024-08-02 13:34:10,005 - INFO - Extracted word: incompetent from negative_words
+2024-08-02 13:34:10,005 - INFO - Extracted word: necalificat from negative_words
+2024-08-02 13:34:10,005 - INFO - Extracted word: neprofesionist from negative_words
+2024-08-02 13:34:10,010 - INFO - Extracted word: neexperimentat from negative_words
+2024-08-02 13:34:10,014 - INFO - Extracted word: incorect from negative_words
+2024-08-02 13:34:10,015 - INFO - Extracted word: nedrept from negative_words
+2024-08-02 13:34:10,015 - INFO - Extracted word: imoral from negative_words
+2024-08-02 13:34:10,015 - INFO - Extracted word: necinstit from negative_words
+2024-08-02 13:34:10,015 - INFO - Extracted word: mincinos from negative_words
+2024-08-02 13:34:10,020 - INFO - Extracted word: nedemn de încredere from negative_words
+2024-08-02 13:34:10,020 - INFO - Extracted word: necredibil from negative_words
+2024-08-02 13:34:10,020 - INFO - Extracted word: neplauzibil from negative_words
+2024-08-02 13:34:10,021 - INFO - Extracted word: confuz from negative_words
+2024-08-02 13:34:10,021 - INFO - Extracted word: neclar from negative_words
+2024-08-02 13:34:10,025 - INFO - Extracted word: monotom from negative_words
+2024-08-02 13:34:10,030 - INFO - Extracted word: iritant from negative_words
+2024-08-02 13:34:10,030 - INFO - Extracted word: enervant from negative_words
+2024-08-02 13:34:10,030 - INFO - Extracted word: frustrant from negative_words
+2024-08-02 13:34:10,030 - INFO - Extracted word: stresant from negative_words
+2024-08-02 13:34:10,035 - INFO - Extracted word: jignitor from negative_words
+2024-08-02 13:34:10,035 - INFO - Extracted word: ofensator from negative_words
+2024-08-02 13:34:10,035 - INFO - Extracted word: agresiv from negative_words
+2024-08-02 13:34:10,035 - INFO - Extracted word: violent from negative_words
+2024-08-02 13:34:10,036 - INFO - Extracted 78 words from negative_words collection.
+2024-08-02 13:34:10,036 - INFO - Loaded 78 words into global variable NEGATIVE_WORDS.
+2024-08-02 13:34:10,036 - INFO - Loading words from collection: greetings_words
+2024-08-02 13:34:10,037 - INFO - Accessing collection: greetings_words
+2024-08-02 13:34:10,041 - INFO - Extracted word: salut from greetings_words
+2024-08-02 13:34:10,070 - INFO - Extracted word: domnule from greetings_words
+2024-08-02 13:34:10,070 - INFO - Extracted word: doamna from greetings_words
+2024-08-02 13:34:10,070 - INFO - Extracted word: stimate domnule/doamna from greetings_words
+2024-08-02 13:34:10,078 - INFO - Extracted word: ce mai faci? from greetings_words
+2024-08-02 13:34:10,078 - INFO - Extracted word: hei! from greetings_words
+2024-08-02 13:34:10,078 - INFO - Extracted word: Servus! from greetings_words
+2024-08-02 13:34:10,082 - INFO - Extracted 17 words from greetings_words collection.
+2024-08-02 13:34:10,082 - INFO - Loaded 17 words into global variable GREETINGS_WORDS.
+2024-08-02 13:34:10,083 - INFO - Loading words from collection: companies
+2024-08-02 13:34:10,083 - INFO - Accessing collection: companies
+2024-08-02 13:34:10,085 - INFO - Extracted word: Vodafone from companies
+2024-08-02 13:34:10,085 - INFO - Extracted word: Vodafone Romania from companies
+2024-08-02 13:34:10,085 - INFO - Extracted word: Vodafone Ro from companies
+2024-08-02 13:34:10,086 - INFO - Extracted word: Vodafone R from companies
+2024-08-02 13:34:10,086 - INFO - Extracted word: Vodafone R. from companies
+2024-08-02 13:34:10,086 - INFO - Extracted word: Orange from companies
+2024-08-02 13:34:10,086 - INFO - Extracted word: Telekom from companies
+2024-08-02 13:34:10,090 - INFO - Extracted word: BCR from companies
+2024-08-02 13:34:10,090 - INFO - Extracted word: BRD from companies
+2024-08-02 13:34:10,091 - INFO - Extracted word: ING from companies
+2024-08-02 13:34:10,091 - INFO - Extracted word: Raiffeisen Bank from companies
+2024-08-02 13:34:10,091 - INFO - Extracted word: EON from companies
+2024-08-02 13:34:10,091 - INFO - Extracted word: Edenred from companies
+2024-08-02 13:34:10,092 - INFO - Extracted word: Vodafone România from companies
+2024-08-02 13:34:10,095 - INFO - Extracted 16 words from companies collection.
+2024-08-02 13:34:10,096 - INFO - Loaded 16 words into global variable COMPANIES_NAMES.
+2024-08-02 13:34:10,096 - INFO - Loading words from collection: words_to_remove
+2024-08-02 13:34:10,096 - INFO - Accessing collection: words_to_remove
+2024-08-02 13:34:10,112 - INFO - Extracted 4 words from words_to_remove collection.
+2024-08-02 13:34:10,112 - INFO - Loaded 4 words into global variable WORDS_TO_REMOVE.
+2024-08-02 13:34:10,113 - INFO - Loading words from collection: availability_words
+2024-08-02 13:34:10,113 - INFO - Accessing collection: availability_words
+2024-08-02 13:34:10,118 - INFO - Extracted 1 words from availability_words collection.
+2024-08-02 13:34:10,118 - INFO - Loaded 1 words into global variable AVAILABILITY_WORDS.
+2024-08-02 13:34:10,119 - INFO - Loading words from collection: from_what_company
+2024-08-02 13:34:10,119 - INFO - Accessing collection: from_what_company
+2024-08-02 13:34:10,120 - INFO - Extracted word: din partea companiei from from_what_company
+2024-08-02 13:34:10,121 - INFO - Extracted word: de la from from_what_company
+2024-08-02 13:34:10,121 - INFO - Extracted word: partea companiei from from_what_company
+2024-08-02 13:34:10,121 - INFO - Extracted 3 words from from_what_company collection.
+2024-08-02 13:34:10,121 - INFO - Loaded 3 words into global variable FROM_WHAT_COMPANY.
+2024-08-02 13:34:10,122 - INFO - Loading words from collection: good_bye_words
+2024-08-02 13:34:10,122 - INFO - Accessing collection: good_bye_words
+2024-08-02 13:34:10,124 - INFO - Extracted word: Pe curând! from good_bye_words
+2024-08-02 13:34:10,124 - INFO - Extracted word: La revedere! from good_bye_words
+2024-08-02 13:34:10,128 - INFO - Extracted word: Ne auzim! from good_bye_words
+2024-08-02 13:34:10,128 - INFO - Extracted 4 words from good_bye_words collection.
+2024-08-02 13:34:10,128 - INFO - Loaded 4 words into global variable GOOD_BYE_WORDS.
+2024-08-02 13:34:10,130 - INFO - Found 0 files with status 'to_process'.
+2024-08-02 13:34:10,131 - INFO - No new files to process in BCR.
+2024-08-02 13:34:10,131 - INFO - No new files to process in Vodafone.
+2024-08-02 13:35:10,133 - INFO - Found 1 files with status 'to_process'.
+2024-08-02 13:35:10,133 - INFO - Using device: cuda
+2024-08-02 13:35:15,756 - INFO - Successfully downloaded E_andra.oprea_D_2024-06-03_H_102615_067_CLID_722566683_Follow Up.wav to C:\Users\simaa\AppData\Local\Temp\E_andra.oprea_D_2024-06-03_H_102615_067_CLID_722566683_Follow Up.wav
+2024-08-02 13:35:15,764 - INFO - Audio Duration: 38.184 seconds
+2024-08-02 13:35:15,764 - INFO - Processing file: E_andra.oprea_D_2024-06-03_H_102615_067_CLID_722566683_Follow Up.wav
+2024-08-02 13:35:15,765 - INFO - Checking for existing agent with username: andra.oprea and project: BCR
+2024-08-02 13:35:15,767 - INFO - Agent andra.oprea already exists in the agents database.
+2024-08-02 13:35:15,768 - INFO - Agent Name: Andra Oprea
+2024-08-02 13:35:15,768 - INFO - Project Name: BCR
+2024-08-02 13:35:15,768 - INFO - Day: 2024-06-03
+2024-08-02 13:35:15,769 - INFO - Phone Number: 722566683
+2024-08-02 13:35:15,769 - INFO - Final Status: Follow Up
+2024-08-02 13:35:20,094 - INFO - Speaker: SPEAKER_00
+2024-08-02 13:35:20,094 - INFO - Time: 10.0s to 15.0s
+2024-08-02 13:35:20,104 - INFO - Sentiment: 3 stars
+2024-08-02 13:35:21,239 - INFO - Speaker: SPEAKER_00
+2024-08-02 13:35:21,240 - INFO - Time: 0.0s to 5.0s
+2024-08-02 13:35:21,246 - INFO - Sentiment: 5 stars
+2024-08-02 13:35:21,543 - INFO - Speaker: SPEAKER_00
+2024-08-02 13:35:21,543 - INFO - Time: 15.0s to 20.0s
+2024-08-02 13:35:21,549 - INFO - Sentiment: 3 stars
+2024-08-02 13:35:22,716 - INFO - Speaker: SPEAKER_00
+2024-08-02 13:35:22,717 - INFO - Time: 5.0s to 10.0s
+2024-08-02 13:35:22,723 - INFO - Sentiment: 3 stars
+2024-08-02 13:35:24,668 - INFO - Speaker: SPEAKER_00
+2024-08-02 13:35:24,669 - INFO - Time: 20.0s to 25.0s
+2024-08-02 13:35:24,674 - INFO - Sentiment: 3 stars
+2024-08-02 13:35:25,217 - INFO - Speaker: SPEAKER_00
+2024-08-02 13:35:25,218 - INFO - Time: 25.0s to 30.0s
+2024-08-02 13:35:25,224 - INFO - Sentiment: 5 stars
+2024-08-02 13:35:26,924 - INFO - Speaker: SPEAKER_01
+2024-08-02 13:35:26,925 - INFO - Time: 5.0s to 10.0s
+2024-08-02 13:35:26,930 - INFO - Sentiment: 3 stars
+2024-08-02 13:35:29,183 - INFO - Speaker: SPEAKER_01
+2024-08-02 13:35:29,184 - INFO - Time: 20.0s to 25.0s
+2024-08-02 13:35:29,217 - INFO - Sentiment: 2 stars
+2024-08-02 13:35:29,313 - INFO - Speaker: SPEAKER_01
+2024-08-02 13:35:29,313 - INFO - Time: 25.0s to 30.0s
+2024-08-02 13:35:29,318 - INFO - Sentiment: 5 stars
+2024-08-02 13:35:29,534 - INFO - Speaker: SPEAKER_01
+2024-08-02 13:35:29,534 - INFO - Time: 10.0s to 15.0s
+2024-08-02 13:35:29,539 - INFO - Sentiment: 3 stars
+2024-08-02 13:35:30,076 - INFO - Speaker: SPEAKER_01
+2024-08-02 13:35:30,077 - INFO - Time: 15.0s to 20.0s
+2024-08-02 13:35:30,081 - INFO - Sentiment: 3 stars
+2024-08-02 13:35:32,080 - INFO - Speaker: SPEAKER_01
+2024-08-02 13:35:32,080 - INFO - Time: 30.0s to 35.0s
+2024-08-02 13:35:32,083 - INFO - Sentiment: 3 stars
+2024-08-02 13:35:32,085 - INFO - Average Sentiment Score: 3.42
+2024-08-02 13:35:32,085 - INFO - Impact Result: {'start_sentiment': 5, 'end_sentiment': 3, 'percentage_change': -40.0, 'impact': 'Negative change', 'adjusted_conversion_rate': 0.06}
+2024-08-02 13:35:32,086 - INFO - Satisfaction Score: neutral
+2024-08-02 13:35:32,086 - INFO - Projected Customer Rating: 5
+2024-08-02 13:35:32,086 - INFO - SPEAKER_00 Total Talk Duration: 30.00 seconds
+2024-08-02 13:35:32,087 - INFO - SPEAKER_01 Total Talk Duration: 30.00 seconds
+2024-08-02 13:35:32,087 - INFO - Total Crosstalk Duration: 0.00 seconds
+2024-08-02 13:35:32,087 - INFO - SPEAKER_00 Total Dead Air Duration: 0.00 seconds
+2024-08-02 13:35:32,087 - INFO - SPEAKER_01 Total Dead Air Duration: 5.00 seconds
+2024-08-02 13:35:32,093 - INFO - Agent did not use any greetings words.
+2024-08-02 13:35:32,093 - INFO - Agent did not mention any company names.
+2024-08-02 13:35:32,094 - INFO - Final Score: 90
+2024-08-02 14:03:28,176 - INFO - Successfully connected to MongoDB.
+2024-08-02 14:03:28,178 - INFO - Using device: cuda
+2024-08-02 14:03:38,960 - INFO - Loading words from collection: common_words
+2024-08-02 14:03:59,603 - INFO - Accessing collection: common_words
+2024-08-02 14:03:59,607 - INFO - Extracted word: sunt from common_words
+2024-08-02 14:03:59,607 - INFO - Extracted word: pe from common_words
+2024-08-02 14:03:59,607 - INFO - Extracted word: la from common_words
+2024-08-02 14:03:59,608 - INFO - Extracted word: a from common_words
+2024-08-02 14:03:59,608 - INFO - Extracted word: ce from common_words
+2024-08-02 14:03:59,608 - INFO - Extracted word: si from common_words
+2024-08-02 14:03:59,609 - INFO - Extracted word: este from common_words
+2024-08-02 14:03:59,609 - INFO - Extracted word: cu from common_words
+2024-08-02 14:03:59,609 - INFO - Extracted word: pentru from common_words
+2024-08-02 14:03:59,610 - INFO - Extracted word: de from common_words
+2024-08-02 14:03:59,610 - INFO - Extracted word: ca from common_words
+2024-08-02 14:03:59,610 - INFO - Extracted word: în from common_words
+2024-08-02 14:03:59,616 - INFO - Extracted word: al from common_words
+2024-08-02 14:03:59,616 - INFO - Extracted word: un from common_words
+2024-08-02 14:03:59,617 - INFO - Extracted word: ma from common_words
+2024-08-02 14:03:59,617 - INFO - Extracted word: sa from common_words
+2024-08-02 14:03:59,617 - INFO - Extracted word: avea from common_words
+2024-08-02 14:03:59,618 - INFO - Extracted word: acest from common_words
+2024-08-02 14:03:59,618 - INFO - Extracted word: foarte from common_words
+2024-08-02 14:03:59,618 - INFO - Extracted word: ei from common_words
+2024-08-02 14:03:59,619 - INFO - Extracted word: chiar from common_words
+2024-08-02 14:03:59,619 - INFO - Extracted word: nu from common_words
+2024-08-02 14:03:59,619 - INFO - Extracted word: trebuie from common_words
+2024-08-02 14:03:59,620 - INFO - Extracted word: spune from common_words
+2024-08-02 14:03:59,621 - INFO - Extracted word: poate from common_words
+2024-08-02 14:03:59,621 - INFO - Extracted word: mult from common_words
+2024-08-02 14:03:59,621 - INFO - Extracted word: doar from common_words
+2024-08-02 14:03:59,621 - INFO - Extracted word: mai from common_words
+2024-08-02 14:03:59,629 - INFO - Extracted word: cine from common_words
+2024-08-02 14:03:59,630 - INFO - Extracted word: unde from common_words
+2024-08-02 14:03:59,630 - INFO - Extracted word: când from common_words
+2024-08-02 14:03:59,631 - INFO - Extracted word: cum from common_words
+2024-08-02 14:03:59,647 - INFO - Extracted word: deoarece from common_words
+2024-08-02 14:03:59,647 - INFO - Extracted word: sau from common_words
+2024-08-02 14:03:59,647 - INFO - Extracted word: ori from common_words
+2024-08-02 14:03:59,648 - INFO - Extracted word: fie from common_words
+2024-08-02 14:03:59,648 - INFO - Extracted word: posibil from common_words
+2024-08-02 14:03:59,653 - INFO - Extracted word: toate from common_words
+2024-08-02 14:03:59,662 - INFO - Extracted word: tot from common_words
+2024-08-02 14:03:59,662 - INFO - Extracted word: nimic from common_words
+2024-08-02 14:03:59,663 - INFO - Extracted word: nimeni from common_words
+2024-08-02 14:03:59,672 - INFO - Extracted word: aici from common_words
+2024-08-02 14:03:59,672 - INFO - Extracted 54 words from common_words collection.
+2024-08-02 14:04:14,839 - INFO - Loaded 54 words into global variable COMMON_WORDS.
+2024-08-02 14:04:22,478 - INFO - Loading words from collection: positive_words
+2024-08-02 14:04:23,616 - INFO - Accessing collection: positive_words
+2024-08-02 14:04:23,619 - INFO - Extracted word: bine from positive_words
+2024-08-02 14:04:23,619 - INFO - Extracted word: frumos from positive_words
+2024-08-02 14:04:23,620 - INFO - Extracted word: minunat from positive_words
+2024-08-02 14:04:23,620 - INFO - Extracted word: superb from positive_words
+2024-08-02 14:04:23,620 - INFO - Extracted word: excelent from positive_words
+2024-08-02 14:04:23,621 - INFO - Extracted word: grozav from positive_words
+2024-08-02 14:04:23,621 - INFO - Extracted word: extraordinar from positive_words
+2024-08-02 14:04:23,621 - INFO - Extracted word: deosebit from positive_words
+2024-08-02 14:04:23,621 - INFO - Extracted word: perfect from positive_words
+2024-08-02 14:04:23,622 - INFO - Extracted word: uimitor from positive_words
+2024-08-02 14:04:23,622 - INFO - Extracted word: incredibil from positive_words
+2024-08-02 14:04:23,622 - INFO - Extracted word: fantasticos from positive_words
+2024-08-02 14:04:23,627 - INFO - Extracted word: colosal from positive_words
+2024-08-02 14:04:23,627 - INFO - Extracted word: gigantic from positive_words
+2024-08-02 14:04:23,627 - INFO - Extracted word: impozant from positive_words
+2024-08-02 14:04:23,628 - INFO - Extracted word: grandios from positive_words
+2024-08-02 14:04:23,628 - INFO - Extracted word: sublim from positive_words
+2024-08-02 14:04:23,628 - INFO - Extracted word: splendid from positive_words
+2024-08-02 14:04:23,629 - INFO - Extracted word: extravagant from positive_words
+2024-08-02 14:04:23,629 - INFO - Extracted word: fenomenal from positive_words
+2024-08-02 14:04:23,629 - INFO - Extracted word: miraculos from positive_words
+2024-08-02 14:04:23,630 - INFO - Extracted word: magic from positive_words
+2024-08-02 14:04:23,630 - INFO - Extracted word: fabulos from positive_words
+2024-08-02 14:04:23,635 - INFO - Extracted word: ideal from positive_words
+2024-08-02 14:04:23,639 - INFO - Extracted word: impecabil from positive_words
+2024-08-02 14:04:23,643 - INFO - Extracted word: de top from positive_words
+2024-08-02 14:04:23,644 - INFO - Extracted word: de calitate from positive_words
+2024-08-02 14:04:23,644 - INFO - Extracted word: de încredere from positive_words
+2024-08-02 14:04:23,644 - INFO - Extracted word: fiabil from positive_words
+2024-08-02 14:04:23,645 - INFO - Extracted word: eficient from positive_words
+2024-08-02 14:04:23,645 - INFO - Extracted word: rapid from positive_words
+2024-08-02 14:04:23,646 - INFO - Extracted word: convenabil from positive_words
+2024-08-02 14:04:23,646 - INFO - Extracted word: accesibil from positive_words
+2024-08-02 14:04:23,646 - INFO - Extracted word: avantajos from positive_words
+2024-08-02 14:04:23,647 - INFO - Extracted word: util from positive_words
+2024-08-02 14:04:23,647 - INFO - Extracted word: benefic from positive_words
+2024-08-02 14:04:23,647 - INFO - Extracted word: suportiv from positive_words
+2024-08-02 14:04:23,648 - INFO - Extracted word: prietenos from positive_words
+2024-08-02 14:04:23,648 - INFO - Extracted word: amabil from positive_words
+2024-08-02 14:04:23,648 - INFO - Extracted word: profesionist from positive_words
+2024-08-02 14:04:23,649 - INFO - Extracted word: dedicat from positive_words
+2024-08-02 14:04:23,649 - INFO - Extracted word: pasionat from positive_words
+2024-08-02 14:04:23,649 - INFO - Extracted word: entuziast from positive_words
+2024-08-02 14:04:23,654 - INFO - Extracted word: motivat from positive_words
+2024-08-02 14:04:23,654 - INFO - Extracted word: orientat spre client from positive_words
+2024-08-02 14:04:23,658 - INFO - Extracted word: flexibil from positive_words
+2024-08-02 14:04:23,658 - INFO - Extracted word: adaptabil from positive_words
+2024-08-02 14:04:23,659 - INFO - Extracted word: proactiv from positive_words
+2024-08-02 14:04:23,659 - INFO - Extracted word: comunicativ from positive_words
+2024-08-02 14:04:23,659 - INFO - Extracted word: persuasiv from positive_words
+2024-08-02 14:04:23,660 - INFO - Extracted word: negociator priceput from positive_words
+2024-08-02 14:04:23,664 - INFO - Extracted word: organizator eficient from positive_words
+2024-08-02 14:04:23,665 - INFO - Extracted word: planificator strategic from positive_words
+2024-08-02 14:04:23,665 - INFO - Extracted word: gânditor inovator from positive_words
+2024-08-02 14:04:23,666 - INFO - Extracted word: orientat spre rezultate from positive_words
+2024-08-02 14:04:23,666 - INFO - Extracted word: concentrat pe obiective from positive_words
+2024-08-02 14:04:23,666 - INFO - Extracted word: motivat de succes from positive_words
+2024-08-02 14:04:23,694 - INFO - Extracted word: sigur from positive_words
+2024-08-02 14:04:23,694 - INFO - Extracted word: solid from positive_words
+2024-08-02 14:04:23,694 - INFO - Extracted word: robust from positive_words
+2024-08-02 14:04:23,695 - INFO - Extracted word: rezistent from positive_words
+2024-08-02 14:04:23,695 - INFO - Extracted word: durabil from positive_words
+2024-08-02 14:04:23,695 - INFO - Extracted word: permanent from positive_words
+2024-08-02 14:04:23,696 - INFO - Extracted word: constant from positive_words
+2024-08-02 14:04:23,696 - INFO - Extracted word: stabil from positive_words
+2024-08-02 14:04:23,696 - INFO - Extracted word: echilibrat from positive_words
+2024-08-02 14:04:23,697 - INFO - Extracted word: reglamentar from positive_words
+2024-08-02 14:04:23,697 - INFO - Extracted word: uniform from positive_words
+2024-08-02 14:04:23,697 - INFO - Extracted word: consecvent from positive_words
+2024-08-02 14:04:23,698 - INFO - Extracted word: metodic from positive_words
+2024-08-02 14:04:23,698 - INFO - Extracted word: riguros from positive_words
+2024-08-02 14:04:23,698 - INFO - Extracted word: precis from positive_words
+2024-08-02 14:04:23,699 - INFO - Extracted word: exact from positive_words
+2024-08-02 14:04:23,699 - INFO - Extracted word: corect from positive_words
+2024-08-02 14:04:23,700 - INFO - Extracted word: superior from positive_words
+2024-08-02 14:04:23,700 - INFO - Extracted word: remarcabil from positive_words
+2024-08-02 14:04:23,700 - INFO - Extracted word: unic from positive_words
+2024-08-02 14:04:23,701 - INFO - Extracted word: special from positive_words
+2024-08-02 14:04:23,701 - INFO - Extracted word: particular from positive_words
+2024-08-02 14:04:23,701 - INFO - Extracted word: distins from positive_words
+2024-08-02 14:04:23,706 - INFO - Extracted word: rar from positive_words
+2024-08-02 14:04:23,712 - INFO - Extracted word: valoros from positive_words
+2024-08-02 14:04:23,712 - INFO - Extracted word: scump from positive_words
+2024-08-02 14:04:23,713 - INFO - Extracted word: costisitor from positive_words
+2024-08-02 14:04:23,713 - INFO - Extracted word: lucru manual from positive_words
+2024-08-02 14:04:23,713 - INFO - Extracted word: exclusivist from positive_words
+2024-08-02 14:04:23,722 - INFO - Extracted word: rafinat from positive_words
+2024-08-02 14:04:23,722 - INFO - Extracted word: elegant from positive_words
+2024-08-02 14:04:23,723 - INFO - Extracted word: luxos from positive_words
+2024-08-02 14:04:23,723 - INFO - Extracted word: sofisticat from positive_words
+2024-08-02 14:04:23,724 - INFO - Extracted 105 words from positive_words collection.
+2024-08-02 14:04:27,495 - INFO - Loaded 105 words into global variable POSITIVE_WORDS.
+2024-08-02 14:04:31,948 - INFO - Loading words from collection: negative_words
+2024-08-02 14:04:38,723 - INFO - Accessing collection: negative_words
+2024-08-02 14:04:38,730 - INFO - Extracted word: prost from negative_words
+2024-08-02 14:04:38,730 - INFO - Extracted word: urât from negative_words
+2024-08-02 14:04:38,731 - INFO - Extracted word: groaznic from negative_words
+2024-08-02 14:04:38,731 - INFO - Extracted word: ingrozitor from negative_words
+2024-08-02 14:04:38,732 - INFO - Extracted word: teribil from negative_words
+2024-08-02 14:04:38,732 - INFO - Extracted word: fioros from negative_words
+2024-08-02 14:04:38,732 - INFO - Extracted word: speriat from negative_words
+2024-08-02 14:04:38,737 - INFO - Extracted word: nervos from negative_words
+2024-08-02 14:04:38,738 - INFO - Extracted word: furios from negative_words
+2024-08-02 14:04:38,742 - INFO - Extracted word: trist from negative_words
+2024-08-02 14:04:38,743 - INFO - Extracted word: nefericit from negative_words
+2024-08-02 14:04:38,752 - INFO - Extracted word: melancolic from negative_words
+2024-08-02 14:04:38,753 - INFO - Extracted word:  deprimant from negative_words
+2024-08-02 14:04:38,753 - INFO - Extracted word: plictisitor from negative_words
+2024-08-02 14:04:38,753 - INFO - Extracted word: obositor from negative_words
+2024-08-02 14:04:38,754 - INFO - Extracted word: greu from negative_words
+2024-08-02 14:04:38,754 - INFO - Extracted word: dificil from negative_words
+2024-08-02 14:04:38,755 - INFO - Extracted word: imposibil from negative_words
+2024-08-02 14:04:38,755 - INFO - Extracted word: nerealist from negative_words
+2024-08-02 14:04:38,755 - INFO - Extracted word: riscant from negative_words
+2024-08-02 14:04:38,756 - INFO - Extracted word: periculos from negative_words
+2024-08-02 14:04:38,761 - INFO - Extracted word: nociv from negative_words
+2024-08-02 14:04:38,765 - INFO - Extracted word: nesigur from negative_words
+2024-08-02 14:04:38,770 - INFO - Extracted word: murdar from negative_words
+2024-08-02 14:04:38,770 - INFO - Extracted word: dezordonat from negative_words
+2024-08-02 14:04:38,771 - INFO - Extracted word: vechi from negative_words
+2024-08-02 14:04:38,771 - INFO - Extracted word: învechit from negative_words
+2024-08-02 14:04:38,776 - INFO - Extracted word: lipsit de valoare from negative_words
+2024-08-02 14:04:38,776 - INFO - Extracted word: inutil from negative_words
+2024-08-02 14:04:38,781 - INFO - Extracted word: neimportant from negative_words
+2024-08-02 14:04:38,782 - INFO - Extracted word: nesemnificativ from negative_words
+2024-08-02 14:04:38,782 - INFO - Extracted word: inferior from negative_words
+2024-08-02 14:04:38,782 - INFO - Extracted word: slab from negative_words
+2024-08-02 14:04:38,783 - INFO - Extracted word: mediocru from negative_words
+2024-08-02 14:04:38,783 - INFO - Extracted word: lipsit de calitate from negative_words
+2024-08-02 14:04:38,784 - INFO - Extracted word: defect from negative_words
+2024-08-02 14:04:38,784 - INFO - Extracted word: spart from negative_words
+2024-08-02 14:04:38,784 - INFO - Extracted word: stricat from negative_words
+2024-08-02 14:04:38,789 - INFO - Extracted word: incompetent from negative_words
+2024-08-02 14:04:38,789 - INFO - Extracted word: necalificat from negative_words
+2024-08-02 14:04:38,790 - INFO - Extracted word: neprofesionist from negative_words
+2024-08-02 14:04:38,795 - INFO - Extracted word: neexperimentat from negative_words
+2024-08-02 14:04:38,800 - INFO - Extracted word: incorect from negative_words
+2024-08-02 14:04:38,800 - INFO - Extracted word: nedrept from negative_words
+2024-08-02 14:04:38,801 - INFO - Extracted word: imoral from negative_words
+2024-08-02 14:04:38,801 - INFO - Extracted word: necinstit from negative_words
+2024-08-02 14:04:38,801 - INFO - Extracted word: mincinos from negative_words
+2024-08-02 14:04:38,807 - INFO - Extracted word: nedemn de încredere from negative_words
+2024-08-02 14:04:38,807 - INFO - Extracted word: necredibil from negative_words
+2024-08-02 14:04:38,808 - INFO - Extracted word: neplauzibil from negative_words
+2024-08-02 14:04:38,808 - INFO - Extracted word: confuz from negative_words
+2024-08-02 14:04:38,809 - INFO - Extracted word: neclar from negative_words
+2024-08-02 14:04:38,814 - INFO - Extracted word: monotom from negative_words
+2024-08-02 14:04:38,819 - INFO - Extracted word: iritant from negative_words
+2024-08-02 14:04:38,820 - INFO - Extracted word: enervant from negative_words
+2024-08-02 14:04:38,820 - INFO - Extracted word: frustrant from negative_words
+2024-08-02 14:04:38,821 - INFO - Extracted word: stresant from negative_words
+2024-08-02 14:04:38,826 - INFO - Extracted word: jignitor from negative_words
+2024-08-02 14:04:38,827 - INFO - Extracted word: ofensator from negative_words
+2024-08-02 14:04:38,827 - INFO - Extracted word: agresiv from negative_words
+2024-08-02 14:04:38,827 - INFO - Extracted word: violent from negative_words
+2024-08-02 14:04:38,828 - INFO - Extracted 78 words from negative_words collection.
+2024-08-02 14:05:05,094 - INFO - Loaded 78 words into global variable NEGATIVE_WORDS.
+2024-08-02 14:05:06,957 - INFO - Loading words from collection: greetings_words
+2024-08-02 14:05:07,588 - INFO - Accessing collection: greetings_words
+2024-08-02 14:05:07,591 - INFO - Extracted word: salut from greetings_words
+2024-08-02 14:05:07,618 - INFO - Extracted word: domnule from greetings_words
+2024-08-02 14:05:07,618 - INFO - Extracted word: doamna from greetings_words
+2024-08-02 14:05:07,618 - INFO - Extracted word: stimate domnule/doamna from greetings_words
+2024-08-02 14:05:07,626 - INFO - Extracted word: ce mai faci? from greetings_words
+2024-08-02 14:05:07,627 - INFO - Extracted word: hei! from greetings_words
+2024-08-02 14:05:07,627 - INFO - Extracted word: Servus! from greetings_words
+2024-08-02 14:05:07,631 - INFO - Extracted 17 words from greetings_words collection.
+2024-08-02 14:05:09,392 - INFO - Loaded 17 words into global variable GREETINGS_WORDS.
+2024-08-02 14:05:12,876 - INFO - Loading words from collection: companies
+2024-08-02 14:05:13,968 - INFO - Accessing collection: companies
+2024-08-02 14:05:13,971 - INFO - Extracted word: Vodafone from companies
+2024-08-02 14:05:13,971 - INFO - Extracted word: Vodafone Romania from companies
+2024-08-02 14:05:13,972 - INFO - Extracted word: Vodafone Ro from companies
+2024-08-02 14:05:13,972 - INFO - Extracted word: Vodafone R from companies
+2024-08-02 14:05:13,972 - INFO - Extracted word: Vodafone R. from companies
+2024-08-02 14:05:13,973 - INFO - Extracted word: Orange from companies
+2024-08-02 14:05:13,973 - INFO - Extracted word: Telekom from companies
+2024-08-02 14:05:13,977 - INFO - Extracted word: BCR from companies
+2024-08-02 14:05:13,978 - INFO - Extracted word: BRD from companies
+2024-08-02 14:05:13,978 - INFO - Extracted word: ING from companies
+2024-08-02 14:05:13,978 - INFO - Extracted word: Raiffeisen Bank from companies
+2024-08-02 14:05:13,979 - INFO - Extracted word: EON from companies
+2024-08-02 14:05:13,979 - INFO - Extracted word: Edenred from companies
+2024-08-02 14:05:13,979 - INFO - Extracted word: Vodafone România from companies
+2024-08-02 14:05:13,985 - INFO - Extracted 16 words from companies collection.
+2024-08-02 14:05:29,150 - INFO - Loaded 16 words into global variable COMPANIES_NAMES.
+2024-08-02 14:05:38,328 - INFO - Loading words from collection: words_to_remove
+2024-08-02 14:05:39,327 - INFO - Accessing collection: words_to_remove
+2024-08-02 14:05:39,345 - INFO - Extracted 4 words from words_to_remove collection.
+2024-08-02 14:23:35,183 - INFO - Successfully connected to MongoDB.
+2024-08-02 14:23:35,184 - INFO - Using device: cuda
+2024-08-02 14:23:45,509 - INFO - Found 1 files with status 'to_process'.
+2024-08-02 14:23:45,509 - INFO - Accessing collection: common_words
+2024-08-02 14:23:45,511 - INFO - Extracted word: sunt from common_words
+2024-08-02 14:23:45,512 - INFO - Extracted word: pe from common_words
+2024-08-02 14:23:45,512 - INFO - Extracted word: la from common_words
+2024-08-02 14:23:45,512 - INFO - Extracted word: a from common_words
+2024-08-02 14:23:45,513 - INFO - Extracted word: ce from common_words
+2024-08-02 14:23:45,513 - INFO - Extracted word: si from common_words
+2024-08-02 14:23:45,513 - INFO - Extracted word: este from common_words
+2024-08-02 14:23:45,513 - INFO - Extracted word: cu from common_words
+2024-08-02 14:23:45,513 - INFO - Extracted word: pentru from common_words
+2024-08-02 14:23:45,514 - INFO - Extracted word: de from common_words
+2024-08-02 14:23:45,514 - INFO - Extracted word: ca from common_words
+2024-08-02 14:23:45,514 - INFO - Extracted word: în from common_words
+2024-08-02 14:23:45,520 - INFO - Extracted word: al from common_words
+2024-08-02 14:23:45,520 - INFO - Extracted word: un from common_words
+2024-08-02 14:23:45,521 - INFO - Extracted word: ma from common_words
+2024-08-02 14:23:45,521 - INFO - Extracted word: sa from common_words
+2024-08-02 14:23:45,521 - INFO - Extracted word: avea from common_words
+2024-08-02 14:23:45,521 - INFO - Extracted word: acest from common_words
+2024-08-02 14:23:45,522 - INFO - Extracted word: foarte from common_words
+2024-08-02 14:23:45,522 - INFO - Extracted word: ei from common_words
+2024-08-02 14:23:45,522 - INFO - Extracted word: chiar from common_words
+2024-08-02 14:23:45,522 - INFO - Extracted word: nu from common_words
+2024-08-02 14:23:45,523 - INFO - Extracted word: trebuie from common_words
+2024-08-02 14:23:45,523 - INFO - Extracted word: spune from common_words
+2024-08-02 14:23:45,523 - INFO - Extracted word: poate from common_words
+2024-08-02 14:23:45,523 - INFO - Extracted word: mult from common_words
+2024-08-02 14:23:45,523 - INFO - Extracted word: doar from common_words
+2024-08-02 14:23:45,524 - INFO - Extracted word: mai from common_words
+2024-08-02 14:23:45,531 - INFO - Extracted word: cine from common_words
+2024-08-02 14:23:45,531 - INFO - Extracted word: unde from common_words
+2024-08-02 14:23:45,531 - INFO - Extracted word: când from common_words
+2024-08-02 14:23:45,532 - INFO - Extracted word: cum from common_words
+2024-08-02 14:23:45,546 - INFO - Extracted word: deoarece from common_words
+2024-08-02 14:23:45,546 - INFO - Extracted word: sau from common_words
+2024-08-02 14:23:45,547 - INFO - Extracted word: ori from common_words
+2024-08-02 14:23:45,547 - INFO - Extracted word: fie from common_words
+2024-08-02 14:23:45,547 - INFO - Extracted word: posibil from common_words
+2024-08-02 14:23:45,551 - INFO - Extracted word: toate from common_words
+2024-08-02 14:23:45,559 - INFO - Extracted word: tot from common_words
+2024-08-02 14:23:45,559 - INFO - Extracted word: nimic from common_words
+2024-08-02 14:23:45,559 - INFO - Extracted word: nimeni from common_words
+2024-08-02 14:23:45,567 - INFO - Extracted word: aici from common_words
+2024-08-02 14:23:45,567 - INFO - Extracted 54 words from common_words collection.
+2024-08-02 14:23:45,567 - INFO - Loaded 54 general words into common_words.
+2024-08-02 14:23:45,568 - INFO - Accessing collection: positive_words
+2024-08-02 14:23:45,570 - INFO - Extracted word: bine from positive_words
+2024-08-02 14:23:45,570 - INFO - Extracted word: frumos from positive_words
+2024-08-02 14:23:45,570 - INFO - Extracted word: minunat from positive_words
+2024-08-02 14:23:45,571 - INFO - Extracted word: superb from positive_words
+2024-08-02 14:23:45,571 - INFO - Extracted word: excelent from positive_words
+2024-08-02 14:23:45,571 - INFO - Extracted word: grozav from positive_words
+2024-08-02 14:23:45,572 - INFO - Extracted word: extraordinar from positive_words
+2024-08-02 14:23:45,572 - INFO - Extracted word: deosebit from positive_words
+2024-08-02 14:23:45,572 - INFO - Extracted word: perfect from positive_words
+2024-08-02 14:23:45,572 - INFO - Extracted word: uimitor from positive_words
+2024-08-02 14:23:45,573 - INFO - Extracted word: incredibil from positive_words
+2024-08-02 14:23:45,573 - INFO - Extracted word: fantasticos from positive_words
+2024-08-02 14:23:45,577 - INFO - Extracted word: colosal from positive_words
+2024-08-02 14:23:45,577 - INFO - Extracted word: gigantic from positive_words
+2024-08-02 14:23:45,577 - INFO - Extracted word: impozant from positive_words
+2024-08-02 14:23:45,577 - INFO - Extracted word: grandios from positive_words
+2024-08-02 14:23:45,578 - INFO - Extracted word: sublim from positive_words
+2024-08-02 14:23:45,578 - INFO - Extracted word: splendid from positive_words
+2024-08-02 14:23:45,578 - INFO - Extracted word: extravagant from positive_words
+2024-08-02 14:23:45,578 - INFO - Extracted word: fenomenal from positive_words
+2024-08-02 14:23:45,579 - INFO - Extracted word: miraculos from positive_words
+2024-08-02 14:23:45,579 - INFO - Extracted word: magic from positive_words
+2024-08-02 14:23:45,579 - INFO - Extracted word: fabulos from positive_words
+2024-08-02 14:23:45,583 - INFO - Extracted word: ideal from positive_words
+2024-08-02 14:23:45,587 - INFO - Extracted word: impecabil from positive_words
+2024-08-02 14:23:45,591 - INFO - Extracted word: de top from positive_words
+2024-08-02 14:23:45,591 - INFO - Extracted word: de calitate from positive_words
+2024-08-02 14:23:45,591 - INFO - Extracted word: de încredere from positive_words
+2024-08-02 14:23:45,591 - INFO - Extracted word: fiabil from positive_words
+2024-08-02 14:23:45,592 - INFO - Extracted word: eficient from positive_words
+2024-08-02 14:23:45,592 - INFO - Extracted word: rapid from positive_words
+2024-08-02 14:23:45,592 - INFO - Extracted word: convenabil from positive_words
+2024-08-02 14:23:45,592 - INFO - Extracted word: accesibil from positive_words
+2024-08-02 14:23:45,592 - INFO - Extracted word: avantajos from positive_words
+2024-08-02 14:23:45,593 - INFO - Extracted word: util from positive_words
+2024-08-02 14:23:45,593 - INFO - Extracted word: benefic from positive_words
+2024-08-02 14:23:45,593 - INFO - Extracted word: suportiv from positive_words
+2024-08-02 14:23:45,593 - INFO - Extracted word: prietenos from positive_words
+2024-08-02 14:23:45,593 - INFO - Extracted word: amabil from positive_words
+2024-08-02 14:23:45,594 - INFO - Extracted word: profesionist from positive_words
+2024-08-02 14:23:45,594 - INFO - Extracted word: dedicat from positive_words
+2024-08-02 14:23:45,594 - INFO - Extracted word: pasionat from positive_words
+2024-08-02 14:23:45,594 - INFO - Extracted word: entuziast from positive_words
+2024-08-02 14:23:45,598 - INFO - Extracted word: motivat from positive_words
+2024-08-02 14:23:45,599 - INFO - Extracted word: orientat spre client from positive_words
+2024-08-02 14:23:45,602 - INFO - Extracted word: flexibil from positive_words
+2024-08-02 14:23:45,603 - INFO - Extracted word: adaptabil from positive_words
+2024-08-02 14:23:45,603 - INFO - Extracted word: proactiv from positive_words
+2024-08-02 14:23:45,603 - INFO - Extracted word: comunicativ from positive_words
+2024-08-02 14:23:45,603 - INFO - Extracted word: persuasiv from positive_words
+2024-08-02 14:23:45,604 - INFO - Extracted word: negociator priceput from positive_words
+2024-08-02 14:23:45,607 - INFO - Extracted word: organizator eficient from positive_words
+2024-08-02 14:23:45,607 - INFO - Extracted word: planificator strategic from positive_words
+2024-08-02 14:23:45,608 - INFO - Extracted word: gânditor inovator from positive_words
+2024-08-02 14:23:45,608 - INFO - Extracted word: orientat spre rezultate from positive_words
+2024-08-02 14:23:45,608 - INFO - Extracted word: concentrat pe obiective from positive_words
+2024-08-02 14:23:45,608 - INFO - Extracted word: motivat de succes from positive_words
+2024-08-02 14:23:45,630 - INFO - Extracted word: sigur from positive_words
+2024-08-02 14:23:45,630 - INFO - Extracted word: solid from positive_words
+2024-08-02 14:23:45,630 - INFO - Extracted word: robust from positive_words
+2024-08-02 14:23:45,631 - INFO - Extracted word: rezistent from positive_words
+2024-08-02 14:23:45,631 - INFO - Extracted word: durabil from positive_words
+2024-08-02 14:23:45,631 - INFO - Extracted word: permanent from positive_words
+2024-08-02 14:23:45,631 - INFO - Extracted word: constant from positive_words
+2024-08-02 14:23:45,632 - INFO - Extracted word: stabil from positive_words
+2024-08-02 14:23:45,632 - INFO - Extracted word: echilibrat from positive_words
+2024-08-02 14:23:45,632 - INFO - Extracted word: reglamentar from positive_words
+2024-08-02 14:23:45,632 - INFO - Extracted word: uniform from positive_words
+2024-08-02 14:23:45,633 - INFO - Extracted word: consecvent from positive_words
+2024-08-02 14:23:45,633 - INFO - Extracted word: metodic from positive_words
+2024-08-02 14:23:45,633 - INFO - Extracted word: riguros from positive_words
+2024-08-02 14:23:45,633 - INFO - Extracted word: precis from positive_words
+2024-08-02 14:23:45,633 - INFO - Extracted word: exact from positive_words
+2024-08-02 14:23:45,634 - INFO - Extracted word: corect from positive_words
+2024-08-02 14:23:45,634 - INFO - Extracted word: superior from positive_words
+2024-08-02 14:23:45,634 - INFO - Extracted word: remarcabil from positive_words
+2024-08-02 14:23:45,634 - INFO - Extracted word: unic from positive_words
+2024-08-02 14:23:45,635 - INFO - Extracted word: special from positive_words
+2024-08-02 14:23:45,635 - INFO - Extracted word: particular from positive_words
+2024-08-02 14:23:45,635 - INFO - Extracted word: distins from positive_words
+2024-08-02 14:23:45,639 - INFO - Extracted word: rar from positive_words
+2024-08-02 14:23:45,643 - INFO - Extracted word: valoros from positive_words
+2024-08-02 14:23:45,643 - INFO - Extracted word: scump from positive_words
+2024-08-02 14:23:45,643 - INFO - Extracted word: costisitor from positive_words
+2024-08-02 14:23:45,644 - INFO - Extracted word: lucru manual from positive_words
+2024-08-02 14:23:45,644 - INFO - Extracted word: exclusivist from positive_words
+2024-08-02 14:23:45,646 - INFO - Extracted word: rafinat from positive_words
+2024-08-02 14:23:45,646 - INFO - Extracted word: elegant from positive_words
+2024-08-02 14:23:45,647 - INFO - Extracted word: luxos from positive_words
+2024-08-02 14:23:45,647 - INFO - Extracted word: sofisticat from positive_words
+2024-08-02 14:23:45,647 - INFO - Extracted 105 words from positive_words collection.
+2024-08-02 14:23:45,647 - INFO - Loaded 105 general words into positive_words.
+2024-08-02 14:23:45,648 - INFO - Accessing collection: negative_words
+2024-08-02 14:23:45,653 - INFO - Extracted word: prost from negative_words
+2024-08-02 14:23:45,654 - INFO - Extracted word: urât from negative_words
+2024-08-02 14:23:45,654 - INFO - Extracted word: groaznic from negative_words
+2024-08-02 14:23:45,654 - INFO - Extracted word: ingrozitor from negative_words
+2024-08-02 14:23:45,654 - INFO - Extracted word: teribil from negative_words
+2024-08-02 14:23:45,655 - INFO - Extracted word: fioros from negative_words
+2024-08-02 14:23:45,655 - INFO - Extracted word: speriat from negative_words
+2024-08-02 14:23:45,659 - INFO - Extracted word: nervos from negative_words
+2024-08-02 14:23:45,659 - INFO - Extracted word: furios from negative_words
+2024-08-02 14:23:45,663 - INFO - Extracted word: trist from negative_words
+2024-08-02 14:23:45,664 - INFO - Extracted word: nefericit from negative_words
+2024-08-02 14:23:45,672 - INFO - Extracted word: melancolic from negative_words
+2024-08-02 14:23:45,673 - INFO - Extracted word:  deprimant from negative_words
+2024-08-02 14:23:45,673 - INFO - Extracted word: plictisitor from negative_words
+2024-08-02 14:23:45,673 - INFO - Extracted word: obositor from negative_words
+2024-08-02 14:23:45,673 - INFO - Extracted word: greu from negative_words
+2024-08-02 14:23:45,674 - INFO - Extracted word: dificil from negative_words
+2024-08-02 14:23:45,674 - INFO - Extracted word: imposibil from negative_words
+2024-08-02 14:23:45,674 - INFO - Extracted word: nerealist from negative_words
+2024-08-02 14:23:45,675 - INFO - Extracted word: riscant from negative_words
+2024-08-02 14:23:45,675 - INFO - Extracted word: periculos from negative_words
+2024-08-02 14:23:45,680 - INFO - Extracted word: nociv from negative_words
+2024-08-02 14:23:45,684 - INFO - Extracted word: nesigur from negative_words
+2024-08-02 14:23:45,689 - INFO - Extracted word: murdar from negative_words
+2024-08-02 14:23:45,690 - INFO - Extracted word: dezordonat from negative_words
+2024-08-02 14:23:45,690 - INFO - Extracted word: vechi from negative_words
+2024-08-02 14:23:45,690 - INFO - Extracted word: învechit from negative_words
+2024-08-02 14:23:45,694 - INFO - Extracted word: lipsit de valoare from negative_words
+2024-08-02 14:23:45,694 - INFO - Extracted word: inutil from negative_words
+2024-08-02 14:23:45,699 - INFO - Extracted word: neimportant from negative_words
+2024-08-02 14:23:45,699 - INFO - Extracted word: nesemnificativ from negative_words
+2024-08-02 14:23:45,699 - INFO - Extracted word: inferior from negative_words
+2024-08-02 14:23:45,700 - INFO - Extracted word: slab from negative_words
+2024-08-02 14:23:45,700 - INFO - Extracted word: mediocru from negative_words
+2024-08-02 14:23:45,700 - INFO - Extracted word: lipsit de calitate from negative_words
+2024-08-02 14:23:45,700 - INFO - Extracted word: defect from negative_words
+2024-08-02 14:23:45,701 - INFO - Extracted word: spart from negative_words
+2024-08-02 14:23:45,701 - INFO - Extracted word: stricat from negative_words
+2024-08-02 14:23:45,706 - INFO - Extracted word: incompetent from negative_words
+2024-08-02 14:23:45,706 - INFO - Extracted word: necalificat from negative_words
+2024-08-02 14:23:45,706 - INFO - Extracted word: neprofesionist from negative_words
+2024-08-02 14:23:45,710 - INFO - Extracted word: neexperimentat from negative_words
+2024-08-02 14:23:45,715 - INFO - Extracted word: incorect from negative_words
+2024-08-02 14:23:45,715 - INFO - Extracted word: nedrept from negative_words
+2024-08-02 14:23:45,715 - INFO - Extracted word: imoral from negative_words
+2024-08-02 14:23:45,715 - INFO - Extracted word: necinstit from negative_words
+2024-08-02 14:23:45,715 - INFO - Extracted word: mincinos from negative_words
+2024-08-02 14:23:45,720 - INFO - Extracted word: nedemn de încredere from negative_words
+2024-08-02 14:23:45,720 - INFO - Extracted word: necredibil from negative_words
+2024-08-02 14:23:45,721 - INFO - Extracted word: neplauzibil from negative_words
+2024-08-02 14:23:45,721 - INFO - Extracted word: confuz from negative_words
+2024-08-02 14:23:45,721 - INFO - Extracted word: neclar from negative_words
+2024-08-02 14:23:45,726 - INFO - Extracted word: monotom from negative_words
+2024-08-02 14:23:45,731 - INFO - Extracted word: iritant from negative_words
+2024-08-02 14:23:45,731 - INFO - Extracted word: enervant from negative_words
+2024-08-02 14:23:45,732 - INFO - Extracted word: frustrant from negative_words
+2024-08-02 14:23:45,732 - INFO - Extracted word: stresant from negative_words
+2024-08-02 14:23:45,737 - INFO - Extracted word: jignitor from negative_words
+2024-08-02 14:23:45,737 - INFO - Extracted word: ofensator from negative_words
+2024-08-02 14:23:45,737 - INFO - Extracted word: agresiv from negative_words
+2024-08-02 14:23:45,738 - INFO - Extracted word: violent from negative_words
+2024-08-02 14:23:45,738 - INFO - Extracted 78 words from negative_words collection.
+2024-08-02 14:23:45,738 - INFO - Loaded 78 general words into negative_words.
+2024-08-02 14:23:45,739 - INFO - Accessing collection: greetings_words
+2024-08-02 14:23:45,741 - INFO - Extracted word: salut from greetings_words
+2024-08-02 14:23:45,770 - INFO - Extracted word: domnule from greetings_words
+2024-08-02 14:23:45,770 - INFO - Extracted word: doamna from greetings_words
+2024-08-02 14:23:45,771 - INFO - Extracted word: stimate domnule/doamna from greetings_words
+2024-08-02 14:23:45,778 - INFO - Extracted word: ce mai faci? from greetings_words
+2024-08-02 14:23:45,779 - INFO - Extracted word: hei! from greetings_words
+2024-08-02 14:23:45,779 - INFO - Extracted word: Servus! from greetings_words
+2024-08-02 14:23:45,783 - INFO - Extracted 17 words from greetings_words collection.
+2024-08-02 14:23:45,784 - INFO - Loaded 17 general words into greetings_words.
+2024-08-02 14:23:45,784 - INFO - Accessing collection: companies
+2024-08-02 14:23:45,786 - INFO - Extracted word: Vodafone from companies
+2024-08-02 14:23:45,786 - INFO - Extracted word: Vodafone Romania from companies
+2024-08-02 14:23:45,787 - INFO - Extracted word: Vodafone Ro from companies
+2024-08-02 14:23:45,787 - INFO - Extracted word: Vodafone R from companies
+2024-08-02 14:23:45,787 - INFO - Extracted word: Vodafone R. from companies
+2024-08-02 14:23:45,788 - INFO - Extracted word: Orange from companies
+2024-08-02 14:23:45,788 - INFO - Extracted word: Telekom from companies
+2024-08-02 14:23:45,791 - INFO - Extracted word: BCR from companies
+2024-08-02 14:23:45,791 - INFO - Extracted word: BRD from companies
+2024-08-02 14:23:45,792 - INFO - Extracted word: ING from companies
+2024-08-02 14:23:45,792 - INFO - Extracted word: Raiffeisen Bank from companies
+2024-08-02 14:23:45,792 - INFO - Extracted word: EON from companies
+2024-08-02 14:23:45,792 - INFO - Extracted word: Edenred from companies
+2024-08-02 14:23:45,793 - INFO - Extracted word: Vodafone România from companies
+2024-08-02 14:23:45,797 - INFO - Extracted 16 words from companies collection.
+2024-08-02 14:23:45,797 - INFO - Loaded 16 general words into companies.
+2024-08-02 14:23:45,797 - INFO - Accessing collection: words_to_remove
+2024-08-02 14:23:45,814 - INFO - Extracted 4 words from words_to_remove collection.
+2024-08-02 14:23:45,814 - INFO - Loaded 4 general words into words_to_remove.
+2024-08-02 14:23:45,814 - INFO - Accessing collection: availability_words
+2024-08-02 14:23:45,820 - INFO - Extracted 1 words from availability_words collection.
+2024-08-02 14:23:45,820 - INFO - Loaded 1 general words into availability_words.
+2024-08-02 14:23:45,820 - INFO - Accessing collection: from_what_company
+2024-08-02 14:23:45,822 - INFO - Extracted word: din partea companiei from from_what_company
+2024-08-02 14:23:45,823 - INFO - Extracted word: de la from from_what_company
+2024-08-02 14:23:45,823 - INFO - Extracted word: partea companiei from from_what_company
+2024-08-02 14:23:45,823 - INFO - Extracted 3 words from from_what_company collection.
+2024-08-02 14:23:45,823 - INFO - Loaded 3 general words into from_what_company.
+2024-08-02 14:23:45,824 - INFO - Accessing collection: good_bye_words
+2024-08-02 14:23:45,825 - INFO - Extracted word: Pe curând! from good_bye_words
+2024-08-02 14:23:45,826 - INFO - Extracted word: La revedere! from good_bye_words
+2024-08-02 14:23:45,830 - INFO - Extracted word: Ne auzim! from good_bye_words
+2024-08-02 14:23:45,830 - INFO - Extracted 4 words from good_bye_words collection.
+2024-08-02 14:23:45,831 - INFO - Loaded 4 general words into good_bye_words.
+2024-08-02 14:24:32,783 - INFO - Added 4 project-specific words to common_words for project 'BCR'.
+2024-08-02 14:24:44,066 - INFO - Added 4 project-specific words to positive_words for project 'BCR'.
+2024-08-02 14:24:52,014 - INFO - Added 4 project-specific words to negative_words for project 'BCR'.
+2024-08-02 14:24:59,254 - INFO - Added 5 project-specific words to greetings_words for project 'BCR'.
+2024-08-02 14:25:05,251 - INFO - Added 0 project-specific words to companies for project 'BCR'.
+2024-08-02 14:25:11,506 - INFO - Added 4 project-specific words to words_to_remove for project 'BCR'.
+2024-08-02 14:25:15,727 - INFO - Added 3 project-specific words to availability_words for project 'BCR'.
+2024-08-02 14:25:20,102 - INFO - Added 2 project-specific words to from_what_company for project 'BCR'.
+2024-08-02 14:25:23,933 - INFO - Added 0 project-specific words to good_bye_words for project 'BCR'.
+2024-08-02 14:26:01,136 - INFO - Final count for common_words: 57 words
+2024-08-02 14:27:50,007 - INFO - Successfully connected to MongoDB.
+2024-08-02 14:27:50,008 - INFO - Using device: cuda
+2024-08-02 14:28:00,625 - INFO - Found 1 files with status 'to_process'.
+2024-08-02 14:28:00,626 - INFO - Accessing collection: common_words
+2024-08-02 14:28:00,628 - INFO - Extracted word: sunt from common_words
+2024-08-02 14:28:00,628 - INFO - Extracted word: pe from common_words
+2024-08-02 14:28:00,629 - INFO - Extracted word: la from common_words
+2024-08-02 14:28:00,629 - INFO - Extracted word: a from common_words
+2024-08-02 14:28:00,629 - INFO - Extracted word: ce from common_words
+2024-08-02 14:28:00,629 - INFO - Extracted word: si from common_words
+2024-08-02 14:28:00,630 - INFO - Extracted word: este from common_words
+2024-08-02 14:28:00,630 - INFO - Extracted word: cu from common_words
+2024-08-02 14:28:00,630 - INFO - Extracted word: pentru from common_words
+2024-08-02 14:28:00,630 - INFO - Extracted word: de from common_words
+2024-08-02 14:28:00,631 - INFO - Extracted word: ca from common_words
+2024-08-02 14:28:00,631 - INFO - Extracted word: în from common_words
+2024-08-02 14:28:00,636 - INFO - Extracted word: al from common_words
+2024-08-02 14:28:00,636 - INFO - Extracted word: un from common_words
+2024-08-02 14:28:00,636 - INFO - Extracted word: ma from common_words
+2024-08-02 14:28:00,636 - INFO - Extracted word: sa from common_words
+2024-08-02 14:28:00,636 - INFO - Extracted word: avea from common_words
+2024-08-02 14:28:00,637 - INFO - Extracted word: acest from common_words
+2024-08-02 14:28:00,637 - INFO - Extracted word: foarte from common_words
+2024-08-02 14:28:00,637 - INFO - Extracted word: ei from common_words
+2024-08-02 14:28:00,638 - INFO - Extracted word: chiar from common_words
+2024-08-02 14:28:00,638 - INFO - Extracted word: nu from common_words
+2024-08-02 14:28:00,638 - INFO - Extracted word: trebuie from common_words
+2024-08-02 14:28:00,638 - INFO - Extracted word: spune from common_words
+2024-08-02 14:28:00,639 - INFO - Extracted word: poate from common_words
+2024-08-02 14:28:00,639 - INFO - Extracted word: mult from common_words
+2024-08-02 14:28:00,639 - INFO - Extracted word: doar from common_words
+2024-08-02 14:28:00,639 - INFO - Extracted word: mai from common_words
+2024-08-02 14:28:00,646 - INFO - Extracted word: cine from common_words
+2024-08-02 14:28:00,647 - INFO - Extracted word: unde from common_words
+2024-08-02 14:28:00,647 - INFO - Extracted word: când from common_words
+2024-08-02 14:28:00,647 - INFO - Extracted word: cum from common_words
+2024-08-02 14:28:00,661 - INFO - Extracted word: deoarece from common_words
+2024-08-02 14:28:00,661 - INFO - Extracted word: sau from common_words
+2024-08-02 14:28:00,662 - INFO - Extracted word: ori from common_words
+2024-08-02 14:28:00,662 - INFO - Extracted word: fie from common_words
+2024-08-02 14:28:00,662 - INFO - Extracted word: posibil from common_words
+2024-08-02 14:28:00,666 - INFO - Extracted word: toate from common_words
+2024-08-02 14:28:00,673 - INFO - Extracted word: tot from common_words
+2024-08-02 14:28:00,673 - INFO - Extracted word: nimic from common_words
+2024-08-02 14:28:00,674 - INFO - Extracted word: nimeni from common_words
+2024-08-02 14:28:00,681 - INFO - Extracted word: aici from common_words
+2024-08-02 14:28:00,681 - INFO - Extracted 54 words from common_words collection.
+2024-08-02 14:28:00,681 - INFO - Loaded 54 general words into common_words.
+2024-08-02 14:28:00,681 - INFO - Accessing collection: positive_words
+2024-08-02 14:28:00,684 - INFO - Extracted word: bine from positive_words
+2024-08-02 14:28:00,684 - INFO - Extracted word: frumos from positive_words
+2024-08-02 14:28:00,684 - INFO - Extracted word: minunat from positive_words
+2024-08-02 14:28:00,685 - INFO - Extracted word: superb from positive_words
+2024-08-02 14:28:00,685 - INFO - Extracted word: excelent from positive_words
+2024-08-02 14:28:00,685 - INFO - Extracted word: grozav from positive_words
+2024-08-02 14:28:00,686 - INFO - Extracted word: extraordinar from positive_words
+2024-08-02 14:28:00,686 - INFO - Extracted word: deosebit from positive_words
+2024-08-02 14:28:00,686 - INFO - Extracted word: perfect from positive_words
+2024-08-02 14:28:00,686 - INFO - Extracted word: uimitor from positive_words
+2024-08-02 14:28:00,687 - INFO - Extracted word: incredibil from positive_words
+2024-08-02 14:28:00,687 - INFO - Extracted word: fantasticos from positive_words
+2024-08-02 14:28:00,690 - INFO - Extracted word: colosal from positive_words
+2024-08-02 14:28:00,691 - INFO - Extracted word: gigantic from positive_words
+2024-08-02 14:28:00,691 - INFO - Extracted word: impozant from positive_words
+2024-08-02 14:28:00,691 - INFO - Extracted word: grandios from positive_words
+2024-08-02 14:28:00,691 - INFO - Extracted word: sublim from positive_words
+2024-08-02 14:28:00,692 - INFO - Extracted word: splendid from positive_words
+2024-08-02 14:28:00,692 - INFO - Extracted word: extravagant from positive_words
+2024-08-02 14:28:00,692 - INFO - Extracted word: fenomenal from positive_words
+2024-08-02 14:28:00,692 - INFO - Extracted word: miraculos from positive_words
+2024-08-02 14:28:00,692 - INFO - Extracted word: magic from positive_words
+2024-08-02 14:28:00,693 - INFO - Extracted word: fabulos from positive_words
+2024-08-02 14:28:00,696 - INFO - Extracted word: ideal from positive_words
+2024-08-02 14:28:00,701 - INFO - Extracted word: impecabil from positive_words
+2024-08-02 14:28:00,705 - INFO - Extracted word: de top from positive_words
+2024-08-02 14:28:00,706 - INFO - Extracted word: de calitate from positive_words
+2024-08-02 14:28:00,706 - INFO - Extracted word: de încredere from positive_words
+2024-08-02 14:28:00,706 - INFO - Extracted word: fiabil from positive_words
+2024-08-02 14:28:00,706 - INFO - Extracted word: eficient from positive_words
+2024-08-02 14:28:00,707 - INFO - Extracted word: rapid from positive_words
+2024-08-02 14:28:00,707 - INFO - Extracted word: convenabil from positive_words
+2024-08-02 14:28:00,707 - INFO - Extracted word: accesibil from positive_words
+2024-08-02 14:28:00,708 - INFO - Extracted word: avantajos from positive_words
+2024-08-02 14:28:00,708 - INFO - Extracted word: util from positive_words
+2024-08-02 14:28:00,708 - INFO - Extracted word: benefic from positive_words
+2024-08-02 14:28:00,708 - INFO - Extracted word: suportiv from positive_words
+2024-08-02 14:28:00,709 - INFO - Extracted word: prietenos from positive_words
+2024-08-02 14:28:00,709 - INFO - Extracted word: amabil from positive_words
+2024-08-02 14:28:00,709 - INFO - Extracted word: profesionist from positive_words
+2024-08-02 14:28:00,709 - INFO - Extracted word: dedicat from positive_words
+2024-08-02 14:28:00,710 - INFO - Extracted word: pasionat from positive_words
+2024-08-02 14:28:00,710 - INFO - Extracted word: entuziast from positive_words
+2024-08-02 14:28:00,714 - INFO - Extracted word: motivat from positive_words
+2024-08-02 14:28:00,715 - INFO - Extracted word: orientat spre client from positive_words
+2024-08-02 14:28:00,719 - INFO - Extracted word: flexibil from positive_words
+2024-08-02 14:28:00,720 - INFO - Extracted word: adaptabil from positive_words
+2024-08-02 14:28:00,720 - INFO - Extracted word: proactiv from positive_words
+2024-08-02 14:28:00,720 - INFO - Extracted word: comunicativ from positive_words
+2024-08-02 14:28:00,721 - INFO - Extracted word: persuasiv from positive_words
+2024-08-02 14:28:00,721 - INFO - Extracted word: negociator priceput from positive_words
+2024-08-02 14:28:00,725 - INFO - Extracted word: organizator eficient from positive_words
+2024-08-02 14:28:00,726 - INFO - Extracted word: planificator strategic from positive_words
+2024-08-02 14:28:00,726 - INFO - Extracted word: gânditor inovator from positive_words
+2024-08-02 14:28:00,726 - INFO - Extracted word: orientat spre rezultate from positive_words
+2024-08-02 14:28:00,727 - INFO - Extracted word: concentrat pe obiective from positive_words
+2024-08-02 14:28:00,727 - INFO - Extracted word: motivat de succes from positive_words
+2024-08-02 14:28:00,751 - INFO - Extracted word: sigur from positive_words
+2024-08-02 14:28:00,751 - INFO - Extracted word: solid from positive_words
+2024-08-02 14:28:00,752 - INFO - Extracted word: robust from positive_words
+2024-08-02 14:28:00,752 - INFO - Extracted word: rezistent from positive_words
+2024-08-02 14:28:00,752 - INFO - Extracted word: durabil from positive_words
+2024-08-02 14:28:00,752 - INFO - Extracted word: permanent from positive_words
+2024-08-02 14:28:00,753 - INFO - Extracted word: constant from positive_words
+2024-08-02 14:28:00,753 - INFO - Extracted word: stabil from positive_words
+2024-08-02 14:28:00,753 - INFO - Extracted word: echilibrat from positive_words
+2024-08-02 14:28:00,753 - INFO - Extracted word: reglamentar from positive_words
+2024-08-02 14:28:00,753 - INFO - Extracted word: uniform from positive_words
+2024-08-02 14:28:00,754 - INFO - Extracted word: consecvent from positive_words
+2024-08-02 14:28:00,754 - INFO - Extracted word: metodic from positive_words
+2024-08-02 14:28:00,754 - INFO - Extracted word: riguros from positive_words
+2024-08-02 14:28:00,754 - INFO - Extracted word: precis from positive_words
+2024-08-02 14:28:00,755 - INFO - Extracted word: exact from positive_words
+2024-08-02 14:28:00,755 - INFO - Extracted word: corect from positive_words
+2024-08-02 14:28:00,755 - INFO - Extracted word: superior from positive_words
+2024-08-02 14:28:00,755 - INFO - Extracted word: remarcabil from positive_words
+2024-08-02 14:28:00,756 - INFO - Extracted word: unic from positive_words
+2024-08-02 14:28:00,756 - INFO - Extracted word: special from positive_words
+2024-08-02 14:28:00,756 - INFO - Extracted word: particular from positive_words
+2024-08-02 14:28:00,756 - INFO - Extracted word: distins from positive_words
+2024-08-02 14:28:00,760 - INFO - Extracted word: rar from positive_words
+2024-08-02 14:28:00,764 - INFO - Extracted word: valoros from positive_words
+2024-08-02 14:28:00,764 - INFO - Extracted word: scump from positive_words
+2024-08-02 14:28:00,765 - INFO - Extracted word: costisitor from positive_words
+2024-08-02 14:28:00,765 - INFO - Extracted word: lucru manual from positive_words
+2024-08-02 14:28:00,765 - INFO - Extracted word: exclusivist from positive_words
+2024-08-02 14:28:00,770 - INFO - Extracted word: rafinat from positive_words
+2024-08-02 14:28:00,771 - INFO - Extracted word: elegant from positive_words
+2024-08-02 14:28:00,771 - INFO - Extracted word: luxos from positive_words
+2024-08-02 14:28:00,771 - INFO - Extracted word: sofisticat from positive_words
+2024-08-02 14:28:00,772 - INFO - Extracted 105 words from positive_words collection.
+2024-08-02 14:28:00,772 - INFO - Loaded 105 general words into positive_words.
+2024-08-02 14:28:00,772 - INFO - Accessing collection: negative_words
+2024-08-02 14:28:00,778 - INFO - Extracted word: prost from negative_words
+2024-08-02 14:28:00,779 - INFO - Extracted word: urât from negative_words
+2024-08-02 14:28:00,779 - INFO - Extracted word: groaznic from negative_words
+2024-08-02 14:28:00,779 - INFO - Extracted word: ingrozitor from negative_words
+2024-08-02 14:28:00,779 - INFO - Extracted word: teribil from negative_words
+2024-08-02 14:28:00,780 - INFO - Extracted word: fioros from negative_words
+2024-08-02 14:28:00,780 - INFO - Extracted word: speriat from negative_words
+2024-08-02 14:28:00,784 - INFO - Extracted word: nervos from negative_words
+2024-08-02 14:28:00,784 - INFO - Extracted word: furios from negative_words
+2024-08-02 14:28:00,788 - INFO - Extracted word: trist from negative_words
+2024-08-02 14:28:00,788 - INFO - Extracted word: nefericit from negative_words
+2024-08-02 14:28:00,795 - INFO - Extracted word: melancolic from negative_words
+2024-08-02 14:28:00,796 - INFO - Extracted word:  deprimant from negative_words
+2024-08-02 14:28:00,796 - INFO - Extracted word: plictisitor from negative_words
+2024-08-02 14:28:00,796 - INFO - Extracted word: obositor from negative_words
+2024-08-02 14:28:00,797 - INFO - Extracted word: greu from negative_words
+2024-08-02 14:28:00,797 - INFO - Extracted word: dificil from negative_words
+2024-08-02 14:28:00,797 - INFO - Extracted word: imposibil from negative_words
+2024-08-02 14:28:00,797 - INFO - Extracted word: nerealist from negative_words
+2024-08-02 14:28:00,798 - INFO - Extracted word: riscant from negative_words
+2024-08-02 14:28:00,798 - INFO - Extracted word: periculos from negative_words
+2024-08-02 14:28:00,802 - INFO - Extracted word: nociv from negative_words
+2024-08-02 14:28:00,806 - INFO - Extracted word: nesigur from negative_words
+2024-08-02 14:28:00,810 - INFO - Extracted word: murdar from negative_words
+2024-08-02 14:28:00,810 - INFO - Extracted word: dezordonat from negative_words
+2024-08-02 14:28:00,810 - INFO - Extracted word: vechi from negative_words
+2024-08-02 14:28:00,810 - INFO - Extracted word: învechit from negative_words
+2024-08-02 14:28:00,814 - INFO - Extracted word: lipsit de valoare from negative_words
+2024-08-02 14:28:00,814 - INFO - Extracted word: inutil from negative_words
+2024-08-02 14:28:00,818 - INFO - Extracted word: neimportant from negative_words
+2024-08-02 14:28:00,818 - INFO - Extracted word: nesemnificativ from negative_words
+2024-08-02 14:28:00,819 - INFO - Extracted word: inferior from negative_words
+2024-08-02 14:28:00,819 - INFO - Extracted word: slab from negative_words
+2024-08-02 14:28:00,819 - INFO - Extracted word: mediocru from negative_words
+2024-08-02 14:28:00,819 - INFO - Extracted word: lipsit de calitate from negative_words
+2024-08-02 14:28:00,819 - INFO - Extracted word: defect from negative_words
+2024-08-02 14:28:00,820 - INFO - Extracted word: spart from negative_words
+2024-08-02 14:28:00,820 - INFO - Extracted word: stricat from negative_words
+2024-08-02 14:28:00,824 - INFO - Extracted word: incompetent from negative_words
+2024-08-02 14:28:00,824 - INFO - Extracted word: necalificat from negative_words
+2024-08-02 14:28:00,824 - INFO - Extracted word: neprofesionist from negative_words
+2024-08-02 14:28:00,828 - INFO - Extracted word: neexperimentat from negative_words
+2024-08-02 14:28:00,832 - INFO - Extracted word: incorect from negative_words
+2024-08-02 14:28:00,832 - INFO - Extracted word: nedrept from negative_words
+2024-08-02 14:28:00,833 - INFO - Extracted word: imoral from negative_words
+2024-08-02 14:28:00,833 - INFO - Extracted word: necinstit from negative_words
+2024-08-02 14:28:00,833 - INFO - Extracted word: mincinos from negative_words
+2024-08-02 14:28:00,837 - INFO - Extracted word: nedemn de încredere from negative_words
+2024-08-02 14:28:00,837 - INFO - Extracted word: necredibil from negative_words
+2024-08-02 14:28:00,837 - INFO - Extracted word: neplauzibil from negative_words
+2024-08-02 14:28:00,837 - INFO - Extracted word: confuz from negative_words
+2024-08-02 14:28:00,838 - INFO - Extracted word: neclar from negative_words
+2024-08-02 14:28:00,842 - INFO - Extracted word: monotom from negative_words
+2024-08-02 14:28:00,845 - INFO - Extracted word: iritant from negative_words
+2024-08-02 14:28:00,845 - INFO - Extracted word: enervant from negative_words
+2024-08-02 14:28:00,846 - INFO - Extracted word: frustrant from negative_words
+2024-08-02 14:28:00,846 - INFO - Extracted word: stresant from negative_words
+2024-08-02 14:28:00,850 - INFO - Extracted word: jignitor from negative_words
+2024-08-02 14:28:00,850 - INFO - Extracted word: ofensator from negative_words
+2024-08-02 14:28:00,850 - INFO - Extracted word: agresiv from negative_words
+2024-08-02 14:28:00,850 - INFO - Extracted word: violent from negative_words
+2024-08-02 14:28:00,851 - INFO - Extracted 78 words from negative_words collection.
+2024-08-02 14:28:00,851 - INFO - Loaded 78 general words into negative_words.
+2024-08-02 14:28:00,851 - INFO - Accessing collection: greetings_words
+2024-08-02 14:28:00,854 - INFO - Extracted word: salut from greetings_words
+2024-08-02 14:28:00,881 - INFO - Extracted word: domnule from greetings_words
+2024-08-02 14:28:00,882 - INFO - Extracted word: doamna from greetings_words
+2024-08-02 14:28:00,882 - INFO - Extracted word: stimate domnule/doamna from greetings_words
+2024-08-02 14:28:00,890 - INFO - Extracted word: ce mai faci? from greetings_words
+2024-08-02 14:28:00,890 - INFO - Extracted word: hei! from greetings_words
+2024-08-02 14:28:00,890 - INFO - Extracted word: Servus! from greetings_words
+2024-08-02 14:28:00,894 - INFO - Extracted 17 words from greetings_words collection.
+2024-08-02 14:28:00,894 - INFO - Loaded 17 general words into greetings_words.
+2024-08-02 14:28:00,895 - INFO - Accessing collection: companies_names
+2024-08-02 14:28:00,897 - INFO - Extracted word: Vodafone from companies_names
+2024-08-02 14:28:00,897 - INFO - Extracted word: Vodafone Romania from companies_names
+2024-08-02 14:28:00,897 - INFO - Extracted word: Vodafone Ro from companies_names
+2024-08-02 14:28:00,898 - INFO - Extracted word: Vodafone R from companies_names
+2024-08-02 14:28:00,898 - INFO - Extracted word: Vodafone R. from companies_names
+2024-08-02 14:28:00,898 - INFO - Extracted word: Orange from companies_names
+2024-08-02 14:28:00,898 - INFO - Extracted word: Telekom from companies_names
+2024-08-02 14:28:00,903 - INFO - Extracted word: BCR from companies_names
+2024-08-02 14:28:00,903 - INFO - Extracted word: BRD from companies_names
+2024-08-02 14:28:00,903 - INFO - Extracted word: ING from companies_names
+2024-08-02 14:28:00,903 - INFO - Extracted word: Raiffeisen Bank from companies_names
+2024-08-02 14:28:00,904 - INFO - Extracted word: EON from companies_names
+2024-08-02 14:28:00,904 - INFO - Extracted word: Edenred from companies_names
+2024-08-02 14:28:00,904 - INFO - Extracted word: Vodafone România from companies_names
+2024-08-02 14:28:00,908 - INFO - Extracted 16 words from companies_names collection.
+2024-08-02 14:28:00,908 - INFO - Loaded 16 general words into companies_names.
+2024-08-02 14:28:00,909 - INFO - Accessing collection: words_to_remove
+2024-08-02 14:28:00,925 - INFO - Extracted 4 words from words_to_remove collection.
+2024-08-02 14:28:00,925 - INFO - Loaded 4 general words into words_to_remove.
+2024-08-02 14:28:00,925 - INFO - Accessing collection: availability_words
+2024-08-02 14:28:00,931 - INFO - Extracted 1 words from availability_words collection.
+2024-08-02 14:28:00,931 - INFO - Loaded 1 general words into availability_words.
+2024-08-02 14:28:00,931 - INFO - Accessing collection: from_what_company
+2024-08-02 14:28:00,933 - INFO - Extracted word: din partea companiei from from_what_company
+2024-08-02 14:28:00,933 - INFO - Extracted word: de la from from_what_company
+2024-08-02 14:28:00,934 - INFO - Extracted word: partea companiei from from_what_company
+2024-08-02 14:28:00,934 - INFO - Extracted 3 words from from_what_company collection.
+2024-08-02 14:28:00,934 - INFO - Loaded 3 general words into from_what_company.
+2024-08-02 14:28:00,934 - INFO - Accessing collection: good_bye_words
+2024-08-02 14:28:00,936 - INFO - Extracted word: Pe curând! from good_bye_words
+2024-08-02 14:28:00,936 - INFO - Extracted word: La revedere! from good_bye_words
+2024-08-02 14:28:00,941 - INFO - Extracted word: Ne auzim! from good_bye_words
+2024-08-02 14:28:00,941 - INFO - Extracted 4 words from good_bye_words collection.
+2024-08-02 14:28:00,941 - INFO - Loaded 4 general words into good_bye_words.
+2024-08-02 14:28:14,451 - INFO - Added 4 project-specific words to common_words for project 'BCR'.
+2024-08-02 14:28:18,700 - INFO - Added 4 project-specific words to positive_words for project 'BCR'.
+2024-08-02 14:28:25,981 - INFO - Added 4 project-specific words to negative_words for project 'BCR'.
+2024-08-02 14:28:31,381 - INFO - Added 5 project-specific words to greetings_words for project 'BCR'.
+2024-08-02 14:28:40,108 - INFO - Added 3 project-specific words to companies_names for project 'BCR'.
+2024-08-02 14:37:14,821 - INFO - Successfully connected to MongoDB.
+2024-08-02 14:37:14,822 - INFO - Using device: cuda
+2024-08-02 14:37:25,878 - INFO - Found 1 files with status 'to_process'.
+2024-08-02 14:37:25,879 - INFO - Accessing collection: common_words
+2024-08-02 14:37:25,881 - INFO - Extracted word: sunt from common_words
+2024-08-02 14:37:25,881 - INFO - Extracted word: pe from common_words
+2024-08-02 14:37:25,881 - INFO - Extracted word: la from common_words
+2024-08-02 14:37:25,881 - INFO - Extracted word: a from common_words
+2024-08-02 14:37:25,882 - INFO - Extracted word: ce from common_words
+2024-08-02 14:37:25,882 - INFO - Extracted word: si from common_words
+2024-08-02 14:37:25,882 - INFO - Extracted word: este from common_words
+2024-08-02 14:37:25,882 - INFO - Extracted word: cu from common_words
+2024-08-02 14:37:25,883 - INFO - Extracted word: pentru from common_words
+2024-08-02 14:37:25,883 - INFO - Extracted word: de from common_words
+2024-08-02 14:37:25,883 - INFO - Extracted word: ca from common_words
+2024-08-02 14:37:25,883 - INFO - Extracted word: în from common_words
+2024-08-02 14:37:25,889 - INFO - Extracted word: al from common_words
+2024-08-02 14:37:25,889 - INFO - Extracted word: un from common_words
+2024-08-02 14:37:25,889 - INFO - Extracted word: ma from common_words
+2024-08-02 14:37:25,890 - INFO - Extracted word: sa from common_words
+2024-08-02 14:37:25,890 - INFO - Extracted word: avea from common_words
+2024-08-02 14:37:25,890 - INFO - Extracted word: acest from common_words
+2024-08-02 14:37:25,890 - INFO - Extracted word: foarte from common_words
+2024-08-02 14:37:25,891 - INFO - Extracted word: ei from common_words
+2024-08-02 14:37:25,891 - INFO - Extracted word: chiar from common_words
+2024-08-02 14:37:25,891 - INFO - Extracted word: nu from common_words
+2024-08-02 14:37:25,891 - INFO - Extracted word: trebuie from common_words
+2024-08-02 14:37:25,891 - INFO - Extracted word: spune from common_words
+2024-08-02 14:37:25,892 - INFO - Extracted word: poate from common_words
+2024-08-02 14:37:25,892 - INFO - Extracted word: mult from common_words
+2024-08-02 14:37:25,892 - INFO - Extracted word: doar from common_words
+2024-08-02 14:37:25,893 - INFO - Extracted word: mai from common_words
+2024-08-02 14:37:25,900 - INFO - Extracted word: cine from common_words
+2024-08-02 14:37:25,900 - INFO - Extracted word: unde from common_words
+2024-08-02 14:37:25,900 - INFO - Extracted word: când from common_words
+2024-08-02 14:37:25,900 - INFO - Extracted word: cum from common_words
+2024-08-02 14:37:25,914 - INFO - Extracted word: deoarece from common_words
+2024-08-02 14:37:25,915 - INFO - Extracted word: sau from common_words
+2024-08-02 14:37:25,915 - INFO - Extracted word: ori from common_words
+2024-08-02 14:37:25,915 - INFO - Extracted word: fie from common_words
+2024-08-02 14:37:25,915 - INFO - Extracted word: posibil from common_words
+2024-08-02 14:37:25,919 - INFO - Extracted word: toate from common_words
+2024-08-02 14:37:25,927 - INFO - Extracted word: tot from common_words
+2024-08-02 14:37:25,927 - INFO - Extracted word: nimic from common_words
+2024-08-02 14:37:25,927 - INFO - Extracted word: nimeni from common_words
+2024-08-02 14:37:25,935 - INFO - Extracted word: aici from common_words
+2024-08-02 14:37:25,935 - INFO - Extracted 54 words from common_words collection.
+2024-08-02 14:37:25,935 - INFO - Loaded 54 general words into common_words.
+2024-08-02 14:37:25,935 - INFO - Accessing collection: positive_words
+2024-08-02 14:37:25,938 - INFO - Extracted word: bine from positive_words
+2024-08-02 14:37:25,938 - INFO - Extracted word: frumos from positive_words
+2024-08-02 14:37:25,938 - INFO - Extracted word: minunat from positive_words
+2024-08-02 14:37:25,939 - INFO - Extracted word: superb from positive_words
+2024-08-02 14:37:25,939 - INFO - Extracted word: excelent from positive_words
+2024-08-02 14:37:25,939 - INFO - Extracted word: grozav from positive_words
+2024-08-02 14:37:25,939 - INFO - Extracted word: extraordinar from positive_words
+2024-08-02 14:37:25,940 - INFO - Extracted word: deosebit from positive_words
+2024-08-02 14:37:25,941 - INFO - Extracted word: perfect from positive_words
+2024-08-02 14:37:25,941 - INFO - Extracted word: uimitor from positive_words
+2024-08-02 14:37:25,941 - INFO - Extracted word: incredibil from positive_words
+2024-08-02 14:37:25,941 - INFO - Extracted word: fantasticos from positive_words
+2024-08-02 14:37:25,944 - INFO - Extracted word: colosal from positive_words
+2024-08-02 14:37:25,945 - INFO - Extracted word: gigantic from positive_words
+2024-08-02 14:37:25,945 - INFO - Extracted word: impozant from positive_words
+2024-08-02 14:37:25,945 - INFO - Extracted word: grandios from positive_words
+2024-08-02 14:37:25,945 - INFO - Extracted word: sublim from positive_words
+2024-08-02 14:37:25,946 - INFO - Extracted word: splendid from positive_words
+2024-08-02 14:37:25,946 - INFO - Extracted word: extravagant from positive_words
+2024-08-02 14:37:25,946 - INFO - Extracted word: fenomenal from positive_words
+2024-08-02 14:37:25,946 - INFO - Extracted word: miraculos from positive_words
+2024-08-02 14:37:25,946 - INFO - Extracted word: magic from positive_words
+2024-08-02 14:37:25,947 - INFO - Extracted word: fabulos from positive_words
+2024-08-02 14:37:25,951 - INFO - Extracted word: ideal from positive_words
+2024-08-02 14:37:25,954 - INFO - Extracted word: impecabil from positive_words
+2024-08-02 14:37:25,958 - INFO - Extracted word: de top from positive_words
+2024-08-02 14:37:25,958 - INFO - Extracted word: de calitate from positive_words
+2024-08-02 14:37:25,958 - INFO - Extracted word: de încredere from positive_words
+2024-08-02 14:37:25,958 - INFO - Extracted word: fiabil from positive_words
+2024-08-02 14:37:25,959 - INFO - Extracted word: eficient from positive_words
+2024-08-02 14:37:25,959 - INFO - Extracted word: rapid from positive_words
+2024-08-02 14:37:25,959 - INFO - Extracted word: convenabil from positive_words
+2024-08-02 14:37:25,959 - INFO - Extracted word: accesibil from positive_words
+2024-08-02 14:37:25,960 - INFO - Extracted word: avantajos from positive_words
+2024-08-02 14:37:25,960 - INFO - Extracted word: util from positive_words
+2024-08-02 14:37:25,960 - INFO - Extracted word: benefic from positive_words
+2024-08-02 14:37:25,960 - INFO - Extracted word: suportiv from positive_words
+2024-08-02 14:37:25,961 - INFO - Extracted word: prietenos from positive_words
+2024-08-02 14:37:25,961 - INFO - Extracted word: amabil from positive_words
+2024-08-02 14:37:25,961 - INFO - Extracted word: profesionist from positive_words
+2024-08-02 14:37:25,961 - INFO - Extracted word: dedicat from positive_words
+2024-08-02 14:37:25,962 - INFO - Extracted word: pasionat from positive_words
+2024-08-02 14:37:25,962 - INFO - Extracted word: entuziast from positive_words
+2024-08-02 14:37:25,965 - INFO - Extracted word: motivat from positive_words
+2024-08-02 14:37:25,966 - INFO - Extracted word: orientat spre client from positive_words
+2024-08-02 14:37:25,969 - INFO - Extracted word: flexibil from positive_words
+2024-08-02 14:37:25,970 - INFO - Extracted word: adaptabil from positive_words
+2024-08-02 14:37:25,970 - INFO - Extracted word: proactiv from positive_words
+2024-08-02 14:37:25,970 - INFO - Extracted word: comunicativ from positive_words
+2024-08-02 14:37:25,970 - INFO - Extracted word: persuasiv from positive_words
+2024-08-02 14:37:25,971 - INFO - Extracted word: negociator priceput from positive_words
+2024-08-02 14:37:25,975 - INFO - Extracted word: organizator eficient from positive_words
+2024-08-02 14:37:25,975 - INFO - Extracted word: planificator strategic from positive_words
+2024-08-02 14:37:25,975 - INFO - Extracted word: gânditor inovator from positive_words
+2024-08-02 14:37:25,975 - INFO - Extracted word: orientat spre rezultate from positive_words
+2024-08-02 14:37:25,976 - INFO - Extracted word: concentrat pe obiective from positive_words
+2024-08-02 14:37:25,976 - INFO - Extracted word: motivat de succes from positive_words
+2024-08-02 14:37:25,997 - INFO - Extracted word: sigur from positive_words
+2024-08-02 14:37:25,997 - INFO - Extracted word: solid from positive_words
+2024-08-02 14:37:25,997 - INFO - Extracted word: robust from positive_words
+2024-08-02 14:37:25,997 - INFO - Extracted word: rezistent from positive_words
+2024-08-02 14:37:25,998 - INFO - Extracted word: durabil from positive_words
+2024-08-02 14:37:25,998 - INFO - Extracted word: permanent from positive_words
+2024-08-02 14:37:25,998 - INFO - Extracted word: constant from positive_words
+2024-08-02 14:37:25,998 - INFO - Extracted word: stabil from positive_words
+2024-08-02 14:37:25,999 - INFO - Extracted word: echilibrat from positive_words
+2024-08-02 14:37:25,999 - INFO - Extracted word: reglamentar from positive_words
+2024-08-02 14:37:25,999 - INFO - Extracted word: uniform from positive_words
+2024-08-02 14:37:25,999 - INFO - Extracted word: consecvent from positive_words
+2024-08-02 14:37:26,000 - INFO - Extracted word: metodic from positive_words
+2024-08-02 14:37:26,000 - INFO - Extracted word: riguros from positive_words
+2024-08-02 14:37:26,000 - INFO - Extracted word: precis from positive_words
+2024-08-02 14:37:26,000 - INFO - Extracted word: exact from positive_words
+2024-08-02 14:37:26,001 - INFO - Extracted word: corect from positive_words
+2024-08-02 14:37:26,001 - INFO - Extracted word: superior from positive_words
+2024-08-02 14:37:26,001 - INFO - Extracted word: remarcabil from positive_words
+2024-08-02 14:37:26,002 - INFO - Extracted word: unic from positive_words
+2024-08-02 14:37:26,002 - INFO - Extracted word: special from positive_words
+2024-08-02 14:37:26,002 - INFO - Extracted word: particular from positive_words
+2024-08-02 14:37:26,003 - INFO - Extracted word: distins from positive_words
+2024-08-02 14:37:26,007 - INFO - Extracted word: rar from positive_words
+2024-08-02 14:37:26,011 - INFO - Extracted word: valoros from positive_words
+2024-08-02 14:37:26,011 - INFO - Extracted word: scump from positive_words
+2024-08-02 14:37:26,012 - INFO - Extracted word: costisitor from positive_words
+2024-08-02 14:37:26,012 - INFO - Extracted word: lucru manual from positive_words
+2024-08-02 14:37:26,012 - INFO - Extracted word: exclusivist from positive_words
+2024-08-02 14:37:26,014 - INFO - Extracted word: rafinat from positive_words
+2024-08-02 14:37:26,015 - INFO - Extracted word: elegant from positive_words
+2024-08-02 14:37:26,015 - INFO - Extracted word: luxos from positive_words
+2024-08-02 14:37:26,015 - INFO - Extracted word: sofisticat from positive_words
+2024-08-02 14:37:26,015 - INFO - Extracted 105 words from positive_words collection.
+2024-08-02 14:37:26,016 - INFO - Loaded 105 general words into positive_words.
+2024-08-02 14:37:26,016 - INFO - Accessing collection: negative_words
+2024-08-02 14:37:26,022 - INFO - Extracted word: prost from negative_words
+2024-08-02 14:37:26,022 - INFO - Extracted word: urât from negative_words
+2024-08-02 14:37:26,022 - INFO - Extracted word: groaznic from negative_words
+2024-08-02 14:37:26,022 - INFO - Extracted word: ingrozitor from negative_words
+2024-08-02 14:37:26,023 - INFO - Extracted word: teribil from negative_words
+2024-08-02 14:37:26,023 - INFO - Extracted word: fioros from negative_words
+2024-08-02 14:37:26,023 - INFO - Extracted word: speriat from negative_words
+2024-08-02 14:37:26,027 - INFO - Extracted word: nervos from negative_words
+2024-08-02 14:37:26,027 - INFO - Extracted word: furios from negative_words
+2024-08-02 14:37:26,031 - INFO - Extracted word: trist from negative_words
+2024-08-02 14:37:26,031 - INFO - Extracted word: nefericit from negative_words
+2024-08-02 14:37:26,038 - INFO - Extracted word: melancolic from negative_words
+2024-08-02 14:37:26,039 - INFO - Extracted word:  deprimant from negative_words
+2024-08-02 14:37:26,039 - INFO - Extracted word: plictisitor from negative_words
+2024-08-02 14:37:26,039 - INFO - Extracted word: obositor from negative_words
+2024-08-02 14:37:26,039 - INFO - Extracted word: greu from negative_words
+2024-08-02 14:37:26,040 - INFO - Extracted word: dificil from negative_words
+2024-08-02 14:37:26,040 - INFO - Extracted word: imposibil from negative_words
+2024-08-02 14:37:26,040 - INFO - Extracted word: nerealist from negative_words
+2024-08-02 14:37:26,040 - INFO - Extracted word: riscant from negative_words
+2024-08-02 14:37:26,041 - INFO - Extracted word: periculos from negative_words
+2024-08-02 14:37:26,045 - INFO - Extracted word: nociv from negative_words
+2024-08-02 14:37:26,049 - INFO - Extracted word: nesigur from negative_words
+2024-08-02 14:37:26,053 - INFO - Extracted word: murdar from negative_words
+2024-08-02 14:37:26,053 - INFO - Extracted word: dezordonat from negative_words
+2024-08-02 14:37:26,053 - INFO - Extracted word: vechi from negative_words
+2024-08-02 14:37:26,053 - INFO - Extracted word: învechit from negative_words
+2024-08-02 14:37:26,057 - INFO - Extracted word: lipsit de valoare from negative_words
+2024-08-02 14:37:26,057 - INFO - Extracted word: inutil from negative_words
+2024-08-02 14:37:26,061 - INFO - Extracted word: neimportant from negative_words
+2024-08-02 14:37:26,061 - INFO - Extracted word: nesemnificativ from negative_words
+2024-08-02 14:37:26,061 - INFO - Extracted word: inferior from negative_words
+2024-08-02 14:37:26,062 - INFO - Extracted word: slab from negative_words
+2024-08-02 14:37:26,062 - INFO - Extracted word: mediocru from negative_words
+2024-08-02 14:37:26,062 - INFO - Extracted word: lipsit de calitate from negative_words
+2024-08-02 14:37:26,062 - INFO - Extracted word: defect from negative_words
+2024-08-02 14:37:26,063 - INFO - Extracted word: spart from negative_words
+2024-08-02 14:37:26,063 - INFO - Extracted word: stricat from negative_words
+2024-08-02 14:37:26,067 - INFO - Extracted word: incompetent from negative_words
+2024-08-02 14:37:26,067 - INFO - Extracted word: necalificat from negative_words
+2024-08-02 14:37:26,067 - INFO - Extracted word: neprofesionist from negative_words
+2024-08-02 14:37:26,071 - INFO - Extracted word: neexperimentat from negative_words
+2024-08-02 14:37:26,075 - INFO - Extracted word: incorect from negative_words
+2024-08-02 14:37:26,075 - INFO - Extracted word: nedrept from negative_words
+2024-08-02 14:37:26,075 - INFO - Extracted word: imoral from negative_words
+2024-08-02 14:37:26,075 - INFO - Extracted word: necinstit from negative_words
+2024-08-02 14:37:26,075 - INFO - Extracted word: mincinos from negative_words
+2024-08-02 14:37:26,079 - INFO - Extracted word: nedemn de încredere from negative_words
+2024-08-02 14:37:26,079 - INFO - Extracted word: necredibil from negative_words
+2024-08-02 14:37:26,080 - INFO - Extracted word: neplauzibil from negative_words
+2024-08-02 14:37:26,080 - INFO - Extracted word: confuz from negative_words
+2024-08-02 14:37:26,080 - INFO - Extracted word: neclar from negative_words
+2024-08-02 14:37:26,084 - INFO - Extracted word: monotom from negative_words
+2024-08-02 14:37:26,087 - INFO - Extracted word: iritant from negative_words
+2024-08-02 14:37:26,087 - INFO - Extracted word: enervant from negative_words
+2024-08-02 14:37:26,087 - INFO - Extracted word: frustrant from negative_words
+2024-08-02 14:37:26,088 - INFO - Extracted word: stresant from negative_words
+2024-08-02 14:37:26,091 - INFO - Extracted word: jignitor from negative_words
+2024-08-02 14:37:26,091 - INFO - Extracted word: ofensator from negative_words
+2024-08-02 14:37:26,092 - INFO - Extracted word: agresiv from negative_words
+2024-08-02 14:37:26,092 - INFO - Extracted word: violent from negative_words
+2024-08-02 14:37:26,092 - INFO - Extracted 78 words from negative_words collection.
+2024-08-02 14:37:26,092 - INFO - Loaded 78 general words into negative_words.
+2024-08-02 14:37:26,093 - INFO - Accessing collection: greetings_words
+2024-08-02 14:37:26,095 - INFO - Extracted word: salut from greetings_words
+2024-08-02 14:37:26,119 - INFO - Extracted word: domnule from greetings_words
+2024-08-02 14:37:26,119 - INFO - Extracted word: doamna from greetings_words
+2024-08-02 14:37:26,119 - INFO - Extracted word: stimate domnule/doamna from greetings_words
+2024-08-02 14:37:26,126 - INFO - Extracted word: ce mai faci? from greetings_words
+2024-08-02 14:37:26,126 - INFO - Extracted word: hei! from greetings_words
+2024-08-02 14:37:26,126 - INFO - Extracted word: Servus! from greetings_words
+2024-08-02 14:37:26,130 - INFO - Extracted 17 words from greetings_words collection.
+2024-08-02 14:37:26,130 - INFO - Loaded 17 general words into greetings_words.
+2024-08-02 14:37:26,131 - INFO - Accessing collection: companies_names
+2024-08-02 14:37:26,133 - INFO - Extracted word: Vodafone from companies_names
+2024-08-02 14:37:26,133 - INFO - Extracted word: Vodafone Romania from companies_names
+2024-08-02 14:37:26,133 - INFO - Extracted word: Vodafone Ro from companies_names
+2024-08-02 14:37:26,134 - INFO - Extracted word: Vodafone R from companies_names
+2024-08-02 14:37:26,134 - INFO - Extracted word: Vodafone R. from companies_names
+2024-08-02 14:37:26,134 - INFO - Extracted word: Orange from companies_names
+2024-08-02 14:37:26,134 - INFO - Extracted word: Telekom from companies_names
+2024-08-02 14:37:26,138 - INFO - Extracted word: BCR from companies_names
+2024-08-02 14:37:26,138 - INFO - Extracted word: BRD from companies_names
+2024-08-02 14:37:26,138 - INFO - Extracted word: ING from companies_names
+2024-08-02 14:37:26,139 - INFO - Extracted word: Raiffeisen Bank from companies_names
+2024-08-02 14:37:26,139 - INFO - Extracted word: EON from companies_names
+2024-08-02 14:37:26,139 - INFO - Extracted word: Edenred from companies_names
+2024-08-02 14:37:26,139 - INFO - Extracted word: Vodafone România from companies_names
+2024-08-02 14:37:26,143 - INFO - Extracted 16 words from companies_names collection.
+2024-08-02 14:37:26,144 - INFO - Loaded 16 general words into companies_names.
+2024-08-02 14:37:26,144 - INFO - Accessing collection: words_to_remove
+2024-08-02 14:37:26,161 - INFO - Extracted 4 words from words_to_remove collection.
+2024-08-02 14:37:26,162 - INFO - Loaded 4 general words into words_to_remove.
+2024-08-02 14:37:26,162 - INFO - Accessing collection: availability_words
+2024-08-02 14:37:26,167 - INFO - Extracted 1 words from availability_words collection.
+2024-08-02 14:37:26,168 - INFO - Loaded 1 general words into availability_words.
+2024-08-02 14:37:26,168 - INFO - Accessing collection: from_what_company
+2024-08-02 14:37:26,170 - INFO - Extracted word: din partea companiei from from_what_company
+2024-08-02 14:37:26,170 - INFO - Extracted word: de la from from_what_company
+2024-08-02 14:37:26,170 - INFO - Extracted word: partea companiei from from_what_company
+2024-08-02 14:37:26,171 - INFO - Extracted 3 words from from_what_company collection.
+2024-08-02 14:37:26,171 - INFO - Loaded 3 general words into from_what_company.
+2024-08-02 14:37:26,171 - INFO - Accessing collection: good_bye_words
+2024-08-02 14:37:26,173 - INFO - Extracted word: Pe curând! from good_bye_words
+2024-08-02 14:37:26,173 - INFO - Extracted word: La revedere! from good_bye_words
+2024-08-02 14:37:26,177 - INFO - Extracted word: Ne auzim! from good_bye_words
+2024-08-02 14:37:26,178 - INFO - Extracted 4 words from good_bye_words collection.
+2024-08-02 14:37:26,178 - INFO - Loaded 4 general words into good_bye_words.
+2024-08-02 14:37:26,180 - INFO - Added 4 project-specific words to common_words for project 'BCR'.
+2024-08-02 14:37:26,180 - INFO - Added 4 project-specific words to positive_words for project 'BCR'.
+2024-08-02 14:37:26,180 - INFO - Added 4 project-specific words to negative_words for project 'BCR'.
+2024-08-02 14:37:26,181 - INFO - Added 5 project-specific words to greetings_words for project 'BCR'.
+2024-08-02 14:37:26,181 - INFO - Added 3 project-specific words to companies_names for project 'BCR'.
+2024-08-02 14:37:26,181 - INFO - Added 4 project-specific words to words_to_remove for project 'BCR'.
+2024-08-02 14:37:26,181 - INFO - Added 3 project-specific words to availability_words for project 'BCR'.
+2024-08-02 14:37:26,182 - INFO - Added 2 project-specific words to from_what_company for project 'BCR'.
+2024-08-02 14:37:26,182 - INFO - Added 0 project-specific words to good_bye_words for project 'BCR'.
+2024-08-02 14:37:26,182 - INFO - Final count for common_words: 57 words
+2024-08-02 14:37:26,182 - INFO - Final count for positive_words: 106 words
+2024-08-02 14:37:26,183 - INFO - Final count for negative_words: 81 words
+2024-08-02 14:37:26,183 - INFO - Final count for greetings_words: 20 words
+2024-08-02 14:37:26,183 - INFO - Final count for companies_names: 17 words
+2024-08-02 14:37:26,183 - INFO - Final count for words_to_remove: 8 words
+2024-08-02 14:37:26,184 - INFO - Final count for availability_words: 4 words
+2024-08-02 14:37:26,184 - INFO - Final count for from_what_company: 5 words
+2024-08-02 14:37:26,184 - INFO - Final count for good_bye_words: 4 words
+2024-08-02 14:37:26,184 - INFO - Using device: cuda
+2024-08-02 14:37:27,962 - INFO - Successfully downloaded E_sabina.muscalu_D_2024-05-31_H_112711_318_CLID_753317434_Nu raspunde.wav to C:\Users\simaa\AppData\Local\Temp\E_sabina.muscalu_D_2024-05-31_H_112711_318_CLID_753317434_Nu raspunde.wav
+2024-08-02 14:37:27,967 - INFO - Audio Duration: 7.968 seconds
+2024-08-02 14:37:27,968 - INFO - Processing file: E_sabina.muscalu_D_2024-05-31_H_112711_318_CLID_753317434_Nu raspunde.wav
+2024-08-02 14:37:27,968 - INFO - Checking for existing agent with username: sabina.muscalu and project: BCR
+2024-08-02 14:37:27,972 - INFO - Inserted agent sabina.muscalu into the agents database.
+2024-08-02 14:37:27,973 - INFO - Agent Name: Sabina Muscalu
+2024-08-02 14:37:27,973 - INFO - Project Name: BCR
+2024-08-02 14:37:27,973 - INFO - Day: 2024-05-31
+2024-08-02 14:37:27,973 - INFO - Phone Number: 753317434
+2024-08-02 14:37:27,974 - INFO - Final Status: Nu raspunde
+2024-08-02 14:37:29,446 - INFO - Speaker: SPEAKER_01
+2024-08-02 14:37:29,446 - INFO - Time: 0.0s to 5.0s
+2024-08-02 14:37:29,447 - INFO - Transcription:  Muzica
+2024-08-02 14:37:29,447 - INFO - Sentiment: 4 stars
+2024-08-02 14:37:30,037 - INFO - Average Sentiment Score: 4.00
+2024-08-02 14:37:30,037 - INFO - Impact Result: {'start_sentiment': 4, 'end_sentiment': 4, 'percentage_change': 0.0, 'impact': 'No significant change', 'adjusted_conversion_rate': 0.1}
+2024-08-02 14:37:30,037 - INFO - Satisfaction Score: positive
+2024-08-02 14:37:30,038 - INFO - Projected Customer Rating: 10
+2024-08-02 14:37:30,038 - INFO - SPEAKER_00 Total Talk Duration: 0.00 seconds
+2024-08-02 14:37:30,038 - INFO - SPEAKER_01 Total Talk Duration: 5.00 seconds
+2024-08-02 14:37:30,039 - INFO - Total Crosstalk Duration: 0.00 seconds
+2024-08-02 14:37:30,039 - INFO - SPEAKER_00 Total Dead Air Duration: 0.00 seconds
+2024-08-02 14:37:30,039 - INFO - SPEAKER_01 Total Dead Air Duration: 0.00 seconds
+2024-08-02 14:37:30,039 - INFO - Agent's Complete Text: 
+2024-08-02 14:37:30,054 - INFO - Agent did not use any greetings words.
+2024-08-02 14:37:30,065 - INFO - Agent did not mention any company names.
+2024-08-02 14:37:30,068 - INFO - Agent did not use any goodbye words.
+2024-08-02 14:37:30,071 - INFO - Agent did not use any availability words.
+2024-08-02 14:37:30,076 - INFO - Agent did not inquire about the customer's company.
+2024-08-02 14:37:30,145 - INFO - Agent used 0 positive words.
+2024-08-02 14:37:30,192 - INFO - Agent used 0 negative words.
+2024-08-02 14:37:30,213 - INFO - Agent used 0 common words.
+2024-08-02 14:37:30,213 - INFO - Final Score: 79
+2024-08-02 14:38:32,982 - INFO - Found 1 files with status 'to_process'.
+2024-08-02 14:38:32,983 - INFO - Accessing collection: common_words
+2024-08-02 14:38:32,985 - INFO - Extracted word: sunt from common_words
+2024-08-02 14:38:32,985 - INFO - Extracted word: pe from common_words
+2024-08-02 14:38:32,985 - INFO - Extracted word: la from common_words
+2024-08-02 14:38:32,986 - INFO - Extracted word: a from common_words
+2024-08-02 14:38:32,986 - INFO - Extracted word: ce from common_words
+2024-08-02 14:38:32,986 - INFO - Extracted word: si from common_words
+2024-08-02 14:38:32,986 - INFO - Extracted word: este from common_words
+2024-08-02 14:38:32,987 - INFO - Extracted word: cu from common_words
+2024-08-02 14:38:32,987 - INFO - Extracted word: pentru from common_words
+2024-08-02 14:38:32,987 - INFO - Extracted word: de from common_words
+2024-08-02 14:38:32,987 - INFO - Extracted word: ca from common_words
+2024-08-02 14:38:32,988 - INFO - Extracted word: în from common_words
+2024-08-02 14:38:32,991 - INFO - Extracted word: al from common_words
+2024-08-02 14:38:32,992 - INFO - Extracted word: un from common_words
+2024-08-02 14:38:32,992 - INFO - Extracted word: ma from common_words
+2024-08-02 14:38:32,992 - INFO - Extracted word: sa from common_words
+2024-08-02 14:38:32,992 - INFO - Extracted word: avea from common_words
+2024-08-02 14:38:32,993 - INFO - Extracted word: acest from common_words
+2024-08-02 14:38:32,993 - INFO - Extracted word: foarte from common_words
+2024-08-02 14:38:32,993 - INFO - Extracted word: ei from common_words
+2024-08-02 14:38:32,993 - INFO - Extracted word: chiar from common_words
+2024-08-02 14:38:32,994 - INFO - Extracted word: nu from common_words
+2024-08-02 14:38:32,994 - INFO - Extracted word: trebuie from common_words
+2024-08-02 14:38:32,994 - INFO - Extracted word: spune from common_words
+2024-08-02 14:38:32,994 - INFO - Extracted word: poate from common_words
+2024-08-02 14:38:32,995 - INFO - Extracted word: mult from common_words
+2024-08-02 14:38:32,995 - INFO - Extracted word: doar from common_words
+2024-08-02 14:38:32,995 - INFO - Extracted word: mai from common_words
+2024-08-02 14:38:33,003 - INFO - Extracted word: cine from common_words
+2024-08-02 14:38:33,003 - INFO - Extracted word: unde from common_words
+2024-08-02 14:38:33,003 - INFO - Extracted word: când from common_words
+2024-08-02 14:38:33,004 - INFO - Extracted word: cum from common_words
+2024-08-02 14:38:33,018 - INFO - Extracted word: deoarece from common_words
+2024-08-02 14:38:33,018 - INFO - Extracted word: sau from common_words
+2024-08-02 14:38:33,019 - INFO - Extracted word: ori from common_words
+2024-08-02 14:38:33,019 - INFO - Extracted word: fie from common_words
+2024-08-02 14:38:33,019 - INFO - Extracted word: posibil from common_words
+2024-08-02 14:38:33,023 - INFO - Extracted word: toate from common_words
+2024-08-02 14:38:33,030 - INFO - Extracted word: tot from common_words
+2024-08-02 14:38:33,031 - INFO - Extracted word: nimic from common_words
+2024-08-02 14:38:33,031 - INFO - Extracted word: nimeni from common_words
+2024-08-02 14:38:33,038 - INFO - Extracted word: aici from common_words
+2024-08-02 14:38:33,038 - INFO - Extracted 54 words from common_words collection.
+2024-08-02 14:38:33,039 - INFO - Loaded 54 general words into common_words.
+2024-08-02 14:38:33,039 - INFO - Accessing collection: positive_words
+2024-08-02 14:38:33,041 - INFO - Extracted word: bine from positive_words
+2024-08-02 14:38:33,042 - INFO - Extracted word: frumos from positive_words
+2024-08-02 14:38:33,042 - INFO - Extracted word: minunat from positive_words
+2024-08-02 14:38:33,042 - INFO - Extracted word: superb from positive_words
+2024-08-02 14:38:33,042 - INFO - Extracted word: excelent from positive_words
+2024-08-02 14:38:33,042 - INFO - Extracted word: grozav from positive_words
+2024-08-02 14:38:33,043 - INFO - Extracted word: extraordinar from positive_words
+2024-08-02 14:38:33,043 - INFO - Extracted word: deosebit from positive_words
+2024-08-02 14:38:33,044 - INFO - Extracted word: perfect from positive_words
+2024-08-02 14:38:33,044 - INFO - Extracted word: uimitor from positive_words
+2024-08-02 14:38:33,044 - INFO - Extracted word: incredibil from positive_words
+2024-08-02 14:38:33,044 - INFO - Extracted word: fantasticos from positive_words
+2024-08-02 14:38:33,048 - INFO - Extracted word: colosal from positive_words
+2024-08-02 14:38:33,048 - INFO - Extracted word: gigantic from positive_words
+2024-08-02 14:38:33,048 - INFO - Extracted word: impozant from positive_words
+2024-08-02 14:38:33,049 - INFO - Extracted word: grandios from positive_words
+2024-08-02 14:38:33,049 - INFO - Extracted word: sublim from positive_words
+2024-08-02 14:38:33,049 - INFO - Extracted word: splendid from positive_words
+2024-08-02 14:38:33,049 - INFO - Extracted word: extravagant from positive_words
+2024-08-02 14:38:33,050 - INFO - Extracted word: fenomenal from positive_words
+2024-08-02 14:38:33,050 - INFO - Extracted word: miraculos from positive_words
+2024-08-02 14:38:33,050 - INFO - Extracted word: magic from positive_words
+2024-08-02 14:38:33,050 - INFO - Extracted word: fabulos from positive_words
+2024-08-02 14:38:33,054 - INFO - Extracted word: ideal from positive_words
+2024-08-02 14:38:33,058 - INFO - Extracted word: impecabil from positive_words
+2024-08-02 14:38:33,061 - INFO - Extracted word: de top from positive_words
+2024-08-02 14:38:33,062 - INFO - Extracted word: de calitate from positive_words
+2024-08-02 14:38:33,062 - INFO - Extracted word: de încredere from positive_words
+2024-08-02 14:38:33,062 - INFO - Extracted word: fiabil from positive_words
+2024-08-02 14:38:33,062 - INFO - Extracted word: eficient from positive_words
+2024-08-02 14:38:33,062 - INFO - Extracted word: rapid from positive_words
+2024-08-02 14:38:33,063 - INFO - Extracted word: convenabil from positive_words
+2024-08-02 14:38:33,063 - INFO - Extracted word: accesibil from positive_words
+2024-08-02 14:38:33,063 - INFO - Extracted word: avantajos from positive_words
+2024-08-02 14:38:33,063 - INFO - Extracted word: util from positive_words
+2024-08-02 14:38:33,064 - INFO - Extracted word: benefic from positive_words
+2024-08-02 14:38:33,064 - INFO - Extracted word: suportiv from positive_words
+2024-08-02 14:38:33,064 - INFO - Extracted word: prietenos from positive_words
+2024-08-02 14:38:33,064 - INFO - Extracted word: amabil from positive_words
+2024-08-02 14:38:33,065 - INFO - Extracted word: profesionist from positive_words
+2024-08-02 14:38:33,065 - INFO - Extracted word: dedicat from positive_words
+2024-08-02 14:38:33,065 - INFO - Extracted word: pasionat from positive_words
+2024-08-02 14:38:33,065 - INFO - Extracted word: entuziast from positive_words
+2024-08-02 14:38:33,069 - INFO - Extracted word: motivat from positive_words
+2024-08-02 14:38:33,069 - INFO - Extracted word: orientat spre client from positive_words
+2024-08-02 14:38:33,073 - INFO - Extracted word: flexibil from positive_words
+2024-08-02 14:38:33,073 - INFO - Extracted word: adaptabil from positive_words
+2024-08-02 14:38:33,073 - INFO - Extracted word: proactiv from positive_words
+2024-08-02 14:38:33,074 - INFO - Extracted word: comunicativ from positive_words
+2024-08-02 14:38:33,074 - INFO - Extracted word: persuasiv from positive_words
+2024-08-02 14:38:33,074 - INFO - Extracted word: negociator priceput from positive_words
+2024-08-02 14:38:33,078 - INFO - Extracted word: organizator eficient from positive_words
+2024-08-02 14:38:33,078 - INFO - Extracted word: planificator strategic from positive_words
+2024-08-02 14:38:33,078 - INFO - Extracted word: gânditor inovator from positive_words
+2024-08-02 14:38:33,079 - INFO - Extracted word: orientat spre rezultate from positive_words
+2024-08-02 14:38:33,079 - INFO - Extracted word: concentrat pe obiective from positive_words
+2024-08-02 14:38:33,079 - INFO - Extracted word: motivat de succes from positive_words
+2024-08-02 14:38:33,100 - INFO - Extracted word: sigur from positive_words
+2024-08-02 14:38:33,100 - INFO - Extracted word: solid from positive_words
+2024-08-02 14:38:33,101 - INFO - Extracted word: robust from positive_words
+2024-08-02 14:38:33,101 - INFO - Extracted word: rezistent from positive_words
+2024-08-02 14:38:33,101 - INFO - Extracted word: durabil from positive_words
+2024-08-02 14:38:33,101 - INFO - Extracted word: permanent from positive_words
+2024-08-02 14:38:33,102 - INFO - Extracted word: constant from positive_words
+2024-08-02 14:38:33,102 - INFO - Extracted word: stabil from positive_words
+2024-08-02 14:38:33,102 - INFO - Extracted word: echilibrat from positive_words
+2024-08-02 14:38:33,102 - INFO - Extracted word: reglamentar from positive_words
+2024-08-02 14:38:33,102 - INFO - Extracted word: uniform from positive_words
+2024-08-02 14:38:33,103 - INFO - Extracted word: consecvent from positive_words
+2024-08-02 14:38:33,103 - INFO - Extracted word: metodic from positive_words
+2024-08-02 14:38:33,103 - INFO - Extracted word: riguros from positive_words
+2024-08-02 14:38:33,103 - INFO - Extracted word: precis from positive_words
+2024-08-02 14:38:33,104 - INFO - Extracted word: exact from positive_words
+2024-08-02 14:38:33,104 - INFO - Extracted word: corect from positive_words
+2024-08-02 14:38:33,104 - INFO - Extracted word: superior from positive_words
+2024-08-02 14:38:33,104 - INFO - Extracted word: remarcabil from positive_words
+2024-08-02 14:38:33,105 - INFO - Extracted word: unic from positive_words
+2024-08-02 14:38:33,105 - INFO - Extracted word: special from positive_words
+2024-08-02 14:38:33,105 - INFO - Extracted word: particular from positive_words
+2024-08-02 14:38:33,106 - INFO - Extracted word: distins from positive_words
+2024-08-02 14:38:33,109 - INFO - Extracted word: rar from positive_words
+2024-08-02 14:38:33,113 - INFO - Extracted word: valoros from positive_words
+2024-08-02 14:38:33,113 - INFO - Extracted word: scump from positive_words
+2024-08-02 14:38:33,114 - INFO - Extracted word: costisitor from positive_words
+2024-08-02 14:38:33,114 - INFO - Extracted word: lucru manual from positive_words
+2024-08-02 14:38:33,114 - INFO - Extracted word: exclusivist from positive_words
+2024-08-02 14:38:33,116 - INFO - Extracted word: rafinat from positive_words
+2024-08-02 14:38:33,116 - INFO - Extracted word: elegant from positive_words
+2024-08-02 14:38:33,116 - INFO - Extracted word: luxos from positive_words
+2024-08-02 14:38:33,117 - INFO - Extracted word: sofisticat from positive_words
+2024-08-02 14:38:33,117 - INFO - Extracted 105 words from positive_words collection.
+2024-08-02 14:38:33,117 - INFO - Loaded 105 general words into positive_words.
+2024-08-02 14:38:33,118 - INFO - Accessing collection: negative_words
+2024-08-02 14:38:33,123 - INFO - Extracted word: prost from negative_words
+2024-08-02 14:38:33,124 - INFO - Extracted word: urât from negative_words
+2024-08-02 14:38:33,124 - INFO - Extracted word: groaznic from negative_words
+2024-08-02 14:38:33,124 - INFO - Extracted word: ingrozitor from negative_words
+2024-08-02 14:38:33,124 - INFO - Extracted word: teribil from negative_words
+2024-08-02 14:38:33,125 - INFO - Extracted word: fioros from negative_words
+2024-08-02 14:38:33,125 - INFO - Extracted word: speriat from negative_words
+2024-08-02 14:38:33,129 - INFO - Extracted word: nervos from negative_words
+2024-08-02 14:38:33,129 - INFO - Extracted word: furios from negative_words
+2024-08-02 14:38:33,133 - INFO - Extracted word: trist from negative_words
+2024-08-02 14:38:33,133 - INFO - Extracted word: nefericit from negative_words
+2024-08-02 14:38:33,140 - INFO - Extracted word: melancolic from negative_words
+2024-08-02 14:38:33,141 - INFO - Extracted word:  deprimant from negative_words
+2024-08-02 14:38:33,141 - INFO - Extracted word: plictisitor from negative_words
+2024-08-02 14:38:33,141 - INFO - Extracted word: obositor from negative_words
+2024-08-02 14:38:33,141 - INFO - Extracted word: greu from negative_words
+2024-08-02 14:38:33,142 - INFO - Extracted word: dificil from negative_words
+2024-08-02 14:38:33,142 - INFO - Extracted word: imposibil from negative_words
+2024-08-02 14:38:33,142 - INFO - Extracted word: nerealist from negative_words
+2024-08-02 14:38:33,142 - INFO - Extracted word: riscant from negative_words
+2024-08-02 14:38:33,143 - INFO - Extracted word: periculos from negative_words
+2024-08-02 14:38:33,146 - INFO - Extracted word: nociv from negative_words
+2024-08-02 14:38:33,150 - INFO - Extracted word: nesigur from negative_words
+2024-08-02 14:38:33,154 - INFO - Extracted word: murdar from negative_words
+2024-08-02 14:38:33,154 - INFO - Extracted word: dezordonat from negative_words
+2024-08-02 14:38:33,155 - INFO - Extracted word: vechi from negative_words
+2024-08-02 14:38:33,155 - INFO - Extracted word: învechit from negative_words
+2024-08-02 14:38:33,159 - INFO - Extracted word: lipsit de valoare from negative_words
+2024-08-02 14:38:33,159 - INFO - Extracted word: inutil from negative_words
+2024-08-02 14:38:33,164 - INFO - Extracted word: neimportant from negative_words
+2024-08-02 14:38:33,164 - INFO - Extracted word: nesemnificativ from negative_words
+2024-08-02 14:38:33,164 - INFO - Extracted word: inferior from negative_words
+2024-08-02 14:38:33,165 - INFO - Extracted word: slab from negative_words
+2024-08-02 14:38:33,165 - INFO - Extracted word: mediocru from negative_words
+2024-08-02 14:38:33,165 - INFO - Extracted word: lipsit de calitate from negative_words
+2024-08-02 14:38:33,165 - INFO - Extracted word: defect from negative_words
+2024-08-02 14:38:33,166 - INFO - Extracted word: spart from negative_words
+2024-08-02 14:38:33,166 - INFO - Extracted word: stricat from negative_words
+2024-08-02 14:38:33,170 - INFO - Extracted word: incompetent from negative_words
+2024-08-02 14:38:33,170 - INFO - Extracted word: necalificat from negative_words
+2024-08-02 14:38:33,170 - INFO - Extracted word: neprofesionist from negative_words
+2024-08-02 14:38:33,174 - INFO - Extracted word: neexperimentat from negative_words
+2024-08-02 14:38:33,177 - INFO - Extracted word: incorect from negative_words
+2024-08-02 14:38:33,178 - INFO - Extracted word: nedrept from negative_words
+2024-08-02 14:38:33,178 - INFO - Extracted word: imoral from negative_words
+2024-08-02 14:38:33,178 - INFO - Extracted word: necinstit from negative_words
+2024-08-02 14:38:33,179 - INFO - Extracted word: mincinos from negative_words
+2024-08-02 14:38:33,182 - INFO - Extracted word: nedemn de încredere from negative_words
+2024-08-02 14:38:33,182 - INFO - Extracted word: necredibil from negative_words
+2024-08-02 14:38:33,182 - INFO - Extracted word: neplauzibil from negative_words
+2024-08-02 14:38:33,183 - INFO - Extracted word: confuz from negative_words
+2024-08-02 14:38:33,183 - INFO - Extracted word: neclar from negative_words
+2024-08-02 14:38:33,187 - INFO - Extracted word: monotom from negative_words
+2024-08-02 14:38:33,191 - INFO - Extracted word: iritant from negative_words
+2024-08-02 14:38:33,191 - INFO - Extracted word: enervant from negative_words
+2024-08-02 14:38:33,192 - INFO - Extracted word: frustrant from negative_words
+2024-08-02 14:38:33,192 - INFO - Extracted word: stresant from negative_words
+2024-08-02 14:38:33,196 - INFO - Extracted word: jignitor from negative_words
+2024-08-02 14:38:33,196 - INFO - Extracted word: ofensator from negative_words
+2024-08-02 14:38:33,196 - INFO - Extracted word: agresiv from negative_words
+2024-08-02 14:38:33,197 - INFO - Extracted word: violent from negative_words
+2024-08-02 14:38:33,197 - INFO - Extracted 78 words from negative_words collection.
+2024-08-02 14:38:33,197 - INFO - Loaded 78 general words into negative_words.
+2024-08-02 14:38:33,197 - INFO - Accessing collection: greetings_words
+2024-08-02 14:38:33,200 - INFO - Extracted word: salut from greetings_words
+2024-08-02 14:38:33,226 - INFO - Extracted word: domnule from greetings_words
+2024-08-02 14:38:33,226 - INFO - Extracted word: doamna from greetings_words
+2024-08-02 14:38:33,227 - INFO - Extracted word: stimate domnule/doamna from greetings_words
+2024-08-02 14:38:33,235 - INFO - Extracted word: ce mai faci? from greetings_words
+2024-08-02 14:38:33,235 - INFO - Extracted word: hei! from greetings_words
+2024-08-02 14:38:33,236 - INFO - Extracted word: Servus! from greetings_words
+2024-08-02 14:38:33,240 - INFO - Extracted 17 words from greetings_words collection.
+2024-08-02 14:38:33,240 - INFO - Loaded 17 general words into greetings_words.
+2024-08-02 14:38:33,240 - INFO - Accessing collection: companies_names
+2024-08-02 14:38:33,242 - INFO - Extracted word: Vodafone from companies_names
+2024-08-02 14:38:33,242 - INFO - Extracted word: Vodafone Romania from companies_names
+2024-08-02 14:38:33,243 - INFO - Extracted word: Vodafone Ro from companies_names
+2024-08-02 14:38:33,243 - INFO - Extracted word: Vodafone R from companies_names
+2024-08-02 14:38:33,243 - INFO - Extracted word: Vodafone R. from companies_names
+2024-08-02 14:38:33,244 - INFO - Extracted word: Orange from companies_names
+2024-08-02 14:38:33,244 - INFO - Extracted word: Telekom from companies_names
+2024-08-02 14:38:33,248 - INFO - Extracted word: BCR from companies_names
+2024-08-02 14:38:33,248 - INFO - Extracted word: BRD from companies_names
+2024-08-02 14:38:33,248 - INFO - Extracted word: ING from companies_names
+2024-08-02 14:38:33,249 - INFO - Extracted word: Raiffeisen Bank from companies_names
+2024-08-02 14:38:33,249 - INFO - Extracted word: EON from companies_names
+2024-08-02 14:38:33,249 - INFO - Extracted word: Edenred from companies_names
+2024-08-02 14:38:33,249 - INFO - Extracted word: Vodafone România from companies_names
+2024-08-02 14:38:33,253 - INFO - Extracted 16 words from companies_names collection.
+2024-08-02 14:38:33,254 - INFO - Loaded 16 general words into companies_names.
+2024-08-02 14:38:33,254 - INFO - Accessing collection: words_to_remove
+2024-08-02 14:38:33,271 - INFO - Extracted 4 words from words_to_remove collection.
+2024-08-02 14:38:33,271 - INFO - Loaded 4 general words into words_to_remove.
+2024-08-02 14:38:33,271 - INFO - Accessing collection: availability_words
+2024-08-02 14:38:33,278 - INFO - Extracted 1 words from availability_words collection.
+2024-08-02 14:38:33,278 - INFO - Loaded 1 general words into availability_words.
+2024-08-02 14:38:33,279 - INFO - Accessing collection: from_what_company
+2024-08-02 14:38:33,281 - INFO - Extracted word: din partea companiei from from_what_company
+2024-08-02 14:38:33,282 - INFO - Extracted word: de la from from_what_company
+2024-08-02 14:38:33,282 - INFO - Extracted word: partea companiei from from_what_company
+2024-08-02 14:38:33,282 - INFO - Extracted 3 words from from_what_company collection.
+2024-08-02 14:38:33,282 - INFO - Loaded 3 general words into from_what_company.
+2024-08-02 14:38:33,283 - INFO - Accessing collection: good_bye_words
+2024-08-02 14:38:33,285 - INFO - Extracted word: Pe curând! from good_bye_words
+2024-08-02 14:38:33,285 - INFO - Extracted word: La revedere! from good_bye_words
+2024-08-02 14:38:33,289 - INFO - Extracted word: Ne auzim! from good_bye_words
+2024-08-02 14:38:33,289 - INFO - Extracted 4 words from good_bye_words collection.
+2024-08-02 14:38:33,289 - INFO - Loaded 4 general words into good_bye_words.
+2024-08-02 14:38:33,291 - INFO - Added 4 project-specific words to common_words for project 'BCR'.
+2024-08-02 14:38:33,291 - INFO - Added 4 project-specific words to positive_words for project 'BCR'.
+2024-08-02 14:38:33,292 - INFO - Added 4 project-specific words to negative_words for project 'BCR'.
+2024-08-02 14:38:33,292 - INFO - Added 5 project-specific words to greetings_words for project 'BCR'.
+2024-08-02 14:38:33,292 - INFO - Added 3 project-specific words to companies_names for project 'BCR'.
+2024-08-02 14:38:33,293 - INFO - Added 4 project-specific words to words_to_remove for project 'BCR'.
+2024-08-02 14:38:33,293 - INFO - Added 3 project-specific words to availability_words for project 'BCR'.
+2024-08-02 14:38:33,293 - INFO - Added 2 project-specific words to from_what_company for project 'BCR'.
+2024-08-02 14:38:33,293 - INFO - Added 0 project-specific words to good_bye_words for project 'BCR'.
+2024-08-02 14:38:33,293 - INFO - Final count for common_words: 57 words
+2024-08-02 14:38:33,294 - INFO - Final count for positive_words: 106 words
+2024-08-02 14:38:33,294 - INFO - Final count for negative_words: 81 words
+2024-08-02 14:38:33,294 - INFO - Final count for greetings_words: 20 words
+2024-08-02 14:38:33,294 - INFO - Final count for companies_names: 17 words
+2024-08-02 14:38:33,295 - INFO - Final count for words_to_remove: 8 words
+2024-08-02 14:38:33,295 - INFO - Final count for availability_words: 4 words
+2024-08-02 14:38:33,295 - INFO - Final count for from_what_company: 5 words
+2024-08-02 14:38:33,295 - INFO - Final count for good_bye_words: 4 words
+2024-08-02 14:38:33,296 - INFO - Using device: cuda
+2024-08-02 14:38:34,789 - INFO - Successfully downloaded E_sabina.muscalu_D_2024-05-31_H_113303_386_CLID_755650317_Full Experience.wav to C:\Users\simaa\AppData\Local\Temp\E_sabina.muscalu_D_2024-05-31_H_113303_386_CLID_755650317_Full Experience.wav
+2024-08-02 14:38:34,796 - INFO - Audio Duration: 121.692 seconds
+2024-08-02 14:38:34,797 - INFO - Processing file: E_sabina.muscalu_D_2024-05-31_H_113303_386_CLID_755650317_Full Experience.wav
+2024-08-02 14:38:34,797 - INFO - Checking for existing agent with username: sabina.muscalu and project: BCR
+2024-08-02 14:38:34,799 - INFO - Agent sabina.muscalu already exists in the agents database.
+2024-08-02 14:38:34,800 - INFO - Agent Name: Sabina Muscalu
+2024-08-02 14:38:34,800 - INFO - Project Name: BCR
+2024-08-02 14:38:34,800 - INFO - Day: 2024-05-31
+2024-08-02 14:38:34,800 - INFO - Phone Number: 755650317
+2024-08-02 14:38:34,800 - INFO - Final Status: Full Experience
+2024-08-02 14:38:36,792 - INFO - Speaker: SPEAKER_00
+2024-08-02 14:38:36,793 - INFO - Time: 0.0s to 5.0s
+2024-08-02 14:38:36,798 - INFO - Sentiment: 5 stars
+2024-08-02 14:38:38,665 - INFO - Speaker: SPEAKER_00
+2024-08-02 14:38:38,666 - INFO - Time: 5.0s to 10.0s
+2024-08-02 14:38:38,671 - INFO - Sentiment: 5 stars
+2024-08-02 14:38:39,953 - INFO - Speaker: SPEAKER_00
+2024-08-02 14:38:39,954 - INFO - Time: 10.0s to 15.0s
+2024-08-02 14:38:39,960 - INFO - Sentiment: 5 stars
+2024-08-02 14:38:41,156 - INFO - Speaker: SPEAKER_00
+2024-08-02 14:38:41,157 - INFO - Time: 15.0s to 20.0s
+2024-08-02 14:38:41,163 - INFO - Sentiment: 3 stars
+2024-08-02 14:38:42,178 - INFO - Speaker: SPEAKER_00
+2024-08-02 14:38:42,178 - INFO - Time: 20.0s to 25.0s
+2024-08-02 14:38:42,184 - INFO - Sentiment: 3 stars
+2024-08-02 14:38:47,221 - INFO - Speaker: SPEAKER_00
+2024-08-02 14:38:47,221 - INFO - Time: 30.0s to 35.0s
+2024-08-02 14:38:47,227 - INFO - Sentiment: 3 stars
+2024-08-02 14:38:48,445 - INFO - Speaker: SPEAKER_00
+2024-08-02 14:38:48,445 - INFO - Time: 25.0s to 30.0s
+2024-08-02 14:38:48,450 - INFO - Sentiment: 1 star
+2024-08-02 14:38:48,799 - INFO - Speaker: SPEAKER_00
+2024-08-02 14:38:48,799 - INFO - Time: 35.0s to 40.0s
+2024-08-02 14:38:48,803 - INFO - Sentiment: 1 star
+2024-08-02 14:38:54,694 - INFO - Speaker: SPEAKER_00
+2024-08-02 14:38:54,694 - INFO - Time: 50.0s to 55.0s
+2024-08-02 14:38:54,701 - INFO - Sentiment: 3 stars
+2024-08-02 14:38:55,265 - INFO - Speaker: SPEAKER_00
+2024-08-02 14:38:55,265 - INFO - Time: 60.0s to 65.0s
+2024-08-02 14:38:55,271 - INFO - Sentiment: 1 star
+2024-08-02 14:38:55,737 - INFO - Speaker: SPEAKER_00
+2024-08-02 14:38:55,738 - INFO - Time: 55.0s to 60.0s
+2024-08-02 14:38:55,744 - INFO - Sentiment: 1 star
+2024-08-02 14:38:55,993 - WARNING - Low confidence or invalid transcription:  Da?
+2024-08-02 14:38:57,285 - INFO - Speaker: SPEAKER_00
+2024-08-02 14:38:57,285 - INFO - Time: 75.0s to 80.0s
+2024-08-02 14:38:57,291 - INFO - Sentiment: 3 stars
+2024-08-02 14:39:02,333 - INFO - Speaker: SPEAKER_00
+2024-08-02 14:39:02,334 - INFO - Time: 90.0s to 95.0s
+2024-08-02 14:39:02,339 - INFO - Sentiment: 1 star
+2024-08-02 14:39:02,728 - INFO - Speaker: SPEAKER_00
+2024-08-02 14:39:02,729 - INFO - Time: 80.0s to 85.0s
+2024-08-02 14:39:02,734 - INFO - Sentiment: 3 stars
+2024-08-02 14:39:03,712 - INFO - Speaker: SPEAKER_00
+2024-08-02 14:39:03,712 - INFO - Time: 95.0s to 100.0s
+2024-08-02 14:39:03,718 - INFO - Sentiment: 5 stars
+2024-08-02 14:39:03,964 - WARNING - Low confidence or invalid transcription:  Ok.
+2024-08-02 14:39:05,395 - INFO - Speaker: SPEAKER_00
+2024-08-02 14:39:05,396 - INFO - Time: 105.0s to 110.0s
+2024-08-02 14:39:05,402 - INFO - Sentiment: 1 star
+2024-08-02 14:39:05,757 - INFO - Speaker: SPEAKER_01
+2024-08-02 14:39:05,758 - INFO - Time: 0.0s to 5.0s
+2024-08-02 14:39:05,758 - INFO - Transcription:  Nu-i eu.
+2024-08-02 14:39:05,759 - INFO - Sentiment: 1 star
+2024-08-02 14:39:07,881 - INFO - Speaker: SPEAKER_01
+2024-08-02 14:39:07,882 - INFO - Time: 5.0s to 10.0s
+2024-08-02 14:39:07,888 - INFO - Sentiment: 5 stars
+2024-08-02 14:39:08,048 - INFO - Speaker: SPEAKER_01
+2024-08-02 14:39:08,049 - INFO - Time: 10.0s to 15.0s
+2024-08-02 14:39:08,049 - INFO - Transcription:  Da, da, da, da.
+2024-08-02 14:39:08,050 - INFO - Sentiment: 3 stars
+2024-08-02 14:39:08,905 - INFO - Speaker: SPEAKER_00
+2024-08-02 14:39:08,906 - INFO - Time: 100.0s to 105.0s
+2024-08-02 14:39:08,911 - INFO - Sentiment: 2 stars
+2024-08-02 14:39:09,748 - WARNING - Low confidence or invalid transcription:  La revedere!
+2024-08-02 14:39:09,777 - INFO - Speaker: SPEAKER_00
+2024-08-02 14:39:09,778 - INFO - Time: 115.0s to 120.0s
+2024-08-02 14:39:09,784 - INFO - Sentiment: 5 stars
+2024-08-02 14:39:09,857 - WARNING - Low confidence or invalid transcription:  La revedere!
+2024-08-02 14:39:10,298 - INFO - Speaker: SPEAKER_01
+2024-08-02 14:39:10,298 - INFO - Time: 25.0s to 30.0s
+2024-08-02 14:39:10,302 - INFO - Sentiment: 5 stars
+2024-08-02 14:39:11,228 - WARNING - Low confidence or invalid transcription:  Ok.
+2024-08-02 14:39:11,822 - INFO - Speaker: SPEAKER_01
+2024-08-02 14:39:11,823 - INFO - Time: 30.0s to 35.0s
+2024-08-02 14:39:11,823 - INFO - Transcription:  Da, am un timp.
+2024-08-02 14:39:11,824 - INFO - Sentiment: 3 stars
+2024-08-02 14:39:13,025 - INFO - Speaker: SPEAKER_01
+2024-08-02 14:39:13,026 - INFO - Time: 50.0s to 55.0s
+2024-08-02 14:39:13,064 - INFO - Sentiment: 3 stars
+2024-08-02 14:39:13,872 - WARNING - Low confidence or invalid transcription:  Ok.
+2024-08-02 14:39:18,352 - INFO - Speaker: SPEAKER_01
+2024-08-02 14:39:18,353 - INFO - Time: 65.0s to 70.0s
+2024-08-02 14:39:18,359 - INFO - Sentiment: 3 stars
+2024-08-02 14:39:19,145 - INFO - Speaker: SPEAKER_01
+2024-08-02 14:39:19,146 - INFO - Time: 85.0s to 90.0s
+2024-08-02 14:39:19,146 - INFO - Transcription:  A, super!
+2024-08-02 14:39:19,147 - INFO - Sentiment: 5 stars
+2024-08-02 14:39:19,164 - INFO - Speaker: SPEAKER_01
+2024-08-02 14:39:19,164 - INFO - Time: 75.0s to 80.0s
+2024-08-02 14:39:19,169 - INFO - Sentiment: 1 star
+2024-08-02 14:39:19,861 - INFO - Speaker: SPEAKER_01
+2024-08-02 14:39:19,862 - INFO - Time: 70.0s to 75.0s
+2024-08-02 14:39:19,867 - INFO - Sentiment: 1 star
+2024-08-02 14:39:19,943 - WARNING - Low confidence or invalid transcription:  La revedere!
+2024-08-02 14:39:20,708 - WARNING - Low confidence or invalid transcription:  La revedere!
+2024-08-02 14:39:23,480 - INFO - Speaker: SPEAKER_01
+2024-08-02 14:39:23,481 - INFO - Time: 105.0s to 110.0s
+2024-08-02 14:39:23,485 - INFO - Sentiment: 1 star
+2024-08-02 14:39:23,756 - INFO - Speaker: SPEAKER_01
+2024-08-02 14:39:23,757 - INFO - Time: 115.0s to 120.0s
+2024-08-02 14:39:23,761 - INFO - Sentiment: 5 stars
+2024-08-02 14:39:24,114 - INFO - Speaker: SPEAKER_01
+2024-08-02 14:39:24,114 - INFO - Time: 110.0s to 115.0s
+2024-08-02 14:39:24,118 - INFO - Sentiment: 1 star
+2024-08-02 14:39:24,119 - INFO - Average Sentiment Score: 2.84
+2024-08-02 14:39:24,120 - INFO - Impact Result: {'start_sentiment': 5, 'end_sentiment': 5, 'percentage_change': 0.0, 'impact': 'No significant change', 'adjusted_conversion_rate': 0.1}
+2024-08-02 14:39:24,120 - INFO - Satisfaction Score: positive
+2024-08-02 14:39:24,120 - INFO - Projected Customer Rating: 10
+2024-08-02 14:39:24,121 - INFO - SPEAKER_00 Total Talk Duration: 90.00 seconds
+2024-08-02 14:39:24,121 - INFO - SPEAKER_01 Total Talk Duration: 65.00 seconds
+2024-08-02 14:39:24,121 - INFO - Total Crosstalk Duration: 0.00 seconds
+2024-08-02 14:39:24,122 - INFO - SPEAKER_00 Total Dead Air Duration: 30.00 seconds
+2024-08-02 14:39:24,122 - INFO - SPEAKER_01 Total Dead Air Duration: 55.00 seconds
+2024-08-02 14:39:24,135 - INFO - Agent did not mention any company names.
+2024-08-02 14:39:24,135 - INFO - Agent did not use any goodbye words.
+2024-08-02 14:39:24,136 - INFO - Agent did not use any availability words.
+2024-08-02 14:39:24,136 - INFO - Agent inquired about the customer's company: de la
+2024-08-02 14:39:24,140 - INFO - Agent used 3 positive words.
+2024-08-02 14:39:24,143 - INFO - Agent used 0 negative words.
+2024-08-02 14:39:24,145 - INFO - Agent used 23 common words.
+2024-08-02 14:39:24,145 - INFO - Final Score: 87
+2024-08-02 14:40:37,122 - INFO - Found 0 files with status 'to_process'.
+2024-08-02 14:40:37,122 - INFO - Accessing collection: common_words
+2024-08-02 14:40:37,124 - INFO - Extracted word: sunt from common_words
+2024-08-02 14:40:37,125 - INFO - Extracted word: pe from common_words
+2024-08-02 14:40:37,125 - INFO - Extracted word: la from common_words
+2024-08-02 14:40:37,125 - INFO - Extracted word: a from common_words
+2024-08-02 14:40:37,126 - INFO - Extracted word: ce from common_words
+2024-08-02 14:40:37,126 - INFO - Extracted word: si from common_words
+2024-08-02 14:40:37,126 - INFO - Extracted word: este from common_words
+2024-08-02 14:40:37,126 - INFO - Extracted word: cu from common_words
+2024-08-02 14:40:37,126 - INFO - Extracted word: pentru from common_words
+2024-08-02 14:40:37,127 - INFO - Extracted word: de from common_words
+2024-08-02 14:40:37,127 - INFO - Extracted word: ca from common_words
+2024-08-02 14:40:37,127 - INFO - Extracted word: în from common_words
+2024-08-02 14:40:37,131 - INFO - Extracted word: al from common_words
+2024-08-02 14:40:37,131 - INFO - Extracted word: un from common_words
+2024-08-02 14:40:37,132 - INFO - Extracted word: ma from common_words
+2024-08-02 14:40:37,132 - INFO - Extracted word: sa from common_words
+2024-08-02 14:40:37,132 - INFO - Extracted word: avea from common_words
+2024-08-02 14:40:37,133 - INFO - Extracted word: acest from common_words
+2024-08-02 14:40:37,133 - INFO - Extracted word: foarte from common_words
+2024-08-02 14:40:37,133 - INFO - Extracted word: ei from common_words
+2024-08-02 14:40:37,133 - INFO - Extracted word: chiar from common_words
+2024-08-02 14:40:37,134 - INFO - Extracted word: nu from common_words
+2024-08-02 14:40:37,134 - INFO - Extracted word: trebuie from common_words
+2024-08-02 14:40:37,134 - INFO - Extracted word: spune from common_words
+2024-08-02 14:40:37,134 - INFO - Extracted word: poate from common_words
+2024-08-02 14:40:37,135 - INFO - Extracted word: mult from common_words
+2024-08-02 14:40:37,135 - INFO - Extracted word: doar from common_words
+2024-08-02 14:40:37,135 - INFO - Extracted word: mai from common_words
+2024-08-02 14:40:37,143 - INFO - Extracted word: cine from common_words
+2024-08-02 14:40:37,143 - INFO - Extracted word: unde from common_words
+2024-08-02 14:40:37,143 - INFO - Extracted word: când from common_words
+2024-08-02 14:40:37,144 - INFO - Extracted word: cum from common_words
+2024-08-02 14:40:37,158 - INFO - Extracted word: deoarece from common_words
+2024-08-02 14:40:37,158 - INFO - Extracted word: sau from common_words
+2024-08-02 14:40:37,158 - INFO - Extracted word: ori from common_words
+2024-08-02 14:40:37,159 - INFO - Extracted word: fie from common_words
+2024-08-02 14:40:37,159 - INFO - Extracted word: posibil from common_words
+2024-08-02 14:40:37,162 - INFO - Extracted word: toate from common_words
+2024-08-02 14:40:37,170 - INFO - Extracted word: tot from common_words
+2024-08-02 14:40:37,171 - INFO - Extracted word: nimic from common_words
+2024-08-02 14:40:37,171 - INFO - Extracted word: nimeni from common_words
+2024-08-02 14:40:37,178 - INFO - Extracted word: aici from common_words
+2024-08-02 14:40:37,178 - INFO - Extracted 54 words from common_words collection.
+2024-08-02 14:40:37,179 - INFO - Loaded 54 general words into common_words.
+2024-08-02 14:40:37,179 - INFO - Accessing collection: positive_words
+2024-08-02 14:40:37,181 - INFO - Extracted word: bine from positive_words
+2024-08-02 14:40:37,182 - INFO - Extracted word: frumos from positive_words
+2024-08-02 14:40:37,182 - INFO - Extracted word: minunat from positive_words
+2024-08-02 14:40:37,182 - INFO - Extracted word: superb from positive_words
+2024-08-02 14:40:37,183 - INFO - Extracted word: excelent from positive_words
+2024-08-02 14:40:37,183 - INFO - Extracted word: grozav from positive_words
+2024-08-02 14:40:37,183 - INFO - Extracted word: extraordinar from positive_words
+2024-08-02 14:40:37,183 - INFO - Extracted word: deosebit from positive_words
+2024-08-02 14:40:37,184 - INFO - Extracted word: perfect from positive_words
+2024-08-02 14:40:37,184 - INFO - Extracted word: uimitor from positive_words
+2024-08-02 14:40:37,184 - INFO - Extracted word: incredibil from positive_words
+2024-08-02 14:40:37,184 - INFO - Extracted word: fantasticos from positive_words
+2024-08-02 14:40:37,188 - INFO - Extracted word: colosal from positive_words
+2024-08-02 14:40:37,189 - INFO - Extracted word: gigantic from positive_words
+2024-08-02 14:40:37,189 - INFO - Extracted word: impozant from positive_words
+2024-08-02 14:40:37,189 - INFO - Extracted word: grandios from positive_words
+2024-08-02 14:40:37,189 - INFO - Extracted word: sublim from positive_words
+2024-08-02 14:40:37,189 - INFO - Extracted word: splendid from positive_words
+2024-08-02 14:40:37,190 - INFO - Extracted word: extravagant from positive_words
+2024-08-02 14:40:37,190 - INFO - Extracted word: fenomenal from positive_words
+2024-08-02 14:40:37,190 - INFO - Extracted word: miraculos from positive_words
+2024-08-02 14:40:37,190 - INFO - Extracted word: magic from positive_words
+2024-08-02 14:40:37,191 - INFO - Extracted word: fabulos from positive_words
+2024-08-02 14:40:37,195 - INFO - Extracted word: ideal from positive_words
+2024-08-02 14:40:37,199 - INFO - Extracted word: impecabil from positive_words
+2024-08-02 14:40:37,203 - INFO - Extracted word: de top from positive_words
+2024-08-02 14:40:37,203 - INFO - Extracted word: de calitate from positive_words
+2024-08-02 14:40:37,203 - INFO - Extracted word: de încredere from positive_words
+2024-08-02 14:40:37,203 - INFO - Extracted word: fiabil from positive_words
+2024-08-02 14:40:37,204 - INFO - Extracted word: eficient from positive_words
+2024-08-02 14:40:37,204 - INFO - Extracted word: rapid from positive_words
+2024-08-02 14:40:37,204 - INFO - Extracted word: convenabil from positive_words
+2024-08-02 14:40:37,204 - INFO - Extracted word: accesibil from positive_words
+2024-08-02 14:40:37,205 - INFO - Extracted word: avantajos from positive_words
+2024-08-02 14:40:37,205 - INFO - Extracted word: util from positive_words
+2024-08-02 14:40:37,205 - INFO - Extracted word: benefic from positive_words
+2024-08-02 14:40:37,205 - INFO - Extracted word: suportiv from positive_words
+2024-08-02 14:40:37,206 - INFO - Extracted word: prietenos from positive_words
+2024-08-02 14:40:37,206 - INFO - Extracted word: amabil from positive_words
+2024-08-02 14:40:37,206 - INFO - Extracted word: profesionist from positive_words
+2024-08-02 14:40:37,206 - INFO - Extracted word: dedicat from positive_words
+2024-08-02 14:40:37,207 - INFO - Extracted word: pasionat from positive_words
+2024-08-02 14:40:37,207 - INFO - Extracted word: entuziast from positive_words
+2024-08-02 14:40:37,211 - INFO - Extracted word: motivat from positive_words
+2024-08-02 14:40:37,211 - INFO - Extracted word: orientat spre client from positive_words
+2024-08-02 14:40:37,216 - INFO - Extracted word: flexibil from positive_words
+2024-08-02 14:40:37,216 - INFO - Extracted word: adaptabil from positive_words
+2024-08-02 14:40:37,216 - INFO - Extracted word: proactiv from positive_words
+2024-08-02 14:40:37,216 - INFO - Extracted word: comunicativ from positive_words
+2024-08-02 14:40:37,217 - INFO - Extracted word: persuasiv from positive_words
+2024-08-02 14:40:37,217 - INFO - Extracted word: negociator priceput from positive_words
+2024-08-02 14:40:37,221 - INFO - Extracted word: organizator eficient from positive_words
+2024-08-02 14:40:37,221 - INFO - Extracted word: planificator strategic from positive_words
+2024-08-02 14:40:37,221 - INFO - Extracted word: gânditor inovator from positive_words
+2024-08-02 14:40:37,221 - INFO - Extracted word: orientat spre rezultate from positive_words
+2024-08-02 14:40:37,222 - INFO - Extracted word: concentrat pe obiective from positive_words
+2024-08-02 14:40:37,222 - INFO - Extracted word: motivat de succes from positive_words
+2024-08-02 14:40:37,244 - INFO - Extracted word: sigur from positive_words
+2024-08-02 14:40:37,244 - INFO - Extracted word: solid from positive_words
+2024-08-02 14:40:37,244 - INFO - Extracted word: robust from positive_words
+2024-08-02 14:40:37,244 - INFO - Extracted word: rezistent from positive_words
+2024-08-02 14:40:37,245 - INFO - Extracted word: durabil from positive_words
+2024-08-02 14:40:37,245 - INFO - Extracted word: permanent from positive_words
+2024-08-02 14:40:37,245 - INFO - Extracted word: constant from positive_words
+2024-08-02 14:40:37,246 - INFO - Extracted word: stabil from positive_words
+2024-08-02 14:40:37,246 - INFO - Extracted word: echilibrat from positive_words
+2024-08-02 14:40:37,246 - INFO - Extracted word: reglamentar from positive_words
+2024-08-02 14:40:37,246 - INFO - Extracted word: uniform from positive_words
+2024-08-02 14:40:37,247 - INFO - Extracted word: consecvent from positive_words
+2024-08-02 14:40:37,247 - INFO - Extracted word: metodic from positive_words
+2024-08-02 14:40:37,247 - INFO - Extracted word: riguros from positive_words
+2024-08-02 14:40:37,248 - INFO - Extracted word: precis from positive_words
+2024-08-02 14:40:37,248 - INFO - Extracted word: exact from positive_words
+2024-08-02 14:40:37,248 - INFO - Extracted word: corect from positive_words
+2024-08-02 14:40:37,248 - INFO - Extracted word: superior from positive_words
+2024-08-02 14:40:37,249 - INFO - Extracted word: remarcabil from positive_words
+2024-08-02 14:40:37,249 - INFO - Extracted word: unic from positive_words
+2024-08-02 14:40:37,249 - INFO - Extracted word: special from positive_words
+2024-08-02 14:40:37,250 - INFO - Extracted word: particular from positive_words
+2024-08-02 14:40:37,250 - INFO - Extracted word: distins from positive_words
+2024-08-02 14:40:37,254 - INFO - Extracted word: rar from positive_words
+2024-08-02 14:40:37,259 - INFO - Extracted word: valoros from positive_words
+2024-08-02 14:40:37,259 - INFO - Extracted word: scump from positive_words
+2024-08-02 14:40:37,259 - INFO - Extracted word: costisitor from positive_words
+2024-08-02 14:40:37,260 - INFO - Extracted word: lucru manual from positive_words
+2024-08-02 14:40:37,260 - INFO - Extracted word: exclusivist from positive_words
+2024-08-02 14:40:37,262 - INFO - Extracted word: rafinat from positive_words
+2024-08-02 14:40:37,262 - INFO - Extracted word: elegant from positive_words
+2024-08-02 14:40:37,263 - INFO - Extracted word: luxos from positive_words
+2024-08-02 14:40:37,263 - INFO - Extracted word: sofisticat from positive_words
+2024-08-02 14:40:37,263 - INFO - Extracted 105 words from positive_words collection.
+2024-08-02 14:40:37,264 - INFO - Loaded 105 general words into positive_words.
+2024-08-02 14:40:37,264 - INFO - Accessing collection: negative_words
+2024-08-02 14:40:37,271 - INFO - Extracted word: prost from negative_words
+2024-08-02 14:40:37,271 - INFO - Extracted word: urât from negative_words
+2024-08-02 14:40:37,272 - INFO - Extracted word: groaznic from negative_words
+2024-08-02 14:40:37,272 - INFO - Extracted word: ingrozitor from negative_words
+2024-08-02 14:40:37,272 - INFO - Extracted word: teribil from negative_words
+2024-08-02 14:40:37,272 - INFO - Extracted word: fioros from negative_words
+2024-08-02 14:40:37,273 - INFO - Extracted word: speriat from negative_words
+2024-08-02 14:40:37,277 - INFO - Extracted word: nervos from negative_words
+2024-08-02 14:40:37,278 - INFO - Extracted word: furios from negative_words
+2024-08-02 14:40:37,282 - INFO - Extracted word: trist from negative_words
+2024-08-02 14:40:37,283 - INFO - Extracted word: nefericit from negative_words
+2024-08-02 14:40:37,291 - INFO - Extracted word: melancolic from negative_words
+2024-08-02 14:40:37,292 - INFO - Extracted word:  deprimant from negative_words
+2024-08-02 14:40:37,292 - INFO - Extracted word: plictisitor from negative_words
+2024-08-02 14:40:37,292 - INFO - Extracted word: obositor from negative_words
+2024-08-02 14:40:37,292 - INFO - Extracted word: greu from negative_words
+2024-08-02 14:40:37,293 - INFO - Extracted word: dificil from negative_words
+2024-08-02 14:40:37,293 - INFO - Extracted word: imposibil from negative_words
+2024-08-02 14:40:37,293 - INFO - Extracted word: nerealist from negative_words
+2024-08-02 14:40:37,294 - INFO - Extracted word: riscant from negative_words
+2024-08-02 14:40:37,294 - INFO - Extracted word: periculos from negative_words
+2024-08-02 14:40:37,298 - INFO - Extracted word: nociv from negative_words
+2024-08-02 14:40:37,303 - INFO - Extracted word: nesigur from negative_words
+2024-08-02 14:40:37,307 - INFO - Extracted word: murdar from negative_words
+2024-08-02 14:40:37,308 - INFO - Extracted word: dezordonat from negative_words
+2024-08-02 14:40:37,308 - INFO - Extracted word: vechi from negative_words
+2024-08-02 14:40:37,308 - INFO - Extracted word: învechit from negative_words
+2024-08-02 14:40:37,313 - INFO - Extracted word: lipsit de valoare from negative_words
+2024-08-02 14:40:37,313 - INFO - Extracted word: inutil from negative_words
+2024-08-02 14:40:37,318 - INFO - Extracted word: neimportant from negative_words
+2024-08-02 14:40:37,318 - INFO - Extracted word: nesemnificativ from negative_words
+2024-08-02 14:40:37,319 - INFO - Extracted word: inferior from negative_words
+2024-08-02 14:40:37,319 - INFO - Extracted word: slab from negative_words
+2024-08-02 14:40:37,319 - INFO - Extracted word: mediocru from negative_words
+2024-08-02 14:40:37,320 - INFO - Extracted word: lipsit de calitate from negative_words
+2024-08-02 14:40:37,320 - INFO - Extracted word: defect from negative_words
+2024-08-02 14:40:37,320 - INFO - Extracted word: spart from negative_words
+2024-08-02 14:40:37,321 - INFO - Extracted word: stricat from negative_words
+2024-08-02 14:40:37,325 - INFO - Extracted word: incompetent from negative_words
+2024-08-02 14:40:37,325 - INFO - Extracted word: necalificat from negative_words
+2024-08-02 14:40:37,326 - INFO - Extracted word: neprofesionist from negative_words
+2024-08-02 14:40:37,329 - INFO - Extracted word: neexperimentat from negative_words
+2024-08-02 14:40:37,334 - INFO - Extracted word: incorect from negative_words
+2024-08-02 14:40:37,334 - INFO - Extracted word: nedrept from negative_words
+2024-08-02 14:40:37,335 - INFO - Extracted word: imoral from negative_words
+2024-08-02 14:40:37,335 - INFO - Extracted word: necinstit from negative_words
+2024-08-02 14:40:37,335 - INFO - Extracted word: mincinos from negative_words
+2024-08-02 14:40:37,340 - INFO - Extracted word: nedemn de încredere from negative_words
+2024-08-02 14:40:37,340 - INFO - Extracted word: necredibil from negative_words
+2024-08-02 14:40:37,341 - INFO - Extracted word: neplauzibil from negative_words
+2024-08-02 14:40:37,341 - INFO - Extracted word: confuz from negative_words
+2024-08-02 14:40:37,341 - INFO - Extracted word: neclar from negative_words
+2024-08-02 14:40:37,346 - INFO - Extracted word: monotom from negative_words
+2024-08-02 14:40:37,350 - INFO - Extracted word: iritant from negative_words
+2024-08-02 14:40:37,351 - INFO - Extracted word: enervant from negative_words
+2024-08-02 14:40:37,351 - INFO - Extracted word: frustrant from negative_words
+2024-08-02 14:40:37,351 - INFO - Extracted word: stresant from negative_words
+2024-08-02 14:40:37,356 - INFO - Extracted word: jignitor from negative_words
+2024-08-02 14:40:37,356 - INFO - Extracted word: ofensator from negative_words
+2024-08-02 14:40:37,356 - INFO - Extracted word: agresiv from negative_words
+2024-08-02 14:40:37,356 - INFO - Extracted word: violent from negative_words
+2024-08-02 14:40:37,357 - INFO - Extracted 78 words from negative_words collection.
+2024-08-02 14:40:37,357 - INFO - Loaded 78 general words into negative_words.
+2024-08-02 14:40:37,357 - INFO - Accessing collection: greetings_words
+2024-08-02 14:40:37,360 - INFO - Extracted word: salut from greetings_words
+2024-08-02 14:40:37,389 - INFO - Extracted word: domnule from greetings_words
+2024-08-02 14:40:37,390 - INFO - Extracted word: doamna from greetings_words
+2024-08-02 14:40:37,390 - INFO - Extracted word: stimate domnule/doamna from greetings_words
+2024-08-02 14:40:37,399 - INFO - Extracted word: ce mai faci? from greetings_words
+2024-08-02 14:40:37,399 - INFO - Extracted word: hei! from greetings_words
+2024-08-02 14:40:37,399 - INFO - Extracted word: Servus! from greetings_words
+2024-08-02 14:40:37,404 - INFO - Extracted 17 words from greetings_words collection.
+2024-08-02 14:40:37,404 - INFO - Loaded 17 general words into greetings_words.
+2024-08-02 14:40:37,405 - INFO - Accessing collection: companies_names
+2024-08-02 14:40:37,407 - INFO - Extracted word: Vodafone from companies_names
+2024-08-02 14:40:37,407 - INFO - Extracted word: Vodafone Romania from companies_names
+2024-08-02 14:40:37,408 - INFO - Extracted word: Vodafone Ro from companies_names
+2024-08-02 14:40:37,408 - INFO - Extracted word: Vodafone R from companies_names
+2024-08-02 14:40:37,408 - INFO - Extracted word: Vodafone R. from companies_names
+2024-08-02 14:40:37,408 - INFO - Extracted word: Orange from companies_names
+2024-08-02 14:40:37,409 - INFO - Extracted word: Telekom from companies_names
+2024-08-02 14:40:37,413 - INFO - Extracted word: BCR from companies_names
+2024-08-02 14:40:37,413 - INFO - Extracted word: BRD from companies_names
+2024-08-02 14:40:37,414 - INFO - Extracted word: ING from companies_names
+2024-08-02 14:40:37,414 - INFO - Extracted word: Raiffeisen Bank from companies_names
+2024-08-02 14:40:37,414 - INFO - Extracted word: EON from companies_names
+2024-08-02 14:40:37,415 - INFO - Extracted word: Edenred from companies_names
+2024-08-02 14:40:37,415 - INFO - Extracted word: Vodafone România from companies_names
+2024-08-02 14:40:37,420 - INFO - Extracted 16 words from companies_names collection.
+2024-08-02 14:40:37,420 - INFO - Loaded 16 general words into companies_names.
+2024-08-02 14:40:37,420 - INFO - Accessing collection: words_to_remove
+2024-08-02 14:40:37,438 - INFO - Extracted 4 words from words_to_remove collection.
+2024-08-02 14:40:37,439 - INFO - Loaded 4 general words into words_to_remove.
+2024-08-02 14:40:37,439 - INFO - Accessing collection: availability_words
+2024-08-02 14:40:37,445 - INFO - Extracted 1 words from availability_words collection.
+2024-08-02 14:40:37,445 - INFO - Loaded 1 general words into availability_words.
+2024-08-02 14:40:37,446 - INFO - Accessing collection: from_what_company
+2024-08-02 14:40:37,448 - INFO - Extracted word: din partea companiei from from_what_company
+2024-08-02 14:40:37,448 - INFO - Extracted word: de la from from_what_company
+2024-08-02 14:40:37,448 - INFO - Extracted word: partea companiei from from_what_company
+2024-08-02 14:40:37,449 - INFO - Extracted 3 words from from_what_company collection.
+2024-08-02 14:40:37,449 - INFO - Loaded 3 general words into from_what_company.
+2024-08-02 14:40:37,449 - INFO - Accessing collection: good_bye_words
+2024-08-02 14:40:37,451 - INFO - Extracted word: Pe curând! from good_bye_words
+2024-08-02 14:40:37,452 - INFO - Extracted word: La revedere! from good_bye_words
+2024-08-02 14:40:37,456 - INFO - Extracted word: Ne auzim! from good_bye_words
+2024-08-02 14:40:37,456 - INFO - Extracted 4 words from good_bye_words collection.
+2024-08-02 14:40:37,456 - INFO - Loaded 4 general words into good_bye_words.
+2024-08-02 14:40:37,459 - INFO - Added 4 project-specific words to common_words for project 'BCR'.
+2024-08-02 14:40:37,459 - INFO - Added 4 project-specific words to positive_words for project 'BCR'.
+2024-08-02 14:40:37,459 - INFO - Added 4 project-specific words to negative_words for project 'BCR'.
+2024-08-02 14:40:37,460 - INFO - Added 5 project-specific words to greetings_words for project 'BCR'.
+2024-08-02 14:40:37,460 - INFO - Added 4 project-specific words to companies_names for project 'BCR'.
+2024-08-02 14:40:37,460 - INFO - Added 4 project-specific words to words_to_remove for project 'BCR'.
+2024-08-02 14:40:37,460 - INFO - Added 3 project-specific words to availability_words for project 'BCR'.
+2024-08-02 14:40:37,461 - INFO - Added 2 project-specific words to from_what_company for project 'BCR'.
+2024-08-02 14:40:37,461 - INFO - Added 0 project-specific words to good_bye_words for project 'BCR'.
+2024-08-02 14:40:37,461 - INFO - Final count for common_words: 57 words
+2024-08-02 14:40:37,461 - INFO - Final count for positive_words: 106 words
+2024-08-02 14:40:37,462 - INFO - Final count for negative_words: 81 words
+2024-08-02 14:40:37,462 - INFO - Final count for greetings_words: 20 words
+2024-08-02 14:40:37,462 - INFO - Final count for companies_names: 17 words
+2024-08-02 14:40:37,462 - INFO - Final count for words_to_remove: 8 words
+2024-08-02 14:40:37,462 - INFO - Final count for availability_words: 4 words
+2024-08-02 14:40:37,463 - INFO - Final count for from_what_company: 5 words
+2024-08-02 14:40:37,463 - INFO - Final count for good_bye_words: 4 words
+2024-08-02 14:40:37,463 - INFO - No new files to process in BCR.
+2024-08-02 14:40:37,464 - INFO - Accessing collection: common_words
+2024-08-02 14:40:37,466 - INFO - Extracted word: sunt from common_words
+2024-08-02 14:40:37,467 - INFO - Extracted word: pe from common_words
+2024-08-02 14:40:37,467 - INFO - Extracted word: la from common_words
+2024-08-02 14:40:37,467 - INFO - Extracted word: a from common_words
+2024-08-02 14:40:37,467 - INFO - Extracted word: ce from common_words
+2024-08-02 14:40:37,467 - INFO - Extracted word: si from common_words
+2024-08-02 14:40:37,467 - INFO - Extracted word: este from common_words
+2024-08-02 14:40:37,468 - INFO - Extracted word: cu from common_words
+2024-08-02 14:40:37,468 - INFO - Extracted word: pentru from common_words
+2024-08-02 14:40:37,468 - INFO - Extracted word: de from common_words
+2024-08-02 14:40:37,468 - INFO - Extracted word: ca from common_words
+2024-08-02 14:40:37,469 - INFO - Extracted word: în from common_words
+2024-08-02 14:40:37,473 - INFO - Extracted word: al from common_words
+2024-08-02 14:40:37,473 - INFO - Extracted word: un from common_words
+2024-08-02 14:40:37,473 - INFO - Extracted word: ma from common_words
+2024-08-02 14:40:37,474 - INFO - Extracted word: sa from common_words
+2024-08-02 14:40:37,474 - INFO - Extracted word: avea from common_words
+2024-08-02 14:40:37,474 - INFO - Extracted word: acest from common_words
+2024-08-02 14:40:37,474 - INFO - Extracted word: foarte from common_words
+2024-08-02 14:40:37,475 - INFO - Extracted word: ei from common_words
+2024-08-02 14:40:37,475 - INFO - Extracted word: chiar from common_words
+2024-08-02 14:40:37,475 - INFO - Extracted word: nu from common_words
+2024-08-02 14:40:37,475 - INFO - Extracted word: trebuie from common_words
+2024-08-02 14:40:37,476 - INFO - Extracted word: spune from common_words
+2024-08-02 14:40:37,476 - INFO - Extracted word: poate from common_words
+2024-08-02 14:40:37,476 - INFO - Extracted word: mult from common_words
+2024-08-02 14:40:37,477 - INFO - Extracted word: doar from common_words
+2024-08-02 14:40:37,477 - INFO - Extracted word: mai from common_words
+2024-08-02 14:40:37,484 - INFO - Extracted word: cine from common_words
+2024-08-02 14:40:37,484 - INFO - Extracted word: unde from common_words
+2024-08-02 14:40:37,485 - INFO - Extracted word: când from common_words
+2024-08-02 14:40:37,485 - INFO - Extracted word: cum from common_words
+2024-08-02 14:40:37,501 - INFO - Extracted word: deoarece from common_words
+2024-08-02 14:40:37,501 - INFO - Extracted word: sau from common_words
+2024-08-02 14:40:37,502 - INFO - Extracted word: ori from common_words
+2024-08-02 14:40:37,502 - INFO - Extracted word: fie from common_words
+2024-08-02 14:40:37,502 - INFO - Extracted word: posibil from common_words
+2024-08-02 14:40:37,506 - INFO - Extracted word: toate from common_words
+2024-08-02 14:40:37,514 - INFO - Extracted word: tot from common_words
+2024-08-02 14:40:37,514 - INFO - Extracted word: nimic from common_words
+2024-08-02 14:40:37,514 - INFO - Extracted word: nimeni from common_words
+2024-08-02 14:40:37,522 - INFO - Extracted word: aici from common_words
+2024-08-02 14:40:37,522 - INFO - Extracted 54 words from common_words collection.
+2024-08-02 14:40:37,522 - INFO - Loaded 54 general words into common_words.
+2024-08-02 14:40:37,523 - INFO - Accessing collection: positive_words
+2024-08-02 14:40:37,525 - INFO - Extracted word: bine from positive_words
+2024-08-02 14:40:37,525 - INFO - Extracted word: frumos from positive_words
+2024-08-02 14:40:37,526 - INFO - Extracted word: minunat from positive_words
+2024-08-02 14:40:37,526 - INFO - Extracted word: superb from positive_words
+2024-08-02 14:40:37,526 - INFO - Extracted word: excelent from positive_words
+2024-08-02 14:40:37,527 - INFO - Extracted word: grozav from positive_words
+2024-08-02 14:40:37,527 - INFO - Extracted word: extraordinar from positive_words
+2024-08-02 14:40:37,527 - INFO - Extracted word: deosebit from positive_words
+2024-08-02 14:40:37,527 - INFO - Extracted word: perfect from positive_words
+2024-08-02 14:40:37,528 - INFO - Extracted word: uimitor from positive_words
+2024-08-02 14:40:37,528 - INFO - Extracted word: incredibil from positive_words
+2024-08-02 14:40:37,528 - INFO - Extracted word: fantasticos from positive_words
+2024-08-02 14:40:37,532 - INFO - Extracted word: colosal from positive_words
+2024-08-02 14:40:37,532 - INFO - Extracted word: gigantic from positive_words
+2024-08-02 14:40:37,533 - INFO - Extracted word: impozant from positive_words
+2024-08-02 14:40:37,533 - INFO - Extracted word: grandios from positive_words
+2024-08-02 14:40:37,533 - INFO - Extracted word: sublim from positive_words
+2024-08-02 14:40:37,533 - INFO - Extracted word: splendid from positive_words
+2024-08-02 14:40:37,534 - INFO - Extracted word: extravagant from positive_words
+2024-08-02 14:40:37,534 - INFO - Extracted word: fenomenal from positive_words
+2024-08-02 14:40:37,534 - INFO - Extracted word: miraculos from positive_words
+2024-08-02 14:40:37,534 - INFO - Extracted word: magic from positive_words
+2024-08-02 14:40:37,535 - INFO - Extracted word: fabulos from positive_words
+2024-08-02 14:40:37,539 - INFO - Extracted word: ideal from positive_words
+2024-08-02 14:40:37,543 - INFO - Extracted word: impecabil from positive_words
+2024-08-02 14:40:37,547 - INFO - Extracted word: de top from positive_words
+2024-08-02 14:40:37,547 - INFO - Extracted word: de calitate from positive_words
+2024-08-02 14:40:37,547 - INFO - Extracted word: de încredere from positive_words
+2024-08-02 14:40:37,548 - INFO - Extracted word: fiabil from positive_words
+2024-08-02 14:40:37,548 - INFO - Extracted word: eficient from positive_words
+2024-08-02 14:40:37,548 - INFO - Extracted word: rapid from positive_words
+2024-08-02 14:40:37,548 - INFO - Extracted word: convenabil from positive_words
+2024-08-02 14:40:37,549 - INFO - Extracted word: accesibil from positive_words
+2024-08-02 14:40:37,549 - INFO - Extracted word: avantajos from positive_words
+2024-08-02 14:40:37,549 - INFO - Extracted word: util from positive_words
+2024-08-02 14:40:37,549 - INFO - Extracted word: benefic from positive_words
+2024-08-02 14:40:37,550 - INFO - Extracted word: suportiv from positive_words
+2024-08-02 14:40:37,550 - INFO - Extracted word: prietenos from positive_words
+2024-08-02 14:40:37,550 - INFO - Extracted word: amabil from positive_words
+2024-08-02 14:40:37,550 - INFO - Extracted word: profesionist from positive_words
+2024-08-02 14:40:37,551 - INFO - Extracted word: dedicat from positive_words
+2024-08-02 14:40:37,551 - INFO - Extracted word: pasionat from positive_words
+2024-08-02 14:40:37,551 - INFO - Extracted word: entuziast from positive_words
+2024-08-02 14:40:37,555 - INFO - Extracted word: motivat from positive_words
+2024-08-02 14:40:37,555 - INFO - Extracted word: orientat spre client from positive_words
+2024-08-02 14:40:37,559 - INFO - Extracted word: flexibil from positive_words
+2024-08-02 14:40:37,559 - INFO - Extracted word: adaptabil from positive_words
+2024-08-02 14:40:37,560 - INFO - Extracted word: proactiv from positive_words
+2024-08-02 14:40:37,560 - INFO - Extracted word: comunicativ from positive_words
+2024-08-02 14:40:37,560 - INFO - Extracted word: persuasiv from positive_words
+2024-08-02 14:40:37,560 - INFO - Extracted word: negociator priceput from positive_words
+2024-08-02 14:40:37,564 - INFO - Extracted word: organizator eficient from positive_words
+2024-08-02 14:40:37,564 - INFO - Extracted word: planificator strategic from positive_words
+2024-08-02 14:40:37,565 - INFO - Extracted word: gânditor inovator from positive_words
+2024-08-02 14:40:37,565 - INFO - Extracted word: orientat spre rezultate from positive_words
+2024-08-02 14:40:37,565 - INFO - Extracted word: concentrat pe obiective from positive_words
+2024-08-02 14:40:37,565 - INFO - Extracted word: motivat de succes from positive_words
+2024-08-02 14:40:37,588 - INFO - Extracted word: sigur from positive_words
+2024-08-02 14:40:37,588 - INFO - Extracted word: solid from positive_words
+2024-08-02 14:40:37,589 - INFO - Extracted word: robust from positive_words
+2024-08-02 14:40:37,589 - INFO - Extracted word: rezistent from positive_words
+2024-08-02 14:40:37,589 - INFO - Extracted word: durabil from positive_words
+2024-08-02 14:40:37,590 - INFO - Extracted word: permanent from positive_words
+2024-08-02 14:40:37,590 - INFO - Extracted word: constant from positive_words
+2024-08-02 14:40:37,590 - INFO - Extracted word: stabil from positive_words
+2024-08-02 14:40:37,591 - INFO - Extracted word: echilibrat from positive_words
+2024-08-02 14:40:37,591 - INFO - Extracted word: reglamentar from positive_words
+2024-08-02 14:40:37,591 - INFO - Extracted word: uniform from positive_words
+2024-08-02 14:40:37,591 - INFO - Extracted word: consecvent from positive_words
+2024-08-02 14:40:37,591 - INFO - Extracted word: metodic from positive_words
+2024-08-02 14:40:37,592 - INFO - Extracted word: riguros from positive_words
+2024-08-02 14:40:37,592 - INFO - Extracted word: precis from positive_words
+2024-08-02 14:40:37,592 - INFO - Extracted word: exact from positive_words
+2024-08-02 14:40:37,592 - INFO - Extracted word: corect from positive_words
+2024-08-02 14:40:37,593 - INFO - Extracted word: superior from positive_words
+2024-08-02 14:40:37,593 - INFO - Extracted word: remarcabil from positive_words
+2024-08-02 14:40:37,593 - INFO - Extracted word: unic from positive_words
+2024-08-02 14:40:37,593 - INFO - Extracted word: special from positive_words
+2024-08-02 14:40:37,594 - INFO - Extracted word: particular from positive_words
+2024-08-02 14:40:37,594 - INFO - Extracted word: distins from positive_words
+2024-08-02 14:40:37,598 - INFO - Extracted word: rar from positive_words
+2024-08-02 14:40:37,602 - INFO - Extracted word: valoros from positive_words
+2024-08-02 14:40:37,602 - INFO - Extracted word: scump from positive_words
+2024-08-02 14:40:37,602 - INFO - Extracted word: costisitor from positive_words
+2024-08-02 14:40:37,602 - INFO - Extracted word: lucru manual from positive_words
+2024-08-02 14:40:37,603 - INFO - Extracted word: exclusivist from positive_words
+2024-08-02 14:40:37,606 - INFO - Extracted word: rafinat from positive_words
+2024-08-02 14:40:37,606 - INFO - Extracted word: elegant from positive_words
+2024-08-02 14:40:37,606 - INFO - Extracted word: luxos from positive_words
+2024-08-02 14:40:37,606 - INFO - Extracted word: sofisticat from positive_words
+2024-08-02 14:40:37,607 - INFO - Extracted 105 words from positive_words collection.
+2024-08-02 14:40:37,607 - INFO - Loaded 105 general words into positive_words.
+2024-08-02 14:40:37,607 - INFO - Accessing collection: negative_words
+2024-08-02 14:40:37,613 - INFO - Extracted word: prost from negative_words
+2024-08-02 14:40:37,613 - INFO - Extracted word: urât from negative_words
+2024-08-02 14:40:37,613 - INFO - Extracted word: groaznic from negative_words
+2024-08-02 14:40:37,614 - INFO - Extracted word: ingrozitor from negative_words
+2024-08-02 14:40:37,614 - INFO - Extracted word: teribil from negative_words
+2024-08-02 14:40:37,614 - INFO - Extracted word: fioros from negative_words
+2024-08-02 14:40:37,614 - INFO - Extracted word: speriat from negative_words
+2024-08-02 14:40:37,618 - INFO - Extracted word: nervos from negative_words
+2024-08-02 14:40:37,618 - INFO - Extracted word: furios from negative_words
+2024-08-02 14:40:37,622 - INFO - Extracted word: trist from negative_words
+2024-08-02 14:40:37,623 - INFO - Extracted word: nefericit from negative_words
+2024-08-02 14:40:37,630 - INFO - Extracted word: melancolic from negative_words
+2024-08-02 14:40:37,631 - INFO - Extracted word:  deprimant from negative_words
+2024-08-02 14:40:37,631 - INFO - Extracted word: plictisitor from negative_words
+2024-08-02 14:40:37,631 - INFO - Extracted word: obositor from negative_words
+2024-08-02 14:40:37,631 - INFO - Extracted word: greu from negative_words
+2024-08-02 14:40:37,632 - INFO - Extracted word: dificil from negative_words
+2024-08-02 14:40:37,632 - INFO - Extracted word: imposibil from negative_words
+2024-08-02 14:40:37,632 - INFO - Extracted word: nerealist from negative_words
+2024-08-02 14:40:37,633 - INFO - Extracted word: riscant from negative_words
+2024-08-02 14:40:37,633 - INFO - Extracted word: periculos from negative_words
+2024-08-02 14:40:37,638 - INFO - Extracted word: nociv from negative_words
+2024-08-02 14:40:37,642 - INFO - Extracted word: nesigur from negative_words
+2024-08-02 14:40:37,647 - INFO - Extracted word: murdar from negative_words
+2024-08-02 14:40:37,648 - INFO - Extracted word: dezordonat from negative_words
+2024-08-02 14:40:37,648 - INFO - Extracted word: vechi from negative_words
+2024-08-02 14:40:37,648 - INFO - Extracted word: învechit from negative_words
+2024-08-02 14:40:37,653 - INFO - Extracted word: lipsit de valoare from negative_words
+2024-08-02 14:40:37,653 - INFO - Extracted word: inutil from negative_words
+2024-08-02 14:40:37,658 - INFO - Extracted word: neimportant from negative_words
+2024-08-02 14:40:37,658 - INFO - Extracted word: nesemnificativ from negative_words
+2024-08-02 14:40:37,659 - INFO - Extracted word: inferior from negative_words
+2024-08-02 14:40:37,659 - INFO - Extracted word: slab from negative_words
+2024-08-02 14:40:37,659 - INFO - Extracted word: mediocru from negative_words
+2024-08-02 14:40:37,660 - INFO - Extracted word: lipsit de calitate from negative_words
+2024-08-02 14:40:37,660 - INFO - Extracted word: defect from negative_words
+2024-08-02 14:40:37,660 - INFO - Extracted word: spart from negative_words
+2024-08-02 14:40:37,660 - INFO - Extracted word: stricat from negative_words
+2024-08-02 14:40:37,665 - INFO - Extracted word: incompetent from negative_words
+2024-08-02 14:40:37,666 - INFO - Extracted word: necalificat from negative_words
+2024-08-02 14:40:37,666 - INFO - Extracted word: neprofesionist from negative_words
+2024-08-02 14:40:37,670 - INFO - Extracted word: neexperimentat from negative_words
+2024-08-02 14:40:37,675 - INFO - Extracted word: incorect from negative_words
+2024-08-02 14:40:37,675 - INFO - Extracted word: nedrept from negative_words
+2024-08-02 14:40:37,675 - INFO - Extracted word: imoral from negative_words
+2024-08-02 14:40:37,676 - INFO - Extracted word: necinstit from negative_words
+2024-08-02 14:40:37,676 - INFO - Extracted word: mincinos from negative_words
+2024-08-02 14:40:37,680 - INFO - Extracted word: nedemn de încredere from negative_words
+2024-08-02 14:40:37,681 - INFO - Extracted word: necredibil from negative_words
+2024-08-02 14:40:37,681 - INFO - Extracted word: neplauzibil from negative_words
+2024-08-02 14:40:37,681 - INFO - Extracted word: confuz from negative_words
+2024-08-02 14:40:37,682 - INFO - Extracted word: neclar from negative_words
+2024-08-02 14:40:37,686 - INFO - Extracted word: monotom from negative_words
+2024-08-02 14:40:37,691 - INFO - Extracted word: iritant from negative_words
+2024-08-02 14:40:37,691 - INFO - Extracted word: enervant from negative_words
+2024-08-02 14:40:37,691 - INFO - Extracted word: frustrant from negative_words
+2024-08-02 14:40:37,692 - INFO - Extracted word: stresant from negative_words
+2024-08-02 14:40:37,696 - INFO - Extracted word: jignitor from negative_words
+2024-08-02 14:40:37,696 - INFO - Extracted word: ofensator from negative_words
+2024-08-02 14:40:37,697 - INFO - Extracted word: agresiv from negative_words
+2024-08-02 14:40:37,697 - INFO - Extracted word: violent from negative_words
+2024-08-02 14:40:37,697 - INFO - Extracted 78 words from negative_words collection.
+2024-08-02 14:40:37,697 - INFO - Loaded 78 general words into negative_words.
+2024-08-02 14:40:37,698 - INFO - Accessing collection: greetings_words
+2024-08-02 14:40:37,700 - INFO - Extracted word: salut from greetings_words
+2024-08-02 14:40:37,729 - INFO - Extracted word: domnule from greetings_words
+2024-08-02 14:40:37,729 - INFO - Extracted word: doamna from greetings_words
+2024-08-02 14:40:37,730 - INFO - Extracted word: stimate domnule/doamna from greetings_words
+2024-08-02 14:40:37,738 - INFO - Extracted word: ce mai faci? from greetings_words
+2024-08-02 14:40:37,739 - INFO - Extracted word: hei! from greetings_words
+2024-08-02 14:40:37,739 - INFO - Extracted word: Servus! from greetings_words
+2024-08-02 14:40:37,743 - INFO - Extracted 17 words from greetings_words collection.
+2024-08-02 14:40:37,744 - INFO - Loaded 17 general words into greetings_words.
+2024-08-02 14:40:37,744 - INFO - Accessing collection: companies_names
+2024-08-02 14:40:37,747 - INFO - Extracted word: Vodafone from companies_names
+2024-08-02 14:40:37,747 - INFO - Extracted word: Vodafone Romania from companies_names
+2024-08-02 14:40:37,747 - INFO - Extracted word: Vodafone Ro from companies_names
+2024-08-02 14:40:37,747 - INFO - Extracted word: Vodafone R from companies_names
+2024-08-02 14:40:37,748 - INFO - Extracted word: Vodafone R. from companies_names
+2024-08-02 14:40:37,748 - INFO - Extracted word: Orange from companies_names
+2024-08-02 14:40:37,748 - INFO - Extracted word: Telekom from companies_names
+2024-08-02 14:40:37,753 - INFO - Extracted word: BCR from companies_names
+2024-08-02 14:40:37,753 - INFO - Extracted word: BRD from companies_names
+2024-08-02 14:40:37,753 - INFO - Extracted word: ING from companies_names
+2024-08-02 14:40:37,754 - INFO - Extracted word: Raiffeisen Bank from companies_names
+2024-08-02 14:40:37,754 - INFO - Extracted word: EON from companies_names
+2024-08-02 14:40:37,754 - INFO - Extracted word: Edenred from companies_names
+2024-08-02 14:40:37,754 - INFO - Extracted word: Vodafone România from companies_names
+2024-08-02 14:40:37,759 - INFO - Extracted 16 words from companies_names collection.
+2024-08-02 14:40:37,759 - INFO - Loaded 16 general words into companies_names.
+2024-08-02 14:40:37,759 - INFO - Accessing collection: words_to_remove
+2024-08-02 14:40:37,777 - INFO - Extracted 4 words from words_to_remove collection.
+2024-08-02 14:40:37,778 - INFO - Loaded 4 general words into words_to_remove.
+2024-08-02 14:40:37,778 - INFO - Accessing collection: availability_words
+2024-08-02 14:40:37,784 - INFO - Extracted 1 words from availability_words collection.
+2024-08-02 14:40:37,784 - INFO - Loaded 1 general words into availability_words.
+2024-08-02 14:40:37,785 - INFO - Accessing collection: from_what_company
+2024-08-02 14:40:37,786 - INFO - Extracted word: din partea companiei from from_what_company
+2024-08-02 14:40:37,787 - INFO - Extracted word: de la from from_what_company
+2024-08-02 14:40:37,787 - INFO - Extracted word: partea companiei from from_what_company
+2024-08-02 14:40:37,787 - INFO - Extracted 3 words from from_what_company collection.
+2024-08-02 14:40:37,788 - INFO - Loaded 3 general words into from_what_company.
+2024-08-02 14:40:37,788 - INFO - Accessing collection: good_bye_words
+2024-08-02 14:40:37,790 - INFO - Extracted word: Pe curând! from good_bye_words
+2024-08-02 14:40:37,790 - INFO - Extracted word: La revedere! from good_bye_words
+2024-08-02 14:40:37,794 - INFO - Extracted word: Ne auzim! from good_bye_words
+2024-08-02 14:40:37,795 - INFO - Extracted 4 words from good_bye_words collection.
+2024-08-02 14:40:37,795 - INFO - Loaded 4 general words into good_bye_words.
+2024-08-02 14:40:37,797 - INFO - Added 4 project-specific words to common_words for project 'Vodafone'.
+2024-08-02 14:40:37,797 - INFO - Added 4 project-specific words to positive_words for project 'Vodafone'.
+2024-08-02 14:40:37,797 - INFO - Added 4 project-specific words to negative_words for project 'Vodafone'.
+2024-08-02 14:40:37,798 - INFO - Added 3 project-specific words to greetings_words for project 'Vodafone'.
+2024-08-02 14:40:37,798 - INFO - Added 1 project-specific words to companies_names for project 'Vodafone'.
+2024-08-02 14:40:37,798 - INFO - Added 4 project-specific words to words_to_remove for project 'Vodafone'.
+2024-08-02 14:40:37,798 - INFO - Added 3 project-specific words to availability_words for project 'Vodafone'.
+2024-08-02 14:40:37,799 - INFO - Added 1 project-specific words to from_what_company for project 'Vodafone'.
+2024-08-02 14:40:37,799 - INFO - Added 0 project-specific words to good_bye_words for project 'Vodafone'.
+2024-08-02 14:40:37,799 - INFO - Final count for common_words: 57 words
+2024-08-02 14:40:37,799 - INFO - Final count for positive_words: 106 words
+2024-08-02 14:40:37,800 - INFO - Final count for negative_words: 81 words
+2024-08-02 14:40:37,800 - INFO - Final count for greetings_words: 21 words
+2024-08-02 14:40:37,800 - INFO - Final count for companies_names: 17 words
+2024-08-02 14:40:37,800 - INFO - Final count for words_to_remove: 8 words
+2024-08-02 14:40:37,801 - INFO - Final count for availability_words: 4 words
+2024-08-02 14:40:37,801 - INFO - Final count for from_what_company: 6 words
+2024-08-02 14:40:37,801 - INFO - Final count for good_bye_words: 4 words
+2024-08-02 14:40:37,801 - INFO - No new files to process in Vodafone.

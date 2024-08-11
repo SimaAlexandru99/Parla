@@ -1,0 +1,11 @@
+torch
+transformers
+pyannote.audio
+spacy
+yake
+pymongo
+google-cloud-storage
+firebase-admin
+google-generativeai
+pydub
+scipy
